@@ -1,0 +1,50 @@
+body{
+    background: #96C7F7;
+}
+style6{    
+     color : Black;
+     font-size: 20px;
+    }
+#btnIngresar
+{
+    background-color: #F2CF66;
+	border-bottom: 5px solid #D1B358;
+}
+
+
+.style4 {
+        color : Red;
+        font-size: 15px;
+}
+form {
+    border: 2px solid #66A;
+    background: #ADCCDE;
+    width: 400px;
+    margin:auto;
+}
+a:hover{
+    text-decoration: none;
+    color: red;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+}
+
+table {
+    margin: auto;
+    font-size: 14px;
+}
+
+#ventas, #ventas td {
+    border: 1px solid gray;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+#botones {
+    margin: 10px;
+}

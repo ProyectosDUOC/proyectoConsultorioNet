@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consultorio", "Consultorio\Consultorio.csproj", "{FD40A38B-9CDD-4E40-AB44-D55E2EDDDF99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{99EC40C8-9EB7-47DA-8623-76EC5C8F5E50}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD40A38B-9CDD-4E40-AB44-D55E2EDDDF99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD40A38B-9CDD-4E40-AB44-D55E2EDDDF99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD40A38B-9CDD-4E40-AB44-D55E2EDDDF99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD40A38B-9CDD-4E40-AB44-D55E2EDDDF99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99EC40C8-9EB7-47DA-8623-76EC5C8F5E50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99EC40C8-9EB7-47DA-8623-76EC5C8F5E50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99EC40C8-9EB7-47DA-8623-76EC5C8F5E50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99EC40C8-9EB7-47DA-8623-76EC5C8F5E50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

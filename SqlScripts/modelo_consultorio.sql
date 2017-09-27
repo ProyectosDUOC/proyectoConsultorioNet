@@ -8,8 +8,8 @@
 
 CREATE TABLE Alergia
   (
-    id_alergia NUMBER (4) NOT NULL ,
-    nombre NVARCHAR2 (30) NOT NULL
+    id_alergia NUMERIC (4) NOT NULL ,
+    nombre VARCHAR2 (30) NOT NULL
   ) ;
 ALTER TABLE Alergia ADD CONSTRAINT Alergia_PK PRIMARY KEY ( id_alergia ) ;
 

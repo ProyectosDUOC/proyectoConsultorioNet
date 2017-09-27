@@ -281,8 +281,8 @@ CREATE TABLE Desvinculado
 );
 ALTER TABLE Desvinculado ADD CONSTRAINT Desvinculado_PK PRIMARY KEY ( id_desvinculado ) ;
 
-ALTER TABLE Desvinculado ADD CONSTRAINT tipoDesc_Desvinculado_FK FOREIGN KEY ( id_tipo_desvin );
-ALTER TABLE Desvinculado ADD CONSTRAINT Usuario_Desvinculado_FK FOREIGN KEY ( id_usuario );
+ALTER TABLE Desvinculado ADD CONSTRAINT tipoDesc_Desvinculado_FK FOREIGN KEY ( id_tipo_desvin ) REFERENCES Tipo_Desvinculado (id_tipo_desvin);
+ALTER TABLE Desvinculado ADD CONSTRAINT Usuario_Desvinculado_FK FOREIGN KEY ( id_usuario ) REFERENCES Usuario ( id_usuario ) ;
 
 ALTER TABLE Comuna ADD CONSTRAINT Comuna_Region_FK FOREIGN KEY ( id_region ) REFERENCES Region ( id_region ) ;
 

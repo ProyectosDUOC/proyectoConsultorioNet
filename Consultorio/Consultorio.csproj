@@ -374,7 +374,12 @@
   <ItemGroup>
     <Content Include="Web.sitemap" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ConsultorioBD\ConsultorioBD.csproj">
+      <Project>{52A7A71F-C5C1-415B-95E0-C30E76561AAE}</Project>
+      <Name>ConsultorioBD</Name>
+    </ProjectReference>
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Admin.Master" />
   </ItemGroup>

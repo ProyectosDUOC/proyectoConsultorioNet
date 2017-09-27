@@ -76,6 +76,24 @@ namespace Consultorio {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator valUsuario;
         
         /// <summary>
+        /// Control lblConeccion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblConeccion;
+        
+        /// <summary>
+        /// Control btnBaseDatos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnBaseDatos;
+        
+        /// <summary>
         /// Control btnIngresar.
         /// </summary>
         /// <remarks>

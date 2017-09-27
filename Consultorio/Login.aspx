@@ -122,6 +122,9 @@
                     <tr>
                         <td class="style8">
                             &nbsp;
+                            <asp:Label ID="lblConeccion" runat="server" Text="Label"></asp:Label>
+                            <asp:Button ID="btnBaseDatos" runat="server" Text="conectar" 
+                                onclick="Button1_Click" />
                         </td>
                         <td class="style9">
                             &nbsp;

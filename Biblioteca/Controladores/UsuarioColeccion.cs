@@ -178,7 +178,7 @@ namespace Biblioteca.Controladores
         }
 
         
-        public static Boolean buscarContrasena(string user, string pass) 
+        /*public static Boolean buscarContrasena(string user, string pass) 
         {
             foreach (Usuario me in usuarios )
             {
@@ -189,7 +189,7 @@ namespace Biblioteca.Controladores
             }
             return false;
 
-        }
+        }*/
     }
 
 

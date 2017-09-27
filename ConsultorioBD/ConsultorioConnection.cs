@@ -10,7 +10,10 @@ namespace ConsultorioBD
     {
           private SqlConnection _connection;
 
-          private ConsultorioConnection() { }
+          public ConsultorioConnection()
+          {
+              _connection = new SqlConnection("Data Source=localhost\\SQLEXPRESS;Initial Catalog=Consultorios;Integrated Security=true");
+          }
          
           public ConsultorioConnection(String connectionString)
             {

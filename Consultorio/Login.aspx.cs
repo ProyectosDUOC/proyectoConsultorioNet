@@ -48,17 +48,15 @@ namespace Consultorio
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-
-            string conStr = "Data Source=SEBA-NB\\SQLEXPRESS;Initial Catalog=Empresas;Integrated Security=true";
-            ConsultorioConnection empCon = new ConsultorioConnection(conStr);
-            SqlConnection sqlCon = empCon.getConnection();
-            SqlCommand sqlComd = sqlCon.CreateCommand();
-            sqlComd.CommandType = CommandType.Text;
-            sqlComd.CommandText = "select * from empleado";
-            SqlDataAdapter adapter = new SqlDataAdapter(sqlComd);
-            DataSet dSet = new DataSet();
-            adapter.Fill(dSet);
-            //gvEmpleados.DataSource = dSet;
+            ConsultorioConnection consultorioCon = new ConsultorioConnection();
+            SqlConnection sqlCon = consultorioCon.getConnection();
+            SqlCommand sqlCmd = sqlCon.CreateCommand();
+            sqlCmd.CommandType = CommandType.Text;
+            sqlCmd.CommandText = "select * from Control_Acceso" ;
+            SqlDataAdapter adapter = new SqlDataAdapter(sqlCmd);
+            DataSet data = new DataSet();
+            adapter.Fill(data);
+            gvTest.DataSource = data;
             DataBind();
         }
     }

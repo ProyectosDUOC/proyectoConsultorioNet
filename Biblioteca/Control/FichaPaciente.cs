@@ -8,14 +8,13 @@ namespace Biblioteca.Control
 {
     public class FichaPaciente
     {
-        public uint idfichaMedica { get; set; }
+        public int idfichaMedica { get; set; }
         private DateTime fechaIngreso { get; set; }
 
         private Paciente paciente { get; set; }
         private Secretaria secretaria { get; set; }
         private Enfermera enfermeraChequeo { get; set; }
         private Medico medicoTratante { get; set; }
-        public  { get; set; }
         private float peso { get; set; }//kg
         private int estatura { get; set; }//cm
         private float imc { get; set; }// indice de masa corporal

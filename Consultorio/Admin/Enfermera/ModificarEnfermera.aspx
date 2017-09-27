@@ -2,8 +2,6 @@
     <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     </asp:Content>
     <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-        <form id="form1" runat="server">
             <div>
                 <table>
                     <tr>
@@ -131,5 +129,4 @@
                 <asp:Button ID="btn_Guardar" runat="server" Text="Guardar" Height="47px" Width="232px" onclick="btn_Guardar_Click" />
                 <asp:Button ID="btn_Atras" runat="server" Text="Atrás" Width="188px" Height="55px" onclick="btn_Atras_Click" />
             </div>
-        </form>
     </asp:Content>

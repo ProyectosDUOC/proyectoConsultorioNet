@@ -5,7 +5,7 @@
     <html xmlns="http://www.w3.org/1999/xhtml">
 
     <head runat="server">
-        <title>Acceso Plataforma Virtual</title>
+        <title>Acceso Plataforma Virtua :) l</title>
         <link href="/CSS/estilo.css" rel="stylesheet" type="text/css" />
 
         <style type="text/css">

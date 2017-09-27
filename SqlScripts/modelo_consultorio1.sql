@@ -405,11 +405,6 @@ INSERT INTO [Consultorios].[dbo].[Control_Acceso] VALUES (9,'seba','seba',2)
 INSERT INTO [Consultorios].[dbo].[Control_Acceso] VALUES (10,'root','DuocAdmin',5)
 INSERT INTO [Consultorios].[dbo].[Control_Acceso] VALUES (11,'paty','paty',2)
 
-INSERT INTO [Consultorios].[dbo].[Tipo_Usuario] VALUES (1,'medico')
-INSERT INTO [Consultorios].[dbo].[Tipo_Usuario] VALUES (2,'secretaria')
-INSERT INTO [Consultorios].[dbo].[Tipo_Usuario] VALUES (3,'enfermera')
-INSERT INTO [Consultorios].[dbo].[Tipo_Usuario] VALUES (4,'paciente')
-INSERT INTO [Consultorios].[dbo].[Tipo_Usuario] VALUES (5,'administrador')
 
 INSERT INTO [Consultorios].[dbo].[Sector] VALUES (1,'Amarillo')
 INSERT INTO [Consultorios].[dbo].[Sector] VALUES (2,'Rojo')
@@ -433,6 +428,7 @@ INSERT INTO [Consultorios].[dbo].[Nacionalidad] VALUES (4,'Aleman')
 INSERT INTO [Consultorios].[dbo].[Nacionalidad] VALUES (5,'Peruano')
 INSERT INTO [Consultorios].[dbo].[Nacionalidad] VALUES (6,'Ruso')
 INSERT INTO [Consultorios].[dbo].[Nacionalidad] VALUES (7,'Norcoreano')
+INSERT INTO [Consultorios].[dbo].[Nacionalidad] VALUES (8,'Haitiano')
 
 INSERT INTO [Consultorios].[dbo].[Grupo_sanguineo] VALUES (1,'Grupo A')
 INSERT INTO [Consultorios].[dbo].[Grupo_sanguineo] VALUES (2,'Grupo B')
@@ -457,5 +453,3 @@ INSERT INTO [Consultorios].[dbo].[Medicamentos] VALUES (3,'Aspirina')
 INSERT INTO [Consultorios].[dbo].[Medicamentos] VALUES (4,'Ketorolaco')
 --                                               num, rut   , dv , dire foto, nombre, snom, appate, apmate , fecha nac , direcion          , fono 1   , fono 2 ,id control, id comun ,id nacionalidad, id genero
 INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (1,19000000,'1','foto1','Benjamin','Elias','Mora','Torres', '1995-04-21' , 'Los crisantemos 327',9829999,28550, 1, 2,1,1)
-
-                                                                                         id_usuario  INT NOT NULL ,

@@ -53,7 +53,8 @@ CREATE TABLE Control_Acceso
     id_control_acceso INT NOT NULL ,
     usuario NVARCHAR (30) NOT NULL ,
     contrasena NVARCHAR (30) NOT NULL ,
-    id_tipo_usuario INT NOT NULL
+    id_tipo_usuario INT NOT NULL,
+    activo INT
   ) ;
 ALTER TABLE Control_Acceso ADD CONSTRAINT Control_Acceso_PK PRIMARY KEY ( id_control_acceso ) ;
 
@@ -171,7 +172,7 @@ CREATE TABLE Paciente
     id_grupo_sanguineo INT NOT NULL ,
     id_rh              INT NOT NULL ,
     id_sector          INT NOT NULL ,
-    id_alergia         INT NOT NULL
+    id_alergia         INT NOT NULL 
   ) ;
 ALTER TABLE Paciente ADD CONSTRAINT Paciente_PK PRIMARY KEY ( id_paciente ) ;
 
@@ -257,10 +258,31 @@ CREATE TABLE Usuario
     id_control_acceso INT NOT NULL ,
     id_comuna         INT NOT NULL ,
     id_nacionalidad   INT NOT NULL ,
-    id_genero         INT NOT NULL
+    id_genero         INT NOT NULL ,
+    activo            INT NOT NULL
   ) ;
 ALTER TABLE Usuario ADD CONSTRAINT Usuario_PK PRIMARY KEY ( id_usuario ) ;
 
+CREATE TABLE Tipo_Desvinculado
+(
+  id_tipo_desvin INT NOT NULL,
+  nombre         NVARCHAR(30),
+  glosa           NVARCHAR(30)
+);
+ALTER TABLE Tipo_Desvinculado ADD CONSTRAINT Tipo_Desvincu_PK PRIMARY KEY ( id_tipo_desvin ) ;
+
+CREATE TABLE Desvinculado
+(
+  id_desvinculado INT NOT NULL,
+  id_usuario      INT NOT NULL,
+  fecha           DATE,
+  id_tipo_desvin  INT NOT NULL,
+  glosa           NVARCHAR(30),
+);
+ALTER TABLE Desvinculado ADD CONSTRAINT Desvinculado_PK PRIMARY KEY ( id_desvinculado ) ;
+
+ALTER TABLE Desvinculado ADD CONSTRAINT tipoDesc_Desvinculado_FK FOREIGN KEY ( id_tipo_desvin );
+ALTER TABLE Desvinculado ADD CONSTRAINT Usuario_Desvinculado_FK FOREIGN KEY ( id_usuario );
 
 ALTER TABLE Comuna ADD CONSTRAINT Comuna_Region_FK FOREIGN KEY ( id_region ) REFERENCES Region ( id_region ) ;
 

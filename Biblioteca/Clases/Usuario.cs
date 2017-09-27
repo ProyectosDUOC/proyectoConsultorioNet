@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Biblioteca.Enumeraciones;
+using Biblioteca.Control;
+using Biblioteca.Clases;
 
 namespace Biblioteca
 {
@@ -10,8 +12,7 @@ namespace Biblioteca
     {
         private int id; //por defecto    
 
-        private String user;
-        private String contrasena;
+        public ControlAcceso controlAcceso{set; get; }
 
         private int rut; //validad rut
         private char dv;  //digito verificador
@@ -50,9 +51,7 @@ namespace Biblioteca
 
         private void Init() 
         {
-            id = 0;
-            user = String.Empty;
-            contrasena = String.Empty;
+            id = 0;            
             rut = 0;
             dv = '0';
             foto = "1000";
@@ -82,32 +81,7 @@ namespace Biblioteca
             }
         }
 
-        public string User
-        {
-            get
-            {
-                return user;
-            }
-
-            set
-            {
-                user = value;
-            }
-        }
-
-        public string Contrasena
-        {
-            get
-            {
-                return contrasena;
-            }
-
-            set
-            {
-                contrasena = value;
-            }
-        }
-
+      
         public int Rut
         {
             get
@@ -293,7 +267,7 @@ namespace Biblioteca
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("User: {0} : pass {1} \n", user, contrasena);
+            sb.AppendFormat("User: {0} : pass {1} \n", controlAcceso.usuario.ToString(), controlAcceso.pass.ToString());
             sb.AppendFormat("Rut = {0}-{1} \n Nombre Completo: {2} {3} {4} {5} \n foto : {6} \n Fecha de Nacimiento: {7} \n Sexo: {8}", rut, dv, pnombre, snombre, appaterno, apmaterno, foto, fechaNacimiento, genero);
             sb.AppendFormat("\n Nacionalidad: {0} \n Comuna: {1} \n Direccion: {2} \n Fono 1: {3} \n Fono 2: {4} ", nacionalidad, comuna, direccion, fono1, fono2);
             return sb.ToString();

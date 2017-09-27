@@ -29,7 +29,7 @@ namespace Biblioteca.Controladores
             return false;
         }
 
-        public static FichaPaciente buscar(uint id)
+        public static FichaPaciente buscar(int id)
         {
             FichaPaciente ficha = new FichaPaciente();
 

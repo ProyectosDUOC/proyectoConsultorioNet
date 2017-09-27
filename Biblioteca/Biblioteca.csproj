@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\Enfermera.cs" />
+    <Compile Include="Clases\Medicamento.cs" />
     <Compile Include="Clases\Medico.cs" />
     <Compile Include="Clases\Paciente.cs" />
     <Compile Include="Clases\Secretaria.cs" />
@@ -51,6 +52,7 @@
     <Compile Include="Control\FichaPaciente.cs" />
     <Compile Include="Control\FotoRamdom.cs" />
     <Compile Include="Control\LicenciaMedica.cs" />
+    <Compile Include="Control\RecetaMedica.cs" />
     <Compile Include="Enumeraciones\Enumeraciones.cs" />
     <Compile Include="Enumeraciones\EnumeracionesLocalidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

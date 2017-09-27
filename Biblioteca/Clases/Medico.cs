@@ -7,7 +7,7 @@ namespace Biblioteca.Clases
 {
     public class Medico: Usuario
     {
-        private uint idMedico;
+        private int idMedico;
         private int rutMedico;
         private char dvMedico;
         private Especialidad especialidad;
@@ -25,7 +25,7 @@ namespace Biblioteca.Clases
             especialidad = Especialidad.Seleccione;        
         }
 
-        public uint IdMedico
+        public int IdMedico
         {
             get { return idMedico; }
             set { idMedico = value; }

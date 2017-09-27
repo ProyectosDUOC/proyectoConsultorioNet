@@ -8,7 +8,7 @@ namespace Biblioteca.Clases
 {
     public class Paciente: Usuario
     {
-        private uint idPaciente;
+        private int idPaciente;
      
         private Sector sector;
         private GrupoSanguineo grupoSanguineo;
@@ -28,7 +28,7 @@ namespace Biblioteca.Clases
             alergia = String.Empty;
         }
 
-        public uint IdPaciente
+        public int IdPaciente
         {
             get { return idPaciente; }
             set { idPaciente = value; }

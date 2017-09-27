@@ -15,7 +15,7 @@ namespace Biblioteca.Control
         private Secretaria secretaria { get; set; }
         private Enfermera enfermeraChequeo { get; set; }
         private Medico medicoTratante { get; set; }
-
+        public  { get; set; }
         private float peso { get; set; }//kg
         private int estatura { get; set; }//cm
         private float imc { get; set; }// indice de masa corporal

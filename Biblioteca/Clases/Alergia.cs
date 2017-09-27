@@ -64,7 +64,7 @@ namespace Biblioteca.Control
         {
             StringBuilder sb = new StringBuilder();
             // sb.AppendFormat("Medico: rut Medico : {0}-{1} /n Especialidad : {2}", rutMedico, dvMedico, especialidad);
-            sb.AppendFormat("id alegrgia: {0} nombre Alergia : {1}  Descripcion : {2} ", id, nombre, descripcion);
+            sb.AppendFormat("id alergia: {0} nombre Alergia : {1}  Descripcion : {2} ", id, nombre, descripcion);
             return sb.ToString();
         }
     }

@@ -25,7 +25,7 @@ namespace Biblioteca.Controladores
             return false;
         }
 
-        public static LicenciaMedica buscar(uint id)
+        public static LicenciaMedica buscar(int id)
         {
             LicenciaMedica lm = new LicenciaMedica();
 
@@ -60,7 +60,7 @@ namespace Biblioteca.Controladores
             }
             return false;
         }
-        public Boolean eliminar(uint id) 
+        public Boolean eliminar(int id) 
         {
             int x = 0;
             foreach (LicenciaMedica li in licenciasM)

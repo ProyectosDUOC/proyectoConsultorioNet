@@ -8,7 +8,7 @@ namespace Biblioteca.Control
 {
     public class LicenciaMedica
     {
-        private uint idLicencia;
+        private int idLicencia;
 
         private DateTime fecha;
         private Medico medico;
@@ -32,7 +32,7 @@ namespace Biblioteca.Control
 
         }
 
-        public uint IdLicencia
+        public int IdLicencia
         {
             get { return idLicencia; }
             set { idLicencia = value; }

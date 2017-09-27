@@ -8,7 +8,7 @@ namespace Biblioteca
 {
     public class Usuario
     {
-        private uint id; //por defecto    
+        private int id; //por defecto    
 
         private String user;
         private String contrasena;
@@ -33,7 +33,7 @@ namespace Biblioteca
         private String fono2;
 
 
-        public Usuario(uint id, int rut, char dv, String foto, String pnombre) {
+        public Usuario(int id, int rut, char dv, String foto, String pnombre) {
             this.id = id;
             this.rut = rut;
             this.dv = dv;
@@ -69,7 +69,7 @@ namespace Biblioteca
             fono2 = String.Empty;
         }
 
-        public uint Id
+        public int Id
         {
             get
             {

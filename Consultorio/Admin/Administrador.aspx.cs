@@ -4,11 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Biblioteca.Clases;
 
 namespace Consultorio.Admin
 {
     public partial class Administrador : System.Web.UI.Page
     {
+    
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -25,7 +27,7 @@ namespace Consultorio.Admin
 
         protected void btn_CerrarSesion_Click(object sender, EventArgs e)
         {
-            Server.Transfer("/Login.aspx");
+            Response.Redirect("/Login.aspx");
         }
 
         protected void btn_Medico_Click(object sender, EventArgs e)

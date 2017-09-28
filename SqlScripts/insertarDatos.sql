@@ -28,17 +28,17 @@ INSERT INTO [Consultorios].[dbo].[Tipo_Usuario] VALUES (3,'enfermera')
 INSERT INTO [Consultorios].[dbo].[Tipo_Usuario] VALUES (4,'medico')
 INSERT INTO [Consultorios].[dbo].[Tipo_Usuario] VALUES (5,'administrador')
 
-                          -- id regitros vinculado a una cuenta, usuario , pass , tipo de usuario 
+                          -- id regitros vinculado a una cuenta, usuario , pass , tipo de usuario, activo
 INSERT INTO [Consultorios].[dbo].[Control_Acceso] VALUES (1,'paciente','paciente',1,1) -- siempre fijo no hace nada
 INSERT INTO [Consultorios].[dbo].[Control_Acceso] VALUES (2,'medico69C','medico23',4,1)
 INSERT INTO [Consultorios].[dbo].[Control_Acceso] VALUES (3,'secretariaMaria','secretaria1313',2,1)
 INSERT INTO [Consultorios].[dbo].[Control_Acceso] VALUES (4,'enfermeraNaty','naty132',2,1)
 INSERT INTO [Consultorios].[dbo].[Control_Acceso] VALUES (5,'supervisor','root2017',5,1)
-INSERT INTO [Consultorios].[dbo].[Control_Acceso] VALUES (6,'Manuel24','Alambre24',3,1)
+INSERT INTO [Consultorios].[dbo].[Control_Acceso] VALUES (6,'Manuel24','Alambre24',3,0)
 INSERT INTO [Consultorios].[dbo].[Control_Acceso] VALUES (7,'soporteconsultorio','root',5,1)
 INSERT INTO [Consultorios].[dbo].[Control_Acceso] VALUES (8,'carlos','cAr102',4,1)
 INSERT INTO [Consultorios].[dbo].[Control_Acceso] VALUES (9,'seba','seba',2,1)
-INSERT INTO [Consultorios].[dbo].[Control_Acceso] VALUES (10,'root','DuocAdmin',5,1)
+INSERT INTO [Consultorios].[dbo].[Control_Acceso] VALUES (10,'root','DuocAdmin',5,0)
 INSERT INTO [Consultorios].[dbo].[Control_Acceso] VALUES (11,'paty','paty',2,1)
 
 
@@ -87,5 +87,17 @@ INSERT INTO [Consultorios].[dbo].[Medicamentos] VALUES (1,'Paracetamol')
 INSERT INTO [Consultorios].[dbo].[Medicamentos] VALUES (2,'Ibuprofeno')
 INSERT INTO [Consultorios].[dbo].[Medicamentos] VALUES (3,'Aspirina')
 INSERT INTO [Consultorios].[dbo].[Medicamentos] VALUES (4,'Ketorolaco')
---                                               num, rut   , dv , dire foto, nombre, snom, appate, apmate , fecha nac , direcion          , fono 1   , fono 2 ,id control, id comun ,id nacionalidad, id genero
-INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (1,19000000,'1','foto1','Benjamin','Elias','Mora','Torres', '1995-04-21' , 'Los crisantemos 327',9829999,28550, 1, 2,1,1,1)
+--                                               num, rut   , dv , dire foto, nombre, snom, appate, apmate , fecha nac , direcion          , fono 1   , fono 2 ,id control, id comun ,id nacionalidad, id genero, activo
+INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (1, 
+											19000000,'1',
+											'foto1',
+											'Benjamin','Elias','Mora','Torres',
+											'1995-04-21' ,
+											'Los crisantemos 327',
+											9829999,
+											28550,
+											1,
+											2,
+											1,
+											1,
+											1)

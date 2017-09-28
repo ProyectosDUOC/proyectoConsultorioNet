@@ -375,6 +375,10 @@
     <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Biblioteca\Biblioteca.csproj">
+      <Project>{99EC40C8-9EB7-47DA-8623-76EC5C8F5E50}</Project>
+      <Name>Biblioteca</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ConsultorioBD\ConsultorioBD.csproj">
       <Project>{52A7A71F-C5C1-415B-95E0-C30E76561AAE}</Project>
       <Name>ConsultorioBD</Name>

@@ -7,14 +7,26 @@ using System.Web.UI.WebControls;
 using ConsultorioBD;
 using System.Data.SqlClient;
 using System.Data;
+using Biblioteca.Control;
+using Biblioteca.Clases;
 
 namespace Consultorio
 {
     public partial class Login : System.Web.UI.Page
     {
+         private ControlAcceso MiUsuario {
+            get {
+                if (Session["MiUsuario"] == null) {
+                    Session["MiUsuario"] = new ControlAcceso();
+                }
+                return (ControlAcceso)Session["MiUsuario"];
+            }
+            set { Session["MiUsuario"] = value; }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)

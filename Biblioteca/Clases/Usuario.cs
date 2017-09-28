@@ -33,6 +33,9 @@ namespace Biblioteca
         private String fono1;
         private String fono2;
 
+        public int activo{ get; set; }
+        
+
 
         public Usuario(int id, int rut, char dv, String foto, String pnombre, String snombre, String appaterno, String apmaterno) {
             this.id = id;
@@ -69,6 +72,7 @@ namespace Biblioteca
             direccion = String.Empty;
             fono1 = String.Empty;
             fono2 = String.Empty;
+            activo = 0;
         }
 
         public int Id
@@ -273,6 +277,7 @@ namespace Biblioteca
             sb.AppendFormat("User: {0} : pass {1} \n", controlAcceso.usuario.ToString(), controlAcceso.pass.ToString());
             sb.AppendFormat("Rut = {0}-{1} \n Nombre Completo: {2} {3} {4} {5} \n foto : {6} \n Fecha de Nacimiento: {7} \n Sexo: {8}", rut, dv, pnombre, snombre, appaterno, apmaterno, foto, fechaNacimiento, genero);
             sb.AppendFormat("\n Nacionalidad: {0} \n Comuna: {1} \n Direccion: {2} \n Fono 1: {3} \n Fono 2: {4} ", nacionalidad, comuna, direccion, fono1, fono2);
+            sb.AppendFormat("ACtivo {0}", activo);
             return sb.ToString();
         }
 

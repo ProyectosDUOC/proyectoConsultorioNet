@@ -10,9 +10,9 @@ namespace Biblioteca.Clases
     {
         private int idPaciente;
      
-        private Sector sector;
-        private GrupoSanguineo grupoSanguineo;
-        private RhSanguineo rh;
+        private String sector;
+        private String grupoSanguineo;
+        private String rh;
         private String alergia; // cambiar por la clase Alergia
 
         public Paciente() 
@@ -22,9 +22,9 @@ namespace Biblioteca.Clases
         private void Init() 
         {
             idPaciente = 0;
-            sector = Sector.Seleccione;
-            grupoSanguineo = GrupoSanguineo.Seleccione;
-            rh = RhSanguineo.Seleccione;
+            sector = String.Empty;
+            grupoSanguineo = String.Empty;
+            rh = String.Empty;
             alergia = String.Empty;
         }
 
@@ -33,7 +33,7 @@ namespace Biblioteca.Clases
             get { return idPaciente; }
             set { idPaciente = value; }
         }
-        public Sector Sector
+        public string Sector
         {
             get
             {
@@ -45,7 +45,7 @@ namespace Biblioteca.Clases
                 sector = value;
             }
         }
-        public GrupoSanguineo GrupoSanguineo
+        public string GrupoSanguineo
         {
             get
             {
@@ -57,7 +57,7 @@ namespace Biblioteca.Clases
                 grupoSanguineo = value;
             }
         }
-        public RhSanguineo Rh
+        public string Rh
         {
             get
             {

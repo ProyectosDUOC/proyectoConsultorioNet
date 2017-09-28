@@ -177,19 +177,7 @@ namespace Biblioteca.Controladores
             return result;
         }
 
-        
-        /*public static Boolean buscarContrasena(string user, string pass) 
-        {
-            foreach (Usuario me in usuarios )
-            {
-                if (me.User.Equals(user) && me.Contrasena.Equals(pass))
-                {
-                    return true;
-                }
-            }
-            return false;
-
-        }*/
+      
     }
 
 

@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controladores\ControlAccesoColeccion.cs" />
+    <Compile Include="Controladores\MedicamentoColeccion.cs" />
     <Compile Include="Control\ControlAcceso.cs" />
     <Compile Include="Clases\Enfermera.cs" />
     <Compile Include="Clases\Medicamento.cs" />
@@ -51,7 +53,6 @@
     <Compile Include="Controladores\UsuarioColeccion.cs" />
     <Compile Include="Clases\Alergia.cs" />
     <Compile Include="Control\FichaPaciente.cs" />
-    <Compile Include="Control\FotoRamdom.cs" />
     <Compile Include="Control\LicenciaMedica.cs" />
     <Compile Include="Control\RecetaMedica.cs" />
     <Compile Include="Enumeraciones\Enumeraciones.cs" />

@@ -7,7 +7,7 @@ namespace Biblioteca.Clases
 {
     public class Enfermera: Usuario
     {
-        private uint idEnfermera { get; set; }
+        private int idEnfermera { get; set; }
 
         public Enfermera() {}
 

@@ -25,21 +25,24 @@ namespace Biblioteca
 
 
         private DateTime fechaNacimiento;
-        private Genero genero;
+        private String genero;
 
-        private Nacionalidad nacionalidad;
-        private Comuna comuna;
+        private String nacionalidad;
+        private String comuna;
         private String direccion;
         private String fono1;
         private String fono2;
 
 
-        public Usuario(int id, int rut, char dv, String foto, String pnombre) {
+        public Usuario(int id, int rut, char dv, String foto, String pnombre, String snombre, String appaterno, String apmaterno) {
             this.id = id;
             this.rut = rut;
             this.dv = dv;
             this.foto = foto;
-            this.pnombre = pnombre;        
+            this.pnombre = pnombre;
+            this.snombre = snombre;
+            this.appaterno = appaterno;
+            this.apmaterno = apmaterno;
         }
 
         public Usuario() 
@@ -54,15 +57,15 @@ namespace Biblioteca
             id = 0;            
             rut = 0;
             dv = '0';
-            foto = "1000";
+            foto = "0000";
             pnombre = String.Empty;
             snombre = String.Empty;
             appaterno = String.Empty;
             apmaterno = String.Empty;
             fechaNacimiento = DateTime.Now;
-            genero = Genero.Seleccione;
-            nacionalidad = Nacionalidad.Seleccione;
-            comuna = Comuna.Seleccione;
+            genero = String.Empty;
+            nacionalidad = String.Empty;
+            comuna = String.Empty;
             direccion = String.Empty;
             fono1 = String.Empty;
             fono2 = String.Empty;
@@ -186,7 +189,7 @@ namespace Biblioteca
             }
         }
 
-        public Genero Genero
+        public string Genero
         {
             get
             {
@@ -199,7 +202,7 @@ namespace Biblioteca
             }
         }
 
-        public Comuna Comuna
+        public string Comuna
         {
             get
             {
@@ -251,7 +254,7 @@ namespace Biblioteca
             }
         }
 
-        public Nacionalidad Nacionalidad
+        public String Nacionalidad
         {
             get
             {

@@ -52,7 +52,7 @@ namespace Consultorio
             SqlConnection sqlCon = consultorioCon.getConnection();
             SqlCommand sqlCmd = sqlCon.CreateCommand();
             sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "select * from Control_Acceso" ;
+            sqlCmd.CommandText = "select * from Control_Acceso ca JOIN Tipo_Usuario tu on (ca.id_tipo_usuario = tu.id_tipo_usuario)" ;
             SqlDataAdapter adapter = new SqlDataAdapter(sqlCmd);
             DataSet data = new DataSet();
             adapter.Fill(data);

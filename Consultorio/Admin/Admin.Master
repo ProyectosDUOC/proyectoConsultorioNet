@@ -4,7 +4,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>ADMINISTRADOR</title>
+    <link href="/CSS/estilo2.css" rel="stylesheet" type="text/css" />
    <link id="favicon1" runat="server" rel="shortcut icon" href="~/Imagen/favicon.ico" type="image/x-icon" />
     
     <asp:ContentPlaceHolder ID="head" runat="server">    

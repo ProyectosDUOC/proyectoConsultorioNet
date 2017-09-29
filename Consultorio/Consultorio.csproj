@@ -70,6 +70,11 @@
     <Content Include="Admin\Paciente\ModificarPaciente.aspx" />
     <Content Include="Admin\PanelMedico.aspx" />
     <Content Include="Admin\PanelSecretaria.aspx" />
+    <Content Include="Admin\Secretaria\AgregarSecretaria.aspx" />
+    <Content Include="Admin\Secretaria\BuscarSecretaria.aspx" />
+    <Content Include="Admin\Secretaria\EliminarSecretaria.aspx" />
+    <Content Include="Admin\Secretaria\ListarSecretaria.aspx" />
+    <Content Include="Admin\Secretaria\ModificarSecretaria.aspx" />
     <Content Include="CSS\estilo.css" />
     <Content Include="Enfermera\FichaPacienteE.aspx" />
     <Content Include="Enfermera\PanelConsultaE.aspx" />
@@ -241,6 +246,41 @@
     <Compile Include="Admin\PanelSecretaria.aspx.designer.cs">
       <DependentUpon>PanelSecretaria.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Secretaria\AgregarSecretaria.aspx.cs">
+      <DependentUpon>AgregarSecretaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Secretaria\AgregarSecretaria.aspx.designer.cs">
+      <DependentUpon>AgregarSecretaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Secretaria\BuscarSecretaria.aspx.cs">
+      <DependentUpon>BuscarSecretaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Secretaria\BuscarSecretaria.aspx.designer.cs">
+      <DependentUpon>BuscarSecretaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Secretaria\EliminarSecretaria.aspx.cs">
+      <DependentUpon>EliminarSecretaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Secretaria\EliminarSecretaria.aspx.designer.cs">
+      <DependentUpon>EliminarSecretaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Secretaria\ListarSecretaria.aspx.cs">
+      <DependentUpon>ListarSecretaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Secretaria\ListarSecretaria.aspx.designer.cs">
+      <DependentUpon>ListarSecretaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Secretaria\ModificarSecretaria.aspx.cs">
+      <DependentUpon>ModificarSecretaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Secretaria\ModificarSecretaria.aspx.designer.cs">
+      <DependentUpon>ModificarSecretaria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Enfermera\Enfermera.Master.cs">
       <DependentUpon>Enfermera.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -387,6 +427,7 @@
   <ItemGroup>
     <Content Include="Admin\Admin.Master" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

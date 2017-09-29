@@ -72,7 +72,8 @@
                     <asp:Button ID="btn_Enfermera" runat="server" Text="Enfermera" Height="100px" Width="300px" onclick="btn_Enfermera_Click"
                     />
                     <asp:Button ID="btn_Medico" runat="server" Text="Medico" Height="100px" Width="300px" onclick="btn_Medico_Click" />
-                    <asp:Button ID="btn_Secretaria" runat="server" Text="Secretaria" Height="100px" Width="300px" />
+                    <asp:Button ID="btn_Secretaria" runat="server" Text="Secretaria" Height="100px" 
+                        Width="300px" onclick="btn_Secretaria_Click" />
                 </center>
             </div>
     </asp:Content>

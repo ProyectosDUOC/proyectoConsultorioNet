@@ -46,13 +46,11 @@ namespace Consultorio
                 }
                 if (user.ToLower().Equals("enfermera"))
                 {
-
                     Response.Redirect("/Enfermera/PanelConsultaE.aspx");
                 }
                 if (user.ToLower().Equals("administrador"))
                 {
                     Response.Redirect("/Admin/Administrador.aspx");
-
                 }
 
             }

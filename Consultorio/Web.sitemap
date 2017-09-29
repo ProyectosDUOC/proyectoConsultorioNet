@@ -46,7 +46,11 @@
         <siteMapNode url="Admin/Paciente/ModificarPaciente.aspx" title="Modificar Paciente" description=""/>
       </siteMapNode>
       <siteMapNode url="Admin/PanelSecretaria.aspx" title="Secretaria" description="" >
-
+        <siteMapNode url="Admin/Secretaria/AgregarSecretaria.aspx" title="Agregar Secretaria" description=""/>
+        <siteMapNode url="Admin/Secretaria/BuscarSecretaria.aspx" title="Buscar Secretaria" description=""/>
+        <siteMapNode url="Admin/Secretaria/EliminarSecretaria.aspx" title="Eliminar Secretaria" description=""/>
+        <siteMapNode url="Admin/Secretaria/ListarSecretaria.aspx" title="Listar Secretaria" description=""/>
+        <siteMapNode url="Admin/Secretaria/ModificarSecretaria.aspx" title="Modificar Secretaria" description=""/>
       </siteMapNode>
     </siteMapNode>
   </siteMapNode>

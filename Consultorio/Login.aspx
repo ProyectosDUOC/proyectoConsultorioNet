@@ -127,18 +127,15 @@
                         </td>
                         <td class="style9">
                             &nbsp;
-                            <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" Height="71px" onclick="btnIngresar_Click" Width="160px" class="button"
-                            />
+                            <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" Height="71px" onclick="btnIngresar_Click" Width="160px" />
                         </td>
                         <td>
                             &nbsp;
                         </td>
                     </tr>
                     <tr>
-                        <td class="style8">
-                            &nbsp;
-                            <asp:GridView ID="gvTest" runat="server">
-                            </asp:GridView>
+                        <td class="style8">                           
+                           
                         </td>
                         <td class="style9">
                             &nbsp;
@@ -159,6 +156,10 @@
                         </td>
                     </tr>
                 </table>
+            </div>
+            <div>
+             <asp:GridView ID="gvTest" runat="server">
+                            </asp:GridView>
             </div>
         </form>
         <footer id="footer">

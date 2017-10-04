@@ -5,6 +5,7 @@ INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (4,'Penicilina')
 INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (5,'Aspirina')
 INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (6,'Lactosa')
 INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (7,'Gruten')
+INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (7,'NA')
 
 INSERT INTO [Consultorios].[dbo].[Pais] VALUES (1,'Argentina')
 INSERT INTO [Consultorios].[dbo].[Pais] VALUES (2,'Chile')
@@ -87,17 +88,3 @@ INSERT INTO [Consultorios].[dbo].[Medicamentos] VALUES (1,'Paracetamol')
 INSERT INTO [Consultorios].[dbo].[Medicamentos] VALUES (2,'Ibuprofeno')
 INSERT INTO [Consultorios].[dbo].[Medicamentos] VALUES (3,'Aspirina')
 INSERT INTO [Consultorios].[dbo].[Medicamentos] VALUES (4,'Ketorolaco')
---                                               num, rut   , dv , dire foto, nombre, snom, appate, apmate , fecha nac , direcion          , fono 1   , fono 2 ,id control, id comun ,id nacionalidad, id genero, activo
-INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (1, 
-											19000000,'1',
-											'foto1',
-											'Benjamin','Elias','Mora','Torres',
-											'1995-04-21' ,
-											'Los crisantemos 327',
-											9829999,
-											28550,
-											1,
-											2,
-											1,
-											1,
-											1)

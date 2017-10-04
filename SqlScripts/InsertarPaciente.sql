@@ -65,7 +65,7 @@ INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (58,19907000,'k','foto8','Moha
 
 INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (59,19456010,'1','foto9','Pascuala','Loreto','De Gaul','Perez','1995-04-21' ,'Los crisantemos 327',9829999,28550,1,2,1,2,1)
 
-INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (60,18341230,'6','foto10','Jose','Maria','La Cruz','Ramirez','1995-04-21' ,'Los crisantemos 327',9829999,28550,1,2,1,1,1)	
+INSERT INTO [Consultorios].[dbo].[Usuario] VALUES(60,18341230,'6','foto10','Jose','Maria','La Cruz','Ramirez','1995-04-21' ,'Los crisantemos 327',9829999,28550,1,2,1,1,1)	
 
 
 		

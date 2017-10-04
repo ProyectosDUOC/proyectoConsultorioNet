@@ -14,6 +14,10 @@
         {
             width: 199px;
         }
+        .style3
+        {
+            width: 166px;
+        }
     </style>
 </head>
 <body>
@@ -26,9 +30,11 @@
                     Alergias</td>
                 <td class="style2">
                     Comuna</td>
-                <td>
+                <td class="style3">
                     &nbsp;
                     Sector</td>
+                <td>
+                    medico</td>
             </tr>
             <tr>
                 <td class="style1">                   
@@ -41,11 +47,18 @@
                         ConnectionString="<%$ ConnectionStrings:ConsultoriosConnectionString3 %>" 
                         SelectCommand="SELECT Comuna.id_comuna as id, Comuna.nom_com as Comuna, Region.nom_region as nombre_region, Pais.nom_pais as pais FROM Comuna INNER JOIN Region ON Comuna.id_region = Region.id_region INNER JOIN Pais ON Region.id_pais = Pais.id_pais "></asp:SqlDataSource>
                 </td>
-                <td>
+                <td class="style3">
                    
                     <asp:SqlDataSource ID="sqlSector" runat="server" 
                         ConnectionString="<%$ ConnectionStrings:ConsultoriosConnectionString4 %>" 
                         SelectCommand="SELECT id_sector as &quot;ID&quot;,nombre as &quot;Nombre sector&quot; FROM Sector"></asp:SqlDataSource>
+                   
+                </td>
+                <td>
+                   
+                    <asp:SqlDataSource ID="SqlMedico" runat="server" 
+                        ConnectionString="<%$ ConnectionStrings:ConsultoriosConnectionString5 %>" 
+                        SelectCommand="SELECT Medico.id_Medico as &quot;Id Medico&quot;, Medico.rut_medico as &quot;Rut Medico&quot;,  Medico.dv_medico as &quot;Dv Medico&quot;,  Usuario.rut_usuario as &quot;Rut Medico personal&quot;, Usuario.dv_usuario as &quot;dv&quot;, Usuario.pnombre as &quot;Nombre&quot;, Usuario.snombre as &quot;Segundo Nombre&quot;, Usuario.appaterno as &quot;Apellido Paterno&quot;, Usuario.apmaterno as &quot;Apellido Materno&quot;, Usuario.fecha_nacimiento as &quot;Fecha Nacimiento&quot;, Usuario.direccion as &quot;Dirección&quot;, Usuario.fono1 as &quot;Fono 1&quot;, Usuario.fono2 as &quot;Fono 2&quot;,  Especialidad.nom_especialidad as &quot;Nombre Especialidad&quot; FROM Medico INNER JOIN Usuario ON Medico.id_usuario = Usuario.id_usuario INNER JOIN Especialidad ON Medico.id_especialidad = Especialidad.id_especialidad"></asp:SqlDataSource>
                    
                 </td>
             </tr>
@@ -100,7 +113,7 @@
                         <SortedDescendingHeaderStyle BackColor="#000065" />
                     </asp:GridView>
                 </td>
-                <td>
+                <td class="style3">
                     
                     <asp:GridView ID="GridView3" runat="server" AllowPaging="True" 
                         AllowSorting="True" AutoGenerateColumns="False" CellPadding="4" 
@@ -122,6 +135,53 @@
                         <SortedAscendingHeaderStyle BackColor="#506C8C" />
                         <SortedDescendingCellStyle BackColor="#FFFDF8" />
                         <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
+                    </asp:GridView>
+                </td>
+                <td>
+                    
+                    <asp:GridView ID="GridView4" runat="server" AllowPaging="True" 
+                        AllowSorting="True" AutoGenerateColumns="False" BackColor="White" 
+                        BorderColor="#E7E7FF" BorderStyle="None" BorderWidth="1px" CellPadding="3" 
+                        DataKeyNames="Id Medico" DataSourceID="SqlMedico" GridLines="Horizontal">
+                        <AlternatingRowStyle BackColor="#F7F7F7" />
+                        <Columns>
+                            <asp:BoundField DataField="Id Medico" HeaderText="Id Medico" ReadOnly="True" 
+                                SortExpression="Id Medico" />
+                            <asp:BoundField DataField="Rut Medico" HeaderText="Rut Medico" 
+                                SortExpression="Rut Medico" />
+                            <asp:BoundField DataField="Dv Medico" HeaderText="Dv Medico" 
+                                SortExpression="Dv Medico" />
+                            <asp:BoundField DataField="Rut Medico personal" 
+                                HeaderText="Rut Medico personal" SortExpression="Rut Medico personal" />
+                            <asp:BoundField DataField="dv" HeaderText="dv" SortExpression="dv" />
+                            <asp:BoundField DataField="Nombre" HeaderText="Nombre" 
+                                SortExpression="Nombre" />
+                            <asp:BoundField DataField="Segundo Nombre" HeaderText="Segundo Nombre" 
+                                SortExpression="Segundo Nombre" />
+                            <asp:BoundField DataField="Apellido Paterno" HeaderText="Apellido Paterno" 
+                                SortExpression="Apellido Paterno" />
+                            <asp:BoundField DataField="Apellido Materno" HeaderText="Apellido Materno" 
+                                SortExpression="Apellido Materno" />
+                            <asp:BoundField DataField="Fecha Nacimiento" HeaderText="Fecha Nacimiento" 
+                                SortExpression="Fecha Nacimiento" />
+                            <asp:BoundField DataField="Dirección" HeaderText="Dirección" 
+                                SortExpression="Dirección" />
+                            <asp:BoundField DataField="Fono 1" HeaderText="Fono 1" 
+                                SortExpression="Fono 1" />
+                            <asp:BoundField DataField="Fono 2" HeaderText="Fono 2" 
+                                SortExpression="Fono 2" />
+                            <asp:BoundField DataField="Nombre Especialidad" 
+                                HeaderText="Nombre Especialidad" SortExpression="Nombre Especialidad" />
+                        </Columns>
+                        <FooterStyle BackColor="#B5C7DE" ForeColor="#4A3C8C" />
+                        <HeaderStyle BackColor="#4A3C8C" Font-Bold="True" ForeColor="#F7F7F7" />
+                        <PagerStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" HorizontalAlign="Right" />
+                        <RowStyle BackColor="#E7E7FF" ForeColor="#4A3C8C" />
+                        <SelectedRowStyle BackColor="#738A9C" Font-Bold="True" ForeColor="#F7F7F7" />
+                        <SortedAscendingCellStyle BackColor="#F4F4FD" />
+                        <SortedAscendingHeaderStyle BackColor="#5A4C9D" />
+                        <SortedDescendingCellStyle BackColor="#D8D8F0" />
+                        <SortedDescendingHeaderStyle BackColor="#3E3277" />
                     </asp:GridView>
                 </td>
             </tr>

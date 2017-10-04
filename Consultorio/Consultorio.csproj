@@ -76,7 +76,6 @@
     <Content Include="Admin\Secretaria\ListarSecretaria.aspx" />
     <Content Include="Admin\Secretaria\ModificarSecretaria.aspx" />
     <Content Include="CSS\estilo.css" />
-    <Content Include="CSS\estilo2.css" />
     <Content Include="Enfermera\FichaPacienteE.aspx" />
     <Content Include="Enfermera\PanelConsultaE.aspx" />
     <Content Include="Login.aspx" />

@@ -136,6 +136,9 @@
                     <tr>
                         <td class="style8">                           
                            
+                            <asp:Button ID="Button1" runat="server" Text="Prueba" 
+                                onclick="Button1_Click1" />
+                           
                         </td>
                         <td class="style9">
                             &nbsp;

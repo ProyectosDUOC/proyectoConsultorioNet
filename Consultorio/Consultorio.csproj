@@ -84,6 +84,7 @@
     <Content Include="Medico\LicenciaMedica.aspx" />
     <Content Include="Medico\PanelConsultaM.aspx" />
     <Content Include="Medico\VisualizarHistorial.aspx" />
+    <Content Include="prueba.aspx" />
     <Content Include="Secretaria\AgendarHora.aspx" />
     <Content Include="Secretaria\AgregarPacienteConsulta.aspx" />
     <Content Include="Secretaria\AgregarPacienteHora.aspx" />
@@ -352,6 +353,13 @@
       <DependentUpon>VisualizarHistorial.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="prueba.aspx.cs">
+      <DependentUpon>prueba.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="prueba.aspx.designer.cs">
+      <DependentUpon>prueba.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Secretaria\AgendarHora.aspx.cs">
       <DependentUpon>AgendarHora.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

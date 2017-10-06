@@ -16,6 +16,21 @@ namespace Biblioteca.Control
         public int sabado { get; set; }
         public int domingo { get; set; }
         public Sector sector { get; set; }
-     
+
+        public JornadaLaboral() {
+            Init();
+        }
+
+        private void Init() {
+            id = 0;
+            lunes = 0;
+            martes = 0;
+            miercoles = 0;
+            jueves = 0;
+            viernes = 0;
+            sabado = 0;
+            domingo = 0;
+            sector = null;
+        }
     }
 }

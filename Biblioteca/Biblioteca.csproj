@@ -52,6 +52,7 @@
     <Compile Include="Controladores\LicenciaMedicaColeccion.cs" />
     <Compile Include="Controladores\UsuarioColeccion.cs" />
     <Compile Include="Clases\Alergia.cs" />
+    <Compile Include="Control\AlergiaPaciente.cs" />
     <Compile Include="Control\ControlAcceso.cs" />
     <Compile Include="Control\FichaPaciente.cs" />
     <Compile Include="Control\JornadaLaboral.cs" />

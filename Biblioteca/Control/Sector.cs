@@ -10,6 +10,15 @@ namespace Biblioteca.Control
         public int id { get; set; }
         public String nombre { get; set; }
 
+        public Sector() {
+            Init();
+        }
+
+        private void Init() {
+            id = 0;
+            nombre = String.Empty;
+        }
+
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

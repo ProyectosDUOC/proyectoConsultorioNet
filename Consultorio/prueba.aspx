@@ -45,7 +45,8 @@
                 <td class="style2">
                     <asp:SqlDataSource ID="SqlComunaRegion" runat="server" 
                         ConnectionString="<%$ ConnectionStrings:ConsultoriosConnectionString3 %>" 
-                        SelectCommand="SELECT Comuna.id_comuna as id, Comuna.nom_com as Comuna, Region.nom_region as nombre_region, Pais.nom_pais as pais FROM Comuna INNER JOIN Region ON Comuna.id_region = Region.id_region INNER JOIN Pais ON Region.id_pais = Pais.id_pais "></asp:SqlDataSource>
+                        
+                        SelectCommand="SELECT Comuna.id_comuna, Comuna.nom_com, Provincia.nom_com AS Expr2, Region.nom_region, Pais.nom_pais FROM Comuna INNER JOIN Provincia ON Comuna.id_provincia = Provincia.id_provincia INNER JOIN Region ON Provincia.id_region = Region.id_region INNER JOIN Pais ON Region.id_pais = Pais.id_pais"></asp:SqlDataSource>
                 </td>
                 <td class="style3">
                    
@@ -90,17 +91,20 @@
                    
                     <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" 
                         BackColor="White" BorderColor="#999999" BorderStyle="None" BorderWidth="1px" 
-                        CellPadding="3" DataKeyNames="id" DataSourceID="SqlComunaRegion" 
+                        CellPadding="3" DataKeyNames="id_comuna" DataSourceID="SqlComunaRegion" 
                         GridLines="Vertical" AllowPaging="True" AllowSorting="True">
                         <AlternatingRowStyle BackColor="#DCDCDC" />
                         <Columns>
-                            <asp:BoundField DataField="id" HeaderText="id" ReadOnly="True" 
-                                SortExpression="id" />
-                            <asp:BoundField DataField="Comuna" HeaderText="Comuna" 
-                                SortExpression="Comuna" />
-                            <asp:BoundField DataField="nombre_region" HeaderText="nombre_region" 
-                                SortExpression="nombre_region" />
-                            <asp:BoundField DataField="pais" HeaderText="pais" SortExpression="pais" />
+                            <asp:BoundField DataField="id_comuna" HeaderText="id_comuna" ReadOnly="True" 
+                                SortExpression="id_comuna" />
+                            <asp:BoundField DataField="nom_com" HeaderText="nom_com" 
+                                SortExpression="nom_com" />
+                            <asp:BoundField DataField="Expr2" HeaderText="Expr2" 
+                                SortExpression="Expr2" />
+                            <asp:BoundField DataField="nom_region" HeaderText="nom_region" 
+                                SortExpression="nom_region" />
+                            <asp:BoundField DataField="nom_pais" HeaderText="nom_pais" 
+                                SortExpression="nom_pais" />
                         </Columns>
                         <FooterStyle BackColor="#CCCCCC" ForeColor="Black" />
                         <HeaderStyle BackColor="#000084" Font-Bold="True" ForeColor="White" />

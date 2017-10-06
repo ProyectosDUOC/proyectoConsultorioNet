@@ -38,6 +38,14 @@ CREATE TABLE Alergia
   ) ;
 ALTER TABLE Alergia ADD CONSTRAINT Alergia_PK PRIMARY KEY ( id_alergia ) ;
 
+CREATE TABLE Alergia_Paciente
+(
+  id_alergia_paciente INT NOT NULL,
+  id_alergia INT NOT NULL,
+  id_paciente INT NOT NULL
+);
+ALTER TABLE Alergia_Paciente ADD CONSTRAINT id_aler_paci_PK PRIMARY KEY (id_alergia_paciente);
+
 CREATE TABLE Provincia
   (
     id_provincia INT NOT NULL ,
@@ -63,6 +71,7 @@ CREATE TABLE Control_Acceso
     usuario NVARCHAR (30) NOT NULL ,
     contrasena NVARCHAR (30) NOT NULL ,
     id_tipo_usuario INT NOT NULL,
+    id_usuario INT NOT NULL,
     activo INT
   ) ;
 ALTER TABLE Control_Acceso ADD CONSTRAINT Control_Acceso_PK PRIMARY KEY ( id_control_acceso ) ;
@@ -88,6 +97,7 @@ ALTER TABLE Especialidad ADD CONSTRAINT Especialidad_PK PRIMARY KEY ( id_especia
 CREATE TABLE Ficha_Paciente
   (
     id_ficha_paciente INT NOT NULL ,
+    fecha             DATE,
     id_consultorio    INT NOT NULL ,
     id_secretaria     INT NOT NULL ,
     id_Medico         INT NOT NULL ,
@@ -131,7 +141,8 @@ CREATE TABLE Jornada_laboral
     viernes            INT ,
     sabado             INT  ,
     domingo            INT ,
-    id_sector          INT NOT NULL
+    id_sector          INT NOT NULL,
+    glosa              NVARCHAR(30)
   ) ;
 ALTER TABLE Jornada_laboral ADD CONSTRAINT Jornada_laboral_PK PRIMARY KEY ( id_jornada_laboral ) ;
 
@@ -149,7 +160,11 @@ ALTER TABLE Licencia_Medica ADD CONSTRAINT Licencia_Medica_PK PRIMARY KEY ( id_l
 CREATE TABLE Medicamentos
   (
     id_medicamentos INT NOT NULL ,
-    nombre NVARCHAR (30) NOT NULL
+    principio_activo NVARCHAR(30),
+    producto_referencia NVARCHAR(30),
+    nombre_producto NVARCHAR (60),
+    codigo_registro INT,
+    glosa NVARCHAR(60)
   ) ;
 ALTER TABLE Medicamentos ADD CONSTRAINT Medicamentos_PK PRIMARY KEY ( id_medicamentos ) ;
 
@@ -158,7 +173,7 @@ CREATE TABLE Medico
   (
     id_Medico  INT NOT NULL ,
     rut_medico INT NOT NULL ,
-    dv_medico NVARCHAR (1) NOT NULL ,
+    dv_medico CHAR(1) NOT NULL ,
     id_usuario         INT NOT NULL ,
     id_especialidad    INT NOT NULL ,
     id_jornada_laboral INT NOT NULL
@@ -180,8 +195,7 @@ CREATE TABLE Paciente
     id_usuario         INT NOT NULL ,
     id_grupo_sanguineo INT NOT NULL ,
     id_rh              INT NOT NULL ,
-    id_sector          INT NOT NULL ,
-    id_alergia         INT NOT NULL 
+    id_sector          INT NOT NULL 
   ) ;
 ALTER TABLE Paciente ADD CONSTRAINT Paciente_PK PRIMARY KEY ( id_paciente ) ;
 
@@ -254,7 +268,7 @@ CREATE TABLE Usuario
   (
     id_usuario  INT NOT NULL ,
     rut_usuario INT NOT NULL ,
-    dv_usuario NVARCHAR (1) NOT NULL ,
+    dv_usuario CHAR(1) NOT NULL ,
     foto NVARCHAR(30) NOT NULL ,
     pnombre NVARCHAR (30) NOT NULL ,
     snombre NVARCHAR (30) ,
@@ -263,8 +277,7 @@ CREATE TABLE Usuario
     fecha_nacimiento DATE NOT NULL ,
     direccion NVARCHAR (30) ,
     fono1             INT ,
-    fono2             INT ,
-    id_control_acceso INT NOT NULL ,
+    fono2             INT ,   
     id_comuna         INT NOT NULL ,
     id_nacionalidad   INT NOT NULL ,
     id_genero         INT NOT NULL ,
@@ -299,6 +312,8 @@ ALTER TABLE Provincia ADD CONSTRAINT Provincia_Region_FK FOREIGN KEY ( id_region
 
 ALTER TABLE Control_Acceso ADD CONSTRAINT Control_Acceso_Tipo_Usuario_FK FOREIGN KEY ( id_tipo_usuario ) REFERENCES Tipo_Usuario ( id_tipo_usuario ) ;
 
+ALTER TABLE Control_Acceso ADD CONSTRAINT Control_Acceso_Usuario_FK FOREIGN KEY ( id_usuario ) REFERENCES Usuario ( id_usuario ) ;
+
 ALTER TABLE Enfermera ADD CONSTRAINT Enfermera_Jornada_laboral_FK FOREIGN KEY ( id_jornada_laboral ) REFERENCES Jornada_laboral ( id_jornada_laboral ) ;
 
 ALTER TABLE Enfermera ADD CONSTRAINT Enfermera_Usuario_FK FOREIGN KEY ( id_usuario ) REFERENCES Usuario ( id_usuario ) ;
@@ -324,8 +339,6 @@ ALTER TABLE Medico ADD CONSTRAINT Medico_Jornada_laboral_FK FOREIGN KEY ( id_jor
 
 ALTER TABLE Medico ADD CONSTRAINT Medico_Usuario_FK FOREIGN KEY ( id_usuario ) REFERENCES Usuario ( id_usuario ) ;
 
-ALTER TABLE Paciente ADD CONSTRAINT Paciente_Alergia_FK FOREIGN KEY ( id_alergia ) REFERENCES Alergia ( id_alergia ) ;
-
 ALTER TABLE Paciente ADD CONSTRAINT Paciente_Grupo_sanguineo_FK FOREIGN KEY ( id_grupo_sanguineo ) REFERENCES Grupo_sanguineo ( id_grupo_sanguineo ) ;
 
 ALTER TABLE Paciente ADD CONSTRAINT Paciente_Rh_sanguineo_FK FOREIGN KEY ( id_rh ) REFERENCES Rh_sanguineo ( id_rh ) ;
@@ -346,13 +359,15 @@ ALTER TABLE Secretaria ADD CONSTRAINT Secretaria_Usuario_FK FOREIGN KEY ( id_usu
 
 ALTER TABLE Usuario ADD CONSTRAINT Usuario_Comuna_FK FOREIGN KEY ( id_comuna ) REFERENCES Comuna ( id_comuna ) ;
 
-ALTER TABLE Usuario ADD CONSTRAINT Usuario_Control_Acceso_FK FOREIGN KEY ( id_control_acceso ) REFERENCES Control_Acceso ( id_control_acceso ) ;
-
 ALTER TABLE Usuario ADD CONSTRAINT Usuario_Genero_FK FOREIGN KEY ( id_genero ) REFERENCES Genero ( id_genero ) ;
 
 ALTER TABLE Usuario ADD CONSTRAINT Usuario_Nacionalidad_FK FOREIGN KEY ( id_nacionalidad ) REFERENCES Nacionalidad ( id_nacionalidad ) ;
 
 ALTER TABLE Consultorio ADD CONSTRAINT Consultorio_Comuna_FK FOREIGN KEY ( id_comuna ) REFERENCES Comuna ( id_comuna ) ;
+
+ALTER TABLE Alergia_Paciente ADD CONSTRAINT Aler_Pac_Alerg_FK FOREIGN KEY ( id_alergia ) REFERENCES Alergia ( id_alergia ) ;
+
+ALTER TABLE Alergia_Paciente ADD CONSTRAINT Aler_Pac_Paciente_FK FOREIGN KEY ( id_paciente ) REFERENCES Paciente ( id_paciente ) ;
 
 -- Informe de Resumen de Oracle SQL Developer Data Modeler: 
 -- 

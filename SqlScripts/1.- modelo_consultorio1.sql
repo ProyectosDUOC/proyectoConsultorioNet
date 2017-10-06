@@ -38,12 +38,21 @@ CREATE TABLE Alergia
   ) ;
 ALTER TABLE Alergia ADD CONSTRAINT Alergia_PK PRIMARY KEY ( id_alergia ) ;
 
+CREATE TABLE Provincia
+  (
+    id_provincia INT NOT NULL ,
+    nom_com NVARCHAR (30) ,
+    id_region INT NOT NULL
+  ) ;
+ALTER TABLE Provincia ADD CONSTRAINT Provincia_PK PRIMARY KEY ( id_provincia ) ;
+
+
 
 CREATE TABLE Comuna
   (
     id_comuna INT NOT NULL ,
     nom_com NVARCHAR (30) ,
-    id_region INT NOT NULL
+    id_provincia INT NOT NULL
   ) ;
 ALTER TABLE Comuna ADD CONSTRAINT Comuna_PK PRIMARY KEY ( id_comuna ) ;
 
@@ -284,7 +293,9 @@ ALTER TABLE Desvinculado ADD CONSTRAINT Desvinculado_PK PRIMARY KEY ( id_desvinc
 ALTER TABLE Desvinculado ADD CONSTRAINT tipoDesc_Desvinculado_FK FOREIGN KEY ( id_tipo_desvin ) REFERENCES Tipo_Desvinculado (id_tipo_desvin);
 ALTER TABLE Desvinculado ADD CONSTRAINT Usuario_Desvinculado_FK FOREIGN KEY ( id_usuario ) REFERENCES Usuario ( id_usuario ) ;
 
-ALTER TABLE Comuna ADD CONSTRAINT Comuna_Region_FK FOREIGN KEY ( id_region ) REFERENCES Region ( id_region ) ;
+ALTER TABLE Comuna ADD CONSTRAINT Comuna_Provincia_FK FOREIGN KEY ( id_provincia ) REFERENCES Provincia ( id_provincia ) ;
+
+ALTER TABLE Provincia ADD CONSTRAINT Provincia_Region_FK FOREIGN KEY ( id_region ) REFERENCES Region ( id_region ) ;
 
 ALTER TABLE Control_Acceso ADD CONSTRAINT Control_Acceso_Tipo_Usuario_FK FOREIGN KEY ( id_tipo_usuario ) REFERENCES Tipo_Usuario ( id_tipo_usuario ) ;
 

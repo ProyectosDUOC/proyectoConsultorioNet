@@ -142,7 +142,7 @@ CREATE TABLE Jornada_laboral
     sabado             INT  ,
     domingo            INT ,
     id_sector          INT NOT NULL,
-    glosa              NVARCHAR(30)
+    glosa              NVARCHAR(30) 
   ) ;
 ALTER TABLE Jornada_laboral ADD CONSTRAINT Jornada_laboral_PK PRIMARY KEY ( id_jornada_laboral ) ;
 
@@ -163,7 +163,7 @@ CREATE TABLE Medicamentos
     principio_activo NVARCHAR(30),
     producto_referencia NVARCHAR(30),
     nombre_producto NVARCHAR (60),
-    codigo_registro INT,
+    codigo_registro NVARCHAR(30),
     glosa NVARCHAR(60)
   ) ;
 ALTER TABLE Medicamentos ADD CONSTRAINT Medicamentos_PK PRIMARY KEY ( id_medicamentos ) ;

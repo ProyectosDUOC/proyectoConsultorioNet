@@ -180,6 +180,12 @@ CREATE TABLE Medico
   ) ;
 ALTER TABLE Medico ADD CONSTRAINT Medico_PK PRIMARY KEY ( id_Medico ) ;
 
+CREATE TABLE Administrador
+  (
+    id_administrador  INT NOT NULL ,   
+    id_usuario INT NOT NULL
+  ) ;
+ALTER TABLE Administrador ADD CONSTRAINT Administrador_PK PRIMARY KEY ( id_administrador ) ;
 
 CREATE TABLE Nacionalidad
   (
@@ -338,6 +344,8 @@ ALTER TABLE Medico ADD CONSTRAINT Medico_Especialidad_FK FOREIGN KEY ( id_especi
 ALTER TABLE Medico ADD CONSTRAINT Medico_Jornada_laboral_FK FOREIGN KEY ( id_jornada_laboral ) REFERENCES Jornada_laboral ( id_jornada_laboral ) ;
 
 ALTER TABLE Medico ADD CONSTRAINT Medico_Usuario_FK FOREIGN KEY ( id_usuario ) REFERENCES Usuario ( id_usuario ) ;
+
+ALTER TABLE Administrador ADD CONSTRAINT Admin_Usuario_FK FOREIGN KEY ( id_usuario ) REFERENCES Usuario ( id_usuario ) ;
 
 ALTER TABLE Paciente ADD CONSTRAINT Paciente_Grupo_sanguineo_FK FOREIGN KEY ( id_grupo_sanguineo ) REFERENCES Grupo_sanguineo ( id_grupo_sanguineo ) ;
 

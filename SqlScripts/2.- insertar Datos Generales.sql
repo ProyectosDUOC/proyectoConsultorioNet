@@ -1,10 +1,10 @@
-INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (1,'Polen')
+﻿INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (1,'Polen')
 INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (2,'Acaros')
 INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (3,'Polvo')
 INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (4,'Penicilina')
 INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (5,'Aspirina')
 INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (6,'Lactosa')
-INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (7,'Gruten')
+INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (7,'Gluten')
 INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (7,'NA')
 
 INSERT INTO [Consultorios].[dbo].[Pais] VALUES (1,'Chile')

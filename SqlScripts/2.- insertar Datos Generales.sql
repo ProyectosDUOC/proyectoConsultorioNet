@@ -13,7 +13,7 @@ INSERT INTO [Consultorios].[dbo].[Pais] VALUES (2,'Argentina')
 INSERT INTO [Consultorios].[dbo].[Pais] VALUES (3,'Brazil')
 INSERT INTO [Consultorios].[dbo].[Pais] VALUES (4,'Mexico')
 
-INSERT INTO [Consultorios].[dbo].[Region] VALUES (1,'Metropolitana',2)
+INSERT INTO [Consultorios].[dbo].[Region] VALUES (1,'Metropolitana',1)
 
 INSERT INTO [Consultorios].[dbo].[Provincia] VALUES (1,'Santiago',1)
 INSERT INTO [Consultorios].[dbo].[Provincia] VALUES (2,'Chacabuco',1)

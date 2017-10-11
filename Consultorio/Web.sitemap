@@ -52,6 +52,7 @@
         <siteMapNode url="Admin/Secretaria/ListarSecretaria.aspx" title="Listar Secretaria" description=""/>
         <siteMapNode url="Admin/Secretaria/ModificarSecretaria.aspx" title="Modificar Secretaria" description=""/>
       </siteMapNode>
+      <siteMapNode url="Admin/PanelSector.aspx" title="Secretaria" description=""/>
     </siteMapNode>
   </siteMapNode>
 </siteMap>

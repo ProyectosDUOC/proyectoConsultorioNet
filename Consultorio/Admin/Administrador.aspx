@@ -94,7 +94,9 @@
     <table style="width: 100%;">
         <tr>
             <td class="style13">
-                &nbsp;</td>
+                <asp:Button ID="btnSector" runat="server" Text="Sector" 
+                    onclick="btnSector_Click" />
+            </td>
             <td class="style12">
                 <img alt="/Imagen/Iconos/001-personas-1.png" 
                     src="/Imagen/Iconos/001-personas-1.png" style="height: 44px; width: 79px" />&nbsp;<asp:Button ID="btn_Paciente" runat="server" 

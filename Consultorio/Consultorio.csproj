@@ -70,6 +70,7 @@
     <Content Include="Admin\Paciente\ModificarPaciente.aspx" />
     <Content Include="Admin\PanelMedico.aspx" />
     <Content Include="Admin\PanelSecretaria.aspx" />
+    <Content Include="Admin\PanelSector.aspx" />
     <Content Include="Admin\Secretaria\AgregarSecretaria.aspx" />
     <Content Include="Admin\Secretaria\BuscarSecretaria.aspx" />
     <Content Include="Admin\Secretaria\EliminarSecretaria.aspx" />
@@ -246,6 +247,13 @@
     </Compile>
     <Compile Include="Admin\PanelSecretaria.aspx.designer.cs">
       <DependentUpon>PanelSecretaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PanelSector.aspx.cs">
+      <DependentUpon>PanelSector.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PanelSector.aspx.designer.cs">
+      <DependentUpon>PanelSector.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Secretaria\AgregarSecretaria.aspx.cs">
       <DependentUpon>AgregarSecretaria.aspx</DependentUpon>

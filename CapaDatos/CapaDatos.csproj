@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{99EC40C8-9EB7-47DA-8623-76EC5C8F5E50}</ProjectGuid>
+    <ProjectGuid>{AAA869B7-8C2B-4E88-8FCB-6A45506BBD28}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Biblioteca</RootNamespace>
-    <AssemblyName>Biblioteca</AssemblyName>
+    <RootNamespace>CapaDatos</RootNamespace>
+    <AssemblyName>CapaDatos</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -34,6 +34,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,38 +43,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controladores\AlergiaColeccion.cs" />
-    <Compile Include="Controladores\ControlAccesoColeccion.cs" />
-    <Compile Include="Controladores\MedicamentoColeccion.cs" />
-    <Compile Include="Clases\Enfermera.cs" />
-    <Compile Include="Clases\Medicamento.cs" />
-    <Compile Include="Clases\Medico.cs" />
-    <Compile Include="Clases\Paciente.cs" />
-    <Compile Include="Clases\Secretaria.cs" />
-    <Compile Include="Controladores\FichaColeccion.cs" />
-    <Compile Include="Controladores\LicenciaMedicaColeccion.cs" />
-    <Compile Include="Controladores\UsuarioColeccion.cs" />
-    <Compile Include="Clases\Alergia.cs" />
-    <Compile Include="Control\AlergiaPaciente.cs" />
-    <Compile Include="Control\ControlAcceso.cs" />
-    <Compile Include="Control\FichaPaciente.cs" />
-    <Compile Include="Control\JornadaLaboral.cs" />
-    <Compile Include="Control\LicenciaMedica.cs" />
-    <Compile Include="Control\RecetaMedica.cs" />
-    <Compile Include="Control\Sector.cs" />
-    <Compile Include="Enumeraciones\Enumeraciones.cs" />
-    <Compile Include="Enumeraciones\EnumeracionesLocalidad.cs" />
+    <Compile Include="ConsultoriosEDM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConsultoriosEDM.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Clases\Usuario.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
-      <Project>{AAA869B7-8C2B-4E88-8FCB-6A45506BBD28}</Project>
-      <Name>CapaDatos</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="ConsultoriosEDM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ConsultoriosEDM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

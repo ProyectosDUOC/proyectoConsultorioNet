@@ -39,5 +39,10 @@ namespace Consultorio.Admin
         {
             Response.Redirect("/Admin/PanelSecretaria.aspx");
         }
+
+        protected void btnSector_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Admin/PanelSector.aspx");
+        }
     }
 }

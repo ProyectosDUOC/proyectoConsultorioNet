@@ -281,6 +281,101 @@ namespace Biblioteca
             return sb.ToString();
         }
 
+         public bool Create()
+        {
+            try
+            {
+                Consultiorios.DALC.Usuario usuario = new Consultiorios.DALC.Usuario();
 
+                usuario.id_usuario = this.id;
+                usuario.
+
+
+              
+                pac.id_paciente = this.idPaciente;
+                bib.Nombre = this.Nombre;
+                bib.Publica = this.Publica;
+                bib.Inauguracion = this.Inaguracion;
+                bib.Libros = this.Libros;
+
+                CommonBC.ModeloBibliotecas.AddToBiblioteca(bib);
+                CommonBC.ModeloBibliotecas.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
+
+        public bool Read()
+        {
+            try
+            {
+                Bibliotecas.DALC.Biblioteca biblioteca = CommonBC.ModeloBibliotecas.Biblioteca.First
+                    (
+                        bib => bib.Id == this.Id
+                    );
+                this.nombre = biblioteca.Nombre;
+                this.publica = biblioteca.Publica;
+                this.inaguracion = biblioteca.Inauguracion;
+                this.libros = biblioteca.Libros;
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+
+        }
+
+        public bool update()
+        {
+            try
+            {
+                Bibliotecas.DALC.Biblioteca biblioteca = CommonBC.ModeloBibliotecas.Biblioteca.First
+                    (
+                          bib => bib.Id == this.Id
+                    );
+                this.nombre = biblioteca.Nombre;
+                this.publica = biblioteca.Publica;
+                this.inaguracion = biblioteca.Inauguracion;
+                this.libros = biblioteca.Libros;
+
+                CommonBC.ModeloBibliotecas.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+
+        }
+
+        public bool Delete()
+        {
+            try
+            {
+                Bibliotecas.DALC.Biblioteca biblioteca = CommonBC.ModeloBibliotecas.Biblioteca.First
+                    (
+                        bib => bib.Id == this.Id
+
+                    );
+                CommonBC.ModeloBibliotecas.DeleteObject(biblioteca);
+                CommonBC.ModeloBibliotecas.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+                throw;
+            }
+
+        }
+
+    }
     }
 }

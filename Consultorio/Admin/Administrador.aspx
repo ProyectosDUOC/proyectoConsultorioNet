@@ -99,7 +99,7 @@
             </td>
             <td class="style12">
                 <img alt="/Imagen/Iconos/001-personas-1.png" 
-                    src="/Imagen/Iconos/001-personas-1.png" style="height: 44px; width: 79px" />&nbsp;<asp:Button ID="btn_Paciente" runat="server" 
+                    src="/Imagen/Iconos/001-personas-1.png" style="height: 44px; width: 79px" /><asp:Button ID="btn_Paciente" runat="server" 
                     Text="Paciente" Height="43px" Width="235px" onclick="btn_Paciente_Click" />
             </td>
         </tr>
@@ -108,7 +108,7 @@
                 &nbsp;</td>
             <td class="style12">
                 <img alt="" src="/Imagen/Iconos/016-enfermera-1.png" 
-                    style="height: 49px; width: 100px" />&nbsp;<asp:Button ID="btn_Enfermera" runat="server" 
+                    style="height: 49px; width: 100px" /><asp:Button ID="btn_Enfermera" runat="server" 
                     Text="Enfermera" Height="53px" Width="234px" onclick="btn_Enfermera_Click"
                     />
             </td>

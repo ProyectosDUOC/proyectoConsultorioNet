@@ -2081,7 +2081,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="ConsultoriosEDM" ZoomLevel="85">
+      <Diagram Name="ConsultioriosEDM">
         <EntityTypeShape EntityType="ConsultoriosModel.Administrador" Width="1.5" PointX="12" PointY="10.75" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Alergia" Width="1.5" PointX="18" PointY="6.75" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Alergia_Paciente" Width="1.5" PointX="20.25" PointY="10.5" Height="1.9802864583333317" IsExpanded="true" />

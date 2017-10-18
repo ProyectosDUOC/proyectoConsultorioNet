@@ -287,10 +287,36 @@ namespace Biblioteca
             {
                 Consultiorios.DALC.Usuario usuario = new Consultiorios.DALC.Usuario();
 
-                usuario.id_usuario = this.id;
-                usuario.
+                usuario.id_usuario = this.Id;
+                usuario.rut_usuario = this.Rut;
+                usuario.dv_usuario = this.Dv.ToString();
+                usuario.foto = this.Foto;
+                usuario.pnombre = this.Pnombre;
 
 
+                        
+                 public ControlAcceso controlAcceso{set; get; }
+
+        private int rut; //validad rut
+        private char dv;  //digito verificador
+        private String foto; //ruta de la foto guardada
+       
+        private String pnombre;
+        private String snombre;
+        private String appaterno;
+        private String apmaterno;
+
+
+        private DateTime fechaNacimiento;
+        private String genero;
+
+        private String nacionalidad;
+        private String comuna;
+        private String direccion;
+        private String fono1;
+        private String fono2;
+
+        public int activo{ get; set; }
               
                 pac.id_paciente = this.idPaciente;
                 bib.Nombre = this.Nombre;

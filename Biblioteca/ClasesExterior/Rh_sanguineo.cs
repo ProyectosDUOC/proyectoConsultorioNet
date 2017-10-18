@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Biblioteca.ClasesExterior
 {
-    public class Nacionalidad
+    public class Rh_sanguineo
     {
         private int id;
 
@@ -22,7 +22,7 @@ namespace Biblioteca.ClasesExterior
             set { nombre = value; }
         }
 
-        public Nacionalidad() {
+        public Rh_sanguineo() {
             Init();
         }
 
@@ -30,6 +30,5 @@ namespace Biblioteca.ClasesExterior
             id = 0;
             nombre = String.Empty;
         }
-
     }
 }

@@ -5,9 +5,9 @@ using System.Text;
 
 namespace Biblioteca.ClasesExterior
 {
-    public class Nacionalidad
+    public class TipoUsuario
     {
-        private int id;
+          private int id;
 
         public int Id
         {
@@ -22,7 +22,7 @@ namespace Biblioteca.ClasesExterior
             set { nombre = value; }
         }
 
-        public Nacionalidad() {
+        public TipoUsuario() {
             Init();
         }
 
@@ -30,6 +30,5 @@ namespace Biblioteca.ClasesExterior
             id = 0;
             nombre = String.Empty;
         }
-
     }
 }

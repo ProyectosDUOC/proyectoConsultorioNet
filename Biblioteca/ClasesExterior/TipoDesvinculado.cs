@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Biblioteca.ClasesExterior
 {
-    public class Nacionalidad
+    public class TipoDesvinculado
     {
         private int id;
 
@@ -22,14 +22,22 @@ namespace Biblioteca.ClasesExterior
             set { nombre = value; }
         }
 
-        public Nacionalidad() {
+        private String glosa;
+
+        public String Glosa
+        {
+            get { return glosa; }
+            set { glosa = value; }
+        }
+
+        public TipoDesvinculado() {
             Init();
         }
 
         private void Init() {
             id = 0;
             nombre = String.Empty;
+            glosa = String.Empty;
         }
-
     }
 }

@@ -22,7 +22,7 @@ namespace Biblioteca.ClasesExterior
             set { nombre = value; }
         }
 
-        public G() {
+        public Pais() {
             Init();
         }
 

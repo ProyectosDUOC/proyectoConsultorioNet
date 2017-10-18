@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Biblioteca.ClasesExterior
 {
-    public class Nacionalidad
+    public class Comuna
     {
         private int id;
 
@@ -22,14 +22,22 @@ namespace Biblioteca.ClasesExterior
             set { nombre = value; }
         }
 
-        public Nacionalidad() {
+        private Provincia provincia;
+
+        public Provincia Provincia
+        {
+            get { return provincia; }
+            set { provincia = value; }
+        }
+
+        public Comuna() {
             Init();
         }
 
         private void Init() {
             id = 0;
             nombre = String.Empty;
+            provincia = null;
         }
-
     }
 }

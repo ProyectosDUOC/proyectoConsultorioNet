@@ -41,38 +41,44 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClasesExterior\Comuna.cs" />
+    <Compile Include="ClasesExterior\Genero.cs" />
+    <Compile Include="ClasesExterior\Medicamentos.cs" />
+    <Compile Include="ClasesExterior\Nacionalidad.cs" />
+    <Compile Include="ClasesExterior\Pais.cs" />
+    <Compile Include="ClasesExterior\Provincia.cs" />
+    <Compile Include="ClasesExterior\Region.cs" />
+    <Compile Include="ClasesExterior\Rh_sanguineo.cs" />
+    <Compile Include="ClasesExterior\Sector.cs" />
+    <Compile Include="ClasesExterior\TipoDesvinculado.cs" />
+    <Compile Include="ClasesExterior\TipoUsuario.cs" />
+    <Compile Include="CommonBC.cs" />
     <Compile Include="Controladores\AlergiaColeccion.cs" />
     <Compile Include="Controladores\ControlAccesoColeccion.cs" />
     <Compile Include="Controladores\MedicamentoColeccion.cs" />
     <Compile Include="Clases\Enfermera.cs" />
     <Compile Include="Clases\Medicamento.cs" />
     <Compile Include="Clases\Medico.cs" />
-    <Compile Include="Clases\Paciente.cs" />
-    <Compile Include="Clases\Secretaria.cs" />
     <Compile Include="Controladores\FichaColeccion.cs" />
     <Compile Include="Controladores\LicenciaMedicaColeccion.cs" />
     <Compile Include="Controladores\UsuarioColeccion.cs" />
     <Compile Include="Clases\Alergia.cs" />
-    <Compile Include="Control\AlergiaPaciente.cs" />
     <Compile Include="Control\ControlAcceso.cs" />
     <Compile Include="Control\FichaPaciente.cs" />
     <Compile Include="Control\JornadaLaboral.cs" />
     <Compile Include="Control\LicenciaMedica.cs" />
-    <Compile Include="Control\RecetaMedica.cs" />
     <Compile Include="Control\Sector.cs" />
-    <Compile Include="Enumeraciones\Enumeraciones.cs" />
-    <Compile Include="Enumeraciones\EnumeracionesLocalidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Clases\Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
-      <Project>{AAA869B7-8C2B-4E88-8FCB-6A45506BBD28}</Project>
-      <Name>CapaDatos</Name>
+    <ProjectReference Include="..\Consultiorios.DALC\Consultiorios.DALC.csproj">
+      <Project>{3C73077E-736F-40D6-A520-2C017C92D2B9}</Project>
+      <Name>Consultiorios.DALC</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.Config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

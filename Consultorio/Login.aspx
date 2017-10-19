@@ -121,10 +121,7 @@
                     <tr>
                         <td class="style8">
                             &nbsp;
-                            <asp:Label ID="lblConeccion" runat="server" Text="Label"></asp:Label>
-                            <asp:Button ID="btnBaseDatos" runat="server" Text="conectar" 
-                                onclick="Button1_Click" />
-                        </td>
+                            </td>
                         <td class="style9">
                             &nbsp;
                             <asp:Button ID="btnIngresar" runat="server" Text="Ingresar" Height="71px" onclick="btnIngresar_Click" Width="160px" />
@@ -135,9 +132,6 @@
                     </tr>
                     <tr>
                         <td class="style8">                           
-                           
-                            <asp:Button ID="Button1" runat="server" Text="Prueba" 
-                                onclick="Button1_Click1" />
                            
                         </td>
                         <td class="style9">
@@ -159,10 +153,6 @@
                         </td>
                     </tr>
                 </table>
-            </div>
-            <div>
-             <asp:GridView ID="gvTest" runat="server">
-                            </asp:GridView>
             </div>
         </form>
         <footer id="footer">

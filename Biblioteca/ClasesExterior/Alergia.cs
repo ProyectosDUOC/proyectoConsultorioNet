@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Biblioteca.ClasesExterior
 {
-    public class Region
+    public class Alergia
     {
         private int id;
 
@@ -21,23 +21,14 @@ namespace Biblioteca.ClasesExterior
             get { return nombre; }
             set { nombre = value; }
         }
-
-        private Pais pais;
-
-        public Pais Pais
+        public Alergia()
         {
-            get { return pais; }
-            set { pais = value; }
-        }
-
-        public Region() {
             Init();
         }
-
-        private void Init() {
+        private void Init()
+        {
             id = 0;
             nombre = String.Empty;
-            Pais = null;
         }
     }
 }

@@ -15,13 +15,5 @@ namespace Consultorio.Admin
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Sector sect = new Sector();
-
-            sect.Id = Convert.ToInt32(txtID.Text);
-            sect.Nombre = txtNombre.Text;
-            L1.Text = sect.AgregarSector();
-        }
     }
 }

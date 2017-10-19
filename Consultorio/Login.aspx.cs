@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using ConsultorioBD;
 using System.Data.SqlClient;
 using System.Data;
 using Biblioteca.Control;
@@ -56,23 +55,7 @@ namespace Consultorio
             }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            ConsultorioConnection consultorioCon = new ConsultorioConnection();
-            SqlConnection sqlCon = consultorioCon.getConnection();
-            SqlCommand sqlCmd = sqlCon.CreateCommand();
-            sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = "select ca.id_control_acceso as Id, ca.usuario, ca.contrasena, ca.activo, tu.nom_tipo_usuario as nombre_tipo from Control_Acceso ca JOIN Tipo_Usuario tu on (ca.id_tipo_usuario = tu.id_tipo_usuario)" ;
-            SqlDataAdapter adapter = new SqlDataAdapter(sqlCmd);
-            DataSet data = new DataSet();
-            adapter.Fill(data);
-            gvTest.DataSource = data;
-            DataBind();
-        }
+        
 
-        protected void Button1_Click1(object sender, EventArgs e)
-        {
-            Response.Redirect("/Prueba.aspx");
-        }
     }
 }

@@ -42,9 +42,7 @@
                 <asp:Label ID="L1" runat="server" Text="status"></asp:Label>
             </td>
             <td>
-                <asp:Button ID="Button1" runat="server" Text="Agregar" onclick="Button1_Click" 
-                    style="height: 26px" />
-            </td>
+                &nbsp;</td>
         </tr>
     </table>
 </asp:Content>

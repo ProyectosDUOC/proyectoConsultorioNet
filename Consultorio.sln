@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consultorio", "Consultorio\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "Biblioteca\Biblioteca.csproj", "{99EC40C8-9EB7-47DA-8623-76EC5C8F5E50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsultorioBD", "ConsultorioBD\ConsultorioBD.csproj", "{52A7A71F-C5C1-415B-95E0-C30E76561AAE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Consultiorios.DALC", "Consultiorios.DALC\Consultiorios.DALC.csproj", "{3C73077E-736F-40D6-A520-2C017C92D2B9}"
 EndProject
 Global
@@ -39,16 +37,6 @@ Global
 		{99EC40C8-9EB7-47DA-8623-76EC5C8F5E50}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{99EC40C8-9EB7-47DA-8623-76EC5C8F5E50}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{99EC40C8-9EB7-47DA-8623-76EC5C8F5E50}.Release|x86.ActiveCfg = Release|Any CPU
-		{52A7A71F-C5C1-415B-95E0-C30E76561AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52A7A71F-C5C1-415B-95E0-C30E76561AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52A7A71F-C5C1-415B-95E0-C30E76561AAE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{52A7A71F-C5C1-415B-95E0-C30E76561AAE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{52A7A71F-C5C1-415B-95E0-C30E76561AAE}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{52A7A71F-C5C1-415B-95E0-C30E76561AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{52A7A71F-C5C1-415B-95E0-C30E76561AAE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{52A7A71F-C5C1-415B-95E0-C30E76561AAE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{52A7A71F-C5C1-415B-95E0-C30E76561AAE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{52A7A71F-C5C1-415B-95E0-C30E76561AAE}.Release|x86.ActiveCfg = Release|Any CPU
 		{3C73077E-736F-40D6-A520-2C017C92D2B9}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{3C73077E-736F-40D6-A520-2C017C92D2B9}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{3C73077E-736F-40D6-A520-2C017C92D2B9}.Debug|Mixed Platforms.Build.0 = Debug|x86

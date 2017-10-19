@@ -8,10 +8,36 @@ namespace Biblioteca.Clases
 {
     public class ControlAcceso
     {
-        public int id {get; set; }
-        public String username { get; set; }
-        public String pass { get; set; }
-        public TipoUsuario tipoUsuario { get; set; }
+        private int id;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        private String username;
+
+        public String Username
+        {
+            get { return username; }
+            set { username = value; }
+        }
+        private String pass;
+
+        public String e
+        {
+            get { return pass; }
+            set { pass = value; }
+        }
+        private TipoUsuario tipoUsuario;
+
+        public TipoUsuario TipoUsuario
+        {
+            get { return tipoUsuario; }
+            set { tipoUsuario = value; }
+        }
+
+      
         private Usuario usuario;
 
         public Usuario Usuario
@@ -23,9 +49,9 @@ namespace Biblioteca.Clases
 
         public int Activo
         {
-            get { return Activo; }
-            set { Activo = value; }
-        }
+            get { return activo; }
+            set { activo = value; }
+        }      
 
         public ControlAcceso() {
             Init();
@@ -37,7 +63,7 @@ namespace Biblioteca.Clases
             pass = String.Empty;
             tipoUsuario = null;
             usuario = null;
-            Activo = 0;
+            activo = 0;
         }
 
      /*   public override string ToString()

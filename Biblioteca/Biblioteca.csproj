@@ -41,8 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClasesExterior\Alergia.cs" />
+    <Compile Include="ClasesExterior\AlergiaPaciente.cs" />
     <Compile Include="ClasesExterior\Comuna.cs" />
+    <Compile Include="ClasesExterior\Desvinculado.cs" />
+    <Compile Include="ClasesExterior\Especialidad.cs" />
     <Compile Include="ClasesExterior\Genero.cs" />
+    <Compile Include="ClasesExterior\GrupoSanguineo.cs" />
+    <Compile Include="ClasesExterior\JornadaLaboral.cs" />
     <Compile Include="ClasesExterior\Medicamentos.cs" />
     <Compile Include="ClasesExterior\Nacionalidad.cs" />
     <Compile Include="ClasesExterior\Pais.cs" />
@@ -53,18 +59,14 @@
     <Compile Include="ClasesExterior\TipoDesvinculado.cs" />
     <Compile Include="ClasesExterior\TipoUsuario.cs" />
     <Compile Include="Clases\Consultorio.cs" />
+    <Compile Include="Clases\Enfermera.cs" />
+    <Compile Include="Clases\Medico.cs" />
+    <Compile Include="Clases\Paciente.cs" />
     <Compile Include="CommonBC.cs" />
-    <Compile Include="Controladores\AlergiaColeccion.cs" />
-    <Compile Include="Controladores\ControlAccesoColeccion.cs" />
-    <Compile Include="Controladores\MedicamentoColeccion.cs" />
-    <Compile Include="Controladores\FichaColeccion.cs" />
-    <Compile Include="Controladores\LicenciaMedicaColeccion.cs" />
-    <Compile Include="Controladores\UsuarioColeccion.cs" />
+    <Compile Include="Controladores\extra.cs" />
     <Compile Include="Control\ControlAcceso.cs" />
     <Compile Include="Control\FichaPaciente.cs" />
-    <Compile Include="Control\JornadaLaboral.cs" />
     <Compile Include="Control\LicenciaMedica.cs" />
-    <Compile Include="Control\Sector.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Clases\Usuario.cs" />
   </ItemGroup>

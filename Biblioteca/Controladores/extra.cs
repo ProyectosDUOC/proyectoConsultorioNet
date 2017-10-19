@@ -2,75 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Biblioteca.Clases;
 
 namespace Biblioteca.Controladores
 {
-    public class UsuarioColeccion
+    public class extra
     {
-
-        //CRUd
-        private static List<Usuario> usuarios = new List<Usuario>();
-
-        public UsuarioColeccion() 
+        public static Boolean verificarRut(int rut, char digito)
         {
-         usuarios = new List<Usuario>();
-        }
-        // se deberia tener uno por cada tipo de persona 
-        // problema o error : dado en el caso que si un medico, enfermera o doctor es paciente
-        // generare un error al ingresarlo porque ya existe el rut
-
-        public  Boolean agregar(Usuario persona) 
-        {
-            if (buscar(persona.Rut) == null)
-            {
-                usuarios.Add(persona);
-                return true;
-            }           
-            return false;
-        }
-
-        public static Usuario buscar(int rut)
-        {
-            return null;
-        }
-
-        public List<Usuario> listar() 
-        {
-
-            return usuarios;
-        }
-
-        public Boolean modificar(Usuario persona) 
-        {
-            int x = 0;
-            foreach (Usuario use in usuarios)
-            {
-                if (use.Rut.Equals(persona.Rut))
-                {
-                    usuarios.Insert(x, persona);
-                    return true;
-                }
-                x++;
-            }
-            return false;
-        }
-        public Boolean eliminar(String rut) 
-        {
-            int x = 0;
-            foreach (Usuario use in usuarios)
-            {
-                if (use.Rut.Equals(rut))
-                {
-                    usuarios.RemoveAt(x);
-                    return true;
-                }
-                x++;
-            }
-            return false;
-        }
-
-        public static Boolean verificarRut(int rut, char digito) {
 
             string dv = "";
 
@@ -83,7 +21,7 @@ namespace Biblioteca.Controladores
                 mRut[i] = (auxRut % 10);
                 auxRut = (auxRut / 10);
             }
-           
+
             if (rut.ToString().Length == 8)
             {
                 suma = mRut[0] * 2 + mRut[1] * 3 + mRut[2] * 4 + mRut[3] * 5 + mRut[4] * 6 + mRut[5] * 7 + mRut[6] * 2 + mRut[7] * 3;
@@ -118,7 +56,7 @@ namespace Biblioteca.Controladores
             return false;
         }
 
-        public static char digitoRut(int rut) 
+        public static char digitoRut(int rut)
         {
             string dv = "";
 
@@ -157,18 +95,18 @@ namespace Biblioteca.Controladores
                 dv = suma.ToString();
             }
 
-            
+
             return char.Parse(dv);
         }
 
-        public static string encriptar(string clave) 
+        public static string encriptar(string clave)
         {
             string result = string.Empty;
             byte[] encryted = System.Text.Encoding.Unicode.GetBytes(clave);
             result = Convert.ToBase64String(encryted);
             return result;
         }
-        public static string desencriptar(string claveEn) 
+        public static string desencriptar(string claveEn)
         {
             string result = string.Empty;
             byte[] decryted = Convert.FromBase64String(claveEn);
@@ -176,11 +114,5 @@ namespace Biblioteca.Controladores
             result = System.Text.Encoding.Unicode.GetString(decryted);
             return result;
         }
-
-      
     }
-
-
 }
-
-   

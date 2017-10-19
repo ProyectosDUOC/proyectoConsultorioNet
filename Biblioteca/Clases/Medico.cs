@@ -6,7 +6,7 @@ using Biblioteca.ClasesExterior;
 
 namespace Biblioteca.Clases
 {
-    public class Consultorio
+    public class Medico
     {
         private int id;
 
@@ -29,33 +29,37 @@ namespace Biblioteca.Clases
             get { return dv; }
             set { dv = value; }
         }
-        private Comuna comuna;
+        private Usuario usuario;
 
-        public Comuna Comuna
+        public Usuario Usuario
         {
-            get { return comuna; }
-            set { comuna = value; }
+            get { return usuario; }
+            set { usuario = value; }
         }
-        private String nombre;
+        private Especialidad especialidad;
 
-        public String Nombre
+        public Especialidad Especialidad
         {
-            get { return nombre; }
-            set { nombre = value; }
+            get { return especialidad; }
+            set { especialidad = value; }
         }
-        
-        public Consultorio()
+        private JornadaLaboral jornadaLaboral;
+
+        public JornadaLaboral JornadaLaboral
         {
-            Init();
+            get { return jornadaLaboral; }
+            set { jornadaLaboral = value; }
         }
-        private void Init()
-        {
+
+
+
+        private void Init() {
             id = 0;
             rut = 0;
             dv = '0';
-            comuna = null;
-            nombre = String.Empty;
+            usuario = null;
+            especialidad = null;
+            jornadaLaboral = null;
         }
-
     }
 }

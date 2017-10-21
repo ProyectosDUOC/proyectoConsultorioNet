@@ -30,5 +30,63 @@ namespace Biblioteca.ClasesExterior
             id = 0;
             nombre = String.Empty;
         }
+        public bool Create() {
+            try
+            {
+                Consultiorios.DALC.Especialidad especialidad = new Consultiorios.DALC.Especialidad();
+                especialidad.id_especialidad = this.Id;
+                especialidad.nom_especialidad = this.Nombre;
+
+                CommonBC.ModeloConsultorio.AddToEspecialidad(especialidad);
+                CommonBC.ModeloConsultorio.SaveChanges();
+
+                return true;
+            }
+            catch (Exception ex)
+            {                
+                return false;
+            }            
+        }
+        public bool Read(){
+            try
+            {
+                Consultiorios.DALC.Especialidad especialidad = CommonBC.ModeloConsultorio.Especialidad.First
+                    (
+                        especial => especial.id_especialidad == this.Id
+                    );
+                this.Id = especialidad.id_especialidad;
+                this.Nombre = especialidad.nom_especialidad;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool Update()
+        {
+            try
+            {
+                Consultiorios.DALC.Especialidad especialidad = CommonBC.ModeloConsultorio.Especialidad.First
+                    (
+                        especial => especial.id_especialidad == this.Id
+                    );
+
+                
+                this.Id = especialidad.id_especialidad;
+                this.Nombre = especialidad.nom_especialidad;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
+
     }
 }

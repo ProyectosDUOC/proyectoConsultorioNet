@@ -69,8 +69,8 @@ namespace Biblioteca.ClasesExterior
                     (
                         alergiaPaciente => alergiaPaciente.id_alergia_paciente == this.Id
                     );
-                this.id = alergiaPac.id_alergia;
-              //  this.paciente = alergiaPac.Paciente.;
+                this.Id = alergiaPac.id_alergia;
+           //  this.Paciente = alergiaPac.Paciente.id_paciente;
               //  this.alergia = alergiaPac.Alergia();
                 return true;
             }

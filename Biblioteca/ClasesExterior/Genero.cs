@@ -31,6 +31,80 @@ namespace Biblioteca.ClasesExterior
             nombre = String.Empty;
         }
 
+        public bool Create() {
+            try
+            {
+                Consultiorios.DALC.Genero genero = new Consultiorios.DALC.Genero();
 
+                genero.id_genero = this.Id;
+                genero.nom_genero = this.Nombre;
+
+                CommonBC.ModeloConsultorio.AddToGenero(genero);
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {                
+                return false;
+            }
+        }
+        public bool Read()
+        {
+            try
+            {
+                Consultiorios.DALC.Genero genero = CommonBC.ModeloConsultorio.Genero.First
+                    (
+                        gen => gen.id_genero == this.Id                 
+                    );
+                this.Id = genero.id_genero;
+                this.Nombre = genero.nom_genero;            
+               
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool Update()
+        {
+            try
+            {
+                Consultiorios.DALC.Genero genero = CommonBC.ModeloConsultorio.Genero.First
+                    (
+                        gen => gen.id_genero == this.Id
+                    );          
+
+                genero.id_genero = this.Id;
+                genero.nom_genero = this.Nombre;
+
+              
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool Delete()
+        {
+            try
+            {
+                Consultiorios.DALC.Genero genero = CommonBC.ModeloConsultorio.Genero.First
+                    (
+                        gen => gen.id_genero == this.Id
+                    );
+                CommonBC.ModeloConsultorio.DeleteObject(genero);
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+      
     }
 }

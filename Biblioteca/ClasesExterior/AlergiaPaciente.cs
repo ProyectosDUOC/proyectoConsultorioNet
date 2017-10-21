@@ -69,9 +69,9 @@ namespace Biblioteca.ClasesExterior
                     (
                         alergiaPaciente => alergiaPaciente.id_alergia_paciente == this.Id
                     );
-                this.id = alergiaPac.id_alergia;
-              //  this.paciente = alergiaPac.Paciente.;
-              //  this.alergia = alergiaPac.Alergia();
+                this.Id = alergiaPac.id_alergia;
+                this.Paciente.Id = alergiaPac.id_paciente;
+                this.Alergia.Id = alergiaPac.id_alergia;
                 return true;
             }
             catch (Exception ex)
@@ -88,9 +88,9 @@ namespace Biblioteca.ClasesExterior
                     (
                         alergiaPaciente => alergiaPaciente.id_alergia_paciente == this.Id
                     );
-                this.id = alergiaPac.id_alergia;
-                //  this.paciente = alergiaPac.Paciente.;
-                //  this.alergia = alergiaPac.Alergia();
+                 alergiaPac.id_alergia = this.Id;
+                 alergiaPac.id_paciente = this.Paciente.Id;
+                 alergiaPac.id_alergia = this.Alergia.Id;
 
                 CommonBC.ModeloConsultorio.SaveChanges();
                 return true;

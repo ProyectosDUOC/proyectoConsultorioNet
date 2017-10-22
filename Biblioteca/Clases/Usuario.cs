@@ -166,9 +166,9 @@ namespace Biblioteca
                 usuario.appaterno = this.Appaterno;
                 usuario.apmaterno = this.Apmaterno;
                 usuario.fecha_nacimiento = this.FechaNacimiento;
-                usuario.Genero.id_genero = this.Genero.Id;
-                usuario.Nacionalidad.id_nacionalidad = this.Nacionalidad.Id;
-                usuario.Comuna.id_comuna = this.Comuna.Id;
+                usuario.id_genero = this.Genero.Id;
+                usuario.id_nacionalidad = this.Nacionalidad.Id;
+                usuario.id_comuna = this.Comuna.Id;
                 usuario.direccion = this.Direccion;
                 usuario.fono1 = int.Parse(this.Fono1);
                 usuario.fono2 = int.Parse(this.Fono2);
@@ -198,9 +198,9 @@ namespace Biblioteca
                 this.Appaterno = usuario.appaterno;
                 this.Apmaterno = usuario.apmaterno;
                 this.FechaNacimiento = usuario.fecha_nacimiento;
-                this.Genero.Id = usuario.Genero.id_genero;
+                this.Genero.Id = usuario.id_genero;
                 this.Nacionalidad.Id = usuario.id_nacionalidad;
-                this.Comuna.Id = usuario.Comuna.id_comuna;
+                this.Comuna.Id = usuario.id_comuna;
                 this.Direccion = usuario.direccion;
                 this.Fono1 = usuario.fono1.ToString();
                 this.Fono2 = usuario.fono2.ToString();
@@ -228,9 +228,9 @@ namespace Biblioteca
                 usuario.appaterno = this.Appaterno;
                 usuario.apmaterno = this.Apmaterno;
                 usuario.fecha_nacimiento = this.FechaNacimiento;
-                usuario.Genero.id_genero = this.Genero.Id;
-                usuario.Nacionalidad.id_nacionalidad = this.Nacionalidad.Id;
-                usuario.Comuna.id_comuna = this.Comuna.Id;
+                usuario.id_genero= this.Genero.Id;
+                usuario.id_nacionalidad = this.Nacionalidad.Id;
+                usuario.id_comuna = this.Comuna.Id;
                 usuario.direccion = this.Direccion;
                 usuario.fono1 = int.Parse(this.Fono1);
                 usuario.fono2 = int.Parse(this.Fono2);

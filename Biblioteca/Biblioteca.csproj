@@ -62,6 +62,7 @@
     <Compile Include="Clases\Enfermera.cs" />
     <Compile Include="Clases\Medico.cs" />
     <Compile Include="Clases\Paciente.cs" />
+    <Compile Include="Clases\Secretaria.cs" />
     <Compile Include="CommonBC.cs" />
     <Compile Include="Controladores\extra.cs" />
     <Compile Include="Control\ControlAcceso.cs" />

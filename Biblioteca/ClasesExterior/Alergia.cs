@@ -96,30 +96,7 @@ namespace Biblioteca.ClasesExterior
             {
                 return false;
             }
-        }
-
-        public bool Update()
-        {
-            try
-            {
-                Consultiorios.DALC.Alergia alergia =
-                    CommonBC.ModeloConsultorio.Alergia.First
-                        (
-                            ale => ale.id_alergia == this.Id
-                        );
-
-                CommonBC.ModeloConsultorio.DeleteObject(alergia);
-                CommonBC.ModeloConsultorio.SaveChanges();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                return false;
-            }
-        }
-        
-
-    
+        }   
 
     }
 }

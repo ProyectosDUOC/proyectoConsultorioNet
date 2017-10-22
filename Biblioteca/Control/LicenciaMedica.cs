@@ -9,44 +9,23 @@ namespace Biblioteca.Control
     public class LicenciaMedica
     {
         private int idLicencia;
-
-        private DateTime fecha;
-        private Medico medico;
-        private Paciente paciente;       
         private int numeroDias;
         private string motivo;
+        private Paciente paciente;  
 
         public LicenciaMedica() 
         {
             Init();
         }
 
-        private void Init()
-        {
-            idLicencia = 0;
-            fecha = DateTime.Now;
-            medico = null;
-            paciente = null;
-            numeroDias = 0;
-            motivo = String.Empty;
-
-        }
+       
 
         public int IdLicencia
         {
             get { return idLicencia; }
             set { idLicencia = value; }
         }
-        public DateTime Fecha
-        {
-            get { return fecha; }
-            set { fecha = value; }
-        }    
-        public Medico Medico
-        {
-            get { return medico; }
-            set { medico = value; }
-        }
+      
         public int NumeroDias
         {
             get { return numeroDias; }
@@ -62,16 +41,90 @@ namespace Biblioteca.Control
             get { return motivo; }
             set { motivo = value; }
         }
-
-        public override string ToString()
+        private void Init()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("N° {0}",idLicencia);
-            sb.AppendFormat("Fecha:{0} ", fecha);
-            sb.AppendFormat("Paciente: {0} , Medico {1}" , paciente, medico );
-            sb.AppendFormat("numeros de dias {0} , motivo {1}", numeroDias, motivo);
-            return sb.ToString();
+            idLicencia = 0; 
+            paciente = null;
+            numeroDias = 0;
+            motivo = String.Empty;
+
+        }     
+
+        public bool Create() {
+            try
+            {
+                Consultiorios.DALC.Licencia_Medica licenciaMe = new Consultiorios.DALC.Licencia_Medica();
+                licenciaMe.id_licencia_medica = this.IdLicencia;
+                licenciaMe.numero_de_dias = this.NumeroDias;
+                licenciaMe.motivos = this.Motivo;
+                licenciaMe.id_ficha_paciente = this.Paciente.Id;
+                CommonBC.ModeloConsultorio.AddToLicencia_Medica(licenciaMe);
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
+        public bool Read() {
+            try
+            {
+                Consultiorios.DALC.Licencia_Medica licenciaMe = CommonBC.ModeloConsultorio.Licencia_Medica.First
+                    (
+                        licencia => licencia.id_licencia_medica == this.IdLicencia
+                    );
+
+                this.NumeroDias = licenciaMe.numero_de_dias;
+                this.Motivo = licenciaMe.motivos;
+                this.Paciente.Id = licenciaMe.id_ficha_paciente;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool Update()
+        {
+            try
+            {
+                Consultiorios.DALC.Licencia_Medica licenciaMe = CommonBC.ModeloConsultorio.Licencia_Medica.First
+                    (
+                        licencia => licencia.id_licencia_medica == this.IdLicencia
+                    );
+
+                licenciaMe.numero_de_dias = this.NumeroDias;
+                licenciaMe.motivos = this.Motivo;
+                licenciaMe.id_ficha_paciente = this.Paciente.Id;
+
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool Delete()
+        {
+            try
+            {
+                Consultiorios.DALC.Licencia_Medica licenciaMe = CommonBC.ModeloConsultorio.Licencia_Medica.First
+                    (
+                        licencia => licencia.id_licencia_medica == this.IdLicencia
+                    );
+
+                CommonBC.ModeloConsultorio.DeleteObject(licenciaMe);
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

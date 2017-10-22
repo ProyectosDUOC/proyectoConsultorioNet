@@ -59,10 +59,16 @@
     <Compile Include="ClasesExterior\TipoDesvinculado.cs" />
     <Compile Include="ClasesExterior\TipoUsuario.cs" />
     <Compile Include="Clases\Consultorio.cs" />
+    <Compile Include="Clases\ConsultorioColeccion.cs" />
     <Compile Include="Clases\Enfermera.cs" />
+    <Compile Include="Clases\EnfermeraColeccion.cs" />
     <Compile Include="Clases\Medico.cs" />
+    <Compile Include="Clases\MedicoColeccion.cs" />
     <Compile Include="Clases\Paciente.cs" />
+    <Compile Include="Clases\PacienteColeccion.cs" />
     <Compile Include="Clases\Secretaria.cs" />
+    <Compile Include="Clases\SecretariaColeccion.cs" />
+    <Compile Include="Clases\UsuarioColeccion.cs" />
     <Compile Include="CommonBC.cs" />
     <Compile Include="Controladores\extra.cs" />
     <Compile Include="Control\ControlAcceso.cs" />

@@ -30,5 +30,7 @@ namespace Biblioteca.ClasesExterior
             id = 0;
             nombre = String.Empty;
         }
+
+        public 
     }
 }

@@ -61,10 +61,10 @@ namespace Biblioteca.Clases
               Consultiorios.DALC.Paciente paciente= new Consultiorios.DALC.Paciente();
              
               paciente.id_paciente = this.Id;
-              paciente.Usuario.id_usuario = this.Usuario.Id;
-              paciente.Grupo_sanguineo.id_grupo_sanguineo = this.GrupoSanguineo.Id;
-              paciente.Rh_sanguineo.id_rh = this.Rh.Id;
-              paciente.Sector.id_sector = this.Sector.Id;
+              paciente.id_usuario = this.Usuario.Id;
+              paciente.id_grupo_sanguineo = this.GrupoSanguineo.Id;
+              paciente.id_rh = this.Rh.Id;
+              paciente.id_sector = this.Sector.Id;
 
               CommonBC.ModeloConsultorio.AddToPaciente(paciente);
               CommonBC.ModeloConsultorio.SaveChanges();
@@ -83,9 +83,9 @@ namespace Biblioteca.Clases
                         pacien => pacien.id_paciente == this.Id
                     );
                 this.Usuario.Id = paciente.id_usuario;
-                this.GrupoSanguineo.Id = paciente.Grupo_sanguineo.id_grupo_sanguineo;
-                this.Rh.Id = paciente.Rh_sanguineo.id_rh;
-                this.Sector.Id = paciente.Sector.id_sector;
+                this.GrupoSanguineo.Id = paciente.id_grupo_sanguineo;
+                this.Rh.Id = paciente.id_rh;
+                this.Sector.Id = paciente.id_sector;
 
                 return true;
             }
@@ -101,10 +101,10 @@ namespace Biblioteca.Clases
                     (
                         pacien => pacien.id_paciente == this.Id
                     );
-                paciente.Usuario.id_usuario = this.Usuario.Id;
-                paciente.Grupo_sanguineo.id_grupo_sanguineo = this.GrupoSanguineo.Id;
-                paciente.Rh_sanguineo.id_rh = this.Rh.Id;
-                paciente.Sector.id_sector = this.Sector.Id;
+                paciente.id_usuario = this.Usuario.Id;
+                paciente.id_grupo_sanguineo = this.GrupoSanguineo.Id;
+                paciente.id_rh = this.Rh.Id;
+                paciente.id_sector = this.Sector.Id;
 
                 CommonBC.ModeloConsultorio.SaveChanges();
                 return true;

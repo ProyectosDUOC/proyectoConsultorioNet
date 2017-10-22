@@ -39,5 +39,6 @@ namespace Biblioteca.ClasesExterior
             nombre = String.Empty;
             glosa = String.Empty;
         }
+
     }
 }

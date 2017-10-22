@@ -67,7 +67,7 @@ namespace Biblioteca.Clases
                 medico.id_Medico = this.Id;
                 medico.rut_medico = this.Rut;
                 medico.dv_medico = this.Dv.ToString();
-                medico.Usuario.id_usuario = this.Usuario.Id;
+                medico.id_usuario = this.Usuario.Id;
                 medico.id_especialidad = this.Especialidad.Id;
                 medico.id_jornada_laboral = this.JornadaLaboral.Id;
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Biblioteca.ClasesExterior;
+using Biblioteca.Clases;
 
 namespace Biblioteca.Clases
 {

@@ -68,6 +68,7 @@
     <Compile Include="Control\ControlAcceso.cs" />
     <Compile Include="Control\ControlAccesoColeccion.cs" />
     <Compile Include="Control\FichaPaciente.cs" />
+    <Compile Include="Control\FichaPacienteColeccion.cs" />
     <Compile Include="Control\LicenciaMedica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Clases\Usuario.cs" />

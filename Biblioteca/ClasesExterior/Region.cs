@@ -39,5 +39,81 @@ namespace Biblioteca.ClasesExterior
             nombre = String.Empty;
             Pais = null;
         }
+
+        public bool Create()
+        {
+            try
+            {
+                Consultiorios.DALC.Region reg = new Consultiorios.DALC.Region();
+
+                reg.id_pais = this.Pais.Id;
+                reg.id_region = this.Id;
+                reg.nom_region = this.Nombre;
+
+                CommonBC.ModeloConsultorio.AddToRegion(reg);
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
+
+        public bool Read()
+        {
+            try
+            {
+                Consultiorios.DALC.Region reg = CommonBC.ModeloConsultorio.Region.First(
+                                                    r => r.id_region == this.Id);
+
+                this.Nombre = reg.nom_region;
+                this.Pais.Id = reg.id_pais;
+
+                return true;
+
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool Update()
+        {
+            try
+            {
+                Consultiorios.DALC.Region reg = CommonBC.ModeloConsultorio.Region.First(
+                                                    r => r.id_region == this.Id);
+                reg.id_pais = this.Pais.Id;
+                reg.nom_region = this.Nombre;
+
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool Delete()
+        {
+            try
+            {
+                Consultiorios.DALC.Region reg = CommonBC.ModeloConsultorio.Region.First(
+                                    r => r.id_region == this.Id);
+
+                CommonBC.ModeloConsultorio.DeleteObject(reg);
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
     }
 }

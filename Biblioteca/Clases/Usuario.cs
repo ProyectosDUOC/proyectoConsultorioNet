@@ -152,118 +152,117 @@ namespace Biblioteca
             activo = 0;
         }
 
+        public bool Create() {
+            try
+            {
+                Consultiorios.DALC.Usuario usuario = new Consultiorios.DALC.Usuario();
+
+                usuario.id_usuario = this.Id;
+                usuario.rut_usuario = this.Rut;
+                usuario.dv_usuario = this.Dv.ToString();
+                usuario.foto = this.Foto;
+                usuario.pnombre = this.Pnombre;
+                usuario.snombre = this.Snombre;
+                usuario.appaterno = this.Appaterno;
+                usuario.apmaterno = this.Apmaterno;
+                usuario.fecha_nacimiento = this.FechaNacimiento;
+                usuario.id_genero = this.Genero.Id;
+                usuario.id_nacionalidad = this.Nacionalidad.Id;
+                usuario.id_comuna = this.Comuna.Id;
+                usuario.direccion = this.Direccion;
+                usuario.fono1 = int.Parse(this.Fono1);
+                usuario.fono2 = int.Parse(this.Fono2);
+                usuario.activo = this.Activo;
+
+                CommonBC.ModeloConsultorio.AddToUsuario(usuario);
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+               return false;
+            }
+        }
+        public bool Read() {
+            try
+            {
+                Consultiorios.DALC.Usuario usuario = CommonBC.ModeloConsultorio.Usuario.First
+                    (
+                        usu => usu.id_usuario == this.Id
+                    );
+                this.Rut = usuario.rut_usuario;
+                this.Dv = Char.Parse(usuario.dv_usuario);
+                this.Foto = usuario.foto;
+                this.Pnombre = usuario.pnombre;
+                this.Snombre = usuario.snombre;
+                this.Appaterno = usuario.appaterno;
+                this.Apmaterno = usuario.apmaterno;
+                this.FechaNacimiento = usuario.fecha_nacimiento;
+                this.Genero.Id = usuario.id_genero;
+                this.Nacionalidad.Id = usuario.id_nacionalidad;
+                this.Comuna.Id = usuario.id_comuna;
+                this.Direccion = usuario.direccion;
+                this.Fono1 = usuario.fono1.ToString();
+                this.Fono2 = usuario.fono2.ToString();
+                this.Activo = usuario.activo;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool Update() {
+            try
+            {
+                Consultiorios.DALC.Usuario usuario = CommonBC.ModeloConsultorio.Usuario.First
+                    (
+                        usu => usu.id_usuario == this.Id
+                    );
+                usuario.rut_usuario = this.Rut;
+                usuario.dv_usuario = this.Dv.ToString();
+                usuario.foto = this.Foto;
+                usuario.pnombre = this.Pnombre;
+                usuario.snombre = this.Snombre;
+                usuario.appaterno = this.Appaterno;
+                usuario.apmaterno = this.Apmaterno;
+                usuario.fecha_nacimiento = this.FechaNacimiento;
+                usuario.id_genero= this.Genero.Id;
+                usuario.id_nacionalidad = this.Nacionalidad.Id;
+                usuario.id_comuna = this.Comuna.Id;
+                usuario.direccion = this.Direccion;
+                usuario.fono1 = int.Parse(this.Fono1);
+                usuario.fono2 = int.Parse(this.Fono2);
+                usuario.activo = this.Activo;
+
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {                
+                return false;
+            }
+        }
+        public bool Delete() {
+            try
+            {
+                Consultiorios.DALC.Usuario usuario = CommonBC.ModeloConsultorio.Usuario.First
+                    (
+                        usua => usua.id_usuario == this.Id
+                    );
+                CommonBC.ModeloConsultorio.DeleteObject(usuario);
+                CommonBC.ModeloConsultorio.SaveChanges();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }        
+        }
 
 
 
-        /*  public override string ToString()
-          {
-              StringBuilder sb = new StringBuilder();
-              sb.AppendFormat("User: {0} : pass {1} \n", controlAcceso.usuario.ToString(), controlAcceso.pass.ToString());
-              sb.AppendFormat("Rut = {0}-{1} \n Nombre Completo: {2} {3} {4} {5} \n foto : {6} \n Fecha de Nacimiento: {7} \n Sexo: {8}", rut, dv, pnombre, snombre, appaterno, apmaterno, foto, fechaNacimiento, genero);
-              sb.AppendFormat("\n Nacionalidad: {0} \n Comuna: {1} \n Direccion: {2} \n Fono 1: {3} \n Fono 2: {4} ", nacionalidad, comuna, direccion, fono1, fono2);
-              sb.AppendFormat("ACtivo {0}", activo);
-              return sb.ToString();
-          }
-
-           public bool Create()
-          {
-              try
-              {
-                  Consultiorios.DALC.Usuario usuario = new Consultiorios.DALC.Usuario();
-
-                  usuario.id_usuario = this.Id;
-                  usuario.rut_usuario = this.Rut;
-                  usuario.dv_usuario = this.Dv.ToString();
-                  usuario.foto = this.Foto;
-                  usuario.pnombre = this.Pnombre;
-                  usuario.snombre = this.Snombre;
-                  usuario.appaterno = this.Appaterno;
-                  usuario.apmaterno = this.Apmaterno;
-                  usuario.fecha_nacimiento = this.FechaNacimiento;
-              
-
-       
-              
-               
-
-                //  CommonBC.ModeloBibliotecas.AddToBiblioteca(bib);
-                //  CommonBC.ModeloBibliotecas.SaveChanges();
-                  return true;
-              }
-              catch (Exception ex)
-              {
-
-                  return false;
-              }
-          }
-
-          public bool Read()
-          {
-              try
-              {
-                  Bibliotecas.DALC.Biblioteca biblioteca = CommonBC.ModeloBibliotecas.Biblioteca.First
-                      (
-                          bib => bib.Id == this.Id
-                      );
-                  this.nombre = biblioteca.Nombre;
-                  this.publica = biblioteca.Publica;
-                  this.inaguracion = biblioteca.Inauguracion;
-                  this.libros = biblioteca.Libros;
-                  return true;
-              }
-              catch (Exception ex)
-              {
-
-                  return false;
-              }
-
-          }
-
-          public bool update()
-          {
-              try
-              {
-                  Bibliotecas.DALC.Biblioteca biblioteca = CommonBC.ModeloBibliotecas.Biblioteca.First
-                      (
-                            bib => bib.Id == this.Id
-                      );
-                  this.nombre = biblioteca.Nombre;
-                  this.publica = biblioteca.Publica;
-                  this.inaguracion = biblioteca.Inauguracion;
-                  this.libros = biblioteca.Libros;
-
-                  CommonBC.ModeloBibliotecas.SaveChanges();
-                  return true;
-              }
-              catch (Exception ex)
-              {
-
-                  return false;
-              }
-
-          }
-
-          public bool Delete()
-          {
-              try
-              {
-                  Bibliotecas.DALC.Biblioteca biblioteca = CommonBC.ModeloBibliotecas.Biblioteca.First
-                      (
-                          bib => bib.Id == this.Id
-
-                      );
-                  CommonBC.ModeloBibliotecas.DeleteObject(biblioteca);
-                  CommonBC.ModeloBibliotecas.SaveChanges();
-                  return true;
-              }
-              catch (Exception ex)
-              {
-                  return false;
-                  throw;
-              }
-
-          }
-
-      }*/
     }
 }

@@ -57,5 +57,84 @@ namespace Biblioteca.Clases
             nombre = String.Empty;
         }
 
+        public bool Create() {
+            try
+            {
+                Consultiorios.DALC.Consultorio consultorio = new Consultiorios.DALC.Consultorio();
+
+                consultorio.id_consultorio = this.Id;
+                consultorio.rut_consultorio = this.Rut;
+                consultorio.dv = this.Dv.ToString();
+                consultorio.id_comuna = this.Comuna.Id;
+                consultorio.nombre = this.Nombre;
+
+                CommonBC.ModeloConsultorio.AddToConsultorio(consultorio);
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool Read(){
+            try
+            {
+                Consultiorios.DALC.Consultorio consultorio = CommonBC.ModeloConsultorio.Consultorio.First
+                            (
+                                    consulto => consulto.id_consultorio == this.Id
+                                );              
+                this.Rut = consultorio.id_consultorio;
+                this.Dv = Char.Parse(consultorio.dv);
+                this.Comuna.Id = consultorio.id_comuna;
+                this.Nombre = consultorio.nombre;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool Update()
+        {
+            try
+            {
+                Consultiorios.DALC.Consultorio consultorio = CommonBC.ModeloConsultorio.Consultorio.First
+                            (
+                                    consulto => consulto.id_consultorio == this.Id
+                                );                
+                consultorio.rut_consultorio = this.Rut;
+                consultorio.dv = this.Dv.ToString();
+                consultorio.id_comuna = this.Comuna.Id;
+                consultorio.nombre = this.Nombre;
+               
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool Delete()
+        {
+            try
+            {
+                Consultiorios.DALC.Consultorio consultorio = CommonBC.ModeloConsultorio.Consultorio.First
+                            (
+                                    consulto => consulto.id_consultorio == this.Id
+                                );
+                CommonBC.ModeloConsultorio.DeleteObject(consultorio);
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

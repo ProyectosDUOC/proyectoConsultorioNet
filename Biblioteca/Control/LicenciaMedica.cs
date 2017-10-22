@@ -108,7 +108,7 @@ namespace Biblioteca.Control
                 return false;
             }
         }
-        public bool Update()
+        public bool Delete()
         {
             try
             {

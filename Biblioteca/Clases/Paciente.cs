@@ -54,5 +54,82 @@ namespace Biblioteca.Clases
             rh = null;
             sector = null;
         }
+
+        public bool Create() {
+            try
+            {                
+              Consultiorios.DALC.Paciente paciente= new Consultiorios.DALC.Paciente();
+             
+              paciente.id_paciente = this.Id;
+              paciente.Usuario.id_usuario = this.Usuario.Id;
+              paciente.Grupo_sanguineo.id_grupo_sanguineo = this.GrupoSanguineo.Id;
+              paciente.Rh_sanguineo.id_rh = this.Rh.Id;
+              paciente.Sector.id_sector = this.Sector.Id;
+
+              CommonBC.ModeloConsultorio.AddToPaciente(paciente);
+              CommonBC.ModeloConsultorio.SaveChanges();
+              return true;
+            }
+            catch (Exception ex)
+            {
+              return false;
+            }                    
+        }
+        public bool Read() {
+            try
+            {
+                Consultiorios.DALC.Paciente paciente = CommonBC.ModeloConsultorio.Paciente.First
+                    (
+                        pacien => pacien.id_paciente == this.Id
+                    );
+                this.Usuario.Id = paciente.id_usuario;
+                this.GrupoSanguineo.Id = paciente.Grupo_sanguineo.id_grupo_sanguineo;
+                this.Rh.Id = paciente.Rh_sanguineo.id_rh;
+                this.Sector.Id = paciente.Sector.id_sector;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool Update() {
+            try
+            {
+                Consultiorios.DALC.Paciente paciente = CommonBC.ModeloConsultorio.Paciente.First
+                    (
+                        pacien => pacien.id_paciente == this.Id
+                    );
+                paciente.Usuario.id_usuario = this.Usuario.Id;
+                paciente.Grupo_sanguineo.id_grupo_sanguineo = this.GrupoSanguineo.Id;
+                paciente.Rh_sanguineo.id_rh = this.Rh.Id;
+                paciente.Sector.id_sector = this.Sector.Id;
+
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool Delete() {
+            try
+            {
+                Consultiorios.DALC.Paciente paciente = CommonBC.ModeloConsultorio.Paciente.First
+                    (
+                        pacien => pacien.id_paciente == this.Id
+                    );
+                CommonBC.ModeloConsultorio.DeleteObject(paciente);
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        
+        }
     }
 }

@@ -65,15 +65,13 @@ namespace Biblioteca.Clases
                 Consultiorios.DALC.Enfermera enfermera = CommonBC.ModeloConsultorio.Enfermera.First
                     (
                         enfer => enfer.id_enfermera == this.Id
-                    );
-                this.Id = enfermera.id_enfermera;
+                    );               
                 this.Usuario.Id = enfermera.id_usuario;
                 this.JornadaLaboral.Id = enfermera.id_jornada_laboral;
 
-                CommonBC.ModeloConsultorio.SaveChanges();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {                
                return false;
             }        
@@ -85,15 +83,14 @@ namespace Biblioteca.Clases
                 Consultiorios.DALC.Enfermera enfermera = CommonBC.ModeloConsultorio.Enfermera.First
                     (
                         enfer => enfer.id_enfermera == this.Id
-                     );
-                enfermera.id_enfermera = this.Id;
+                     );              
                 enfermera.id_usuario = this.Usuario.Id;
                 enfermera.id_jornada_laboral = this.JornadaLaboral.Id;
 
                 CommonBC.ModeloConsultorio.SaveChanges();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {                
                 return false;
             }        
@@ -109,7 +106,7 @@ namespace Biblioteca.Clases
                 CommonBC.ModeloConsultorio.SaveChanges();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }        

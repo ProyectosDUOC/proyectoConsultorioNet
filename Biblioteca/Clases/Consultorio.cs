@@ -84,8 +84,7 @@ namespace Biblioteca.Clases
                 Consultiorios.DALC.Consultorio consultorio = CommonBC.ModeloConsultorio.Consultorio.First
                             (
                                     consulto => consulto.id_consultorio == this.Id
-                                );
-                this.Id = consultorio.id_consultorio;
+                                );              
                 this.Rut = consultorio.id_consultorio;
                 this.Dv = Char.Parse(consultorio.dv);
                 this.Comuna.Id = consultorio.id_comuna;
@@ -105,9 +104,7 @@ namespace Biblioteca.Clases
                 Consultiorios.DALC.Consultorio consultorio = CommonBC.ModeloConsultorio.Consultorio.First
                             (
                                     consulto => consulto.id_consultorio == this.Id
-                                );
-
-                consultorio.id_consultorio = this.Id;
+                                );                
                 consultorio.rut_consultorio = this.Rut;
                 consultorio.dv = this.Dv.ToString();
                 consultorio.id_comuna = this.Comuna.Id;
@@ -139,8 +136,5 @@ namespace Biblioteca.Clases
                 return false;
             }
         }
-
-        
-
     }
 }

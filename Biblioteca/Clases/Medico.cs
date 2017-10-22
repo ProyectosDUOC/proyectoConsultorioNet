@@ -78,7 +78,6 @@ namespace Biblioteca.Clases
             }
             catch (Exception ex)
             {
-
                 return false;
             }         
         }
@@ -89,14 +88,12 @@ namespace Biblioteca.Clases
                     (
                         medi => medi.id_Medico == this.Id
                     );
-                this.Id = medico.id_Medico;
                 this.Rut = medico.rut_medico;
                 this.Dv = Char.Parse(medico.dv_medico);
                 this.usuario.Id = medico.id_usuario;
                 this.especialidad.Id = medico.id_especialidad;
                 this.jornadaLaboral.Id = medico.id_jornada_laboral;
 
-                CommonBC.ModeloConsultorio.SaveChanges();
                 return true;
             }
             catch (Exception ex)
@@ -113,14 +110,12 @@ namespace Biblioteca.Clases
                     (
                         medi => medi.id_Medico == this.Id                    
                     );
-                medico.id_Medico = this.Id;
                 medico.rut_medico = this.Rut;
                 medico.dv_medico = this.Dv.ToString();
                 medico.id_usuario = this.Usuario.Id;
                 medico.id_especialidad = this.Especialidad.Id;
                 medico.id_jornada_laboral = this.JornadaLaboral.Id;
 
-                CommonBC.ModeloConsultorio.AddToMedico(medico);
                 CommonBC.ModeloConsultorio.SaveChanges();                   
                 return true;
             }
@@ -140,7 +135,7 @@ namespace Biblioteca.Clases
                 CommonBC.ModeloConsultorio.SaveChanges();
                 return true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return false;
             }

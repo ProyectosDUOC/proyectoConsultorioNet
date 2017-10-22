@@ -56,7 +56,7 @@ namespace Biblioteca.ClasesExterior
                     (
                         tipo => tipo.id_tipo_usuario == this.Id
                     );
-                this.Id = tipoUsuario.id_tipo_usuario;
+             
                 this.Nombre = tipoUsuario.nom_tipo_usuario;
                 return true;
             }
@@ -74,7 +74,7 @@ namespace Biblioteca.ClasesExterior
                     (
                         tipo => tipo.id_tipo_usuario == this.Id
                     );
-                tipoUsuario.id_tipo_usuario = this.Id;
+               
                 tipoUsuario.nom_tipo_usuario = this.Nombre;
                 CommonBC.ModeloConsultorio.SaveChanges();
                 return true;

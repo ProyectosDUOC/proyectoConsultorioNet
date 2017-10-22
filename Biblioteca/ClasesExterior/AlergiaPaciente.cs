@@ -69,8 +69,7 @@ namespace Biblioteca.ClasesExterior
                 Consultiorios.DALC.Alergia_Paciente alergiaPac = CommonBC.ModeloConsultorio.Alergia_Paciente.First
                     (
                         alergiaPaciente => alergiaPaciente.id_alergia_paciente == this.Id
-                    );
-                this.Id = alergiaPac.id_alergia;
+                    );             
                 this.Paciente.Id = alergiaPac.id_paciente;
                 this.Alergia.Id = alergiaPac.id_alergia;
 
@@ -89,8 +88,7 @@ namespace Biblioteca.ClasesExterior
                 Consultiorios.DALC.Alergia_Paciente alergiaPac = CommonBC.ModeloConsultorio.Alergia_Paciente.First
                     (
                         alergiaPaciente => alergiaPaciente.id_alergia_paciente == this.Id
-                    );
-                 alergiaPac.id_alergia = this.Id;
+                    );              
                  alergiaPac.id_paciente = this.Paciente.Id;
                  alergiaPac.id_alergia = this.Alergia.Id;
 

@@ -61,10 +61,7 @@ namespace Biblioteca.ClasesExterior
                     CommonBC.ModeloConsultorio.Alergia.First
                         (
                             ale => ale.id_alergia == this.Id
-                        );
-
-
-                this.Id = alergia.id_alergia;
+                        );                
                 this.Nombre = alergia.nombre;
 
                 return true;
@@ -84,9 +81,7 @@ namespace Biblioteca.ClasesExterior
                         (
                             ale => ale.id_alergia == this.Id
                         );
-
-
-                this.Id = alergia.id_alergia;
+            
                 this.Nombre = alergia.nombre;
 
                 CommonBC.ModeloConsultorio.SaveChanges();
@@ -96,7 +91,26 @@ namespace Biblioteca.ClasesExterior
             {
                 return false;
             }
-        }   
+        }
+        public bool Delete() {
+            try
+            {
+                Consultiorios.DALC.Alergia alergia =
+                    CommonBC.ModeloConsultorio.Alergia.First
+                        (
+                            ale => ale.id_alergia == this.Id
+                        );
+                CommonBC.ModeloConsultorio.DeleteObject(alergia);
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
 
     }
 }

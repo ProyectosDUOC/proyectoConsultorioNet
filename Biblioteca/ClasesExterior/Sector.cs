@@ -31,6 +31,6 @@ namespace Biblioteca.ClasesExterior
             nombre = String.Empty;
         }
 
-        public 
+       
     }
 }

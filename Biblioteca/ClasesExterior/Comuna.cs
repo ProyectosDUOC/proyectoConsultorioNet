@@ -72,7 +72,6 @@ namespace Biblioteca.ClasesExterior
                             comun => comun.id_comuna == this.Id
                         );
 
-                this.Id = comuna.id_comuna ;
                 this.Nombre = comuna.nom_com;
                 this.provincia.Id = comuna.id_provincia;
 
@@ -95,7 +94,6 @@ namespace Biblioteca.ClasesExterior
                             comun => comun.id_comuna == this.Id
                         );
 
-                comuna.id_comuna = this.Id;
                 comuna.nom_com = this.Nombre;
                 comuna.id_provincia = this.Provincia.Id;
 

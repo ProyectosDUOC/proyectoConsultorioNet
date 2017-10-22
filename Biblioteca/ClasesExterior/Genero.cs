@@ -57,7 +57,7 @@ namespace Biblioteca.ClasesExterior
                     (
                         gen => gen.id_genero == this.Id                 
                     );
-                this.Id = genero.id_genero;
+              
                 this.Nombre = genero.nom_genero;            
                
                 return true;
@@ -77,7 +77,7 @@ namespace Biblioteca.ClasesExterior
                         gen => gen.id_genero == this.Id
                     );          
 
-                genero.id_genero = this.Id;
+              
                 genero.nom_genero = this.Nombre;
 
               

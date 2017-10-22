@@ -54,7 +54,7 @@ namespace Biblioteca.ClasesExterior
                     (
                         especial => especial.id_especialidad == this.Id
                     );
-                this.Id = especialidad.id_especialidad;
+             
                 this.Nombre = especialidad.nom_especialidad;
 
                 return true;
@@ -74,10 +74,9 @@ namespace Biblioteca.ClasesExterior
                         especial => especial.id_especialidad == this.Id
                     );
 
-                
-                this.Id = especialidad.id_especialidad;
+            
                 this.Nombre = especialidad.nom_especialidad;
-
+                CommonBC.ModeloConsultorio.SaveChanges();
                 return true;
             }
             catch (Exception ex)
@@ -85,7 +84,25 @@ namespace Biblioteca.ClasesExterior
                 return false;
             }
         }
+        public bool Delete() {
+            try
+            {
+                
+                Consultiorios.DALC.Especialidad especialidad = CommonBC.ModeloConsultorio.Especialidad.First
+                    (
+                        especial => especial.id_especialidad == this.Id
+                    );
+                CommonBC.ModeloConsultorio.DeleteObject(especialidad);
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
 
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
 
 
     }

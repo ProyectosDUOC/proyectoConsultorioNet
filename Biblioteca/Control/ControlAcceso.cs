@@ -24,7 +24,7 @@ namespace Biblioteca.Clases
         }
         private String pass;
 
-        public String e
+        public String Pass
         {
             get { return pass; }
             set { pass = value; }
@@ -66,12 +66,88 @@ namespace Biblioteca.Clases
             activo = 0;
         }
 
-     /*   public override string ToString()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendFormat("id ControlAcceso: {0} usuario : {1}  pass : {2} ", id, usuario, pass);
-            return sb.ToString();
-        }*/
+        public bool Create() {
+            try
+            {
+                Consultiorios.DALC.Control_Acceso controlAcceso = new Consultiorios.DALC.Control_Acceso();
+                controlAcceso.id_control_acceso = this.Id;
+                controlAcceso.usuario = this.Username;
+                controlAcceso.contrasena = this.Pass;
+                controlAcceso.id_tipo_usuario = this.TipoUsuario.Id;
+                controlAcceso.id_usuario = this.Usuario.Id;
+                controlAcceso.activo = this.Activo;
+                CommonBC.ModeloConsultorio.AddToControl_Acceso(controlAcceso);
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            } 
+        }
+        public bool Read() {
+            try
+            {
+                Consultiorios.DALC.Control_Acceso controlAcceso = CommonBC.ModeloConsultorio.Control_Acceso.First
+                    (
+                        contro => contro.id_control_acceso == this.Id
+                    );
+               
+                this.Username = controlAcceso.usuario;
+                this.Pass = controlAcceso.contrasena;
+                this.TipoUsuario.Id = controlAcceso.id_tipo_usuario;
+                this.Usuario.Id = controlAcceso.id_usuario;
+                this.Activo = (int)controlAcceso.activo;
+                
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }        
+        }
 
+        public bool Update()
+        {
+            try
+            {
+                Consultiorios.DALC.Control_Acceso controlAcceso = CommonBC.ModeloConsultorio.Control_Acceso.First
+                    (
+                        contro => contro.id_control_acceso == this.Id
+                    );
+
+                controlAcceso.usuario = this.Username;
+                controlAcceso.contrasena = this.Pass;
+                controlAcceso.id_tipo_usuario = this.TipoUsuario.Id;
+                controlAcceso.id_usuario = this.Usuario.Id;
+                controlAcceso.activo = this.Activo;
+                CommonBC.ModeloConsultorio.SaveChanges();
+                
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+        public bool Delete()
+        {
+            try
+            {
+                Consultiorios.DALC.Control_Acceso controlAcceso = CommonBC.ModeloConsultorio.Control_Acceso.First
+                    (
+                        contro => contro.id_control_acceso == this.Id
+                    );
+                CommonBC.ModeloConsultorio.DeleteObject(controlAcceso);
+                CommonBC.ModeloConsultorio.SaveChanges();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
     }
 }

@@ -99,10 +99,19 @@ namespace Biblioteca.ClasesExterior
 
         public bool Delete()
         {
-            Consultiorios.DALC.Tipo_Desvinculado desv = CommonBC.ModeloConsultorio.Tipo_Desvinculado.
-                                                                    First(d => d.id_tipo_desvin == this.Id);
-            CommonBC.ModeloConsultorio.DeleteObject(desv);
-            CommonBC.ModeloConsultorio.SaveChanges();
+            try
+            {
+                Consultiorios.DALC.Tipo_Desvinculado desv = CommonBC.ModeloConsultorio.Tipo_Desvinculado.
+                                                                   First(d => d.id_tipo_desvin == this.Id);
+                CommonBC.ModeloConsultorio.DeleteObject(desv);
+                CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+           
         }
 
     }

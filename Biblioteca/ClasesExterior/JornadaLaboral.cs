@@ -111,9 +111,12 @@ namespace Biblioteca.ClasesExterior
                 jornadalaboral.viernes = this.Viernes;
                 jornadalaboral.sabado = this.Sabado;
                 jornadalaboral.domingo = this.Domingo;
+                jornadalaboral.id_sector = this.Sector.Id;
+                jornadalaboral.glosa = this.Glosa;
 
                 CommonBC.ModeloConsultorio.AddToJornada_laboral(jornadalaboral);
                 CommonBC.ModeloConsultorio.SaveChanges();
+                return true;
             }
             catch (Exception ex)
             {
@@ -131,14 +134,15 @@ namespace Biblioteca.ClasesExterior
                         jor => jor.id_jornada_laboral == this.Id
                     );
                 //buscar como exportar
-                this.Lunes = jornadalaboral.lunes ;
-                this.Martes = jornadalaboral.martes;
-                this.Miercoles = jornadalaboral.miercoles;
-                this.Jueves = jornadalaboral.jueves;
-                this.Viernes = jornadalaboral.viernes;
-                this.Sabado = jornadalaboral.sabado ;
-                this.Domingo = jornadalaboral.domingo;
-
+                this.Lunes = (int)jornadalaboral.lunes ;
+                this.Martes = (int)jornadalaboral.martes;
+                this.Miercoles = (int)jornadalaboral.miercoles;
+                this.Jueves = (int)jornadalaboral.jueves;
+                this.Viernes = (int)jornadalaboral.viernes;
+                this.Sabado = (int)jornadalaboral.sabado;
+                this.Domingo = (int)jornadalaboral.domingo;
+                this.Sector.Id = jornadalaboral.id_sector;
+                this.Glosa = jornadalaboral.glosa;
                 return true;
             }
             catch (Exception ex)
@@ -165,7 +169,8 @@ namespace Biblioteca.ClasesExterior
                 jornadalaboral.viernes = this.Viernes;
                 jornadalaboral.sabado = this.Sabado;
                 jornadalaboral.domingo = this.Domingo;
-
+                jornadalaboral.id_sector = this.Sector.Id;
+                jornadalaboral.glosa = this.Glosa;
                 CommonBC.ModeloConsultorio.SaveChanges();
 
                 return true;

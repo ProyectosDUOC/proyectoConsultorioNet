@@ -70,6 +70,29 @@ namespace Biblioteca.ClasesExterior
             }
         }
 
+        public bool Update() 
+        {
+            try
+            {
+                Consultiorios.DALC.Grupo_sanguineo gruposangre =
+                    CommonBC.ModeloConsultorio.Grupo_sanguineo.First
+                    (
+                        gruposan => gruposan.id_grupo_sanguineo == this.Id
+                    );
+
+                gruposangre.nombre = this.Nombre;
+
+                CommonBC.ModeloConsultorio.SaveChanges();
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                
+                return false;
+            }
+        }
+
         public bool Delete()
         {
             try

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Biblioteca.Clases;
 
 namespace Biblioteca.ClasesExterior
 {
@@ -63,5 +64,108 @@ namespace Biblioteca.ClasesExterior
             codigoRegistro = String.Empty;
             glosa = String.Empty;
         }
+
+
+        public bool Create() 
+        {
+            try
+            {
+                Consultiorios.DALC.Medicamentos medicamentos = new Consultiorios.DALC.Medicamentos();
+
+                medicamentos.id_medicamentos = this.Id;
+                medicamentos.principio_activo = this.PrincipioActivo;
+                medicamentos.nombre_producto = this.Nombre;
+                medicamentos.producto_referencia = this.ProductoReferencia;
+                medicamentos.codigo_registro = this.CodigoRegistro;
+                medicamentos.glosa = this.Glosa;
+
+                CommonBC.ModeloConsultorio.AddToMedicamentos(medicamentos);
+                CommonBC.ModeloConsultorio.SaveChanges();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                
+                return false;
+            }
+        }
+
+        public bool Read()
+        {
+            try
+            {
+                Consultiorios.DALC.Medicamentos medicamentos = 
+                    CommonBC.ModeloConsultorio.Medicamentos.First
+                    (
+                        medik => medik.id_medicamentos == this.Id 
+                    );
+
+                this.PrincipioActivo = medicamentos.principio_activo;
+                this.Nombre = medicamentos.nombre_producto;
+                this.ProductoReferencia = medicamentos.producto_referencia;
+                this.CodigoRegistro = medicamentos.codigo_registro;
+                this.Glosa = medicamentos.glosa;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
+
+
+        public bool Update()
+        {
+            try
+            {
+                Consultiorios.DALC.Medicamentos medicamentos =
+                    CommonBC.ModeloConsultorio.Medicamentos.First
+                    (
+                        medik => medik.id_medicamentos == this.Id
+                    );
+
+                medicamentos.id_medicamentos = this.Id;
+                medicamentos.principio_activo = this.PrincipioActivo;
+                medicamentos.nombre_producto = this.Nombre;
+                medicamentos.producto_referencia = this.ProductoReferencia;
+                medicamentos.codigo_registro = this.CodigoRegistro;
+                medicamentos.glosa = this.Glosa;
+
+                CommonBC.ModeloConsultorio.SaveChanges();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
+
+        public bool Delete()
+        {
+            try
+            {
+                Consultiorios.DALC.Medicamentos medicamentos =
+                    CommonBC.ModeloConsultorio.Medicamentos.First
+                    (
+                        medik => medik.id_medicamentos == this.Id
+                    );
+
+                CommonBC.ModeloConsultorio.DeleteObject(medicamentos);
+                CommonBC.ModeloConsultorio.SaveChanges();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
+        
     }
 }

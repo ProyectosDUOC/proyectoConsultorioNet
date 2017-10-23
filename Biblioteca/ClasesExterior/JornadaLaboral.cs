@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Biblioteca.Clases;
+
 
 namespace Biblioteca.ClasesExterior
 {
@@ -94,6 +96,111 @@ namespace Biblioteca.ClasesExterior
             sector = null;
             glosa = String.Empty;
         }
+
+        public bool Create() 
+        {
+            try
+            {
+                Consultiorios.DALC.Jornada_laboral jornadalaboral = new Consultiorios.DALC.Jornada_laboral();
+
+                jornadalaboral.id_jornada_laboral = this.Id;
+                jornadalaboral.lunes = this.Lunes;
+                jornadalaboral.martes = this.Martes;
+                jornadalaboral.miercoles = this.Miercoles;
+                jornadalaboral.jueves = this.Jueves;
+                jornadalaboral.viernes = this.Viernes;
+                jornadalaboral.sabado = this.Sabado;
+                jornadalaboral.domingo = this.Domingo;
+
+                CommonBC.ModeloConsultorio.AddToJornada_laboral(jornadalaboral);
+                CommonBC.ModeloConsultorio.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+        public bool Read() 
+        {
+            try
+            {
+                Consultiorios.DALC.Jornada_laboral jornadalaboral =
+                    CommonBC.ModeloConsultorio.Jornada_laboral.First
+                    (
+                        jor => jor.id_jornada_laboral == this.Id
+                    );
+                //buscar como exportar
+                this.Lunes = jornadalaboral.lunes ;
+                this.Martes = jornadalaboral.martes;
+                this.Miercoles = jornadalaboral.miercoles;
+                this.Jueves = jornadalaboral.jueves;
+                this.Viernes = jornadalaboral.viernes;
+                this.Sabado = jornadalaboral.sabado ;
+                this.Domingo = jornadalaboral.domingo;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                
+                return false;
+            }
+        }
+
+        public bool Update ()
+        {
+            try
+            {
+                Consultiorios.DALC.Jornada_laboral jornadalaboral =
+                    CommonBC.ModeloConsultorio.Jornada_laboral.First
+                    (
+                        jor => jor.id_jornada_laboral == this.Id
+                    );
+
+                jornadalaboral.lunes = this.Lunes;
+                jornadalaboral.martes = this.Martes;
+                jornadalaboral.miercoles = this.Miercoles;
+                jornadalaboral.jueves = this.Jueves;
+                jornadalaboral.viernes = this.Viernes;
+                jornadalaboral.sabado = this.Sabado;
+                jornadalaboral.domingo = this.Domingo;
+
+                CommonBC.ModeloConsultorio.SaveChanges();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+            
+        }
+
+        public bool Delete() 
+        {
+            try
+            {
+                Consultiorios.DALC.Jornada_laboral jornadalaboral =
+                    CommonBC.ModeloConsultorio.Jornada_laboral.First
+                    (
+                        jor => jor.id_jornada_laboral == this.Id
+                    );
+
+                CommonBC.ModeloConsultorio.DeleteObject(jornadalaboral);
+                CommonBC.ModeloConsultorio.SaveChanges();
+
+                return false;
+            }
+            catch (Exception ex)
+            {
+                
+                return false;
+            }
+        }
+
+
+
 
     }
 }

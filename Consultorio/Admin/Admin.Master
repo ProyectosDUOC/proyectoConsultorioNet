@@ -18,9 +18,6 @@
         </asp:SiteMapPath>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">        
         </asp:ContentPlaceHolder>
-
-<asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
-</asp:Menu>
         </form>
     </div>
 </body>

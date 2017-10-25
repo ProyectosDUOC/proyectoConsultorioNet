@@ -1,10 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/Admin.Master" AutoEventWireup="true" CodeBehind="AgregarPaciente.aspx.cs" Inherits="Consultorio.Admin.Paciente.AgregarPaciente" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 <style type="text/css">
-        .style1
-        {
-            width: 14px;
-        }
         .style2
         {
             width: 33px;
@@ -21,9 +17,9 @@
             </tr>
             <tr>
                 <td><asp:TextBox ID="txt_nFicha" runat="server"></asp:TextBox></td>
-                <td><asp:TextBox ID="txt_Rut" runat="server"></asp:TextBox></td>
-                <td class="style1">-</td>
-                <td class="style2"><asp:Label ID="lbl_Dv" runat="server" Text=" "></asp:Label></td>
+                <td><asp:TextBox ID="txt_Rut" TextMode="Number" runat="server"></asp:TextBox></td>
+                <td>-<asp:TextBox ID="txt_dv" runat="server" Width="35px"></asp:TextBox>
+                </td>
                 <td><asp:Button ID="btn_Buscar" runat="server" Text="Buscar" 
                          /></td>
             </tr>
@@ -56,21 +52,16 @@
             </tr>
             <tr>
                 <td>
-                    <table>
-                        <tr>
-                            <td><asp:TextBox ID="txt_Dia" runat="server" Width="30px"></asp:TextBox></td>
-                            <td> / </td>
-                            <td><asp:TextBox ID="txt_Mes" runat="server" Width="30px"></asp:TextBox></td>
-                            <td> / </td>
-                            <td><asp:TextBox ID="txt_Año" runat="server" Width="30px"></asp:TextBox></td>                       
-                        </tr>
-                    </table>
+                    <asp:TextBox ID="txt_Fecha" TextMode="Date" runat="server"></asp:TextBox>
                 </td>
 
                 <td><asp:Label ID="lbl_Edad" runat="server" Text=" "></asp:Label></td>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList></td>
-                <td><asp:TextBox ID="txt_nacionalidad" runat="server"></asp:TextBox></td>
+                    <asp:DropDownList ID="ddlGenero" runat="server"></asp:DropDownList></td>
+                <td>
+                    <asp:DropDownList ID="ddNacionalidad" runat="server">
+                    </asp:DropDownList>
+                </td>
             </tr>
             <tr>
                 <td class="style2">&nbsp;</td>
@@ -82,8 +73,14 @@
             </tr>
             <tr>                
                 <td><asp:TextBox ID="txt_Domicilio" runat="server"></asp:TextBox></td>
-                <td><asp:TextBox ID="txt_Comuna" runat="server"></asp:TextBox></td>
-                <td><asp:TextBox ID="txt_Sector" runat="server"></asp:TextBox></td>                   
+                <td>
+                    <asp:DropDownList ID="ddComuna" runat="server">
+                    </asp:DropDownList>
+                </td>
+                <td>
+                    <asp:DropDownList ID="ddSector" runat="server">
+                    </asp:DropDownList>
+                </td>                   
             </tr>
             <tr>
                 <td class="style2">&nbsp;</td>
@@ -93,8 +90,8 @@
                 <td>N° celular</td>
             </tr>
             <tr>                
-                <td><asp:TextBox ID="txt_nCasa" runat="server"></asp:TextBox></td>
-                <td><asp:TextBox ID="txt_nCelular" runat="server"></asp:TextBox></td>                  
+                <td><asp:TextBox ID="txt_nCasa"  runat="server"></asp:TextBox></td>
+                <td><asp:TextBox ID="txt_nCelular" TextMode="Number" runat="server"></asp:TextBox></td>                  
             </tr>
             <tr>
                 <td class="style2">&nbsp;</td>
@@ -105,9 +102,15 @@
                 <td>Alergia</td>
             </tr>
             <tr>                
-                <td><asp:TextBox ID="txt_GSanguineo" runat="server"></asp:TextBox></td>
-                <td><asp:TextBox ID="txt_RSanguineo" runat="server"></asp:TextBox></td>      
-                <td><asp:TextBox ID="txt_Alergia" runat="server"></asp:TextBox></td>             
+                <td>
+                    <asp:DropDownList ID="ddGrupoS" runat="server">
+                    </asp:DropDownList>
+                </td>
+                <td>
+                    <asp:DropDownList ID="ddlRh" runat="server">
+                    </asp:DropDownList>
+                </td>      
+                <td>&nbsp;</td>             
             </tr>
         </table>
         <br>
@@ -116,7 +119,7 @@
             <asp:Button ID="btn_Guardar" runat="server" Text="Guardar" Height="47px" 
             Width="232px" onclick="btn_Guardar_Click" />
 
-            <asp:Button ID="btn_Atras" runat="server" Text="Atrás" Width="188px" 
-            Height="48px" onclick="btn_Atras_Click"/>
+        <asp:Label ID="lblRespuesta" runat="server" Text="Label"></asp:Label>
+
     </div>
 </asp:Content>

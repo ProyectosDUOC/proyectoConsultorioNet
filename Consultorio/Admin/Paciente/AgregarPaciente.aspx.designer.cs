@@ -31,13 +31,13 @@ namespace Consultorio.Admin.Paciente {
         protected global::System.Web.UI.WebControls.TextBox txt_Rut;
         
         /// <summary>
-        /// Control lbl_Dv.
+        /// Control txt_dv.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Dv;
+        protected global::System.Web.UI.WebControls.TextBox txt_dv;
         
         /// <summary>
         /// Control btn_Buscar.
@@ -85,31 +85,13 @@ namespace Consultorio.Admin.Paciente {
         protected global::System.Web.UI.WebControls.TextBox txt_apMaterno;
         
         /// <summary>
-        /// Control txt_Dia.
+        /// Control txt_Fecha.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Dia;
-        
-        /// <summary>
-        /// Control txt_Mes.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Mes;
-        
-        /// <summary>
-        /// Control txt_Año.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Año;
+        protected global::System.Web.UI.WebControls.TextBox txt_Fecha;
         
         /// <summary>
         /// Control lbl_Edad.
@@ -121,22 +103,22 @@ namespace Consultorio.Admin.Paciente {
         protected global::System.Web.UI.WebControls.Label lbl_Edad;
         
         /// <summary>
-        /// Control DropDownList1.
+        /// Control ddlGenero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddlGenero;
         
         /// <summary>
-        /// Control txt_nacionalidad.
+        /// Control ddNacionalidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nacionalidad;
+        protected global::System.Web.UI.WebControls.DropDownList ddNacionalidad;
         
         /// <summary>
         /// Control txt_Domicilio.
@@ -148,22 +130,22 @@ namespace Consultorio.Admin.Paciente {
         protected global::System.Web.UI.WebControls.TextBox txt_Domicilio;
         
         /// <summary>
-        /// Control txt_Comuna.
+        /// Control ddComuna.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Comuna;
+        protected global::System.Web.UI.WebControls.DropDownList ddComuna;
         
         /// <summary>
-        /// Control txt_Sector.
+        /// Control ddSector.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Sector;
+        protected global::System.Web.UI.WebControls.DropDownList ddSector;
         
         /// <summary>
         /// Control txt_nCasa.
@@ -184,31 +166,22 @@ namespace Consultorio.Admin.Paciente {
         protected global::System.Web.UI.WebControls.TextBox txt_nCelular;
         
         /// <summary>
-        /// Control txt_GSanguineo.
+        /// Control ddGrupoS.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_GSanguineo;
+        protected global::System.Web.UI.WebControls.DropDownList ddGrupoS;
         
         /// <summary>
-        /// Control txt_RSanguineo.
+        /// Control ddlRh.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_RSanguineo;
-        
-        /// <summary>
-        /// Control txt_Alergia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_Alergia;
+        protected global::System.Web.UI.WebControls.DropDownList ddlRh;
         
         /// <summary>
         /// Control btn_Guardar.
@@ -220,12 +193,12 @@ namespace Consultorio.Admin.Paciente {
         protected global::System.Web.UI.WebControls.Button btn_Guardar;
         
         /// <summary>
-        /// Control btn_Atras.
+        /// Control lblRespuesta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Atras;
+        protected global::System.Web.UI.WebControls.Label lblRespuesta;
     }
 }

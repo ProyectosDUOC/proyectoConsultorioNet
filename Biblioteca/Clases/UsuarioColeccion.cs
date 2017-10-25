@@ -7,5 +7,6 @@ namespace Biblioteca.Clases
 {
     class UsuarioColeccion
     {
+       
     }
 }

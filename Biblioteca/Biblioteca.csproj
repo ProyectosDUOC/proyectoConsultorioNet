@@ -42,9 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClasesExterior\Alergia.cs" />
+    <Compile Include="ClasesExterior\AlergiaColeccion.cs" />
     <Compile Include="ClasesExterior\AlergiaPaciente.cs" />
+    <Compile Include="ClasesExterior\AlergiaPacienteColeccion.cs" />
     <Compile Include="ClasesExterior\Comuna.cs" />
+    <Compile Include="ClasesExterior\ComunaColeccion.cs" />
     <Compile Include="ClasesExterior\Desvinculado.cs" />
+    <Compile Include="ClasesExterior\DesvinculadoColeccion.cs" />
     <Compile Include="ClasesExterior\Especialidad.cs" />
     <Compile Include="ClasesExterior\Genero.cs" />
     <Compile Include="ClasesExterior\GrupoSanguineo.cs" />

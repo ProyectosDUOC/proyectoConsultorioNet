@@ -50,8 +50,11 @@
     <Compile Include="ClasesExterior\Desvinculado.cs" />
     <Compile Include="ClasesExterior\DesvinculadoColeccion.cs" />
     <Compile Include="ClasesExterior\Especialidad.cs" />
+    <Compile Include="ClasesExterior\EspecialidadColeccion.cs" />
     <Compile Include="ClasesExterior\Genero.cs" />
+    <Compile Include="ClasesExterior\GeneroColeccion.cs" />
     <Compile Include="ClasesExterior\GrupoSanguineo.cs" />
+    <Compile Include="ClasesExterior\GrupoSanguineoColeccion.cs" />
     <Compile Include="ClasesExterior\JornadaLaboral.cs" />
     <Compile Include="ClasesExterior\Medicamentos.cs" />
     <Compile Include="ClasesExterior\Nacionalidad.cs" />

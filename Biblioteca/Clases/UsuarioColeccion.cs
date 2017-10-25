@@ -44,5 +44,6 @@ namespace Biblioteca.Clases
             var usuarios = CommonBC.ModeloConsultorio.Usuario;
             return GenerarListado(usuarios.ToList());
         }
+
     }
 }

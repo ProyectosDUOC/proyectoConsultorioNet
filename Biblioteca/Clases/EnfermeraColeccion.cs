@@ -15,11 +15,9 @@ namespace Biblioteca.Clases
             {
                 Biblioteca.Clases.Enfermera enfermera = new Enfermera();
 
-                enfermera.Id = enfer.id_enfermera;
-                
-               
-                enfermera.Usuario.Id = enfer.id_enfermera;
-                enfermera.JornadaLaboral.Id = enfer.id_jornada_laboral;
+                enfermera.Id = enfer.id_enfermera;               
+                enfermera.IdUsuario = enfer.id_usuario;
+                enfermera.IdJornadaLaboral= enfer.id_jornada_laboral;
 
                 enfermeras.Add(enfermera);
             }

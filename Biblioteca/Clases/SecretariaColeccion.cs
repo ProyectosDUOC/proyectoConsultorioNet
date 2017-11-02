@@ -16,8 +16,8 @@ namespace Biblioteca.Clases
                 Biblioteca.Clases.Secretaria secretaria= new Secretaria();
 
                 secretaria.Id = secre.id_secretaria;
-                secretaria.Usuario.Id = secre.id_usuario;
-                secretaria.JornadaLaboral.Id = secre.id_jornada_laboral;
+                secretaria.IdUsuario = secre.id_usuario;
+                secretaria.IdJornadaLaboral = secre.id_jornada_laboral;
                 
                 secretarias.Add(secretaria);
             }

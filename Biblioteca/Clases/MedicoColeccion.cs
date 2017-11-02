@@ -17,9 +17,9 @@ namespace Biblioteca.Clases
 
                 medico.Id = medic.id_Medico;
                 medico.Rut = medic.rut_medico;
-                medico.Usuario.Id = medic.id_usuario;
-                medico.Especialidad.Id = medic.id_especialidad;
-                medico.JornadaLaboral.Id = medic.id_jornada_laboral;
+                medico.IdUsuario = medic.id_usuario;
+                medico.IdEspecialidad = medic.id_especialidad;
+                medico.IdJornadaLaboral = medic.id_jornada_laboral;
                 
                 medicos.Add(medico);
             }

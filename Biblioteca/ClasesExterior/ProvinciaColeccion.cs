@@ -16,7 +16,7 @@ namespace Biblioteca.ClasesExterior
                 Provincia provincia = new Provincia();
                 provincia.Id = prov.id_provincia;
                 provincia.Nombre = prov.nom_com;
-                provincia.Region.Id = prov.id_region;
+                provincia.IdRegion = prov.id_region;
 
                 provincias.Add(provincia);
             }

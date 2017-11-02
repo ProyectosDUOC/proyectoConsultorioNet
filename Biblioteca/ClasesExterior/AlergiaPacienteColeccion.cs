@@ -16,7 +16,7 @@ namespace Biblioteca.ClasesExterior
                 Biblioteca.ClasesExterior.AlergiaPaciente alergiaPaciente = new AlergiaPaciente();
 
                 alergiaPaciente.Id = alerPa.id_alergia;
-                alergiaPaciente.Alergia.Id = alerPa.id_alergia;
+                alergiaPaciente.IdAlergia = alerPa.id_alergia;
                 alergiaPaciente.Paciente.Id = alerPa.Paciente.id_paciente;
 
                 alergiaPacientes.Add(alergiaPaciente);

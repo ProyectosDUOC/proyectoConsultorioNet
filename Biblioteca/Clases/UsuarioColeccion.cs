@@ -24,9 +24,9 @@ namespace Biblioteca.Clases
                 usuario.Appaterno = usua.appaterno;
                 usuario.Apmaterno = usua.apmaterno;
                 usuario.FechaNacimiento = usua.fecha_nacimiento;
-                usuario.Genero.Id = usua.id_genero;
-                usuario.Nacionalidad.Id = usua.id_nacionalidad;
-                usuario.Comuna.Id = usua.id_comuna;
+                usuario.IdGenero = usua.id_genero;
+                usuario.IdNacionalidad = usua.id_nacionalidad;
+                usuario.IdComuna = usua.id_comuna;
                 usuario.Direccion = usua.direccion;
                 usuario.Fono1 = usua.fono1.ToString();
                 usuario.Fono2 = usua.fono2.ToString();

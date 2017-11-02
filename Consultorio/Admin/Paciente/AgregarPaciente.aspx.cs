@@ -20,10 +20,11 @@ namespace Consultorio.Admin.Paciente
             try
             {
                 Biblioteca.Clases.Paciente paciente = new Biblioteca.Clases.Paciente();
+                Biblioteca.Usuario usuario = new Biblioteca.Usuario();
                 paciente.Id = int.Parse(txt_nFicha.Text);
                 if (!paciente.Read())
                 {
-                    paciente.Usuario.Rut = int.Parse(txt_Rut.Text);
+                    paciente.IdUsuario. = int.Parse(txt_Rut.Text);
                     paciente.Usuario.Dv = Char.Parse(txt_dv.Text);
                     paciente.Usuario.Pnombre = txt_pNombre.Text;
                     paciente.Usuario.Snombre = txt_sNombre.Text;

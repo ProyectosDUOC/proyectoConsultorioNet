@@ -11,7 +11,7 @@ namespace Biblioteca.ClasesExterior
         {
             List<Biblioteca.ClasesExterior.Alergia> alergias= new List<Alergia>();
 
-            foreach (Consultiorios.DALC.Alergia aler in AlergiaDALC)
+            foreach (Consultiorios.DALC. Alergia aler in AlergiaDALC)
             {
                 Biblioteca.ClasesExterior.Alergia alergia = new Alergia();
 

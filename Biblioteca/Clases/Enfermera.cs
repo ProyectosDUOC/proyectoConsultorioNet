@@ -15,12 +15,14 @@ namespace Biblioteca.Clases
             get { return id; }
             set { id = value; }
         }
+
         private int idUsuario;
 
         public int IdUsuario
         {
             get { return idUsuario; }
             set { idUsuario = value; }
+
         }
 
         
@@ -41,6 +43,7 @@ namespace Biblioteca.Clases
             id = 0;
             idUsuario = 0;
             idJornadaLaboral = 0;
+
         }
 
         public bool Create() {
@@ -49,8 +52,10 @@ namespace Biblioteca.Clases
                 Consultiorios.DALC.Enfermera enfermera = new Consultiorios.DALC.Enfermera();
 
                 enfermera.id_enfermera = this.Id;
+
                 enfermera.id_usuario = this.idUsuario;
                 enfermera.id_jornada_laboral = this.idJornadaLaboral;
+
 
                 CommonBC.ModeloConsultorio.AddToEnfermera(enfermera);
                 CommonBC.ModeloConsultorio.SaveChanges();

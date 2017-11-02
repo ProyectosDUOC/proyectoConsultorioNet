@@ -16,13 +16,14 @@ namespace Biblioteca.ClasesExterior
             get { return id; }
             set { id = value; }
         }
-        private Usuario usuario;
+        private int idUsuario;
 
-        public Usuario Usuario
+        public int IdUsuario
         {
-            get { return usuario; }
-            set { usuario = value; }
+            get { return idUsuario; }
+            set { idUsuario = value; }
         }
+
         private DateTime fecha;
 
         public DateTime Fecha
@@ -51,7 +52,7 @@ namespace Biblioteca.ClasesExterior
 
         private void Init() {
             id = 0;
-            usuario = null;
+            idUsuario = 0;
             fecha = DateTime.Now;
             tipoDesvinculado = null;
             glosa = String.Empty;
@@ -65,7 +66,7 @@ namespace Biblioteca.ClasesExterior
                 Consultiorios.DALC.Desvinculado desvinculado = new Consultiorios.DALC.Desvinculado();
                 //parte BD                     //parte clase 
                 desvinculado.id_desvinculado = this.Id;
-                desvinculado.id_usuario = this.Usuario.Id;
+                desvinculado.id_usuario = this.IdUsuario;
                 desvinculado.fecha = this.Fecha;
                 desvinculado.id_tipo_desvin = this.TipoDesvinculado.Id;
                 desvinculado.glosa = this.Glosa;
@@ -92,7 +93,7 @@ namespace Biblioteca.ClasesExterior
                             des => des.id_desvinculado == this.Id
                         );
 
-                this.Usuario.Id = desvinculado.id_usuario;
+                this.IdUsuario = desvinculado.id_usuario;
                 this.Fecha = (DateTime)desvinculado.fecha;
                 this.TipoDesvinculado.Id = desvinculado.id_tipo_desvin;
                 this.Glosa = desvinculado.glosa;
@@ -115,7 +116,7 @@ namespace Biblioteca.ClasesExterior
                             des => des.id_desvinculado == this.Id
                         );
 
-                desvinculado.id_usuario = this.Usuario.Id;
+                desvinculado.id_usuario = this.IdUsuario;
                 desvinculado.fecha = this.Fecha;
                 desvinculado.id_tipo_desvin = this.TipoDesvinculado.Id;
                 desvinculado.glosa = this.Glosa;

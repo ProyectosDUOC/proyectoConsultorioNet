@@ -7,7 +7,7 @@ namespace Biblioteca.Clases
 {
     public class PacienteColeccion
     {
-        public List<Paciente> GenerarListado(List<Consultiorios.DALC.Paciente> PacienteDALC)
+        public static List<Paciente> GenerarListado(List<Consultiorios.DALC.Paciente> PacienteDALC)
         {
             List<Biblioteca.Clases.Paciente> pacientes = new List<Paciente>();
 

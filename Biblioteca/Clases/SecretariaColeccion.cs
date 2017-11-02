@@ -7,7 +7,7 @@ namespace Biblioteca.Clases
 {
     public class SecretariaColeccion
     {
-        public List<Secretaria> GenerarListado(List<Consultiorios.DALC.Secretaria> SecretariaDALC)
+        public static List<Secretaria> GenerarListado(List<Consultiorios.DALC.Secretaria> SecretariaDALC)
         {
             List<Biblioteca.Clases.Secretaria> secretarias= new List<Secretaria>();
 

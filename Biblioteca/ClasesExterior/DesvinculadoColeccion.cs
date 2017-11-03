@@ -16,7 +16,7 @@ namespace Biblioteca.ClasesExterior
                 Biblioteca.ClasesExterior.Desvinculado desvinculado = new Desvinculado();
 
                 desvinculado.Id = desvin.id_desvinculado;
-                desvinculado.Usuario.Id = desvin.id_usuario;
+                desvinculado.IdUsuario = desvin.id_usuario;
                 desvinculado.Fecha = (DateTime)desvin.fecha;
                 desvinculado.TipoDesvinculado.Id = desvin.Tipo_Desvinculado.id_tipo_desvin;
                 desvinculado.Glosa = desvin.glosa; 

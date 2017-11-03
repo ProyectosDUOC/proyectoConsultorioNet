@@ -19,7 +19,7 @@ namespace Biblioteca.Control
                 licenciasMe.IdLicencia = lm.id_licencia_medica;
                 licenciasMe.Motivo = lm.motivos;
                 licenciasMe.NumeroDias = lm.numero_de_dias;
-                licenciasMe.Paciente.Id = lm.id_ficha_paciente;
+                licenciasMe.IdPaciente = lm.id_ficha_paciente;
 
                 licenciasMedicas.Add(licenciasMe);
             }

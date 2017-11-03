@@ -15,11 +15,11 @@ namespace Biblioteca.Control
                 Biblioteca.Control.FichaPaciente ficha = new FichaPaciente();
                 ficha.Id_ficha_paciente = fp.id_ficha_paciente;
                 ficha.Fecha = (DateTime)fp.fecha;
-                ficha.Consultorio.Id = fp.Consultorio.id_consultorio;
-                ficha.Secretaria.Id = fp.Secretaria.id_secretaria;
-                ficha.Medico.Id = fp.Medico.id_Medico;
-                ficha.Enfermera.Id = fp.Enfermera.id_enfermera;
-                ficha.Paciente.Id = fp.Paciente.id_paciente;
+                ficha.IdConsultorio = fp.Consultorio.id_consultorio;
+                ficha.IdSecretaria = fp.Secretaria.id_secretaria;
+                ficha.IdMedico = fp.Medico.id_Medico;
+                ficha.IdEnfermera = fp.Enfermera.id_enfermera;
+                ficha.IdPaciente = fp.Paciente.id_paciente;
                 ficha.Peso = fp.peso;
                 ficha.Estatura = fp.estatura;
                 ficha.Imc = fp.imc;

@@ -30,22 +30,23 @@ namespace Biblioteca.Clases
             get { return pass; }
             set { pass = value; }
         }
-        private TipoUsuario tipoUsuario;
+        private int idTipoUsuario;
 
-        public TipoUsuario TipoUsuario
+        public int IdTipoUsuario
         {
-            get { return tipoUsuario; }
-            set { tipoUsuario = value; }
+            get { return idTipoUsuario; }
+            set { idTipoUsuario = value; }
+        }
+
+        private int idUsuario;
+
+        public int IdUsuario
+        {
+            get { return idUsuario; }
+            set { idUsuario = value; }
         }
 
       
-        private Usuario usuario;
-
-        public Usuario Usuario
-        {
-            get { return usuario; }
-            set { usuario = value; }
-        }
         private int activo;
 
         public int Activo
@@ -62,8 +63,8 @@ namespace Biblioteca.Clases
             id = 0;
             username = String.Empty ;
             pass = String.Empty;
-            tipoUsuario = null;
-            usuario = null;
+            idTipoUsuario = 0;
+            idUsuario = 0;
             activo = 0;
         }
 
@@ -74,8 +75,8 @@ namespace Biblioteca.Clases
                 controlAcceso.id_control_acceso = this.Id;
                 controlAcceso.usuario = this.Username;
                 controlAcceso.contrasena = this.Pass;
-                controlAcceso.id_tipo_usuario = this.TipoUsuario.Id;
-                controlAcceso.id_usuario = this.Usuario.Id;
+                controlAcceso.id_tipo_usuario = this.idTipoUsuario;
+                controlAcceso.id_usuario = this.idUsuario;
                 controlAcceso.activo = this.Activo;
                 CommonBC.ModeloConsultorio.AddToControl_Acceso(controlAcceso);
                 CommonBC.ModeloConsultorio.SaveChanges();
@@ -96,8 +97,8 @@ namespace Biblioteca.Clases
                
                 this.Username = controlAcceso.usuario;
                 this.Pass = controlAcceso.contrasena;
-                this.TipoUsuario.Id = controlAcceso.id_tipo_usuario;
-                this.Usuario.Id = controlAcceso.id_usuario;
+                this.idTipoUsuario = controlAcceso.id_tipo_usuario;
+                this.idUsuario = controlAcceso.id_usuario;
                 this.Activo = (int)controlAcceso.activo;
                 
                 return true;
@@ -119,8 +120,8 @@ namespace Biblioteca.Clases
 
                 controlAcceso.usuario = this.Username;
                 controlAcceso.contrasena = this.Pass;
-                controlAcceso.id_tipo_usuario = this.TipoUsuario.Id;
-                controlAcceso.id_usuario = this.Usuario.Id;
+                controlAcceso.id_tipo_usuario = this.idTipoUsuario;
+                controlAcceso.id_usuario = this.idUsuario;
                 controlAcceso.activo = this.Activo;
                 CommonBC.ModeloConsultorio.SaveChanges();
                 

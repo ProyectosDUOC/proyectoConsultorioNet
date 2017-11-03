@@ -24,41 +24,51 @@ namespace Biblioteca.Control
             get { return fecha; }
             set { fecha = value; }
         }
-        private Consultorio consultorio;
+        private int idConsultorio;
 
-        public Consultorio Consultorio
+        public int IdConsultorio
         {
-            get { return consultorio; }
-            set { consultorio = value; }
+            get { return idConsultorio; }
+            set { idConsultorio = value; }
         }
-        private Secretaria secretaria;
 
-        public Secretaria Secretaria
-        {
-            get { return secretaria; }
-            set { secretaria = value; }
-        }
-        private Medico medico;
 
-        public Medico Medico
-        {
-            get { return medico; }
-            set { medico = value; }
-        }
-        private Enfermera enfermera;
+        private int idSecretaria;
 
-        public Enfermera Enfermera
+        public int IdSecretaria
         {
-            get { return enfermera; }
-            set { enfermera = value; }
+            get { return idSecretaria; }
+            set { idSecretaria = value; }
         }
-        private Paciente paciente;
 
-        public Paciente Paciente
+
+        private int idMedico;
+
+        public int IdMedico
         {
-            get { return paciente; }
-            set { paciente = value; }
+            get { return idMedico; }
+            set { idMedico = value; }
         }
+
+
+        private int idEnfermera;
+
+        public int IdEnfermera
+        {
+            get { return idEnfermera; }
+            set { idEnfermera = value; }
+        }
+
+
+        private int idPaciente;
+
+        public int IdPaciente
+        {
+            get { return idPaciente; }
+            set { idPaciente = value; }
+        }
+
+       
         private int peso;
 
         public int Peso
@@ -123,11 +133,11 @@ namespace Biblioteca.Control
        private void Init() {
            id_ficha_paciente = 0;
            fecha = DateTime.Now;
-           consultorio = null;
-           secretaria = null;
-           medico = null;
-           enfermera = null;
-           paciente = null;
+           idConsultorio = 0;
+           idSecretaria = 0;
+           idMedico = 0;
+           idEnfermera = 0;
+           idPaciente = 0;
            peso = 0;
            estatura = 0;
            imc = 0;
@@ -145,11 +155,11 @@ namespace Biblioteca.Control
                Consultiorios.DALC.Ficha_Paciente fichaPac = new Consultiorios.DALC.Ficha_Paciente();
                fichaPac.id_ficha_paciente = this.Id_ficha_paciente;
                fichaPac.fecha = this.Fecha;
-               fichaPac.id_consultorio = this.Consultorio.Id;
-               fichaPac.id_secretaria = this.Secretaria.Id;
-               fichaPac.id_Medico = this.Medico.Id;
-               fichaPac.id_enfermera = this.Enfermera.Id;
-               fichaPac.id_paciente = this.Paciente.Id;
+               fichaPac.id_consultorio = this.idConsultorio;
+               fichaPac.id_secretaria = this.idSecretaria;
+               fichaPac.id_Medico = this.idMedico;
+               fichaPac.id_enfermera = this.idEnfermera;
+               fichaPac.id_paciente = this.idPaciente;
                fichaPac.peso = this.Peso;
                fichaPac.estatura = this.Estatura;
                fichaPac.imc = this.Imc;
@@ -178,11 +188,11 @@ namespace Biblioteca.Control
                     fic => fic.id_ficha_paciente == this.Id_ficha_paciente
                    );             
                this.Fecha = (DateTime)fichaPac.fecha;
-               this.Consultorio.Id = fichaPac.id_consultorio;
-               this.Secretaria.Id = fichaPac.id_secretaria;
-               this.Medico.Id = fichaPac.id_Medico;
-               this.Enfermera.Id = fichaPac.id_enfermera ;
-               this.Paciente.Id = fichaPac.id_paciente;
+               this.idConsultorio = fichaPac.id_consultorio;
+               this.idSecretaria = fichaPac.id_secretaria;
+               this.idMedico = fichaPac.id_Medico;
+               this.idEnfermera = fichaPac.id_enfermera ;
+               this.idPaciente = fichaPac.id_paciente;
                this.Peso = fichaPac.peso;
                this.Estatura = fichaPac.estatura;
                this.Imc = fichaPac.imc;
@@ -209,11 +219,11 @@ namespace Biblioteca.Control
                     fic => fic.id_ficha_paciente == this.Id_ficha_paciente
                    );             
                fichaPac.fecha = this.Fecha;
-               fichaPac.id_consultorio = this.Consultorio.Id;
-               fichaPac.id_secretaria = this.Secretaria.Id;
-               fichaPac.id_Medico = this.Medico.Id;
-               fichaPac.id_enfermera = this.Enfermera.Id;
-               fichaPac.id_paciente = this.Paciente.Id;
+               fichaPac.id_consultorio = this.idConsultorio;
+               fichaPac.id_secretaria = this.idSecretaria;
+               fichaPac.id_Medico = this.idMedico;
+               fichaPac.id_enfermera = this.idEnfermera;
+               fichaPac.id_paciente = this.idPaciente;
                fichaPac.peso = this.Peso;
                fichaPac.estatura = this.Estatura;
                fichaPac.imc = this.Imc;

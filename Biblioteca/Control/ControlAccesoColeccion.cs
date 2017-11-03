@@ -20,8 +20,8 @@ namespace Biblioteca.Control
                 controlA.Id = control.id_control_acceso;
                 controlA.Username = control.usuario;
                 controlA.Pass = control.contrasena;
-                controlA.TipoUsuario.Id = control.Tipo_Usuario.id_tipo_usuario;
-                controlA.Usuario.Id = control.Usuario1.id_usuario;
+                controlA.IdTipoUsuario = control.id_tipo_usuario;
+                controlA.IdUsuario = control.id_tipo_usuario;
                 controlA.Activo = (int)control.activo;
 
                 controlAccesos.Add(controlA);

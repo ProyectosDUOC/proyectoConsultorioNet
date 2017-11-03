@@ -17,10 +17,10 @@ namespace Biblioteca.Clases
                
 
                 paciente.Id = pac.id_paciente;
-                paciente.Usuario.Id = pac.id_usuario;
-                paciente.GrupoSanguineo.Id = pac.id_grupo_sanguineo;
-                paciente.Rh.Id = pac.id_rh;
-                paciente.Sector.Id = pac.id_sector;
+                paciente.IdUsuario = pac.id_usuario;
+                paciente.IdGrupoSanguineo = pac.id_grupo_sanguineo;
+                paciente.IdRh = pac.id_rh;
+                paciente.IdSector = pac.id_sector;
 
                 pacientes.Add(paciente);
             }

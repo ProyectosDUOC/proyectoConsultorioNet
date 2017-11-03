@@ -22,12 +22,12 @@ namespace Biblioteca.ClasesExterior
             set { nombre = value; }
         }
 
-        private Region region;
+        private int idRegion;
 
-        public Region Region
+        public int IdRegion
         {
-            get { return region; }
-            set { region = value; }
+            get { return idRegion; }
+            set { idRegion = value; }
         }
 
         public Provincia() {
@@ -37,7 +37,7 @@ namespace Biblioteca.ClasesExterior
         private void Init() {
             id = 0;
             nombre = String.Empty;
-            region = null;
+            idRegion = 0;
         }
 
         public bool Create()
@@ -48,7 +48,7 @@ namespace Biblioteca.ClasesExterior
 
                 prov.id_provincia = this.Id;
                 prov.nom_com = this.Nombre;
-                prov.id_region = this.Region.Id;
+                prov.id_region = this.IdRegion;
 
                 CommonBC.ModeloConsultorio.AddToProvincia(prov);
                 CommonBC.ModeloConsultorio.SaveChanges();
@@ -69,7 +69,7 @@ namespace Biblioteca.ClasesExterior
                                                         p => p.id_provincia == this.Id);
 
                 this.Nombre = prov.nom_com;
-                this.Region.Id = prov.id_region;
+                this.IdRegion = prov.id_region;
 
                 return true;
             }
@@ -88,7 +88,7 @@ namespace Biblioteca.ClasesExterior
                                                         p => p.id_provincia == this.Id);
 
                 prov.nom_com = this.Nombre;
-                prov.id_region = this.Region.Id;
+                prov.id_region = this.IdRegion;
 
                 CommonBC.ModeloConsultorio.SaveChanges();
                 return true;

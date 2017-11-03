@@ -29,34 +29,40 @@ namespace Biblioteca.Clases
             get { return dv; }
             set { dv = value; }
         }
-        private Usuario usuario;
+        private int idUsuario;
 
-        public Usuario Usuario
+        public int IdUsuario
         {
-            get { return usuario; }
-            set { usuario = value; }
+            get { return idUsuario; }
+            set { idUsuario = value; }
         }
-        private Especialidad especialidad;
 
-        public Especialidad Especialidad
-        {
-            get { return especialidad; }
-            set { especialidad = value; }
-        }
-        private JornadaLaboral jornadaLaboral;
 
-        public JornadaLaboral JornadaLaboral
+        private int idEspecialidad;
+
+        public int IdEspecialidad
         {
-            get { return jornadaLaboral; }
-            set { jornadaLaboral = value; }
+            get { return idEspecialidad; }
+            set { idEspecialidad = value; }
         }
+
+
+        private int idJornadaLaboral;
+
+        public int IdJornadaLaboral
+        {
+            get { return idJornadaLaboral; }
+            set { idJornadaLaboral = value; }
+        }
+
+       
         private void Init() {
             id = 0;
             rut = 0;
             dv = '0';
-            usuario = null;
-            especialidad = null;
-            jornadaLaboral = null;
+            idUsuario = 0;
+            idEspecialidad = 0;
+            idJornadaLaboral = 0;
         }
 
         public bool Create() {
@@ -67,9 +73,9 @@ namespace Biblioteca.Clases
                 medico.id_Medico = this.Id;
                 medico.rut_medico = this.Rut;
                 medico.dv_medico = this.Dv.ToString();
-                medico.id_usuario = this.Usuario.Id;
-                medico.id_especialidad = this.Especialidad.Id;
-                medico.id_jornada_laboral = this.JornadaLaboral.Id;
+                medico.id_usuario = this.IdUsuario;
+                medico.id_especialidad = this.IdEspecialidad;
+                medico.id_jornada_laboral = this.IdJornadaLaboral;
 
                 CommonBC.ModeloConsultorio.AddToMedico(medico);
                 CommonBC.ModeloConsultorio.SaveChanges();
@@ -90,9 +96,9 @@ namespace Biblioteca.Clases
                     );
                 this.Rut = medico.rut_medico;
                 this.Dv = Char.Parse(medico.dv_medico);
-                this.usuario.Id = medico.id_usuario;
-                this.especialidad.Id = medico.id_especialidad;
-                this.jornadaLaboral.Id = medico.id_jornada_laboral;
+                this.IdUsuario= medico.id_usuario;
+                this.IdEspecialidad = medico.id_especialidad;
+                this.IdJornadaLaboral = medico.id_jornada_laboral;
 
                 return true;
             }
@@ -112,9 +118,9 @@ namespace Biblioteca.Clases
                     );
                 medico.rut_medico = this.Rut;
                 medico.dv_medico = this.Dv.ToString();
-                medico.id_usuario = this.Usuario.Id;
-                medico.id_especialidad = this.Especialidad.Id;
-                medico.id_jornada_laboral = this.JornadaLaboral.Id;
+                medico.id_usuario = this.IdUsuario;
+                medico.id_especialidad = this.IdEspecialidad;
+                medico.id_jornada_laboral = this.IdJornadaLaboral;
 
                 CommonBC.ModeloConsultorio.SaveChanges();                   
                 return true;

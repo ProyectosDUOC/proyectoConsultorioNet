@@ -29,13 +29,15 @@ namespace Biblioteca.Clases
             get { return dv; }
             set { dv = value; }
         }
-        private Comuna comuna;
+        private int idComuna;
 
-        public Comuna Comuna
+        public int IdComuna
         {
-            get { return comuna; }
-            set { comuna = value; }
+            get { return idComuna; }
+            set { idComuna = value; }
         }
+
+      
         private String nombre;
 
         public String Nombre
@@ -53,7 +55,7 @@ namespace Biblioteca.Clases
             id = 0;
             rut = 0;
             dv = '0';
-            comuna = null;
+            idComuna = 0;
             nombre = String.Empty;
         }
 
@@ -65,7 +67,7 @@ namespace Biblioteca.Clases
                 consultorio.id_consultorio = this.Id;
                 consultorio.rut_consultorio = this.Rut;
                 consultorio.dv = this.Dv.ToString();
-                consultorio.id_comuna = this.Comuna.Id;
+                consultorio.id_comuna = this.idComuna;
                 consultorio.nombre = this.Nombre;
 
                 CommonBC.ModeloConsultorio.AddToConsultorio(consultorio);
@@ -87,7 +89,7 @@ namespace Biblioteca.Clases
                                 );              
                 this.Rut = consultorio.id_consultorio;
                 this.Dv = Char.Parse(consultorio.dv);
-                this.Comuna.Id = consultorio.id_comuna;
+                this.IdComuna = consultorio.id_comuna;
                 this.Nombre = consultorio.nombre;
                 return true;
             }
@@ -107,7 +109,7 @@ namespace Biblioteca.Clases
                                 );                
                 consultorio.rut_consultorio = this.Rut;
                 consultorio.dv = this.Dv.ToString();
-                consultorio.id_comuna = this.Comuna.Id;
+                consultorio.id_comuna = this.IdComuna;
                 consultorio.nombre = this.Nombre;
                
                 CommonBC.ModeloConsultorio.SaveChanges();

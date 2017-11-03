@@ -15,29 +15,32 @@ namespace Biblioteca.Clases
             get { return id; }
             set { id = value; }
         }
-        private Usuario usuario;
+        private int idUsuario;
 
-        public Usuario Usuario
+        public int IdUsuario
         {
-            get { return usuario; }
-            set { usuario = value; }
-        }
-        private JornadaLaboral jornadaLaboral;
-
-        public JornadaLaboral JornadaLaboral
-        {
-            get { return jornadaLaboral; }
-            set { jornadaLaboral = value; }
+            get { return idUsuario; }
+            set { idUsuario = value; }
         }
 
+
+        private int idJornadaLaboral;
+
+        public int IdJornadaLaboral
+        {
+            get { return idJornadaLaboral; }
+            set { idJornadaLaboral = value; }
+        }
+
+   
         public Secretaria(){
             Init();
         }
 
         private void Init(){
             id = 0;
-            usuario = null;
-            jornadaLaboral = null;
+            idUsuario = 0;
+            idJornadaLaboral = 0;
         }
 
         public bool Create() {
@@ -46,8 +49,8 @@ namespace Biblioteca.Clases
                 Consultiorios.DALC.Secretaria secretaria = new Consultiorios.DALC.Secretaria();
 
                 secretaria.id_secretaria = this.Id;
-                secretaria.id_usuario = this.Usuario.Id;
-                secretaria.id_jornada_laboral = this.JornadaLaboral.Id;
+                secretaria.id_usuario = this.IdUsuario;
+                secretaria.id_jornada_laboral = this.IdJornadaLaboral;
 
                 CommonBC.ModeloConsultorio.AddToSecretaria(secretaria);
                 CommonBC.ModeloConsultorio.SaveChanges();
@@ -66,8 +69,8 @@ namespace Biblioteca.Clases
                     (
                         secre => secre.id_secretaria == this.Id
                     );               
-                this.Usuario.Id = secretaria.id_usuario;
-                this.JornadaLaboral.Id = secretaria.id_jornada_laboral;
+                this.IdUsuario = secretaria.id_usuario;
+                this.IdJornadaLaboral = secretaria.id_jornada_laboral;
 
                 return true;
             }
@@ -85,8 +88,8 @@ namespace Biblioteca.Clases
                         secre => secre.id_secretaria == this.Id
                     );
 
-                secretaria.id_usuario = this.Usuario.Id;
-                secretaria.id_jornada_laboral = this.JornadaLaboral.Id;
+                secretaria.id_usuario = this.IdUsuario;
+                secretaria.id_jornada_laboral = this.IdJornadaLaboral;
                
                 CommonBC.ModeloConsultorio.SaveChanges();
                 return true;

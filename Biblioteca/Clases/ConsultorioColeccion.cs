@@ -18,7 +18,7 @@ namespace Biblioteca.Clases
                 consultorio.Id = consul.id_consultorio;
                 consultorio.Rut = (int)consul.rut_consultorio;
                 consultorio.Dv = Char.Parse(consul.dv);
-                consultorio.Comuna.Id = consul.id_comuna;
+                consultorio.IdComuna = consul.id_comuna;
                 consultorio.Nombre = consul.nombre;
                 
                 consultorios.Add(consultorio);

@@ -11,8 +11,8 @@ namespace Biblioteca.ClasesExterior
         {
             List<Biblioteca.ClasesExterior.GrupoSanguineo> gruposS = new List<GrupoSanguineo>();
 
-          
+
         }
     }
+
 }
-A

@@ -21,7 +21,7 @@ namespace Biblioteca.ClasesExterior
 
                 comuna.Id = comun.id_comuna;
                 comuna.Nombre = comun.nom_com;
-                comuna.Provincia.Id = comun.Provincia.id_provincia;
+                comuna.IdProvincia= comun.Provincia.id_provincia;
 
                 comunas.Add(comuna);
             }

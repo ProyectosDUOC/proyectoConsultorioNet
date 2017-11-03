@@ -98,27 +98,30 @@ namespace Biblioteca
             get { return fono2; }
             set { fono2 = value; }
         }
-        private Comuna comuna;
+        private int idComuna;
 
-        public Comuna Comuna
+        public int IdComuna
         {
-            get { return comuna; }
-            set { comuna = value; }
+            get { return idComuna; }
+            set { idComuna = value; }
         }
-        private Nacionalidad nacionalidad;
 
-        public Nacionalidad Nacionalidad
-        {
-            get { return nacionalidad; }
-            set { nacionalidad = value; }
-        }
-        private Genero genero;
 
-        public Genero Genero
+        private int idNacionalidad;
+
+        public int IdNacionalidad
         {
-            get { return genero; }
-            set { genero = value; }
+            get { return idNacionalidad; }
+            set { idNacionalidad = value; }
         }
+        private int idGenero;
+
+        public int IdGenero
+        {
+            get { return idGenero; }
+            set { idGenero = value; }
+        }
+
         private int activo;
 
         public int Activo
@@ -143,9 +146,9 @@ namespace Biblioteca
             appaterno = String.Empty;
             apmaterno = String.Empty;
             fechaNacimiento = DateTime.Now;
-            genero = null;
-            nacionalidad = null;
-            comuna = null;
+            idGenero = 0;
+            idNacionalidad = 0;
+            idComuna = 0;
             direccion = String.Empty;
             fono1 = String.Empty;
             fono2 = String.Empty;
@@ -166,9 +169,9 @@ namespace Biblioteca
                 usuario.appaterno = this.Appaterno;
                 usuario.apmaterno = this.Apmaterno;
                 usuario.fecha_nacimiento = this.FechaNacimiento;
-                usuario.id_genero = this.Genero.Id;
-                usuario.id_nacionalidad = this.Nacionalidad.Id;
-                usuario.id_comuna = this.Comuna.Id;
+                usuario.id_genero = this.IdGenero;
+                usuario.id_nacionalidad = this.IdNacionalidad;
+                usuario.id_comuna = this.IdComuna;
                 usuario.direccion = this.Direccion;
                 usuario.fono1 = int.Parse(this.Fono1);
                 usuario.fono2 = int.Parse(this.Fono2);
@@ -198,9 +201,9 @@ namespace Biblioteca
                 this.Appaterno = usuario.appaterno;
                 this.Apmaterno = usuario.apmaterno;
                 this.FechaNacimiento = usuario.fecha_nacimiento;
-                this.Genero.Id = usuario.id_genero;
-                this.Nacionalidad.Id = usuario.id_nacionalidad;
-                this.Comuna.Id = usuario.id_comuna;
+                this.IdGenero = usuario.id_genero;
+                this.IdNacionalidad = usuario.id_nacionalidad;
+                this.IdComuna = usuario.id_comuna;
                 this.Direccion = usuario.direccion;
                 this.Fono1 = usuario.fono1.ToString();
                 this.Fono2 = usuario.fono2.ToString();
@@ -228,9 +231,9 @@ namespace Biblioteca
                 usuario.appaterno = this.Appaterno;
                 usuario.apmaterno = this.Apmaterno;
                 usuario.fecha_nacimiento = this.FechaNacimiento;
-                usuario.id_genero= this.Genero.Id;
-                usuario.id_nacionalidad = this.Nacionalidad.Id;
-                usuario.id_comuna = this.Comuna.Id;
+                usuario.id_genero= this.IdGenero;
+                usuario.id_nacionalidad = this.IdNacionalidad;
+                usuario.id_comuna = this.IdComuna;
                 usuario.direccion = this.Direccion;
                 usuario.fono1 = int.Parse(this.Fono1);
                 usuario.fono2 = int.Parse(this.Fono2);

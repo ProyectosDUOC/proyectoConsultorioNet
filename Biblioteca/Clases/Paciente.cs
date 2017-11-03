@@ -15,44 +15,51 @@ namespace Biblioteca.Clases
             get { return id; }
             set { id = value; }
         }
-        private Usuario usuario;
+        private int idUsuario;
 
-        public Usuario Usuario
+        public int IdUsuario
         {
-            get { return usuario; }
-            set { usuario = value; }
+            get { return idUsuario; }
+            set { idUsuario = value; }
         }
-        private GrupoSanguineo grupoSanguineo;
 
-        public GrupoSanguineo GrupoSanguineo
-        {
-            get { return grupoSanguineo; }
-            set { grupoSanguineo = value; }
-        }
-        private Rh_sanguineo rh;
 
-        public Rh_sanguineo Rh
-        {
-            get { return rh; }
-            set { rh = value; }
-        }
-        private Sector sector;
+        private int idGrupoSanguineo;
 
-        public Sector Sector
+        public int IdGrupoSanguineo
         {
-            get { return sector; }
-            set { sector = value; }
+            get { return idGrupoSanguineo; }
+            set { idGrupoSanguineo = value; }
         }
+
+
+        private int idRh;
+
+        public int IdRh
+        {
+            get { return idRh; }
+            set { idRh = value; }
+        }
+
+        private int idSector;
+
+        public int IdSector
+        {
+            get { return idSector; }
+            set { idSector = value; }
+        }
+
+    
               
         public Paciente() {
             Init();
         }
         private void Init() {
             id = 0;
-            usuario = null;
-            grupoSanguineo = null;
-            rh = null;
-            sector = null;
+            idUsuario = 0;
+            idGrupoSanguineo = 0;
+            idRh = 0;
+            idSector = 0;
         }
 
         public bool Create() {
@@ -61,10 +68,10 @@ namespace Biblioteca.Clases
               Consultiorios.DALC.Paciente paciente= new Consultiorios.DALC.Paciente();
              
               paciente.id_paciente = this.Id;
-              paciente.id_usuario = this.Usuario.Id;
-              paciente.id_grupo_sanguineo = this.GrupoSanguineo.Id;
-              paciente.id_rh = this.Rh.Id;
-              paciente.id_sector = this.Sector.Id;
+              paciente.id_usuario = this.IdUsuario;
+              paciente.id_grupo_sanguineo = this.IdGrupoSanguineo;
+              paciente.id_rh = this.IdRh;
+              paciente.id_sector = this.IdSector;
 
               CommonBC.ModeloConsultorio.AddToPaciente(paciente);
               CommonBC.ModeloConsultorio.SaveChanges();
@@ -82,10 +89,10 @@ namespace Biblioteca.Clases
                     (
                         pacien => pacien.id_paciente == this.Id
                     );
-                this.Usuario.Id = paciente.id_usuario;
-                this.GrupoSanguineo.Id = paciente.id_grupo_sanguineo;
-                this.Rh.Id = paciente.id_rh;
-                this.Sector.Id = paciente.id_sector;
+                this.IdUsuario = paciente.id_usuario;
+                this.IdGrupoSanguineo = paciente.id_grupo_sanguineo;
+                this.IdRh = paciente.id_rh;
+                this.IdSector = paciente.id_sector;
 
                 return true;
             }
@@ -101,10 +108,10 @@ namespace Biblioteca.Clases
                     (
                         pacien => pacien.id_paciente == this.Id
                     );
-                paciente.id_usuario = this.Usuario.Id;
-                paciente.id_grupo_sanguineo = this.GrupoSanguineo.Id;
-                paciente.id_rh = this.Rh.Id;
-                paciente.id_sector = this.Sector.Id;
+                paciente.id_usuario = this.IdUsuario;
+                paciente.id_grupo_sanguineo = this.IdGrupoSanguineo;
+                paciente.id_rh = this.IdRh;
+                paciente.id_sector = this.IdSector;
 
                 CommonBC.ModeloConsultorio.SaveChanges();
                 return true;

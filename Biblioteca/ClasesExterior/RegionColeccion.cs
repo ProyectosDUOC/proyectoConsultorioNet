@@ -16,7 +16,7 @@ namespace Biblioteca.ClasesExterior
                 Region region = new Region();
                 region.Id = reg.id_region;
                 region.Nombre = reg.nom_region;
-                region.Pais.Id = reg.id_pais;
+                region.IdPais = reg.id_pais;
 
                 regiones.Add(region);
             }

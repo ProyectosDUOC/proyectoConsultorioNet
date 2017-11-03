@@ -15,20 +15,25 @@ namespace Biblioteca.Clases
             get { return id; }
             set { id = value; }
         }
-        private int idusuario;
 
-        public int idUsuario
-        {
-            get { return idusuario; }
-            set { usuario = value; }
-        }
-        private JornadaLaboral jornadaLaboral;
+        private int idUsuario;
 
-        public JornadaLaboral JornadaLaboral
+        public int IdUsuario
         {
-            get { return jornadaLaboral; }
-            set { jornadaLaboral = value; }
+            get { return idUsuario; }
+            set { idUsuario = value; }
+
         }
+
+        
+        private int idJornadaLaboral;
+
+        public int IdJornadaLaboral
+        {
+            get { return idJornadaLaboral; }
+            set { idJornadaLaboral = value; }
+        }
+
 
         public Enfermera(){
             Init();
@@ -36,8 +41,9 @@ namespace Biblioteca.Clases
 
         private void Init(){
             id = 0;
-            usuario = 0;
-            jornadaLaboral = null;
+            idUsuario = 0;
+            idJornadaLaboral = 0;
+
         }
 
         public bool Create() {
@@ -46,8 +52,10 @@ namespace Biblioteca.Clases
                 Consultiorios.DALC.Enfermera enfermera = new Consultiorios.DALC.Enfermera();
 
                 enfermera.id_enfermera = this.Id;
-                enfermera.id_usuario = this.idusuario;
-                enfermera.id_jornada_laboral = this.JornadaLaboral.Id;
+
+                enfermera.id_usuario = this.idUsuario;
+                enfermera.id_jornada_laboral = this.idJornadaLaboral;
+
 
                 CommonBC.ModeloConsultorio.AddToEnfermera(enfermera);
                 CommonBC.ModeloConsultorio.SaveChanges();
@@ -66,8 +74,8 @@ namespace Biblioteca.Clases
                     (
                         enfer => enfer.id_enfermera == this.Id
                     );               
-                this.Usuario.Id = enfermera.id_usuario;
-                this.JornadaLaboral.Id = enfermera.id_jornada_laboral;
+                this.idUsuario = enfermera.id_usuario;
+                this.idJornadaLaboral = enfermera.id_jornada_laboral;
 
                 return true;
             }
@@ -84,8 +92,8 @@ namespace Biblioteca.Clases
                     (
                         enfer => enfer.id_enfermera == this.Id
                      );              
-                enfermera.id_usuario = this.Usuario.Id;
-                enfermera.id_jornada_laboral = this.JornadaLaboral.Id;
+                enfermera.id_usuario = this.idUsuario;
+                enfermera.id_jornada_laboral = this.idJornadaLaboral;
 
                 CommonBC.ModeloConsultorio.SaveChanges();
                 return true;

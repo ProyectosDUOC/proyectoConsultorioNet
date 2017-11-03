@@ -15,13 +15,14 @@ namespace Biblioteca.ClasesExterior
             get { return id; }
             set { id = value; }
         }
-        private Alergia alergia;
+        private int idAlergia;
 
-        public Alergia Alergia
+        public int IdAlergia
         {
-            get { return alergia; }
-            set { alergia = value; }
+            get { return idAlergia; }
+            set { idAlergia = value; }
         }
+
         private Paciente paciente;
 
         public Paciente Paciente
@@ -37,7 +38,7 @@ namespace Biblioteca.ClasesExterior
         private void Init()
         {
             id = 0;
-            alergia = null;
+            idAlergia = 0;
             paciente = null;
         }
 
@@ -48,7 +49,7 @@ namespace Biblioteca.ClasesExterior
 
                 
                 alergiaPac.id_alergia_paciente = this.Id;
-                alergiaPac.id_alergia = this.Alergia.Id;
+                alergiaPac.id_alergia = this.IdAlergia;
                 alergiaPac.id_paciente = this.Paciente.Id;
 
                 CommonBC.ModeloConsultorio.AddToAlergia_Paciente(alergiaPac);
@@ -71,7 +72,7 @@ namespace Biblioteca.ClasesExterior
                         alergiaPaciente => alergiaPaciente.id_alergia_paciente == this.Id
                     );             
                 this.Paciente.Id = alergiaPac.id_paciente;
-                this.Alergia.Id = alergiaPac.id_alergia;
+                this.IdAlergia = alergiaPac.id_alergia;
 
                 return true;
             }
@@ -90,7 +91,7 @@ namespace Biblioteca.ClasesExterior
                         alergiaPaciente => alergiaPaciente.id_alergia_paciente == this.Id
                     );              
                  alergiaPac.id_paciente = this.Paciente.Id;
-                 alergiaPac.id_alergia = this.Alergia.Id;
+                 alergiaPac.id_alergia = this.IdAlergia;
 
                 CommonBC.ModeloConsultorio.SaveChanges();
                 return true;

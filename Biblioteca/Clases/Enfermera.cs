@@ -15,11 +15,11 @@ namespace Biblioteca.Clases
             get { return id; }
             set { id = value; }
         }
-        private Usuario usuario;
+        private int idusuario;
 
-        public Usuario Usuario
+        public int idUsuario
         {
-            get { return usuario; }
+            get { return idusuario; }
             set { usuario = value; }
         }
         private JornadaLaboral jornadaLaboral;
@@ -36,7 +36,7 @@ namespace Biblioteca.Clases
 
         private void Init(){
             id = 0;
-            usuario = null;
+            usuario = 0;
             jornadaLaboral = null;
         }
 
@@ -46,7 +46,7 @@ namespace Biblioteca.Clases
                 Consultiorios.DALC.Enfermera enfermera = new Consultiorios.DALC.Enfermera();
 
                 enfermera.id_enfermera = this.Id;
-                enfermera.id_usuario = this.Usuario.Id;
+                enfermera.id_usuario = this.idusuario;
                 enfermera.id_jornada_laboral = this.JornadaLaboral.Id;
 
                 CommonBC.ModeloConsultorio.AddToEnfermera(enfermera);

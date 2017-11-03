@@ -11,7 +11,15 @@ namespace Biblioteca.Control
         private int idLicencia;
         private int numeroDias;
         private string motivo;
-        private Paciente paciente;  
+        private int idPaciente;
+
+        public int IdPaciente
+        {
+            get { return idPaciente; }
+            set { idPaciente = value; }
+        }
+
+         
 
         public LicenciaMedica() 
         {
@@ -31,11 +39,7 @@ namespace Biblioteca.Control
             get { return numeroDias; }
             set { numeroDias = value; }
         }
-        public Paciente Paciente
-        {
-            get { return paciente; }
-            set { paciente = value; }
-        }
+        
         public string Motivo
         {
             get { return motivo; }
@@ -44,7 +48,7 @@ namespace Biblioteca.Control
         private void Init()
         {
             idLicencia = 0; 
-            paciente = null;
+            idPaciente = 0;
             numeroDias = 0;
             motivo = String.Empty;
 
@@ -57,7 +61,7 @@ namespace Biblioteca.Control
                 licenciaMe.id_licencia_medica = this.IdLicencia;
                 licenciaMe.numero_de_dias = this.NumeroDias;
                 licenciaMe.motivos = this.Motivo;
-                licenciaMe.id_ficha_paciente = this.Paciente.Id;
+                licenciaMe.id_ficha_paciente = this.idPaciente;
                 CommonBC.ModeloConsultorio.AddToLicencia_Medica(licenciaMe);
                 CommonBC.ModeloConsultorio.SaveChanges();
                 return true;
@@ -78,7 +82,7 @@ namespace Biblioteca.Control
 
                 this.NumeroDias = licenciaMe.numero_de_dias;
                 this.Motivo = licenciaMe.motivos;
-                this.Paciente.Id = licenciaMe.id_ficha_paciente;
+                this.idPaciente = licenciaMe.id_ficha_paciente;
 
                 return true;
             }
@@ -98,7 +102,7 @@ namespace Biblioteca.Control
 
                 licenciaMe.numero_de_dias = this.NumeroDias;
                 licenciaMe.motivos = this.Motivo;
-                licenciaMe.id_ficha_paciente = this.Paciente.Id;
+                licenciaMe.id_ficha_paciente = this.idPaciente;
 
                 CommonBC.ModeloConsultorio.SaveChanges();
                 return true;

@@ -7,7 +7,7 @@ namespace Biblioteca.ClasesExterior
 {
     public class TipoUsuario
     {
-          private int id;
+        private int id;
 
         public int Id
         {

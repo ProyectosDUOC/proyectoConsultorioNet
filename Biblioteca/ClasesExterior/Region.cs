@@ -22,12 +22,12 @@ namespace Biblioteca.ClasesExterior
             set { nombre = value; }
         }
 
-        private Pais pais;
+        private int idPais;
 
-        public Pais Pais
+        public int IdPais
         {
-            get { return pais; }
-            set { pais = value; }
+            get { return idPais; }
+            set { idPais = value; }
         }
 
         public Region() {
@@ -37,7 +37,7 @@ namespace Biblioteca.ClasesExterior
         private void Init() {
             id = 0;
             nombre = String.Empty;
-            Pais = null;
+            IdPais = 0;
         }
 
         public bool Create()
@@ -46,7 +46,7 @@ namespace Biblioteca.ClasesExterior
             {
                 Consultiorios.DALC.Region reg = new Consultiorios.DALC.Region();
 
-                reg.id_pais = this.Pais.Id;
+                reg.id_pais = this.IdPais;
                 reg.id_region = this.Id;
                 reg.nom_region = this.Nombre;
 
@@ -69,7 +69,7 @@ namespace Biblioteca.ClasesExterior
                                                     r => r.id_region == this.Id);
 
                 this.Nombre = reg.nom_region;
-                this.Pais.Id = reg.id_pais;
+                this.IdPais = reg.id_pais;
 
                 return true;
 
@@ -86,7 +86,7 @@ namespace Biblioteca.ClasesExterior
             {
                 Consultiorios.DALC.Region reg = CommonBC.ModeloConsultorio.Region.First(
                                                     r => r.id_region == this.Id);
-                reg.id_pais = this.Pais.Id;
+                reg.id_pais = this.IdPais;
                 reg.nom_region = this.Nombre;
 
                 CommonBC.ModeloConsultorio.SaveChanges();

@@ -7,11 +7,12 @@ namespace Biblioteca.ClasesExterior
 {
     public class GrupoSanguineoColeccion
     {
-        public static List<GrupoSanguineo> GenerarListado (List<Consultiorios.DALC.Grupo_sanguineo> GrupoSanguienoDAlC) 
+
+        public static List<GrupoSanguineo> GenerarListado (List<Consultiorios.DALC.Grupo_sanguineo> GrupoSanguienoDALC) 
         {
             List<Biblioteca.ClasesExterior.GrupoSanguineo> gruposSanguineos = new List<GrupoSanguineo>();
 
-            foreach (Consultiorios.DALC.Grupo_sanguineo grupS in GrupoSanguienoDAlC)
+            foreach (Consultiorios.DALC.Grupo_sanguineo grupS in GrupoSanguienoDALC)
             {
                 Biblioteca.ClasesExterior.GrupoSanguineo gruposSanguineo = new GrupoSanguineo();
 
@@ -22,6 +23,13 @@ namespace Biblioteca.ClasesExterior
             }
             return gruposSanguineos;
         }
+
+        public List<GrupoSanguineo> ReadAll()
+        {
+            var grupoSanguineos = CommonBC.ModeloConsultorio.Grupo_sanguineo;
+            return GenerarListado(grupoSanguineos.ToList());
+        }
+
     }
 
 }

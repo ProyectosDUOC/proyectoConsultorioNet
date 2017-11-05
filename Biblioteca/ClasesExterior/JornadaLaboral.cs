@@ -65,13 +65,14 @@ namespace Biblioteca.ClasesExterior
             get { return domingo; }
             set { domingo = value; }
         }
-        private Sector sector;
+        private int idSector;
 
-        public Sector Sector
+        public int IdSector
         {
-            get { return sector; }
-            set { sector = value; }
+            get { return idSector; }
+            set { idSector = value; }
         }
+
         private String glosa;
 
         public String Glosa
@@ -93,7 +94,7 @@ namespace Biblioteca.ClasesExterior
             viernes = 0;
             sabado = 0;
             domingo = 0;
-            sector = null;
+            idSector = 0;
             glosa = String.Empty;
         }
 
@@ -111,7 +112,7 @@ namespace Biblioteca.ClasesExterior
                 jornadalaboral.viernes = this.Viernes;
                 jornadalaboral.sabado = this.Sabado;
                 jornadalaboral.domingo = this.Domingo;
-                jornadalaboral.id_sector = this.Sector.Id;
+                jornadalaboral.id_sector = this.IdSector;
                 jornadalaboral.glosa = this.Glosa;
 
                 CommonBC.ModeloConsultorio.AddToJornada_laboral(jornadalaboral);
@@ -141,7 +142,7 @@ namespace Biblioteca.ClasesExterior
                 this.Viernes = (int)jornadalaboral.viernes;
                 this.Sabado = (int)jornadalaboral.sabado;
                 this.Domingo = (int)jornadalaboral.domingo;
-                this.Sector.Id = jornadalaboral.id_sector;
+                this.IdSector = jornadalaboral.id_sector;
                 this.Glosa = jornadalaboral.glosa;
                 return true;
             }
@@ -169,7 +170,7 @@ namespace Biblioteca.ClasesExterior
                 jornadalaboral.viernes = this.Viernes;
                 jornadalaboral.sabado = this.Sabado;
                 jornadalaboral.domingo = this.Domingo;
-                jornadalaboral.id_sector = this.Sector.Id;
+                jornadalaboral.id_sector = this.IdSector;
                 jornadalaboral.glosa = this.Glosa;
                 CommonBC.ModeloConsultorio.SaveChanges();
 

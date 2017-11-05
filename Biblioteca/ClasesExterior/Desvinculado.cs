@@ -31,13 +31,15 @@ namespace Biblioteca.ClasesExterior
             get { return fecha; }
             set { fecha = value; }
         }
-        private TipoDesvinculado tipoDesvinculado;
+        private int idTipoDesvinculado;
 
-        public TipoDesvinculado TipoDesvinculado
+        public int IdTipoDesvinculado
         {
-            get { return tipoDesvinculado; }
-            set { tipoDesvinculado = value; }
+            get { return idTipoDesvinculado; }
+            set { idTipoDesvinculado = value; }
         }
+
+       
         private String glosa;
 
         public String Glosa
@@ -54,7 +56,7 @@ namespace Biblioteca.ClasesExterior
             id = 0;
             idUsuario = 0;
             fecha = DateTime.Now;
-            tipoDesvinculado = null;
+            idTipoDesvinculado = 0;
             glosa = String.Empty;
         }
 
@@ -68,7 +70,7 @@ namespace Biblioteca.ClasesExterior
                 desvinculado.id_desvinculado = this.Id;
                 desvinculado.id_usuario = this.IdUsuario;
                 desvinculado.fecha = this.Fecha;
-                desvinculado.id_tipo_desvin = this.TipoDesvinculado.Id;
+                desvinculado.id_tipo_desvin = this.IdTipoDesvinculado;
                 desvinculado.glosa = this.Glosa;
 
                 CommonBC.ModeloConsultorio.AddToDesvinculado(desvinculado);
@@ -95,7 +97,7 @@ namespace Biblioteca.ClasesExterior
 
                 this.IdUsuario = desvinculado.id_usuario;
                 this.Fecha = (DateTime)desvinculado.fecha;
-                this.TipoDesvinculado.Id = desvinculado.id_tipo_desvin;
+                this.idTipoDesvinculado = desvinculado.id_tipo_desvin;
                 this.Glosa = desvinculado.glosa;
 
                 return true;
@@ -118,7 +120,7 @@ namespace Biblioteca.ClasesExterior
 
                 desvinculado.id_usuario = this.IdUsuario;
                 desvinculado.fecha = this.Fecha;
-                desvinculado.id_tipo_desvin = this.TipoDesvinculado.Id;
+                desvinculado.id_tipo_desvin = this.IdTipoDesvinculado;
                 desvinculado.glosa = this.Glosa;
 
                 CommonBC.ModeloConsultorio.SaveChanges();

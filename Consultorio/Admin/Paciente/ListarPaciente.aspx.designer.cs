@@ -13,22 +13,13 @@ namespace Consultorio.Admin.Paciente {
     public partial class ListarPaciente {
         
         /// <summary>
-        /// Control ObjectDataSource1.
+        /// Control GridView1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
-        
-        /// <summary>
-        /// Control btn_Guardar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Guardar;
+        protected global::System.Web.UI.WebControls.GridView GridView1;
         
         /// <summary>
         /// Control btn_Atras.

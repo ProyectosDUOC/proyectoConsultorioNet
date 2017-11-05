@@ -2,16 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.Entity;
+using Consultiorios.DALC;
 
 namespace Biblioteca.Clases
 {
     public class PacienteColeccion
     {
-        public static List<Paciente> GenerarListado(List<Consultiorios.DALC.Paciente> PacienteDALC)
+        public static List<Paciente> GenerarListado()
         {
+
             List<Biblioteca.Clases.Paciente> pacientes = new List<Paciente>();
 
-            foreach (Consultiorios.DALC.Paciente pac in PacienteDALC)
+            ConsultoriosEntities ee = new ConsultoriosEntities();
+            var paci = ee.Paciente; 
+
+            foreach (Consultiorios.DALC.Paciente pac in paci.ToList())
             {
                 Biblioteca.Clases.Paciente paciente = new Paciente();
                
@@ -29,10 +35,6 @@ namespace Biblioteca.Clases
 
         //Listado de todos los elementos
 
-        public List<Paciente> ReadAll()
-        {
-            var pacientes = CommonBC.ModeloConsultorio.Paciente;
-            return GenerarListado(pacientes.ToList());
-        }
+       
     }
 }

@@ -11,7 +11,11 @@ namespace Consultorio.Admin.Paciente
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                GridView1.DataSource = Biblioteca.Clases.PacienteColeccion.GenerarListado();
+                GridView1.DataBind();
+            }
         }
         protected void btn_Guardar_Click(object sender, EventArgs e)
         {

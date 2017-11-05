@@ -7,7 +7,7 @@ namespace Biblioteca.ClasesExterior
 {
     public class DesvinculadoColeccion
     {
-        public List<Desvinculado> GenerarListado(List<Consultiorios.DALC.Desvinculado>  DesvinculadoDALC)
+        public static List<Desvinculado> GenerarListado(List<Consultiorios.DALC.Desvinculado>  DesvinculadoDALC)
         {
             List<Biblioteca.ClasesExterior.Desvinculado> desvinculados = new List<Desvinculado>();
 

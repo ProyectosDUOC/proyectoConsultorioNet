@@ -7,7 +7,7 @@ namespace Biblioteca.ClasesExterior
 {
     public class EspecialidadColeccion
     {
-        public List<Especialidad> GenerarListado(List<Consultiorios.DALC.Especialidad> EspecialidadDALC)
+        public static List<Especialidad> GenerarListado(List<Consultiorios.DALC.Especialidad> EspecialidadDALC)
         {
             List<Biblioteca.ClasesExterior.Especialidad> especialidades = new List<Especialidad>();
 

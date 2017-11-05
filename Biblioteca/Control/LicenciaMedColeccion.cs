@@ -9,7 +9,7 @@ namespace Biblioteca.Control
 {
     public class LicenciaMedColeccion
     {
-        private List<LicenciaMedica> GenerarListado(List<Consultiorios.DALC.Licencia_Medica> licenciaMedicaDALC) 
+        private static List<LicenciaMedica> GenerarListado(List<Consultiorios.DALC.Licencia_Medica> licenciaMedicaDALC) 
         {
             List<Biblioteca.Control.LicenciaMedica> licenciasMedicas = new List<LicenciaMedica>();
             foreach (Consultiorios.DALC.Licencia_Medica lm in licenciaMedicaDALC)

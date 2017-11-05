@@ -9,7 +9,7 @@ namespace Biblioteca.Control
 {
     public class ControlAccesoColeccion
     {
-        public List<ControlAcceso> GenerarListado(List<Consultiorios.DALC.Control_Acceso> controlAccesoDALC)
+        public static List<ControlAcceso> GenerarListado(List<Consultiorios.DALC.Control_Acceso> controlAccesoDALC)
         {
             List<Biblioteca.Clases.ControlAcceso> controlAccesos = new List<ControlAcceso>();
 

@@ -50,17 +50,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsultioriosEDM.Designer.cs">
+    <Compile Include="ConsultorioEDM.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ConsultioriosEDM.edmx</DependentUpon>
+      <DependentUpon>ConsultorioEDM.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="ConsultioriosEDM.edmx">
+    <EntityDeploy Include="ConsultorioEDM.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ConsultioriosEDM.Designer.cs</LastGenOutput>
+      <LastGenOutput>ConsultorioEDM.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
   <ItemGroup>

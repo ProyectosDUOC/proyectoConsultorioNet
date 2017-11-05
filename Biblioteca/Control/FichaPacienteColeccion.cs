@@ -7,7 +7,7 @@ namespace Biblioteca.Control
 {
     public class FichaPacienteColeccion
     {
-        private List<FichaPaciente> GenerarListado(List<Consultiorios.DALC.Ficha_Paciente> fichaPacienteDALC) 
+        private static List<FichaPaciente> GenerarListado(List<Consultiorios.DALC.Ficha_Paciente> fichaPacienteDALC) 
         {
             List<Biblioteca.Control.FichaPaciente> fichasPacientes = new List<FichaPaciente>();
             foreach (Consultiorios.DALC.Ficha_Paciente fp in fichaPacienteDALC)

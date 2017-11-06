@@ -7,7 +7,7 @@ namespace Biblioteca.ClasesExterior
 {
     public class ComunaColeccion
     {
-        public List<Comuna> GenerarListado(List<Consultiorios.DALC.Comuna> ComunaDALC)
+        public static List<Comuna> GenerarListado(List<Consultiorios.DALC.Comuna> ComunaDALC)
         {
             List<Biblioteca.ClasesExterior.Comuna> comunas = new List<Comuna>();
 

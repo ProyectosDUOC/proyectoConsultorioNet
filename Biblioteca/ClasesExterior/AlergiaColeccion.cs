@@ -7,7 +7,7 @@ namespace Biblioteca.ClasesExterior
 {
     public class AlergiaColeccion
     {
-        public List<Alergia> GenerarListado(List<Consultiorios.DALC.Alergia> AlergiaDALC)
+        public static List<Alergia> GenerarListado(List<Consultiorios.DALC.Alergia> AlergiaDALC)
         {
             List<Biblioteca.ClasesExterior.Alergia> alergias= new List<Alergia>();
 

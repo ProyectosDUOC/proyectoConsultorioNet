@@ -48,7 +48,7 @@
                 <td>Fecha nacimiento</td>
                 <td>Edad</td>
                 <td>Género</td>
-                <td>Nacionalidad</td>
+                <td>NaciNacionalidad</td>
             </tr>
             <tr>
                 <td>
@@ -57,17 +57,21 @@
 
                 <td><asp:Label ID="lbl_Edad" runat="server" Text=" "></asp:Label></td>
                 <td>
-                    <asp:DropDownList ID="ddlGenero" runat="server"></asp:DropDownList></td>
+                    <asp:DropDownList ID="DropDownList1" runat="server">
+                    </asp:DropDownList>
+                </td>
                 <td>
                     <asp:DropDownList ID="ddNacionalidad" runat="server">
                     </asp:DropDownList>
+                    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server">
+                    </asp:ObjectDataSource>
                 </td>
             </tr>
             <tr>
                 <td class="style2">&nbsp;</td>
             </tr>
             <tr>
-                <td>Domicilio</td>
+                <td>Domicilio>
                 <td>Comuna</td>
                 <td>Sector</td>
             </tr>

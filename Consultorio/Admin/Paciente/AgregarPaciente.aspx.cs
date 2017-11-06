@@ -24,20 +24,13 @@ namespace Consultorio.Admin.Paciente
                 paciente.Id = int.Parse(txt_nFicha.Text);
                 if (!paciente.Read())
                 {
-                    paciente.IdUsuario. = int.Parse(txt_Rut.Text);
-                    paciente.Usuario.Dv = Char.Parse(txt_dv.Text);
-                    paciente.Usuario.Pnombre = txt_pNombre.Text;
-                    paciente.Usuario.Snombre = txt_sNombre.Text;
-                    paciente.Usuario.Appaterno = txt_apPaterno.Text;
-                    paciente.Usuario.Apmaterno = txt_apMaterno.Text;
-                    paciente.Usuario.Genero.Id = ddlGenero.SelectedIndex;
-                    paciente.Usuario.FechaNacimiento = DateTime.Parse(txt_Fecha.Text);
-                    paciente.Usuario.Nacionalidad.Id = ddNacionalidad.SelectedIndex;
-                    paciente.Usuario.Direccion = txt_Domicilio.Text;
-                    paciente.Usuario.Comuna.Id = ddComuna.SelectedIndex;
-                    paciente.Sector.Id = ddSector.SelectedIndex;
-                    paciente.GrupoSanguineo.Id = ddGrupoS.SelectedIndex;
-                    paciente.Rh.Id = ddlRh.SelectedIndex;
+                    usuario.Rut = int.Parse(txt_Rut.Text);
+                    usuario.Dv =  Convert.ToChar(txt_dv.Text);
+                    usuario.Pnombre = txt_pNombre.Text;
+                    usuario.Snombre = txt_sNombre.Text;
+                    usuario.Appaterno = txt_apPaterno.Text;
+                    usuario.Apmaterno = txt_apMaterno.Text;
+
 
                     if (paciente.Create())
                     {

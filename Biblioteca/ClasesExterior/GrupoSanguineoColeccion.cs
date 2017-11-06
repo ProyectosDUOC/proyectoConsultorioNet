@@ -7,7 +7,8 @@ namespace Biblioteca.ClasesExterior
 {
     public class GrupoSanguineoColeccion
     {
-        public List<GrupoSanguineo> GenerarListado (List<Consultiorios.DALC.Grupo_sanguineo> GrupoSanguienoDALC) 
+
+        public static List<GrupoSanguineo> GenerarListado (List<Consultiorios.DALC.Grupo_sanguineo> GrupoSanguienoDALC) 
         {
             List<Biblioteca.ClasesExterior.GrupoSanguineo> gruposSanguineos = new List<GrupoSanguineo>();
 

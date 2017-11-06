@@ -70,7 +70,7 @@ namespace Biblioteca.ClasesExterior
                 desvinculado.id_desvinculado = this.Id;
                 desvinculado.id_usuario = this.IdUsuario;
                 desvinculado.fecha = this.Fecha;
-                desvinculado.id_tipo_desvin = this.TipoDesvinculado.Id;
+                desvinculado.id_tipo_desvin = this.IdTipoDesvinculado;
                 desvinculado.glosa = this.Glosa;
 
                 CommonBC.ModeloConsultorio.AddToDesvinculado(desvinculado);
@@ -97,7 +97,7 @@ namespace Biblioteca.ClasesExterior
 
                 this.IdUsuario = desvinculado.id_usuario;
                 this.Fecha = (DateTime)desvinculado.fecha;
-                this.TipoDesvinculado.Id = desvinculado.id_tipo_desvin;
+                this.idTipoDesvinculado = desvinculado.id_tipo_desvin;
                 this.Glosa = desvinculado.glosa;
 
                 return true;
@@ -120,7 +120,7 @@ namespace Biblioteca.ClasesExterior
 
                 desvinculado.id_usuario = this.IdUsuario;
                 desvinculado.fecha = this.Fecha;
-                desvinculado.id_tipo_desvin = this.TipoDesvinculado.Id;
+                desvinculado.id_tipo_desvin = this.IdTipoDesvinculado;
                 desvinculado.glosa = this.Glosa;
 
                 CommonBC.ModeloConsultorio.SaveChanges();

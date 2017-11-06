@@ -7,7 +7,7 @@ namespace Biblioteca.ClasesExterior
 {
     public class GeneroColeccion
     {
-        public List<Genero> GenerarListado(List<Consultiorios.DALC.Genero> GeneroDALC)
+        public static List<Genero> GenerarListado(List<Consultiorios.DALC.Genero> GeneroDALC)
         {
             List<Biblioteca.ClasesExterior.Genero> generos = new List<Genero>();
 

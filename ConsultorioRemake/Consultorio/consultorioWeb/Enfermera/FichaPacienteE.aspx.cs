@@ -5,18 +5,18 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace consultorioWeb.Medico
+namespace consultorioWeb.Enfermera
 {
-    public partial class VisualizarHistorial : System.Web.UI.Page
+    public partial class FichaPacienteE : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void btnAtras_Click(object sender, EventArgs e)
+        protected void Button4_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Medico/HistorialMedico.aspx");
+            Response.Redirect("/Enfermera/PanelConsultaE.aspx");
         }
     }
 }

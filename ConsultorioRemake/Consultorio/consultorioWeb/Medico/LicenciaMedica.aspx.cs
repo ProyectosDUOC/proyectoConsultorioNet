@@ -13,5 +13,11 @@ namespace consultorioWeb.Medico
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+            Response.Redirect("/Medico/FichaPaciente.aspx");
+        }
     }
 }

@@ -1,31 +1,18 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Medico/Medico.Master" AutoEventWireup="true" CodeBehind="PanelConsultaM.aspx.cs" Inherits="consultorioWeb.Medico.PanelConsultaM" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Enfermera/Enfermera.Master" AutoEventWireup="true" CodeBehind="PanelConsultaE.aspx.cs" Inherits="consultorioWeb.Enfermera.PanelConsultaE" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-<style type="text/css">
-            .style1 {
-                width: 204px;
-            }
-
-            .style2 {
-                width: 76px;
-            }
-
-            table {
-                border: 2px solid black;
-            }
-        </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
  <div>
                 <table style="width:100%;">
                     <tr>
                         <td class="style1">
-                            <img alt="" src="/Imagen/Foto1.jpg" style="height: 164px; width: 161px" />
-                        </td>
+                            <img alt="" src="/Imagen/Foto4.jpg" style="height: 149px; width: 140px" /></td>
                         <td class="style4">
                             <table style="width: 100%; height: 114px;">
                                 <tr>
                                     <td class="style2">Nombre:</td>
-                                    <td class="style3">Benjamin Mora</td>
+                                    <td class="style3">
+                                        Patricia</td>
                                     <td>
                                         <asp:Button ID="Button2" runat="server" Text="Cerrar Sesión" onclick="Button2_Click" />
                                     </td>
@@ -35,7 +22,7 @@
                                         <asp:Label ID="Label1" runat="server" Text="Rut:"></asp:Label>
                                     </td>
                                     <td class="style3">
-                                        19.111.111-2</td>
+                                        77.777.777-7</td>
                                     <td>
                                         Sector
                                         <asp:DropDownList ID="DropDownList1" runat="server">
@@ -47,7 +34,7 @@
                                         <asp:Label ID="Label2" runat="server" Text="Fecha: "></asp:Label>
                                     </td>
                                     <td class="style3">
-                                        15-09-17</td>
+                                        15-09-2017</td>
                                     <td>
                                         &nbsp;</td>
                                 </tr>
@@ -58,8 +45,7 @@
                     </tr>
                     <tr>
                         <td class="style1">
-                            <asp:Button ID="btnBuscar" runat="server" Text="Buscar" onclick="btnBuscar_Click" />
-                        </td>
+                            &nbsp;</td>
                         <td class="style4">
                             <asp:Label ID="Label3" runat="server" Text="Lista Pacientes"></asp:Label>
                         </td>
@@ -72,6 +58,7 @@
                         <td class="style4">
                             <asp:GridView ID="GridView1" runat="server" Width="467px">
                             </asp:GridView>
+                            <asp:Button ID="Button3" runat="server" Text="btnFichaPacienteBorrar Despues" onclick="Button3_Click" />
                         </td>
                         <td>
                             &nbsp;</td>

@@ -160,8 +160,7 @@
                             <td class="style10">
                                 &nbsp;</td>
                             <td>
-                                <asp:Button ID="Button4" runat="server" Text="Guardar" 
-                                    />
+                                <asp:Button ID="Button4" runat="server" Text="Guardar" />
                             </td>
                         </tr>
                     </table>                    

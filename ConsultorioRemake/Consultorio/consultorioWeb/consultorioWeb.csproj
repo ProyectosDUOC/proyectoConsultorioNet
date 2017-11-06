@@ -64,6 +64,8 @@
     <Content Include="Admin\Secretaria\ListarSecretaria.aspx" />
     <Content Include="Admin\Secretaria\RegistroSecretaria.aspx" />
     <Content Include="CSS\estilo.css" />
+    <Content Include="Enfermera\FichaPacienteE.aspx" />
+    <Content Include="Enfermera\PanelConsultaE.aspx" />
     <Content Include="Imagen\001-dentista.png" />
     <Content Include="Imagen\001-personas-1.png" />
     <Content Include="Imagen\001-plan-de-estudios.png" />
@@ -302,6 +304,27 @@
     <Compile Include="Admin\Secretaria\RegistroSecretaria.aspx.designer.cs">
       <DependentUpon>RegistroSecretaria.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Enfermera\Enfermera.Master.cs">
+      <DependentUpon>Enfermera.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enfermera\Enfermera.Master.designer.cs">
+      <DependentUpon>Enfermera.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Enfermera\FichaPacienteE.aspx.cs">
+      <DependentUpon>FichaPacienteE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enfermera\FichaPacienteE.aspx.designer.cs">
+      <DependentUpon>FichaPacienteE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Enfermera\PanelConsultaE.aspx.cs">
+      <DependentUpon>PanelConsultaE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Enfermera\PanelConsultaE.aspx.designer.cs">
+      <DependentUpon>PanelConsultaE.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -360,7 +383,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Enfermera\" />
     <Folder Include="Secretaria\" />
   </ItemGroup>
   <ItemGroup>
@@ -373,6 +395,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Medico\Medico.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Enfermera\Enfermera.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

@@ -23,13 +23,13 @@ namespace Biblioteca.ClasesExterior
             set { idAlergia = value; }
         }
 
-        private Paciente paciente;
+        private int idPaciente;
 
-        public Paciente Paciente
+        public int IdPaciente
         {
-            get { return paciente; }
-            set { paciente = value; }
-        } 
+            get { return idPaciente; }
+            set { idPaciente = value; }
+        }
 
         public AlergiaPaciente()
         {
@@ -39,7 +39,7 @@ namespace Biblioteca.ClasesExterior
         {
             id = 0;
             idAlergia = 0;
-            paciente = null;
+            idPaciente = 0;
         }
 
         public bool Create() {

@@ -31,13 +31,15 @@ namespace Biblioteca.ClasesExterior
             get { return fecha; }
             set { fecha = value; }
         }
-        private TipoDesvinculado tipoDesvinculado;
+        private int idTipoDesvinculado;
 
-        public TipoDesvinculado TipoDesvinculado
+        public int IdTipoDesvinculado
         {
-            get { return tipoDesvinculado; }
-            set { tipoDesvinculado = value; }
+            get { return idTipoDesvinculado; }
+            set { idTipoDesvinculado = value; }
         }
+
+       
         private String glosa;
 
         public String Glosa
@@ -54,7 +56,7 @@ namespace Biblioteca.ClasesExterior
             id = 0;
             idUsuario = 0;
             fecha = DateTime.Now;
-            tipoDesvinculado = null;
+            idTipoDesvinculado = 0;
             glosa = String.Empty;
         }
 

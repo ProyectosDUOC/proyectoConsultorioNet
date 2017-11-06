@@ -43,8 +43,59 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClasesExterior\Alergia.cs" />
+    <Compile Include="ClasesExterior\AlergiaColeccion.cs" />
+    <Compile Include="ClasesExterior\AlergiaPaciente.cs" />
+    <Compile Include="ClasesExterior\AlergiaPacienteColeccion.cs" />
+    <Compile Include="ClasesExterior\Comuna.cs" />
+    <Compile Include="ClasesExterior\ComunaColeccion.cs" />
+    <Compile Include="ClasesExterior\Desvinculado.cs" />
+    <Compile Include="ClasesExterior\DesvinculadoColeccion.cs" />
+    <Compile Include="ClasesExterior\Especialidad.cs" />
+    <Compile Include="ClasesExterior\EspecialidadColeccion.cs" />
+    <Compile Include="ClasesExterior\Genero.cs" />
+    <Compile Include="ClasesExterior\GeneroColeccion.cs" />
+    <Compile Include="ClasesExterior\GrupoSanguineo.cs" />
+    <Compile Include="ClasesExterior\GrupoSanguineoColeccion.cs" />
+    <Compile Include="ClasesExterior\JornadaLaboral.cs" />
+    <Compile Include="ClasesExterior\JornadaLaboralColleccion.cs" />
+    <Compile Include="ClasesExterior\Medicamentos.cs" />
+    <Compile Include="ClasesExterior\MedicamentosColeccion.cs" />
+    <Compile Include="ClasesExterior\Nacionalidad.cs" />
+    <Compile Include="ClasesExterior\NacionalidadColeccion.cs" />
+    <Compile Include="ClasesExterior\Pais.cs" />
+    <Compile Include="ClasesExterior\PaisColeccion.cs" />
+    <Compile Include="ClasesExterior\Provincia.cs" />
+    <Compile Include="ClasesExterior\ProvinciaColeccion.cs" />
+    <Compile Include="ClasesExterior\Region.cs" />
+    <Compile Include="ClasesExterior\RegionColeccion.cs" />
+    <Compile Include="ClasesExterior\Rh_sanguineo.cs" />
+    <Compile Include="ClasesExterior\Rh_sanguineoColeccion.cs" />
+    <Compile Include="ClasesExterior\Sector.cs" />
+    <Compile Include="ClasesExterior\SectorColeccion.cs" />
+    <Compile Include="ClasesExterior\TipoDesvinculado.cs" />
+    <Compile Include="ClasesExterior\TipoDesvinculadoColeccion.cs" />
+    <Compile Include="ClasesExterior\TipoUsuario.cs" />
+    <Compile Include="ClasesExterior\TipoUsuarioColeccion.cs" />
+    <Compile Include="Clases\Consultorio.cs" />
+    <Compile Include="Clases\ConsultorioColeccion.cs" />
+    <Compile Include="Clases\Enfermera.cs" />
+    <Compile Include="Clases\EnfermeraColeccion.cs" />
+    <Compile Include="Clases\Medico.cs" />
+    <Compile Include="Clases\MedicoColeccion.cs" />
+    <Compile Include="Clases\Paciente.cs" />
+    <Compile Include="Clases\PacienteColeccion.cs" />
+    <Compile Include="Clases\Secretaria.cs" />
+    <Compile Include="Clases\SecretariaColeccion.cs" />
+    <Compile Include="Clases\Usuario.cs" />
+    <Compile Include="Clases\UsuarioColeccion.cs" />
     <Compile Include="CommonBC.cs" />
     <Compile Include="Control\ControlAcceso.cs" />
+    <Compile Include="Control\ControlAccesoColeccion.cs" />
+    <Compile Include="Control\FichaPaciente.cs" />
+    <Compile Include="Control\FichaPacienteColeccion.cs" />
+    <Compile Include="Control\LicenciaMedColeccion.cs" />
+    <Compile Include="Control\LicenciaMedica.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -56,9 +107,7 @@
   <ItemGroup>
     <None Include="App.Config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Clases\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

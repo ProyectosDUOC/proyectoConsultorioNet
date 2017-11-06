@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using capaDatos;
 
-namespace capaNegocio.Control
+namespace capaNegocio
 {
     public class ControlAcceso
     {

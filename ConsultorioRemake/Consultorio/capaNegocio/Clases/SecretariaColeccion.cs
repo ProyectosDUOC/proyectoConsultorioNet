@@ -24,6 +24,7 @@ namespace capaNegocio
             return secretarias;
         }
 
+        
         //Listado de todos los elementos
 
         public List<Secretaria> ReadAll()

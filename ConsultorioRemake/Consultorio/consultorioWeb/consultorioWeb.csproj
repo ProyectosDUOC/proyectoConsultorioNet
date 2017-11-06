@@ -51,6 +51,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Administrador.aspx" />
+    <Content Include="Admin\Enfermera\ListarEnfermera.aspx" />
+    <Content Include="Admin\Enfermera\RegistroEnfermera.aspx" />
+    <Content Include="Admin\Medico\ListarMedico.aspx" />
+    <Content Include="Admin\Medico\RegistroMedico.aspx" />
+    <Content Include="Admin\Paciente\ListarPaciente.aspx" />
+    <Content Include="Admin\Paciente\RegistroPaciente.aspx" />
+    <Content Include="Admin\PanelEnfermera.aspx" />
+    <Content Include="Admin\PanelMedico.aspx" />
+    <Content Include="Admin\PanelPaciente.aspx" />
+    <Content Include="Admin\PanelSecretaria.aspx" />
+    <Content Include="Admin\Secretaria\ListarSecretaria.aspx" />
+    <Content Include="Admin\Secretaria\RegistroSecretaria.aspx" />
     <Content Include="CSS\estilo.css" />
     <Content Include="Imagen\001-dentista.png" />
     <Content Include="Imagen\001-personas-1.png" />
@@ -201,6 +213,90 @@
     <Compile Include="Admin\Administrador.aspx.designer.cs">
       <DependentUpon>Administrador.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\Enfermera\ListarEnfermera.aspx.cs">
+      <DependentUpon>ListarEnfermera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Enfermera\ListarEnfermera.aspx.designer.cs">
+      <DependentUpon>ListarEnfermera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Enfermera\RegistroEnfermera.aspx.cs">
+      <DependentUpon>RegistroEnfermera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Enfermera\RegistroEnfermera.aspx.designer.cs">
+      <DependentUpon>RegistroEnfermera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Medico\ListarMedico.aspx.cs">
+      <DependentUpon>ListarMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Medico\ListarMedico.aspx.designer.cs">
+      <DependentUpon>ListarMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Medico\RegistroMedico.aspx.cs">
+      <DependentUpon>RegistroMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Medico\RegistroMedico.aspx.designer.cs">
+      <DependentUpon>RegistroMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Paciente\ListarPaciente.aspx.cs">
+      <DependentUpon>ListarPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Paciente\ListarPaciente.aspx.designer.cs">
+      <DependentUpon>ListarPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Paciente\RegistroPaciente.aspx.cs">
+      <DependentUpon>RegistroPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Paciente\RegistroPaciente.aspx.designer.cs">
+      <DependentUpon>RegistroPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PanelEnfermera.aspx.cs">
+      <DependentUpon>PanelEnfermera.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PanelEnfermera.aspx.designer.cs">
+      <DependentUpon>PanelEnfermera.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PanelMedico.aspx.cs">
+      <DependentUpon>PanelMedico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PanelMedico.aspx.designer.cs">
+      <DependentUpon>PanelMedico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PanelPaciente.aspx.cs">
+      <DependentUpon>PanelPaciente.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PanelPaciente.aspx.designer.cs">
+      <DependentUpon>PanelPaciente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\PanelSecretaria.aspx.cs">
+      <DependentUpon>PanelSecretaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\PanelSecretaria.aspx.designer.cs">
+      <DependentUpon>PanelSecretaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Secretaria\ListarSecretaria.aspx.cs">
+      <DependentUpon>ListarSecretaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Secretaria\ListarSecretaria.aspx.designer.cs">
+      <DependentUpon>ListarSecretaria.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Secretaria\RegistroSecretaria.aspx.cs">
+      <DependentUpon>RegistroSecretaria.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Secretaria\RegistroSecretaria.aspx.designer.cs">
+      <DependentUpon>RegistroSecretaria.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -217,10 +313,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Admin\Enfermera\" />
-    <Folder Include="Admin\Medico\" />
-    <Folder Include="Admin\Paciente\" />
-    <Folder Include="Admin\Secretaria\" />
     <Folder Include="Enfermera\" />
     <Folder Include="Secretaria\" />
   </ItemGroup>
@@ -228,10 +320,10 @@
     <Content Include="Medico\Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Admin\Admin.Master" />
+    <Content Include="Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.sitemap" />
+    <Content Include="Admin\Admin.Master" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

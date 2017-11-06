@@ -13,5 +13,31 @@ namespace consultorioWeb.Admin
         {
 
         }
+
+        protected void btnPaci_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Admin/PanelPaciente.aspx");
+        }
+
+        protected void btnEnfermera_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Admin/PanelEnfermera.aspx");
+        }
+
+        protected void btnMedico_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Admin/PanelMedico.aspx");
+        }
+
+        protected void btnSecretaria_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Admin/PanelSecretaria.aspx");
+        }
+
+        protected void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Login.aspx");
+        }
+      
     }
 }

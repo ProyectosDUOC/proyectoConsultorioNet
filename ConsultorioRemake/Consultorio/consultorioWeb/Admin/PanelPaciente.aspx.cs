@@ -26,7 +26,7 @@ namespace consultorioWeb.Admin
 
         protected void btn_Agregar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/Paciente/RegistroPaciente.aspx");
+            Response.Redirect("/Admin/Paciente/Administrador.aspx");
         }
     }
 }

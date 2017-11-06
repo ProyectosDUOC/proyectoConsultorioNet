@@ -8,8 +8,7 @@
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body>
-    
+<body>    
     <div>  
          <form id="form1" runat="server">     
          <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />

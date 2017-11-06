@@ -7,7 +7,7 @@ namespace capaNegocio
 {
     public class NacionalidadColeccion
     {
-        public List<Nacionalidad> GenerarListado(List<capaDatos.Nacionalidad> nacionalidadesDALC)
+        public static List<Nacionalidad> GenerarListado(List<capaDatos.Nacionalidad> nacionalidadesDALC)
         {
             List<capaNegocio.Nacionalidad> nacionalidades = new List<Nacionalidad>();
 
@@ -20,6 +20,12 @@ namespace capaNegocio
                 nacionalidades.Add(nacionalidad);
             }
             return nacionalidades;
+        }
+
+        public List<Nacionalidad> ReadAll()
+        {
+            var nacionalidades = CommonBC.ModeloConsultorio.Nacionalidad;
+            return GenerarListado(nacionalidades.ToList());
         }
     }
 }

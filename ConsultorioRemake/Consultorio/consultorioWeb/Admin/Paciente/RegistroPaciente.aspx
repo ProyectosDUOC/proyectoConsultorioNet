@@ -14,7 +14,7 @@
                 <td><asp:TextBox ID="txt_Rut" TextMode="Number" runat="server"></asp:TextBox></td>
                 <td>-<asp:TextBox ID="txt_dv" runat="server" Width="35px"></asp:TextBox>
                 </td>
-                <td><asp:Button ID="btn_Buscar" runat="server" Text="Buscar" 
+                <td><asp:Button ID="btn_Buscar" runat="server" Text="Buscar" onclick="btn_Buscar_Click" 
                          /></td>
             </tr>
         </table>
@@ -41,8 +41,14 @@
             <tr>
                 <td>Fecha nacimiento</td>
                 <td>Edad</td>
-                <td>Género</td>
-                <td>NaciNacionalidad</td>
+                <td>Género<asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+                        SelectMethod="ReadAll" TypeName="capaNegocio.GeneroColeccion">
+                    </asp:ObjectDataSource>
+                </td>
+                <td>Nacionalidad<asp:ObjectDataSource ID="ObjectDataSource6" runat="server" 
+                        SelectMethod="ReadAll" TypeName="capaNegocio.NacionalidadColeccion">
+                    </asp:ObjectDataSource>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -51,11 +57,14 @@
 
                 <td><asp:Label ID="lbl_Edad" runat="server" Text=" "></asp:Label></td>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server">
+                    <asp:DropDownList ID="ddGenero" runat="server" DataSourceID="ObjectDataSource1" 
+                        DataTextField="Nombre" DataValueField="Id">
                     </asp:DropDownList>
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddNacionalidad" runat="server">
+                    <asp:DropDownList ID="ddNacionalidad" runat="server" 
+                        DataSourceID="ObjectDataSource6" DataTextField="Nombre" 
+                        DataValueField="Id">
                     </asp:DropDownList>
                 </td>
             </tr>
@@ -64,17 +73,25 @@
             </tr>
             <tr>
                 <td>Domicilio>
-                <td>Comuna</td>
-                <td>Sector</td>
+                <td>Comuna<asp:ObjectDataSource ID="ObjectDataSource4" runat="server" 
+                        SelectMethod="ReadAll" TypeName="capaNegocio.ComunaColeccion">
+                    </asp:ObjectDataSource>
+                </td>
+                <td>Sector<asp:ObjectDataSource ID="ObjectDataSource5" runat="server" 
+                        SelectMethod="ReadAll" TypeName="capaNegocio.SectorColeccion">
+                    </asp:ObjectDataSource>
+                </td>
             </tr>
             <tr>                
                 <td><asp:TextBox ID="txt_Domicilio" runat="server"></asp:TextBox></td>
                 <td>
-                    <asp:DropDownList ID="ddComuna" runat="server">
+                    <asp:DropDownList ID="ddComuna" runat="server" DataSourceID="ObjectDataSource4" 
+                        DataTextField="Nombre" DataValueField="Id">
                     </asp:DropDownList>
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddSector" runat="server">
+                    <asp:DropDownList ID="ddSector" runat="server" DataSourceID="ObjectDataSource5" 
+                        DataTextField="Nombre" DataValueField="Id">
                     </asp:DropDownList>
                 </td>                   
             </tr>
@@ -99,12 +116,20 @@
             </tr>
             <tr>                
                 <td>
-                    <asp:DropDownList ID="ddGrupoS" runat="server">
+                    <asp:DropDownList ID="ddGrupoS" runat="server" DataSourceID="ObjectDataSource7" 
+                        DataTextField="Nombre" DataValueField="Id">
                     </asp:DropDownList>
+                    <asp:ObjectDataSource ID="ObjectDataSource7" runat="server" 
+                        SelectMethod="ReadAll" TypeName="capaNegocio.GrupoSanguineoColeccion">
+                    </asp:ObjectDataSource>
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddlRh" runat="server">
+                    <asp:DropDownList ID="ddRh" runat="server" DataSourceID="ObjectDataSource8" 
+                        DataTextField="Nombre" DataValueField="Id">
                     </asp:DropDownList>
+                    <asp:ObjectDataSource ID="ObjectDataSource8" runat="server" 
+                        SelectMethod="ReadAll" TypeName="capaNegocio.Rh_sanguineoColeccion">
+                    </asp:ObjectDataSource>
                 </td>      
                 <td>&nbsp;</td>             
             </tr>

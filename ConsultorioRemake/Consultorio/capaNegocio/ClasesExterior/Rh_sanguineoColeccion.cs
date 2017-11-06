@@ -7,7 +7,7 @@ namespace capaNegocio
 {
     public class Rh_sanguineoColeccion
     {
-        List<capaNegocio.Rh_sanguineo> GenerarListado(List<capaDatos.Rh_sanguineo> rhsDALC)
+       public static List<capaNegocio.Rh_sanguineo> GenerarListado(List<capaDatos.Rh_sanguineo> rhsDALC)
         {
             List<Rh_sanguineo> rhsLista = new List<Rh_sanguineo>();
 
@@ -21,5 +21,11 @@ namespace capaNegocio
             }
             return rhsLista;
         }
+
+       public List<Rh_sanguineo> ReadAll()
+       {
+           var rhs = CommonBC.ModeloConsultorio.Rh_sanguineo;
+           return GenerarListado(rhs.ToList());
+       }
     }
 }

@@ -7,7 +7,7 @@ namespace capaNegocio
 {
     public class SectorColeccion
     {
-        List<Sector> GenerarListado(List<capaDatos.Sector> sectoresDALC)
+     public static List<Sector> GenerarListado(List<capaDatos.Sector> sectoresDALC)
         {
             List<Sector> sectores = new List<Sector>();
 
@@ -21,5 +21,10 @@ namespace capaNegocio
             }
             return sectores;
         }
+     public List<Sector> ReadAll()
+     {
+         var sectores = CommonBC.ModeloConsultorio.Sector;
+         return GenerarListado(sectores.ToList());
+     }
     }
 }

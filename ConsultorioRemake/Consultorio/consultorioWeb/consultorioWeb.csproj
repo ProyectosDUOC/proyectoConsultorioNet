@@ -314,10 +314,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enfermera\" />
+    <Folder Include="Medico\" />
     <Folder Include="Secretaria\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Medico\Web.sitemap" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.sitemap" />

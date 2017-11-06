@@ -13,5 +13,10 @@ namespace consultorioWeb.Admin.Secretaria
         {
 
         }
+
+        protected void btn_Atras_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Admin/PanelSecretaria.aspx");
+        }
     }
 }

@@ -13,5 +13,10 @@ namespace consultorioWeb.Admin.Paciente
         {
 
         }
+
+        protected void btnAtras_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Admin/PanelPaciente.aspx");
+        }
     }
 }

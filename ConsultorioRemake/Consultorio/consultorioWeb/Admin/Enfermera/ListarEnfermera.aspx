@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <div>
+    <div>
                
                 <asp:Button ID="btn_Atras" runat="server" Text="Atrás" Width="188px" 
                     Height="55px" onclick="btn_Atras_Click" />

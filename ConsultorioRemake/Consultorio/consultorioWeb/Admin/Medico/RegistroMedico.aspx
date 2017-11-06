@@ -16,7 +16,9 @@
                 <td><asp:TextBox ID="txt_nFicha" runat="server"></asp:TextBox></td>
                 <td><asp:TextBox ID="txt_Rut" runat="server"></asp:TextBox></td>
                 <td class="style1">-</td>
-                <td class="style2"><asp:Label ID="lbl_Dv" runat="server" Text=" "></asp:Label></td>
+                <td class="style2"><asp:Label ID="lbl_Dv" runat="server" Text=" "></asp:Label>
+                    <asp:TextBox ID="TextBox1" runat="server" Width="51px"></asp:TextBox>
+                </td>
                 <td><asp:TextBox ID="txtMedico" runat="server"></asp:TextBox></td>
                 <td><asp:DropDownList ID="DropDownList2" runat="server"></asp:DropDownList></td>
                 <td><asp:Button ID="btn_Buscar" runat="server" Text="Buscar" 
@@ -65,7 +67,10 @@
                 <td><asp:Label ID="lbl_Edad" runat="server" Text=" "></asp:Label></td>
                 <td>
                     <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList></td>
-                <td><asp:TextBox ID="txt_nacionalidad" runat="server"></asp:TextBox></td>
+                <td>
+                    <asp:DropDownList ID="DropDownList3" runat="server">
+                    </asp:DropDownList>
+                </td>
             </tr>
             <tr>
                 <td class="style2">&nbsp;</td>
@@ -77,8 +82,14 @@
             </tr>
             <tr>                
                 <td><asp:TextBox ID="txt_Domicilio" runat="server"></asp:TextBox></td>
-                <td><asp:TextBox ID="txt_Comuna" runat="server"></asp:TextBox></td>
-                <td><asp:TextBox ID="txt_Sector" runat="server"></asp:TextBox></td>                   
+                <td>
+                    <asp:DropDownList ID="DropDownList5" runat="server">
+                    </asp:DropDownList>
+                </td>
+                <td>
+                    <asp:DropDownList ID="DropDownList4" runat="server">
+                    </asp:DropDownList>
+                </td>                   
             </tr>
             <tr>
                 <td class="style2">&nbsp;</td>

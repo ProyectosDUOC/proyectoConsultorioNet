@@ -364,7 +364,9 @@
     <Folder Include="Secretaria\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Web.sitemap" />
+    <Content Include="Web.sitemap">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Admin.Master" />

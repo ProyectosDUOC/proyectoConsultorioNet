@@ -21,7 +21,6 @@ namespace capaNegocio
                 return _modeloConsultorio;
             }
         }
-
         public CommonBC() { }
     }
 }

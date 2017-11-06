@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode url="" title="Consultorio" description="" >
+
+    <siteMapNode url="Secretaria/MenuSecretaria.aspx" title="Secretaria"  description="">
+      <siteMapNode url="Secretaria/BuscarDoctor.aspx" title="Busqueda Doctor"  description="" />
+      <siteMapNode url="Secretaria/PanelConsultas.aspx" title="Panel Consultas"  description="" >
+        <siteMapNode url="Secretaria/AgregarPacienteConsulta.aspx" title="Agregar Paciente"/>
+      </siteMapNode>
+      <siteMapNode url="Secretaria/AgendarHora.aspx" title="Agendar Hora" description="" >
+        <siteMapNode url="Secretaria/AgregarPacienteHora" title="Agregar Hora" description=""/>
+      </siteMapNode>
+    </siteMapNode>
+
+    <siteMapNode url ="Enfermera/PanelConsultaE.aspx" title="Enfermera" description="">
+      <siteMapNode url="Enfermera/FichaPacienteE.aspx" title="Ficha Paciente" description=""/>
+    </siteMapNode>
+
+    <siteMapNode url="Medico/PanelConsultaM.aspx" title="Medico" description="">
+      <siteMapNode url="Medico/HistorialMedico.aspx" title="Historial Medico" description=""/>
+      <siteMapNode url="Medico/FichaPacienteM.aspx" title="Ficha Paciente" description=""/>
+      <siteMapNode url="Medico/LicenciaMedica.aspx" title="Licencia Medica" description=""/>
+      <siteMapNode url="Medico/VisualizarHistorial.aspx" title="Ver Historial" description=""/>
+    </siteMapNode>
+
+    
+    
+    
+    <siteMapNode url="Admin/Administrador.aspx" title="Administrador" description="">
+    
+      <siteMapNode url="Admin/PanelEnfermera.aspx" title="Enfermera" description="" >
+        <siteMapNode url="Admin/Enfermera/RegistroEnfermera.aspx" title="Agregar Enfermera" description=""/>
+        <siteMapNode url="Admin/Enfermera/ListarEnfermera.aspx" title="Listar Enfermera" description=""/>
+      </siteMapNode>
+      
+      <siteMapNode url="Admin/PanelMedico.aspx" title="Medico" description="" >
+        <siteMapNode url="Admin/Medico/RegistroMedico.aspx" title="Agregar Medico" description=""/>
+        <siteMapNode url="Admin/Medico/ListarMedico.aspx" title="Listar Medico" description=""/>
+      </siteMapNode>
+      
+      
+      <siteMapNode url="Admin/PanelPaciente.aspx" title="Paciente" description="" >
+        <siteMapNode url="Admin/Paciente/RegistroPaciente.aspx" title="Buscar Paciente" description=""/>
+        <siteMapNode url="Admin/Paciente/ListarPaciente.aspx" title="Listar Pacientes" description=""/>
+      </siteMapNode>
+      
+      
+      <siteMapNode url="Admin/PanelSecretaria.aspx" title="Secretaria" description="" >
+        <siteMapNode url="Admin/Secretaria/RegistroSecretaria.aspx" title="Agregar Secretaria" description=""/>
+        <siteMapNode url="Admin/Secretaria/ListarSecretaria.aspx" title="Listar Secretaria" description=""/>
+      </siteMapNode>
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

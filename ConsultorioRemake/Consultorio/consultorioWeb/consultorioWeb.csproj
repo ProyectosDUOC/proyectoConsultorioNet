@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F5B5A5FA-8FE2-41C6-84A1-BA1783752921}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>consultorioWeb</RootNamespace>
+    <AssemblyName>consultorioWeb</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CSS\estilo.css" />
+    <Content Include="Imagen\001-dentista.png" />
+    <Content Include="Imagen\001-personas-1.png" />
+    <Content Include="Imagen\001-plan-de-estudios.png" />
+    <Content Include="Imagen\002-medico-8.png" />
+    <Content Include="Imagen\002-personas.png" />
+    <Content Include="Imagen\002-usb.png" />
+    <Content Include="Imagen\003-archivo.png" />
+    <Content Include="Imagen\003-medico-2.png" />
+    <Content Include="Imagen\004-charlar.png" />
+    <Content Include="Imagen\004-saludable.png" />
+    <Content Include="Imagen\005-medico-1.png" />
+    <Content Include="Imagen\005-medico-5.png" />
+    <Content Include="Imagen\005-portapapeles.png" />
+    <Content Include="Imagen\006-dna-1.png" />
+    <Content Include="Imagen\006-estuche.png" />
+    <Content Include="Imagen\007-diploma.png" />
+    <Content Include="Imagen\007-rayos-x.png" />
+    <Content Include="Imagen\008-codificacion.png" />
+    <Content Include="Imagen\008-dna.png" />
+    <Content Include="Imagen\009-analitica-3.png" />
+    <Content Include="Imagen\009-botiquin-de-primeros-auxilios.png" />
+    <Content Include="Imagen\010-analitica-2.png" />
+    <Content Include="Imagen\010-equipo-de-emergencia.png" />
+    <Content Include="Imagen\011-analitica-1.png" />
+    <Content Include="Imagen\011-cama.png" />
+    <Content Include="Imagen\012-analitica.png" />
+    <Content Include="Imagen\012-reportar-1.png" />
+    <Content Include="Imagen\013-bacterias.png" />
+    <Content Include="Imagen\013-escritorio-3.png" />
+    <Content Include="Imagen\013-reportar.png" />
+    <Content Include="Imagen\014-cardiograma.png" />
+    <Content Include="Imagen\014-escritorio-2.png" />
+    <Content Include="Imagen\015-botiquin.png" />
+    <Content Include="Imagen\015-escritorio-1.png" />
+    <Content Include="Imagen\016-enfermera-1.png" />
+    <Content Include="Imagen\016-escritorio.png" />
+    <Content Include="Imagen\016-jeringa-1.png" />
+    <Content Include="Imagen\017-cuidar.png" />
+    <Content Include="Imagen\017-dentista.png" />
+    <Content Include="Imagen\017-tabletas.png" />
+    <Content Include="Imagen\018-drogas-3.png" />
+    <Content Include="Imagen\018-hospital-3.png" />
+    <Content Include="Imagen\019-enfermera.png" />
+    <Content Include="Imagen\019-oido.png" />
+    <Content Include="Imagen\020-cerebro-1.png" />
+    <Content Include="Imagen\020-hospital-2.png" />
+    <Content Include="Imagen\020-medico-6.png" />
+    <Content Include="Imagen\021-doctor-2.png" />
+    <Content Include="Imagen\021-drogas-2.png" />
+    <Content Include="Imagen\021-medico-5.png" />
+    <Content Include="Imagen\022-cardiograma-2.png" />
+    <Content Include="Imagen\022-doctor-1.png" />
+    <Content Include="Imagen\022-medico-4.png" />
+    <Content Include="Imagen\023-drogas-1.png" />
+    <Content Include="Imagen\023-medico-3.png" />
+    <Content Include="Imagen\023-medico.png" />
+    <Content Include="Imagen\024-escala.png" />
+    <Content Include="Imagen\024-transporte.png" />
+    <Content Include="Imagen\025-dedo.png" />
+    <Content Include="Imagen\025-medico-2.png" />
+    <Content Include="Imagen\025-salud.png" />
+    <Content Include="Imagen\026-libro.png" />
+    <Content Include="Imagen\026-medico-1.png" />
+    <Content Include="Imagen\026-muestra-de-sangre.png" />
+    <Content Include="Imagen\027-medico.png" />
+    <Content Include="Imagen\027-tabletas.png" />
+    <Content Include="Imagen\028-bloc.png" />
+    <Content Include="Imagen\028-hospital-1.png" />
+    <Content Include="Imagen\028-saludable.png" />
+    <Content Include="Imagen\029-bacterias.png" />
+    <Content Include="Imagen\029-jeringa.png" />
+    <Content Include="Imagen\029-rodilla.png" />
+    <Content Include="Imagen\030-bisturi.png" />
+    <Content Include="Imagen\030-medicina.png" />
+    <Content Include="Imagen\030-muestra-de-sangre-1.png" />
+    <Content Include="Imagen\031-doctor.png" />
+    <Content Include="Imagen\031-transfusion-de-sangre.png" />
+    <Content Include="Imagen\032-cardiograma-1.png" />
+    <Content Include="Imagen\032-jeringa-1.png" />
+    <Content Include="Imagen\032-pastillas.png" />
+    <Content Include="Imagen\033-hospital.png" />
+    <Content Include="Imagen\033-premolar.png" />
+    <Content Include="Imagen\033-tabletas.png" />
+    <Content Include="Imagen\034-drogas-3.png" />
+    <Content Include="Imagen\034-ojo.png" />
+    <Content Include="Imagen\034-tirita.png" />
+    <Content Include="Imagen\035-estomago.png" />
+    <Content Include="Imagen\036-botiquin-de-primeros-auxilios.png" />
+    <Content Include="Imagen\037-drogas-2.png" />
+    <Content Include="Imagen\037-pastillas-1.png" />
+    <Content Include="Imagen\038-higado.png" />
+    <Content Include="Imagen\039-drogas-1.png" />
+    <Content Include="Imagen\039-rinon.png" />
+    <Content Include="Imagen\040-historial-medico.png" />
+    <Content Include="Imagen\041-dedo.png" />
+    <Content Include="Imagen\041-epidermis.png" />
+    <Content Include="Imagen\042-muestra-de-sangre.png" />
+    <Content Include="Imagen\043-pastillas.png" />
+    <Content Include="Imagen\043-tirantes.png" />
+    <Content Include="Imagen\044-bloc.png" />
+    <Content Include="Imagen\044-pildora.png" />
+    <Content Include="Imagen\045-jeringa.png" />
+    <Content Include="Imagen\045-rodilla.png" />
+    <Content Include="Imagen\046-bisturi.png" />
+    <Content Include="Imagen\046-cinta.png" />
+    <Content Include="Imagen\047-antibiotico.png" />
+    <Content Include="Imagen\047-transfusion-de-sangre.png" />
+    <Content Include="Imagen\048-cardiograma-1.png" />
+    <Content Include="Imagen\048-nariz.png" />
+    <Content Include="Imagen\049-premolar.png" />
+    <Content Include="Imagen\049-virus.png" />
+    <Content Include="Imagen\050-dna.png" />
+    <Content Include="Imagen\050-ojo.png" />
+    <Content Include="Imagen\051-cerebro.png" />
+    <Content Include="Imagen\052-cardiograma.png" />
+    <Content Include="Imagen\053-corazon.png" />
+    <Content Include="Imagen\058-drogas.png" />
+    <Content Include="Imagen\07.jpg" />
+    <Content Include="Imagen\070-estetoscopio.png" />
+    <Content Include="Imagen\favicon.ico" />
+    <Content Include="Imagen\Foto1.jpg" />
+    <Content Include="Imagen\foto2.jpg" />
+    <Content Include="Imagen\Foto3.jpg" />
+    <Content Include="Imagen\foto4.jpg" />
+    <Content Include="Imagen\LogoGobierno.png" />
+    <Content Include="Login.aspx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\capaNegocio\capaNegocio.csproj">
+      <Project>{5EE1BEB9-CD12-477C-BE9E-9007244B2AAE}</Project>
+      <Name>capaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Admin\Enfermera\" />
+    <Folder Include="Admin\Medico\" />
+    <Folder Include="Admin\Paciente\" />
+    <Folder Include="Admin\Secretaria\" />
+    <Folder Include="Enfermera\" />
+    <Folder Include="Secretaria\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Medico\Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\Admin.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52632</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

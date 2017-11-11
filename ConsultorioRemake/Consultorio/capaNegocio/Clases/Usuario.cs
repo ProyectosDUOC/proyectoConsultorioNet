@@ -183,6 +183,41 @@ namespace capaNegocio
                return false;
             }
         }
+        public bool ReadRut()
+        {
+            try
+            {
+                capaDatos.Usuario usuario = CommonBC.ModeloConsultorio.Usuario.First
+                    (
+                        usu => usu.rut_usuario == this.rut
+                    );
+                
+                this.id = usuario.id_usuario;
+                this.rut = usuario.rut_usuario;
+                this.dv = Char.Parse(usuario.dv_usuario);
+                this.foto = usuario.foto;
+                this.pnombre = usuario.pnombre;
+                this.snombre = usuario.snombre;
+                this.appaterno = usuario.appaterno;
+                this.apmaterno = usuario.apmaterno;
+                this.fechaNacimiento = usuario.fecha_nacimiento;
+                this.idGenero = usuario.id_genero;
+                this.idNacionalidad = usuario.id_nacionalidad;
+                this.idComuna = usuario.id_comuna;
+                this.direccion = usuario.direccion;
+                this.fono1 = usuario.fono1.ToString();
+                this.fono2 = usuario.fono2.ToString();
+                this.activo = usuario.activo;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+       
+
         public bool Read() {
             try
             {

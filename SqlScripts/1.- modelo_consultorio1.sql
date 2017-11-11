@@ -23,33 +23,30 @@ go
 
 CREATE TABLE Consultorio
   (
-    id_consultorio int NOT NULL,
+    id_consultorio int NOT NULL IDENTITY(1,1) PRIMARY KEY,
     rut_consultorio int,
     dv char(1),
     id_comuna INT NOT NULL,
     nombre NVARCHAR(30)
   );
-  ALTER TABLE Consultorio ADD CONSTRAINT Consultorio_PK PRIMARY KEY ( id_consultorio ) ;
 
 CREATE TABLE Alergia
   (
-    id_alergia INT NOT NULL ,
+    id_alergia INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     nombre NVARCHAR (30) NOT NULL
   ) ;
-ALTER TABLE Alergia ADD CONSTRAINT Alergia_PK PRIMARY KEY ( id_alergia ) ;
 
 CREATE TABLE Alergia_Paciente
 (
-  id_alergia_paciente INT NOT NULL,
+  id_alergia_paciente INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
   id_alergia INT NOT NULL,
   id_paciente INT NOT NULL
 );
-ALTER TABLE Alergia_Paciente ADD CONSTRAINT id_aler_paci_PK PRIMARY KEY (id_alergia_paciente);
 
 CREATE TABLE Provincia
   (
     id_provincia INT NOT NULL ,
-    nom_com NVARCHAR (30) ,
+    nom_provincia NVARCHAR (30) ,
     id_region INT NOT NULL
   ) ;
 ALTER TABLE Provincia ADD CONSTRAINT Provincia_PK PRIMARY KEY ( id_provincia ) ;
@@ -67,23 +64,22 @@ ALTER TABLE Comuna ADD CONSTRAINT Comuna_PK PRIMARY KEY ( id_comuna ) ;
 
 CREATE TABLE Control_Acceso
   (
-    id_control_acceso INT NOT NULL ,
-    usuario NVARCHAR (30) NOT NULL ,
+    id_control_acceso INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    usuario_login NVARCHAR (30) NOT NULL ,
     contrasena NVARCHAR (30) NOT NULL ,
     id_tipo_usuario INT NOT NULL,
     id_usuario INT NOT NULL,
     activo INT
   ) ;
-ALTER TABLE Control_Acceso ADD CONSTRAINT Control_Acceso_PK PRIMARY KEY ( id_control_acceso ) ;
+
 
 
 CREATE TABLE Enfermera
   (
-    id_enfermera       INT NOT NULL ,
+    id_enfermera       INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     id_usuario         INT  NOT NULL ,
-    id_jornada_laboral INT  NOT NULL
+    id_jornada_laboral INT  NOT NULL,
   ) ;
-ALTER TABLE Enfermera ADD CONSTRAINT Enfermera_PK PRIMARY KEY ( id_enfermera ) ;
 
 
 CREATE TABLE Especialidad
@@ -96,7 +92,7 @@ ALTER TABLE Especialidad ADD CONSTRAINT Especialidad_PK PRIMARY KEY ( id_especia
 
 CREATE TABLE Ficha_Paciente
   (
-    id_ficha_paciente INT NOT NULL ,
+    id_ficha_paciente INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     fecha             DATE,
     id_consultorio    INT NOT NULL ,
     id_secretaria     INT NOT NULL ,
@@ -112,7 +108,6 @@ CREATE TABLE Ficha_Paciente
     pulsacion         INT NOT NULL ,
     diastolica        INT NOT NULL
   ) ;
-ALTER TABLE Ficha_Paciente ADD CONSTRAINT Ficha_Paciente_PK PRIMARY KEY ( id_ficha_paciente ) ;
 
 
 CREATE TABLE Genero
@@ -143,49 +138,45 @@ CREATE TABLE Jornada_laboral
     domingo            INT ,
     id_sector          INT NOT NULL,
     glosa              NVARCHAR(30) 
-  ) ;
+  	) ;
 ALTER TABLE Jornada_laboral ADD CONSTRAINT Jornada_laboral_PK PRIMARY KEY ( id_jornada_laboral ) ;
 
 
 CREATE TABLE Licencia_Medica
   (
-    id_licencia_medica INT NOT NULL ,
+    id_licencia_medica INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     numero_de_dias     INT NOT NULL ,
     motivos NVARCHAR (30) NOT NULL ,
     id_ficha_paciente INT NOT NULL
   ) ;
-ALTER TABLE Licencia_Medica ADD CONSTRAINT Licencia_Medica_PK PRIMARY KEY ( id_licencia_medica ) ;
 
 
 CREATE TABLE Medicamentos
   (
-    id_medicamentos INT NOT NULL ,
+    id_medicamentos INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     principio_activo NVARCHAR(30),
     producto_referencia NVARCHAR(30),
     nombre_producto NVARCHAR (60),
     codigo_registro NVARCHAR(30),
     glosa NVARCHAR(60)
   ) ;
-ALTER TABLE Medicamentos ADD CONSTRAINT Medicamentos_PK PRIMARY KEY ( id_medicamentos ) ;
 
 
 CREATE TABLE Medico
   (
-    id_Medico  INT NOT NULL ,
+    id_Medico  INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     rut_medico INT NOT NULL ,
     dv_medico CHAR(1) NOT NULL ,
     id_usuario         INT NOT NULL ,
     id_especialidad    INT NOT NULL ,
     id_jornada_laboral INT NOT NULL
   ) ;
-ALTER TABLE Medico ADD CONSTRAINT Medico_PK PRIMARY KEY ( id_Medico ) ;
 
 CREATE TABLE Administrador
   (
-    id_administrador  INT NOT NULL ,   
+    id_administrador  INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
     id_usuario INT NOT NULL
   ) ;
-ALTER TABLE Administrador ADD CONSTRAINT Administrador_PK PRIMARY KEY ( id_administrador ) ;
 
 CREATE TABLE Nacionalidad
   (
@@ -197,14 +188,12 @@ ALTER TABLE Nacionalidad ADD CONSTRAINT Nacionalidad_PK PRIMARY KEY ( id_naciona
 
 CREATE TABLE Paciente
   (
-    id_paciente        INT NOT NULL ,
+    id_paciente        INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     id_usuario         INT NOT NULL ,
     id_grupo_sanguineo INT NOT NULL ,
     id_rh              INT NOT NULL ,
-    id_sector          INT NOT NULL 
+    id_sector          INT NOT NULL
   ) ;
-ALTER TABLE Paciente ADD CONSTRAINT Paciente_PK PRIMARY KEY ( id_paciente ) ;
-
 
 CREATE TABLE Pais
   (
@@ -216,7 +205,7 @@ ALTER TABLE Pais ADD CONSTRAINT Pais_PK PRIMARY KEY ( id_pais ) ;
 
 CREATE TABLE Receta_Medica
   (
-    id_Receta_Medica INT NOT NULL ,
+    id_Receta_Medica INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     fecha            DATE NOT NULL ,
     cantidad         INT NOT NULL ,
     hora             INT NOT NULL ,
@@ -225,8 +214,6 @@ CREATE TABLE Receta_Medica
     id_ficha_paciente INT NOT NULL ,
     id_medicamentos   INT NOT NULL
   ) ;
-ALTER TABLE Receta_Medica ADD CONSTRAINT Receta_PK PRIMARY KEY ( id_Receta_Medica ) ;
-
 
 CREATE TABLE Region
   (
@@ -247,11 +234,10 @@ ALTER TABLE Rh_sanguineo ADD CONSTRAINT Rh_sanguineo_PK PRIMARY KEY ( id_rh ) ;
 
 CREATE TABLE Secretaria
   (
-    id_secretaria      INT NOT NULL ,
+    id_secretaria      INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
     id_usuario         INT NOT NULL ,
     id_jornada_laboral INT NOT NULL
   ) ;
-ALTER TABLE Secretaria ADD CONSTRAINT Secretaria_PK PRIMARY KEY ( id_secretaria ) ;
 
 
 CREATE TABLE Sector
@@ -301,13 +287,12 @@ ALTER TABLE Tipo_Desvinculado ADD CONSTRAINT Tipo_Desvincu_PK PRIMARY KEY ( id_t
 
 CREATE TABLE Desvinculado
 (
-  id_desvinculado INT NOT NULL,
+  id_desvinculado INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
   id_usuario      INT NOT NULL,
   fecha           DATE,
   id_tipo_desvin  INT NOT NULL,
-  glosa           NVARCHAR(30),
+  glosa           NVARCHAR(30)
 );
-ALTER TABLE Desvinculado ADD CONSTRAINT Desvinculado_PK PRIMARY KEY ( id_desvinculado ) ;
 
 ALTER TABLE Desvinculado ADD CONSTRAINT tipoDesc_Desvinculado_FK FOREIGN KEY ( id_tipo_desvin ) REFERENCES Tipo_Desvinculado (id_tipo_desvin);
 ALTER TABLE Desvinculado ADD CONSTRAINT Usuario_Desvinculado_FK FOREIGN KEY ( id_usuario ) REFERENCES Usuario ( id_usuario ) ;
@@ -333,7 +318,6 @@ ALTER TABLE Ficha_Paciente ADD CONSTRAINT Ficha_Paciente_Paciente_FK FOREIGN KEY
 ALTER TABLE Ficha_Paciente ADD CONSTRAINT Ficha_Paciente_Secretaria_FK FOREIGN KEY ( id_secretaria ) REFERENCES Secretaria ( id_secretaria ) ;
 
 ALTER TABLE Ficha_Paciente ADD CONSTRAINT Ficha_Paciente_Consultori_FK FOREIGN KEY ( id_consultorio ) REFERENCES Consultorio ( id_consultorio ) ;
-
 
 ALTER TABLE Jornada_laboral ADD CONSTRAINT Jornada_laboral_Sector_FK FOREIGN KEY ( id_sector ) REFERENCES Sector ( id_sector ) ;
 
@@ -376,45 +360,3 @@ ALTER TABLE Consultorio ADD CONSTRAINT Consultorio_Comuna_FK FOREIGN KEY ( id_co
 ALTER TABLE Alergia_Paciente ADD CONSTRAINT Aler_Pac_Alerg_FK FOREIGN KEY ( id_alergia ) REFERENCES Alergia ( id_alergia ) ;
 
 ALTER TABLE Alergia_Paciente ADD CONSTRAINT Aler_Pac_Paciente_FK FOREIGN KEY ( id_paciente ) REFERENCES Paciente ( id_paciente ) ;
-
--- Informe de Resumen de Oracle SQL Developer Data Modeler: 
--- 
--- CREATE TABLE                            22
--- CREATE INDEX                             0
--- ALTER TABLE                             49
--- CREATE VIEW                              0
--- ALTER VIEW                               0
--- CREATE PACKAGE                           0
--- CREATE PACKAGE BODY                      0
--- CREATE PROCEDURE                         0
--- CREATE FUNCTION                          0
--- CREATE TRIGGER                           0
--- ALTER TRIGGER                            0
--- CREATE COLLECTION TYPE                   0
--- CREATE STRUCTURED TYPE                   0
--- CREATE STRUCTURED TYPE BODY              0
--- CREATE CLUSTER                           0
--- CREATE CONTEXT                           0
--- CREATE DATABASE                          0
--- CREATE DIMENSION                         0
--- CREATE DIRECTORY                         0
--- CREATE DISK GROUP                        0
--- CREATE ROLE                              0
--- CREATE ROLLBACK SEGMENT                  0
--- CREATE SEQUENCE                          0
--- CREATE MATERIALIZED VIEW                 0
--- CREATE SYNONYM                           0
--- CREATE TABLESPACE                        0
--- CREATE USER                              0
--- 
--- DROP TABLESPACE                          0
--- DROP DATABASE                            0
--- 
--- REDACTION POLICY                         0
--- 
--- ORDS DROP SCHEMA                         0
--- ORDS ENABLE SCHEMA                       0
--- ORDS ENABLE OBJECT                       0
--- 
--- ERRORS                                   0
--- WARNINGS                                 0

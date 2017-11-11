@@ -22,7 +22,7 @@ namespace capaNegocio
             return nacionalidades;
         }
 
-        public List<Nacionalidad> ReadAll()
+        public static List<Nacionalidad> ReadAll()
         {
             var nacionalidades = CommonBC.ModeloConsultorio.Nacionalidad;
             return GenerarListado(nacionalidades.ToList());

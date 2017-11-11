@@ -85,24 +85,6 @@ namespace consultorioWeb.Admin.Paciente {
         protected global::System.Web.UI.WebControls.TextBox txt_apMaterno;
         
         /// <summary>
-        /// Control ObjectDataSource1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource1;
-        
-        /// <summary>
-        /// Control ObjectDataSource6.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource6;
-        
-        /// <summary>
         /// Control txt_Fecha.
         /// </summary>
         /// <remarks>
@@ -121,6 +103,15 @@ namespace consultorioWeb.Admin.Paciente {
         protected global::System.Web.UI.WebControls.Label lbl_Edad;
         
         /// <summary>
+        /// Control lblAnios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAnios;
+        
+        /// <summary>
         /// Control ddGenero.
         /// </summary>
         /// <remarks>
@@ -137,24 +128,6 @@ namespace consultorioWeb.Admin.Paciente {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddNacionalidad;
-        
-        /// <summary>
-        /// Control ObjectDataSource4.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource4;
-        
-        /// <summary>
-        /// Control ObjectDataSource5.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource5;
         
         /// <summary>
         /// Control txt_Domicilio.
@@ -184,22 +157,22 @@ namespace consultorioWeb.Admin.Paciente {
         protected global::System.Web.UI.WebControls.DropDownList ddSector;
         
         /// <summary>
-        /// Control txt_nCasa.
+        /// Control txt_fono1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nCasa;
+        protected global::System.Web.UI.WebControls.TextBox txt_fono1;
         
         /// <summary>
-        /// Control txt_nCelular.
+        /// Control txt_fono2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_nCelular;
+        protected global::System.Web.UI.WebControls.TextBox txt_fono2;
         
         /// <summary>
         /// Control ddGrupoS.
@@ -211,15 +184,6 @@ namespace consultorioWeb.Admin.Paciente {
         protected global::System.Web.UI.WebControls.DropDownList ddGrupoS;
         
         /// <summary>
-        /// Control ObjectDataSource7.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource7;
-        
-        /// <summary>
         /// Control ddRh.
         /// </summary>
         /// <remarks>
@@ -227,15 +191,6 @@ namespace consultorioWeb.Admin.Paciente {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddRh;
-        
-        /// <summary>
-        /// Control ObjectDataSource8.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource8;
         
         /// <summary>
         /// Control btn_Guardar.

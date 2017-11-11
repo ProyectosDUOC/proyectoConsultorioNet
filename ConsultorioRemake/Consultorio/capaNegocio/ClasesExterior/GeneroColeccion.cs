@@ -28,7 +28,7 @@ namespace capaNegocio
 
         //Listado de todos los elementos
 
-        public List<Genero> ReadAll()
+        public static List<Genero> ReadAll()
         {
             var generos = CommonBC.ModeloConsultorio.Genero;
             return GenerarListado(generos.ToList());

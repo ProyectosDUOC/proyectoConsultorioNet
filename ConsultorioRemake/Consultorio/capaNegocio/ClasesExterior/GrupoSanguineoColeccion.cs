@@ -24,7 +24,7 @@ namespace capaNegocio
             return gruposSanguineos;
         }
 
-        public List<GrupoSanguineo> ReadAll()
+        public static List<GrupoSanguineo> ReadAll()
         {
             var grupoSanguineos = CommonBC.ModeloConsultorio.Grupo_sanguineo;
             return GenerarListado(grupoSanguineos.ToList());

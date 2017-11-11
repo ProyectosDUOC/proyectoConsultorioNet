@@ -81,6 +81,29 @@ namespace capaNegocio
               return false;
             }                    
         }
+
+        public bool ReadIdUsuario()
+        {
+            try
+            {
+                capaDatos.Paciente paciente = CommonBC.ModeloConsultorio.Paciente.First
+                    (
+                        pacien => pacien.id_usuario == this.idUsuario
+                    );
+                this.id = paciente.id_paciente;
+                this.IdGrupoSanguineo = paciente.id_grupo_sanguineo;
+                this.IdRh = paciente.id_rh;
+                this.IdSector = paciente.id_sector;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
         public bool Read() {
             try
             {

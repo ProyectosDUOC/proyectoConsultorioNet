@@ -21,7 +21,7 @@ namespace capaNegocio
             }
             return sectores;
         }
-     public List<Sector> ReadAll()
+     public static List<Sector> ReadAll()
      {
          var sectores = CommonBC.ModeloConsultorio.Sector;
          return GenerarListado(sectores.ToList());

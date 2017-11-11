@@ -30,7 +30,7 @@ namespace capaNegocio
 
         //Listado de todos los elementos
 
-        public List<Comuna> ReadAll()
+        public static List<Comuna> ReadAll()
         {
             var comunas = CommonBC.ModeloConsultorio.Comuna;
             return GenerarListado(comunas.ToList());

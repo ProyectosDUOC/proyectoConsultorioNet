@@ -22,7 +22,7 @@ namespace capaNegocio
             return rhsLista;
         }
 
-       public List<Rh_sanguineo> ReadAll()
+       public static List<Rh_sanguineo> ReadAll()
        {
            var rhs = CommonBC.ModeloConsultorio.Rh_sanguineo;
            return GenerarListado(rhs.ToList());

@@ -40,7 +40,7 @@ namespace consultorioWeb.Admin.Paciente
         protected void btn_Buscar_Click(object sender, EventArgs e)
         {            
             Usuario usuario = new Usuario();
-            capaNegocio.Paciente paciente = new capaNegocio.Paciente();
+            
          
             usuario.Rut = Convert.ToInt32(txt_Rut.Text);
             usuario.Dv = Convert.ToChar(txt_dv.Text);
@@ -49,53 +49,49 @@ namespace consultorioWeb.Admin.Paciente
 
             if (usuario.ReadRut())
             {
-              
-                paciente.IdUsuario = usuario.Id;
-
-                if (paciente.ReadIdUsuario()) {
+                capaNegocio.Paciente paciente = new capaNegocio.Paciente();
+                paciente.IdUsuario = usuario.Id;           
+                if (paciente.ReadIdUsuario())
+                {
                     txt_pNombre.Text = usuario.Pnombre;
                     txt_sNombre.Text = usuario.Snombre;
                     txt_apMaterno.Text = usuario.Apmaterno;
                     txt_apPaterno.Text = usuario.Appaterno;
                     txt_Fecha.Text = usuario.FechaNacimiento.ToShortDateString();//falla fecha
-
-                    //Calcula la edad 
-                    lblAnios.Text = (DateTime.Today.AddTicks(-usuario.FechaNacimiento.Ticks).Year - 1).ToString();
-
                     //Seleccion la id del selectIndex
                     ddGenero.SelectedIndex = ddGenero.Items.IndexOf(ddGenero.Items.FindByValue(usuario.IdGenero.ToString()));
                     ddNacionalidad.SelectedIndex = ddNacionalidad.Items.IndexOf(ddNacionalidad.Items.FindByValue(usuario.IdNacionalidad.ToString()));
                     txt_Domicilio.Text = usuario.Direccion;
                     ddComuna.SelectedIndex = ddComuna.Items.IndexOf(ddComuna.Items.FindByValue(usuario.IdComuna.ToString()));
-                    ddSector.SelectedIndex = ddSector.Items.IndexOf(ddSector.Items.FindByValue(paciente.IdSector.ToString()));
+                    //Calcula la edad 
+                    lblAnios.Text = (DateTime.Today.AddTicks(-usuario.FechaNacimiento.Ticks).Year - 1).ToString();
                     txt_fono1.Text = usuario.Fono1;
                     txt_fono2.Text = usuario.Fono2;
+
+                    txt_nFicha.Text = paciente.Id.ToString();
+                    ddSector.SelectedIndex = ddSector.Items.IndexOf(ddSector.Items.FindByValue(paciente.IdSector.ToString()));
+
                     ddGrupoS.SelectedIndex = ddGrupoS.Items.IndexOf(ddGrupoS.Items.FindByValue(paciente.IdGrupoSanguineo.ToString()));
                     ddRh.SelectedIndex = ddRh.Items.IndexOf(ddRh.Items.FindByValue(paciente.IdRh.ToString()));
-
-
+                    //lblRespuesta.Text = "no exite paciente";
+                    lblRespuesta.Text = "si " + usuario.imprimir() + "  " + paciente.IdGrupoSanguineo;
                     desbloqueo();
-                    lblRespuesta.Text = "se encontro" + usuario.Id;
-                  
                 }
-
-                //lblRespuesta.Text = "no exite paciente";
-                lblRespuesta.Text = usuario.ToString();
-                limpiar();
-                bloqueo();
+                else {
+                    lblRespuesta.Text = "No entro al paciente";
+                }                
             }
             else {
                 lblRespuesta.Text = "No se encontro";
                 limpiar();
                 bloqueo();
             }
-
         }
         private void desbloqueo() {
             txt_Fecha.Enabled = true;
             txt_apMaterno.Enabled = true;
             txt_fono2.Enabled = true;
-            txt_nFicha.Enabled = true;
+           // txt_nFicha.Enabled = true;
             txt_pNombre.Enabled = true;
             txt_sNombre.Enabled = true;
             txt_apPaterno.Enabled = true;

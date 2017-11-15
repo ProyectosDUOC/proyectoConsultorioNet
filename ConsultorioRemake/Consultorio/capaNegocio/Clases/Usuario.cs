@@ -152,6 +152,11 @@ namespace capaNegocio
             activo = 0;
         }
 
+        public String imprimir() {
+            return id +" " +rut +"-" + dv +"   "+ foto+" /login.aspx "+ pnombre +" "+ snombre+ "  " + appaterno+ "  " + apmaterno;
+        }
+        
+
         public bool Create() {
             try
             {

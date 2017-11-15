@@ -14,8 +14,24 @@
                 <td><asp:TextBox ID="txt_Rut" TextMode="Number" runat="server"></asp:TextBox></td>
                 <td>-<asp:TextBox ID="txt_dv" runat="server" MaxLength="1" Width="35px"></asp:TextBox>
                 </td>
-                <td><asp:Button ID="btn_Buscar" runat="server" Text="Buscar" onclick="btn_Buscar_Click" 
+                <td>
+                    <asp:Button ID="btn_Buscar" runat="server" Text="Buscar" onclick="btn_Buscar_Click" 
                          /></td>
+                <td>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                        ErrorMessage="*Ingrese Rut" ForeColor="Red" ControlToValidate="txt_Rut"></asp:RequiredFieldValidator>
+                    <br/>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txt_dv" ForeColor="Red"
+                    ErrorMessage="*Ingrese Dv"></asp:RequiredFieldValidator>
+                    </td>
+                
+                <td>
+        <asp:Label ID="lblRespuesta" runat="server" ForeColor="Red" Text=""></asp:Label>
+    
+                    <asp:Button ID="btnHabilitar" runat="server" Text="Habilitar Edicion" onclick="btnHabilitar_Click" 
+                         />
+                    </td>
+                
             </tr>
         </table>
 
@@ -124,10 +140,8 @@
 
             <asp:Button ID="btn_Guardar" runat="server" Text="Guardar" Height="47px" 
             Width="232px" onclick="btn_Guardar_Click" />
-               <asp:Button ID="btnAtras" runat="server" Text="Atras" Height="47px" 
-            Width="232px" onclick="btnAtras_Click" />
-
-        <asp:Label ID="lblRespuesta" runat="server" Text="Label"></asp:Label>
-    
+            <a href="../PanelPaciente.aspx" 
+            style="font-size: xx-large; font-weight: 700">Volver</a>
+            
     </div>
 </asp:Content>

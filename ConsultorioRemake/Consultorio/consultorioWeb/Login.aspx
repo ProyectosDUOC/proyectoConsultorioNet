@@ -110,7 +110,8 @@
                                     <td class="style4">
                                         &nbsp;</td>
                                     <td class="style5">
-                                    </td>
+                                        &nbsp;
+                                        </td>
 
                                 </tr>
                             </table>

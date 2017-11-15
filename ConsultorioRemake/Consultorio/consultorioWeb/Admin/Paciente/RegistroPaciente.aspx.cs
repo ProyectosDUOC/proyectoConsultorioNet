@@ -14,7 +14,7 @@ namespace consultorioWeb.Admin.Paciente
         {
 
             if (!IsPostBack)
-            {
+            {    
                 bloqueo();
                 ddGenero.DataSource = capaNegocio.GeneroColeccion.ReadAll();
                 ddGenero.DataBind();
@@ -43,48 +43,56 @@ namespace consultorioWeb.Admin.Paciente
             
          
             usuario.Rut = Convert.ToInt32(txt_Rut.Text);
-            usuario.Dv = Convert.ToChar(txt_dv.Text);
+           
 
     //DropDownList1.SelectedIndex = DropDownList1.Items.IndexOf(DropDownList1.Items.FindByValue(miValor));
 
             if (usuario.ReadRut())
             {
-                capaNegocio.Paciente paciente = new capaNegocio.Paciente();
-                paciente.IdUsuario = usuario.Id;           
-                if (paciente.ReadIdUsuario())
+                if (usuario.Dv == Convert.ToChar(txt_dv.Text))
                 {
-                    txt_pNombre.Text = usuario.Pnombre;
-                    txt_sNombre.Text = usuario.Snombre;
-                    txt_apMaterno.Text = usuario.Apmaterno;
-                    txt_apPaterno.Text = usuario.Appaterno;
-                    txt_Fecha.Text = usuario.FechaNacimiento.ToShortDateString();//falla fecha
-                    //Seleccion la id del selectIndex
-                    ddGenero.SelectedIndex = ddGenero.Items.IndexOf(ddGenero.Items.FindByValue(usuario.IdGenero.ToString()));
-                    ddNacionalidad.SelectedIndex = ddNacionalidad.Items.IndexOf(ddNacionalidad.Items.FindByValue(usuario.IdNacionalidad.ToString()));
-                    txt_Domicilio.Text = usuario.Direccion;
-                    ddComuna.SelectedIndex = ddComuna.Items.IndexOf(ddComuna.Items.FindByValue(usuario.IdComuna.ToString()));
-                    //Calcula la edad 
-                    lblAnios.Text = (DateTime.Today.AddTicks(-usuario.FechaNacimiento.Ticks).Year - 1).ToString();
-                    txt_fono1.Text = usuario.Fono1;
-                    txt_fono2.Text = usuario.Fono2;
+                    capaNegocio.Paciente paciente = new capaNegocio.Paciente();
+                    paciente.IdUsuario = usuario.Id;
+                    if (paciente.ReadIdUsuario())
+                    {
+                        txt_pNombre.Text = usuario.Pnombre;
+                        txt_sNombre.Text = usuario.Snombre;
+                        txt_apMaterno.Text = usuario.Apmaterno;
+                        txt_apPaterno.Text = usuario.Appaterno;
+                        txt_Fecha.Text = usuario.FechaNacimiento.ToString("yyyy-MM-dd");
+                        //Seleccion la id del selectIndex
+                        ddGenero.SelectedIndex = ddGenero.Items.IndexOf(ddGenero.Items.FindByValue(usuario.IdGenero.ToString()));
+                        ddNacionalidad.SelectedIndex = ddNacionalidad.Items.IndexOf(ddNacionalidad.Items.FindByValue(usuario.IdNacionalidad.ToString()));
+                        txt_Domicilio.Text = usuario.Direccion;
+                        ddComuna.SelectedIndex = ddComuna.Items.IndexOf(ddComuna.Items.FindByValue(usuario.IdComuna.ToString()));
+                        //Calcula la edad 
+                        lblAnios.Text = (DateTime.Today.AddTicks(-usuario.FechaNacimiento.Ticks).Year - 1).ToString();
+                        txt_fono1.Text = usuario.Fono1;
+                        txt_fono2.Text = usuario.Fono2;
 
-                    txt_nFicha.Text = paciente.Id.ToString();
-                    ddSector.SelectedIndex = ddSector.Items.IndexOf(ddSector.Items.FindByValue(paciente.IdSector.ToString()));
+                        txt_nFicha.Text = paciente.Id.ToString();
+                        ddSector.SelectedIndex = ddSector.Items.IndexOf(ddSector.Items.FindByValue(paciente.IdSector.ToString()));
 
-                    ddGrupoS.SelectedIndex = ddGrupoS.Items.IndexOf(ddGrupoS.Items.FindByValue(paciente.IdGrupoSanguineo.ToString()));
-                    ddRh.SelectedIndex = ddRh.Items.IndexOf(ddRh.Items.FindByValue(paciente.IdRh.ToString()));
-                    //lblRespuesta.Text = "no exite paciente";
-                    lblRespuesta.Text = "si " + usuario.imprimir() + "  " + paciente.IdGrupoSanguineo;
-                    desbloqueo();
+                        ddGrupoS.SelectedIndex = ddGrupoS.Items.IndexOf(ddGrupoS.Items.FindByValue(paciente.IdGrupoSanguineo.ToString()));
+                        ddRh.SelectedIndex = ddRh.Items.IndexOf(ddRh.Items.FindByValue(paciente.IdRh.ToString()));
+                        //lblRespuesta.Text = "no exite paciente";
+                        lblRespuesta.Text = usuario.FechaNacimiento.ToString();
+                        desbloqueo();
+                    }
+                    else
+                    {
+                        lblRespuesta.Text = "No entro al paciente";
+                    }
                 }
                 else {
-                    lblRespuesta.Text = "No entro al paciente";
-                }                
+                    lblRespuesta.Text = "DV invalido";
+                }
+                
             }
             else {
-                lblRespuesta.Text = "No se encontro";
+                lblRespuesta.Text = "No se encontro";                
                 limpiar();
-                bloqueo();
+                btnHabilitar.Visible = true;                
             }
         }
         private void desbloqueo() {
@@ -104,7 +112,7 @@ namespace consultorioWeb.Admin.Paciente
             ddRh.Enabled = true;
             ddSector.Enabled = true;
             btn_Guardar.Enabled = true;
-        
+            btnHabilitar.Visible = true;
         }
         private void bloqueo() {
             txt_Fecha.Enabled = false;
@@ -123,6 +131,8 @@ namespace consultorioWeb.Admin.Paciente
             ddRh.Enabled = false;
             ddSector.Enabled = false;
             btn_Guardar.Enabled = false;
+            btnHabilitar.Visible = false;
+            
         }
         private void limpiar() {
             txt_Fecha.Text = "" ;
@@ -142,6 +152,11 @@ namespace consultorioWeb.Admin.Paciente
         protected void btn_Guardar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        protected void btnHabilitar_Click(object sender, EventArgs e)
+        {
+            desbloqueo();
         }
     }
 }

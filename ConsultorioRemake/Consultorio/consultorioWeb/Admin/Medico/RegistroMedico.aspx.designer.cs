@@ -148,13 +148,13 @@ namespace consultorioWeb.Admin.Medico {
         protected global::System.Web.UI.WebControls.Label lbl_Edad;
         
         /// <summary>
-        /// Control DropDownList1.
+        /// Control ddGenero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddGenero;
         
         /// <summary>
         /// Control DropDownList3.

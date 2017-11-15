@@ -11,10 +11,19 @@ namespace consultorioWeb.Admin.Medico
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                ddGenero.DataSource = capaNegocio.GeneroColeccion.ReadAll();
+                ddGenero.DataBind();
+            }
         }
 
         protected void btn_Atras_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Admin/PanelMedico.aspx");
+        }
+
+        protected void btn_Buscar_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Admin/PanelMedico.aspx");
         }

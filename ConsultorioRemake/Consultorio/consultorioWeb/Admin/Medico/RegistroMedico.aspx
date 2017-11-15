@@ -22,6 +22,7 @@
                 <td><asp:TextBox ID="txtMedico" runat="server"></asp:TextBox></td>
                 <td><asp:DropDownList ID="DropDownList2" runat="server"></asp:DropDownList></td>
                 <td><asp:Button ID="btn_Buscar" runat="server" Text="Buscar" 
+                        onclick="btn_Buscar_Click" style="height: 26px" 
                          /></td>
             </tr>
         </table>
@@ -66,7 +67,9 @@
 
                 <td><asp:Label ID="lbl_Edad" runat="server" Text=" "></asp:Label></td>
                 <td>
-                    <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList></td>
+                    <asp:DropDownList ID="ddGenero" runat="server" 
+                        DataTextField="Nombre" DataValueField="Id"></asp:DropDownList>
+                </td>
                 <td>
                     <asp:DropDownList ID="DropDownList3" runat="server">
                     </asp:DropDownList>

@@ -66,7 +66,7 @@ namespace capaNegocio
             {                
               capaDatos.Paciente paciente= new capaDatos.Paciente();
              
-              paciente.id_paciente = this.Id;
+             // paciente.id_paciente = this.Id;
               paciente.id_usuario = this.IdUsuario;
               paciente.id_grupo_sanguineo = this.IdGrupoSanguineo;
               paciente.id_rh = this.IdRh;
@@ -91,9 +91,10 @@ namespace capaNegocio
                         pacien => pacien.id_usuario == this.idUsuario
                     );
                 this.id = paciente.id_paciente;
-                this.IdGrupoSanguineo = paciente.id_grupo_sanguineo;
-                this.IdRh = paciente.id_rh;
-                this.IdSector = paciente.id_sector;
+                this.idGrupoSanguineo = paciente.id_grupo_sanguineo;
+                this.idRh = paciente.id_rh;
+                this.idSector = paciente.id_sector;
+                this.idUsuario = paciente.id_usuario;
 
                 return true;
             }

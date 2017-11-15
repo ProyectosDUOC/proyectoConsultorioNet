@@ -49,7 +49,7 @@ namespace consultorioWeb.Admin.Paciente
 
             if (usuario.ReadRut())
             {
-                
+              
                 paciente.IdUsuario = usuario.Id;
 
                 if (paciente.ReadIdUsuario()) {
@@ -75,10 +75,12 @@ namespace consultorioWeb.Admin.Paciente
 
 
                     desbloqueo();
-                    lblRespuesta.Text = "se encontro" + usuario.Id;                
+                    lblRespuesta.Text = "se encontro" + usuario.Id;
+                  
                 }
 
-                lblRespuesta.Text = "no exite paciente";
+                //lblRespuesta.Text = "no exite paciente";
+                lblRespuesta.Text = usuario.ToString();
                 limpiar();
                 bloqueo();
             }

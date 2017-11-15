@@ -17,7 +17,7 @@ namespace capaNegocio
                 capaNegocio.ControlAcceso controlA= new ControlAcceso();
 
                 controlA.Id = control.id_control_acceso;
-                controlA.Username = control.usuario;
+                controlA.Username = control.usuario_login;
                 controlA.Pass = control.contrasena;
                 controlA.IdTipoUsuario = control.id_tipo_usuario;
                 controlA.IdUsuario = control.id_tipo_usuario;

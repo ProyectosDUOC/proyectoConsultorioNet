@@ -47,7 +47,7 @@ namespace capaNegocio
                 capaDatos.Provincia prov = new capaDatos.Provincia();
 
                 prov.id_provincia = this.Id;
-                prov.nom_com = this.Nombre;
+                prov.nom_provincia = this.Nombre;
                 prov.id_region = this.IdRegion;
 
                 CommonBC.ModeloConsultorio.AddToProvincia(prov);
@@ -68,7 +68,7 @@ namespace capaNegocio
                 capaDatos.Provincia prov = CommonBC.ModeloConsultorio.Provincia.First(
                                                         p => p.id_provincia == this.Id);
 
-                this.Nombre = prov.nom_com;
+                this.Nombre = prov.nom_provincia;
                 this.IdRegion = prov.id_region;
 
                 return true;
@@ -87,7 +87,7 @@ namespace capaNegocio
                 capaDatos.Provincia prov = CommonBC.ModeloConsultorio.Provincia.First(
                                                         p => p.id_provincia == this.Id);
 
-                prov.nom_com = this.Nombre;
+                prov.nom_provincia = this.Nombre;
                 prov.id_region = this.IdRegion;
 
                 CommonBC.ModeloConsultorio.SaveChanges();

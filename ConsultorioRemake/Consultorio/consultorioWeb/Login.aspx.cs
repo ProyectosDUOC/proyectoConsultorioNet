@@ -30,30 +30,51 @@ namespace consultorioWeb
 
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
-            string user = Request.Form["txtUsuario"];
-            string pass = Request.Form["txtPass"];
+          //  string user = Request.Form["txtUsuario"];
+          //  string pass = Request.Form["txtPass"];
 
-            if (user != null)
+            ControlAcceso controlAcceso = new ControlAcceso();
+
+            controlAcceso.Username = txtUsuario.Text;
+
+            if (controlAcceso.Read())
             {
-                if (user.ToLower().Equals("secretaria"))
+                if (controlAcceso.Activo == 1)
                 {
-                    Response.Redirect("/Secretaria/MenuSecretaria.aspx");
-                }
-                if (user.ToLower().Equals("medico"))
-                {
-                    Response.Redirect("/Medico/PanelConsultaM.aspx");
-                }
-                if (user.ToLower().Equals("enfermera"))
-                {
-                    Response.Redirect("/Enfermera/PanelConsultaE.aspx");
-                }
-                if (user.ToLower().Equals("administrador"))
-                {
-                    Response.Redirect("/Admin/Administrador.aspx");
-                }
+                    if (controlAcceso.Pass.Equals(txtPass.Text))
+                    {
+                        
+                        if (controlAcceso.IdTipoUsuario == 2)
+                        {
+                            Response.Redirect("/Secretaria/MenuSecretaria.aspx");
+                        }
+                        if (controlAcceso.IdTipoUsuario == 3)
+                        {
+                            Response.Redirect("/Enfermera/PanelConsultaE.aspx");
+                        }
+                        if (controlAcceso.IdTipoUsuario == 4)
+                        {
+                            Response.Redirect("/Medico/PanelConsultaM.aspx");
+                        }
+                        if (controlAcceso.IdTipoUsuario == 5)
+                        {
+                            Response.Redirect("/Admin/Administrador.aspx");
+                        }
+                    }
+                    else
+                    {
+                        lblMensaje.Text = "Clave incorrecta";
+                    }
 
+                }
+                else
+                {
+                    lblMensaje.Text = "Usuario fue eliminado";
+                }
             }
+            else {
+                lblMensaje.Text = "Usuario no existe";
+            }            
         }
-
     }
 }

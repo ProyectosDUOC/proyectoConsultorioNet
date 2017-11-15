@@ -123,7 +123,7 @@
         <br>
 
             <asp:Button ID="btn_Guardar" runat="server" Text="Guardar" Height="47px" 
-            Width="232px" />
+            Width="232px" onclick="btn_Guardar_Click" />
                <asp:Button ID="btnAtras" runat="server" Text="Atras" Height="47px" 
             Width="232px" onclick="btnAtras_Click" />
 

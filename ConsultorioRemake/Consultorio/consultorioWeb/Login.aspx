@@ -13,7 +13,7 @@
 
             .style3 {
                 height: 182px;
-                width: 104px;
+                width: 38px;
             }
 
             .style4 {
@@ -42,7 +42,7 @@
             }
 
             .style10 {
-                width: 104px;
+                width: 38px;
             }
         </style>
     </head>
@@ -89,7 +89,10 @@
                                         <asp:Label ID="Label2" runat="server" Text="Usuario"></asp:Label>
                                     </td>
                                     <td class="style5">
-                                        <asp:TextBox ID="txtUsuario" runat="server" Width="139px"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server"
+                                        ControlToValidate="txtUsuario" ForeColor="Red" 
+                                            ErrorMessage="Ingrese Usuario"></asp:RequiredFieldValidator>
+                                        <asp:TextBox ID="txtUsuario" runat="server" Width="139px" ></asp:TextBox>
                                     </td>
 
                                 </tr>
@@ -99,6 +102,8 @@
                                     </td>
                                     <td class="style5">
                                         <asp:TextBox ID="txtPass" TextMode="Password" runat="server" Width="137px"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtPass" ForeColor="Red"
+                                            ErrorMessage="Ingrese Contraseña"></asp:RequiredFieldValidator>
                                     </td>
 
                                 </tr>
@@ -106,7 +111,6 @@
                                     <td class="style4">
                                         &nbsp;</td>
                                     <td class="style5">
-                                        <asp:RequiredFieldValidator ID="valUsuario" runat="server" ControlToValidate="txtUsuario" ErrorMessage="Debe ingresar Usuario"></asp:RequiredFieldValidator>
                                     </td>
 
                                 </tr>
@@ -136,6 +140,7 @@
                         </td>
                         <td class="style9">
                             &nbsp;
+                            <asp:Label ID="lblMensaje" runat="server" ForeColor="Red" Text=""></asp:Label>
                         </td>
                         <td>
                             &nbsp;

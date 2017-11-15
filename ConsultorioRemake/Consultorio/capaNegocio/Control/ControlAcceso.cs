@@ -75,9 +75,9 @@ namespace capaNegocio
             {
                 ConsultoriosEntities modelo = new ConsultoriosEntities();
                 capaDatos.Control_Acceso controlAcceso = new capaDatos.Control_Acceso();
-
-                controlAcceso.id_control_acceso = this.id;              
-                controlAcceso.usuario = this.username;
+               // Clase autoIncremente de base de datos
+              //  controlAcceso.id_control_acceso = this.id;              
+                controlAcceso.usuario_login = this.username;
                 controlAcceso.contrasena = this.pass;
                 controlAcceso.id_usuario= this.idUsuario;
                 controlAcceso.id_tipo_usuario = this.IdTipoUsuario;
@@ -100,15 +100,15 @@ namespace capaNegocio
 
                 capaDatos.Control_Acceso controlAcceso = modelo.Control_Acceso.First
                     (
-                        contro => contro.id_control_acceso == this.id
+                        contro => contro.usuario_login == this.Username
                     );
 
-                this.Username = controlAcceso.usuario;
+                this.id = controlAcceso.id_control_acceso;
+                this.Username = controlAcceso.usuario_login;
                 this.Pass = controlAcceso.contrasena;
                 this.idTipoUsuario = controlAcceso.id_tipo_usuario;
                 this.idUsuario = controlAcceso.id_usuario;
                 this.Activo = (int)controlAcceso.activo;
-
                 return true;
             }
             catch (Exception ex)
@@ -127,7 +127,7 @@ namespace capaNegocio
                     (
                         contro => contro.id_control_acceso == this.id
                     );
-                controlAcceso.usuario = this.Username;
+                controlAcceso.usuario_login = this.Username;
                 controlAcceso.contrasena = this.Pass;
                 controlAcceso.id_tipo_usuario = this.idTipoUsuario;
                 controlAcceso.id_usuario = this.idUsuario;

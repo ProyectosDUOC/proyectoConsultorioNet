@@ -57,7 +57,7 @@ namespace consultorioWeb.Admin.Paciente
                     txt_sNombre.Text = usuario.Snombre;
                     txt_apMaterno.Text = usuario.Apmaterno;
                     txt_apPaterno.Text = usuario.Appaterno;
-                    txt_Fecha.Text = usuario.FechaNacimiento.ToShortDateString();
+                    txt_Fecha.Text = usuario.FechaNacimiento.ToShortDateString();//falla fecha
 
                     //Calcula la edad 
                     lblAnios.Text = (DateTime.Today.AddTicks(-usuario.FechaNacimiento.Ticks).Year - 1).ToString();
@@ -139,6 +139,11 @@ namespace consultorioWeb.Admin.Paciente
         
         
         
+        }
+
+        protected void btn_Guardar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

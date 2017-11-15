@@ -15,7 +15,7 @@ namespace capaNegocio
             {
                 Provincia provincia = new Provincia();
                 provincia.Id = prov.id_provincia;
-                provincia.Nombre = prov.nom_com;
+                provincia.Nombre = prov.nom_provincia;
                 provincia.IdRegion = prov.id_region;
 
                 provincias.Add(provincia);

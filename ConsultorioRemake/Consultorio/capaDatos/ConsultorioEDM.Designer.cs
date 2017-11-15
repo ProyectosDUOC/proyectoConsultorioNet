@@ -1637,15 +1637,15 @@ namespace capaDatos
         /// Crear un nuevo objeto Control_Acceso.
         /// </summary>
         /// <param name="id_control_acceso">Valor inicial de la propiedad id_control_acceso.</param>
-        /// <param name="usuario">Valor inicial de la propiedad usuario.</param>
+        /// <param name="usuario_login">Valor inicial de la propiedad usuario_login.</param>
         /// <param name="contrasena">Valor inicial de la propiedad contrasena.</param>
         /// <param name="id_tipo_usuario">Valor inicial de la propiedad id_tipo_usuario.</param>
         /// <param name="id_usuario">Valor inicial de la propiedad id_usuario.</param>
-        public static Control_Acceso CreateControl_Acceso(global::System.Int32 id_control_acceso, global::System.String usuario, global::System.String contrasena, global::System.Int32 id_tipo_usuario, global::System.Int32 id_usuario)
+        public static Control_Acceso CreateControl_Acceso(global::System.Int32 id_control_acceso, global::System.String usuario_login, global::System.String contrasena, global::System.Int32 id_tipo_usuario, global::System.Int32 id_usuario)
         {
             Control_Acceso control_Acceso = new Control_Acceso();
             control_Acceso.id_control_acceso = id_control_acceso;
-            control_Acceso.usuario = usuario;
+            control_Acceso.usuario_login = usuario_login;
             control_Acceso.contrasena = contrasena;
             control_Acceso.id_tipo_usuario = id_tipo_usuario;
             control_Acceso.id_usuario = id_usuario;
@@ -1688,24 +1688,24 @@ namespace capaDatos
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String usuario
+        public global::System.String usuario_login
         {
             get
             {
-                return _usuario;
+                return _usuario_login;
             }
             set
             {
-                OnusuarioChanging(value);
-                ReportPropertyChanging("usuario");
-                _usuario = StructuralObject.SetValidValue(value, false);
-                ReportPropertyChanged("usuario");
-                OnusuarioChanged();
+                Onusuario_loginChanging(value);
+                ReportPropertyChanging("usuario_login");
+                _usuario_login = StructuralObject.SetValidValue(value, false);
+                ReportPropertyChanged("usuario_login");
+                Onusuario_loginChanged();
             }
         }
-        private global::System.String _usuario;
-        partial void OnusuarioChanging(global::System.String value);
-        partial void OnusuarioChanged();
+        private global::System.String _usuario_login;
+        partial void Onusuario_loginChanging(global::System.String value);
+        partial void Onusuario_loginChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -1853,7 +1853,7 @@ namespace capaDatos
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("ConsultoriosModel", "Control_Acceso_Usuario_FK", "Usuario")]
-        public Usuario Usuario1
+        public Usuario Usuario
         {
             get
             {
@@ -1869,7 +1869,7 @@ namespace capaDatos
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<Usuario> Usuario1Reference
+        public EntityReference<Usuario> UsuarioReference
         {
             get
             {
@@ -5044,24 +5044,24 @@ namespace capaDatos
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String nom_com
+        public global::System.String nom_provincia
         {
             get
             {
-                return _nom_com;
+                return _nom_provincia;
             }
             set
             {
-                Onnom_comChanging(value);
-                ReportPropertyChanging("nom_com");
-                _nom_com = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("nom_com");
-                Onnom_comChanged();
+                Onnom_provinciaChanging(value);
+                ReportPropertyChanging("nom_provincia");
+                _nom_provincia = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("nom_provincia");
+                Onnom_provinciaChanged();
             }
         }
-        private global::System.String _nom_com;
-        partial void Onnom_comChanging(global::System.String value);
-        partial void Onnom_comChanged();
+        private global::System.String _nom_provincia;
+        partial void Onnom_provinciaChanging(global::System.String value);
+        partial void Onnom_provinciaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.

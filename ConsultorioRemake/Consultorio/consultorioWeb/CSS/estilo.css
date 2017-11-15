@@ -33,7 +33,7 @@ h1 {
 }
 
 table {
-    margin: auto;
+    margin: auto auto auto 0px;
     font-size: 14px;
 }
 

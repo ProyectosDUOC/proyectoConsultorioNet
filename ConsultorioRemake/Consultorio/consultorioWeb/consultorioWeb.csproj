@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Admin\Administrador.aspx" />
+    <Content Include="Admin\Desvincular\PanelDesvincular.aspx" />
     <Content Include="Admin\Enfermera\ListarEnfermera.aspx" />
     <Content Include="Admin\Enfermera\RegistroEnfermera.aspx" />
     <Content Include="Admin\Medico\ListarMedico.aspx" />
@@ -225,6 +226,13 @@
     </Compile>
     <Compile Include="Admin\Administrador.aspx.designer.cs">
       <DependentUpon>Administrador.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Desvincular\PanelDesvincular.aspx.cs">
+      <DependentUpon>PanelDesvincular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Desvincular\PanelDesvincular.aspx.designer.cs">
+      <DependentUpon>PanelDesvincular.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\Enfermera\ListarEnfermera.aspx.cs">
       <DependentUpon>ListarEnfermera.aspx</DependentUpon>

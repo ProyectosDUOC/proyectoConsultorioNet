@@ -90,7 +90,7 @@ INSERT INTO [Consultorios].[dbo].[Control_Acceso] (usuario_login, contrasena, id
 INSERT INTO [Consultorios].[dbo].[Control_Acceso] (usuario_login, contrasena, id_tipo_usuario, id_usuario, activo) VALUES ('Silvia','1234',4,14,1) 
 --SECRETARIAS
 INSERT INTO [Consultorios].[dbo].[Control_Acceso] (usuario_login, contrasena, id_tipo_usuario, id_usuario, activo) VALUES ('Camila','1234',2,15,1) 
-INSERT INTO [Consultorios].[dbo].[Control_Acceso] (usuario_login, contrasena, id_tipo_usuario, id_usuario, activo) VALUES ('Fernanda','1234',3,16,1) 
+INSERT INTO [Consultorios].[dbo].[Control_Acceso] (usuario_login, contrasena, id_tipo_usuario, id_usuario, activo) VALUES ('Fernanda','1234',2,16,1) 
 INSERT INTO [Consultorios].[dbo].[Control_Acceso] (usuario_login, contrasena, id_tipo_usuario, id_usuario, activo) VALUES ('Maria','1234',2,17,1) 
 INSERT INTO [Consultorios].[dbo].[Control_Acceso] (usuario_login, contrasena, id_tipo_usuario, id_usuario, activo) VALUES ('Teresa','1234',2,18,1) 
 INSERT INTO [Consultorios].[dbo].[Control_Acceso] (usuario_login, contrasena, id_tipo_usuario, id_usuario, activo) VALUES ('Teodora','1234',2,19,1) 

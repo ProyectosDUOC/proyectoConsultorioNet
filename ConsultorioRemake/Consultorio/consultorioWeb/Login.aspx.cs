@@ -10,7 +10,7 @@ namespace consultorioWeb
 {
     public partial class Login : System.Web.UI.Page
     {
-        private ControlAcceso MiUsuario
+        private ControlAcceso controlAcceso
         {
             get
             {
@@ -33,7 +33,7 @@ namespace consultorioWeb
           //  string user = Request.Form["txtUsuario"];
           //  string pass = Request.Form["txtPass"];
 
-            ControlAcceso controlAcceso = new ControlAcceso();
+           // ControlAcceso controlAcceso = new ControlAcceso();
 
             controlAcceso.Username = txtUsuario.Text;
 
@@ -42,8 +42,7 @@ namespace consultorioWeb
                 if (controlAcceso.Activo == 1)
                 {
                     if (controlAcceso.Pass.Equals(txtPass.Text))
-                    {
-                        
+                    {                        
                         if (controlAcceso.IdTipoUsuario == 2)
                         {
                             Response.Redirect("/Secretaria/MenuSecretaria.aspx");
@@ -59,6 +58,7 @@ namespace consultorioWeb
                         if (controlAcceso.IdTipoUsuario == 5)
                         {
                             Response.Redirect("/Admin/Administrador.aspx");
+                            //Response.Redirect("/Admin/Administrador.aspx?login="+login);
                         }
                     }
                     else

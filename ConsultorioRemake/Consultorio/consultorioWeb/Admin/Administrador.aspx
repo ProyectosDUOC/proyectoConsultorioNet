@@ -103,7 +103,11 @@
         </tr>
         <tr>
             <td class="style13">
-                &nbsp;</td>
+                <img alt="/Imagen/Iconos/001-plan-de-estudios.png" 
+                    src="/Imagen/Iconos/001-plan-de-estudios.png" 
+                    style="height: 80px; width: 92px" /><asp:Button 
+                    ID="Button1" runat="server" Text="Desvincular" />
+            </td>
             <td class="style12">
                 <img alt="" src="/Imagen/Iconos/016-enfermera-1.png" 
                     style="height: 49px; width: 100px" />

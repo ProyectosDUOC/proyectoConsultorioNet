@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using capaDatos;
+using System.Data.Entity;
 
 namespace capaNegocio
 {
@@ -153,7 +155,7 @@ namespace capaNegocio
         }
 
         public String imprimir() {
-            return id +" " +rut +"-" + dv +"   "+ foto+" /login.aspx "+ pnombre +" "+ snombre+ "  " + appaterno+ "  " + apmaterno;
+            return id +" " +rut +"-" + dv +"   "+ foto+" "+ pnombre +" "+ snombre+ "  " + appaterno+ "  " + apmaterno;
         }
         
 
@@ -253,34 +255,69 @@ namespace capaNegocio
                 return false;
             }
         }
-        public bool Update() {
+        public bool UpdateNuevo() {
             try
             {
+                ConsultoriosEntities modelo = new ConsultoriosEntities();
+
+                capaDatos.Usuario usuario = modelo.Usuario.First
+                    (
+                        usu => usu.rut_usuario == this.rut
+                    );
+                usuario.rut_usuario = this.rut;
+                usuario.dv_usuario = this.dv.ToString();
+               // usuario.foto = this.foto;
+                usuario.pnombre = this.pnombre;
+                usuario.snombre = this.snombre;
+                usuario.appaterno = this.appaterno;
+                usuario.apmaterno = this.apmaterno;
+                usuario.fecha_nacimiento = this.fechaNacimiento;
+                usuario.id_genero= this.idGenero;
+                usuario.id_nacionalidad = this.idNacionalidad;
+                usuario.id_comuna = this.idComuna;
+                usuario.direccion = this.direccion;
+                usuario.fono1 = int.Parse(this.fono1);
+                usuario.fono2 = int.Parse(this.fono2);
+               // usuario.activo = this.activo;
+
+                modelo.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {                
+                return false;
+            }
+        }
+        public bool Update()
+        {
+            try
+            {              
+
                 capaDatos.Usuario usuario = CommonBC.ModeloConsultorio.Usuario.First
                     (
-                        usu => usu.id_usuario == this.Id
+                        usu => usu.rut_usuario == this.rut
                     );
-                usuario.rut_usuario = this.Rut;
-                usuario.dv_usuario = this.Dv.ToString();
-                usuario.foto = this.Foto;
-                usuario.pnombre = this.Pnombre;
-                usuario.snombre = this.Snombre;
-                usuario.appaterno = this.Appaterno;
-                usuario.apmaterno = this.Apmaterno;
-                usuario.fecha_nacimiento = this.FechaNacimiento;
-                usuario.id_genero= this.IdGenero;
-                usuario.id_nacionalidad = this.IdNacionalidad;
-                usuario.id_comuna = this.IdComuna;
-                usuario.direccion = this.Direccion;
-                usuario.fono1 = int.Parse(this.Fono1);
-                usuario.fono2 = int.Parse(this.Fono2);
-                usuario.activo = this.Activo;
+                usuario.rut_usuario = this.rut;
+                usuario.dv_usuario = this.dv.ToString();
+                usuario.foto = this.foto;
+                usuario.pnombre = this.pnombre;
+                usuario.snombre = this.snombre;
+                usuario.appaterno = this.appaterno;
+                usuario.apmaterno = this.apmaterno;
+                usuario.fecha_nacimiento = this.fechaNacimiento;
+                usuario.id_genero = this.idGenero;
+                usuario.id_nacionalidad = this.idNacionalidad;
+                usuario.id_comuna = this.idComuna;
+                usuario.direccion = this.direccion;
+                usuario.fono1 = int.Parse(this.fono1);
+                usuario.fono2 = int.Parse(this.fono2);
+                usuario.activo = this.activo;
 
                 CommonBC.ModeloConsultorio.SaveChanges();
                 return true;
             }
             catch (Exception ex)
-            {                
+            {
                 return false;
             }
         }

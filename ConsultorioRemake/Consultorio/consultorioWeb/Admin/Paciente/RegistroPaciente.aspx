@@ -12,7 +12,8 @@
             <tr>
                 <td><asp:TextBox ID="txt_nFicha" runat="server"></asp:TextBox></td>
                 <td><asp:TextBox ID="txt_Rut" TextMode="Number" runat="server"></asp:TextBox></td>
-                <td>-<asp:TextBox ID="txt_dv" runat="server" MaxLength="1" Width="35px"></asp:TextBox>
+                <td>-<asp:TextBox ID="txt_dv" runat="server" MaxLength="1" Width="35px" 
+                        ></asp:TextBox>
                 </td>
                 <td>
                     <asp:Button ID="btn_Buscar" runat="server" Text="Buscar" onclick="btn_Buscar_Click" 
@@ -118,8 +119,7 @@
             </tr>
             <tr>
                 <td>Grupo sanguineo</td>
-                <td>Rh sanguineo</td>
-                <td>Alergia</td>
+                <td>Rh sanguineo</td>                
             </tr>
             <tr>                
                 <td>
@@ -135,11 +135,11 @@
                 <td>&nbsp;</td>             
             </tr>
         </table>
+        <asp:Button ID="btnGuardarActualizar" runat="server" Height="79px" Text="Guardar" 
+            Width="158px" onclick="btnGuardarActualizar_Click" />
         <br>
         <br>
 
-            <asp:Button ID="btn_Guardar" runat="server" Text="Guardar" Height="47px" 
-            Width="232px" onclick="btn_Guardar_Click" />
             <a href="../PanelPaciente.aspx" 
             style="font-size: xx-large; font-weight: 700">Volver</a>
             

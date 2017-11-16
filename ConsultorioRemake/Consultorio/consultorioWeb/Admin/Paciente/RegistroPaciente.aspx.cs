@@ -10,6 +10,7 @@ namespace consultorioWeb.Admin.Paciente
 {
     public partial class RegistroPaciente : System.Web.UI.Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -32,18 +33,13 @@ namespace consultorioWeb.Admin.Paciente
             }
         }
 
-        protected void btnAtras_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("/Admin/PanelPaciente.aspx");
-        }
 
         protected void btn_Buscar_Click(object sender, EventArgs e)
         {            
             Usuario usuario = new Usuario();
             
          
-            usuario.Rut = Convert.ToInt32(txt_Rut.Text);
-           
+            usuario.Rut = Convert.ToInt32(txt_Rut.Text);          
 
     //DropDownList1.SelectedIndex = DropDownList1.Items.IndexOf(DropDownList1.Items.FindByValue(miValor));
 
@@ -51,7 +47,7 @@ namespace consultorioWeb.Admin.Paciente
             {
                 if (usuario.Dv == Convert.ToChar(txt_dv.Text))
                 {
-                    capaNegocio.Paciente paciente = new capaNegocio.Paciente();
+                   capaNegocio.Paciente paciente = new capaNegocio.Paciente();
                     paciente.IdUsuario = usuario.Id;
                     if (paciente.ReadIdUsuario())
                     {
@@ -90,7 +86,7 @@ namespace consultorioWeb.Admin.Paciente
                 
             }
             else {
-                lblRespuesta.Text = "No se encontro";                
+                lblRespuesta.Text = "Usuario no Registrado";                
                 limpiar();
                 btnHabilitar.Visible = true;                
             }
@@ -111,7 +107,7 @@ namespace consultorioWeb.Admin.Paciente
             ddNacionalidad.Enabled = true;
             ddRh.Enabled = true;
             ddSector.Enabled = true;
-            btn_Guardar.Enabled = true;
+            btnGuardarActualizar.Enabled = true;
             btnHabilitar.Visible = true;
         }
         private void bloqueo() {
@@ -130,7 +126,7 @@ namespace consultorioWeb.Admin.Paciente
             ddNacionalidad.Enabled = false;
             ddRh.Enabled = false;
             ddSector.Enabled = false;
-            btn_Guardar.Enabled = false;
+            btnGuardarActualizar.Enabled = false;
             btnHabilitar.Visible = false;
             
         }
@@ -143,20 +139,127 @@ namespace consultorioWeb.Admin.Paciente
             txt_sNombre.Text = "";
             txt_apPaterno.Text = "";
             txt_Domicilio.Text = "";
-            txt_fono2.Text = "";
-        
-        
-        
+            txt_fono2.Text = "";        
         }
 
+
+
+/*
         protected void btn_Guardar_Click(object sender, EventArgs e)
         {
+            Usuario usuario = new Usuario();
+            usuario.Rut = Convert.ToInt32(txt_Rut.Text);
 
-        }
+            if (usuario.ReadRut()) //si existe entonces se agrega, si no existe se actualiza :3
+            {
+                if (usuario.Dv == Convert.ToChar(txt_dv.Text))
+                {
+                    capaNegocio.Paciente paciente = new capaNegocio.Paciente();
+                    paciente.IdUsuario = usuario.Id;
+                    if (paciente.ReadIdUsuario()) 
+                    {
+                        usuario.Pnombre = txt_pNombre.Text;
+                        usuario.Snombre = txt_sNombre.Text;
+                        usuario.Apmaterno = txt_apMaterno.Text;
+                        usuario.Appaterno = txt_apPaterno.Text;
+                        usuario.FechaNacimiento = Convert.ToDateTime(txt_Fecha.Text);
+                        usuario.IdGenero = ddGenero.SelectedIndex;
+                        usuario.IdNacionalidad = ddNacionalidad.SelectedIndex;
+                        usuario.Direccion = txt_Domicilio.Text;
+                        usuario.IdComuna = ddComuna.SelectedIndex;                      
+                        lblAnios.Text = (DateTime.Today.AddTicks(-usuario.FechaNacimiento.Ticks).Year - 1).ToString();
+
+                        usuario.Fono1 = txt_fono1.Text;
+                        usuario.Fono2 = txt_fono2.Text;
+
+                        paciente.IdSector = ddSector.SelectedIndex;
+                        paciente.IdGrupoSanguineo = ddGrupoS.SelectedIndex;
+                        paciente.IdRh = ddRh.SelectedIndex;
+                        //lblRespuesta.Text = "no exite paciente";
+
+                        if (paciente.Update())
+                        {
+                            if (usuario.Update())
+                            {
+                                lblRespuesta.Text = "0";
+                            }
+                            lblRespuesta.Text = "1";
+                        }
+                       
+                    }
+                    else
+                    {
+                        lblRespuesta.Text = "2";
+                    }
+                }
+                else
+                {
+                    lblRespuesta.Text = "3";
+                }
+
+            }
+            else
+            {
+                lblRespuesta.Text = "Usuario no Registrado";
+                limpiar();
+                btnHabilitar.Visible = true;
+            }
+        } */
 
         protected void btnHabilitar_Click(object sender, EventArgs e)
         {
             desbloqueo();
         }
+
+        protected void btnGuardarActualizar_Click(object sender, EventArgs e)
+        {
+            Usuario us = new Usuario();
+            us.Rut = Convert.ToInt32(txt_Rut.Text);
+            if (us.ReadRut()) //Caso que usuario Existe se actualiza
+            {
+                capaNegocio.Paciente pac = new capaNegocio.Paciente();
+                pac.IdUsuario = us.Id;
+
+                if (pac.ReadIdUsuario())
+                {
+                    pac.IdGrupoSanguineo = ddGrupoS.SelectedIndex;
+                    pac.IdRh = ddRh.SelectedIndex;
+                    pac.IdSector = ddRh.SelectedIndex;
+
+                    us.Pnombre = txt_pNombre.Text;
+                    us.Snombre = txt_sNombre.Text;
+                    us.Appaterno = txt_apPaterno.Text;
+                    us.Apmaterno = txt_apMaterno.Text;
+                    us.FechaNacimiento = Convert.ToDateTime(txt_Fecha.Text);
+                    us.IdGenero = ddGenero.SelectedIndex;
+                    us.IdNacionalidad = ddNacionalidad.SelectedIndex;
+                    us.Direccion = txt_Domicilio.Text;
+                    us.IdComuna = ddComuna.SelectedIndex;
+                    lblAnios.Text = (DateTime.Today.AddTicks(-us.FechaNacimiento.Ticks).Year - 1).ToString();
+                    us.Fono1 = txt_fono1.Text;
+                    us.Fono2 = txt_fono2.Text;
+
+                    lblRespuesta.Text = us.imprimir() + "xx";
+                    if (us.UpdateNuevo())
+                    {
+                        if (pac.Update())
+                        {
+                            lblRespuesta.Text = "Exito!. Se ha actualizado";
+                        }
+                        else {
+                            lblRespuesta.Text = "Erooorororooror";
+                        }
+                    }
+                    else {
+                        lblRespuesta.Text = "No se actualizo";
+                    }
+                    
+                }
+
+            }   //Caso usuario no exite se agrega
+            else {
+                lblRespuesta.Text = "Se crea";            
+            }
+        }   
     }
 }

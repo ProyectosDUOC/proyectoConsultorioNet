@@ -229,12 +229,12 @@ namespace consultorioWeb.Admin.Paciente {
         protected global::System.Web.UI.WebControls.DropDownList ddRh;
         
         /// <summary>
-        /// Control btn_Guardar.
+        /// Control btnGuardarActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_Guardar;
+        protected global::System.Web.UI.WebControls.Button btnGuardarActualizar;
     }
 }

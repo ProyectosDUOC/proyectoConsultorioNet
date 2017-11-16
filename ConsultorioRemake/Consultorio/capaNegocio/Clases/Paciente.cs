@@ -131,9 +131,8 @@ namespace capaNegocio
             {
                 capaDatos.Paciente paciente = CommonBC.ModeloConsultorio.Paciente.First
                     (
-                        pacien => pacien.id_paciente == this.Id
+                        pacien => pacien.id_usuario == this.idUsuario
                     );
-                paciente.id_usuario = this.IdUsuario;
                 paciente.id_grupo_sanguineo = this.IdGrupoSanguineo;
                 paciente.id_rh = this.IdRh;
                 paciente.id_sector = this.IdSector;

@@ -23,7 +23,6 @@ namespace capaNegocio
             set { idUsuario = value; }
 
         }
-
         
         private int idJornadaLaboral;
 
@@ -71,9 +70,9 @@ namespace capaNegocio
             {
                 capaDatos.Enfermera enfermera = CommonBC.ModeloConsultorio.Enfermera.First
                     (
-                        enfer => enfer.id_enfermera == this.Id
+                        enfer => enfer.id_usuario == this.idUsuario
                     );               
-                this.idUsuario = enfermera.id_usuario;
+                this.id = enfermera.id_enfermera;
                 this.idJornadaLaboral = enfermera.id_jornada_laboral;
 
                 return true;

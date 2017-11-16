@@ -31,13 +31,13 @@ namespace consultorioWeb.Admin.Enfermera {
         protected global::System.Web.UI.WebControls.TextBox txt_Rut;
         
         /// <summary>
-        /// Control lbl_Dv.
+        /// Control txt_dv.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_Dv;
+        protected global::System.Web.UI.WebControls.TextBox txt_dv;
         
         /// <summary>
         /// Control btn_Buscar.
@@ -103,22 +103,22 @@ namespace consultorioWeb.Admin.Enfermera {
         protected global::System.Web.UI.WebControls.Label lbl_Edad;
         
         /// <summary>
-        /// Control DropDownList1.
+        /// Control ddGenero.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.DropDownList ddGenero;
         
         /// <summary>
-        /// Control DropDownList2.
+        /// Control ddNacionalidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.DropDownList ddNacionalidad;
         
         /// <summary>
         /// Control txt_Domicilio.
@@ -130,22 +130,22 @@ namespace consultorioWeb.Admin.Enfermera {
         protected global::System.Web.UI.WebControls.TextBox txt_Domicilio;
         
         /// <summary>
-        /// Control DropDownList3.
+        /// Control ddComuna.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList3;
+        protected global::System.Web.UI.WebControls.DropDownList ddComuna;
         
         /// <summary>
-        /// Control DropDownList4.
+        /// Control ddSector.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        protected global::System.Web.UI.WebControls.DropDownList ddSector;
         
         /// <summary>
         /// Control txt_nCasa.
@@ -182,5 +182,14 @@ namespace consultorioWeb.Admin.Enfermera {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Atras;
+        
+        /// <summary>
+        /// Control lblRespuesta.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRespuesta;
     }
 }

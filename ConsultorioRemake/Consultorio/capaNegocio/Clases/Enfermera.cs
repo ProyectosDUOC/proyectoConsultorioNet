@@ -23,7 +23,6 @@ namespace capaNegocio
             set { idUsuario = value; }
 
         }
-
         
         private int idJornadaLaboral;
 

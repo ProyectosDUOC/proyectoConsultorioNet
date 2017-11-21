@@ -230,7 +230,7 @@ namespace capaNegocio
             {
                 capaDatos.Usuario usuario = CommonBC.ModeloConsultorio.Usuario.First
                     (
-                        usu => usu.id_usuario == this.Id
+                        usu => usu.id_usuario == this.id
                     );
                 this.Rut = usuario.rut_usuario;
                 this.Dv = Char.Parse(usuario.dv_usuario);

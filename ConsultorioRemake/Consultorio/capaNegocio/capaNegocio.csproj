@@ -77,6 +77,8 @@
     <Compile Include="ClasesExterior\TipoDesvinculadoColeccion.cs" />
     <Compile Include="ClasesExterior\TipoUsuario.cs" />
     <Compile Include="ClasesExterior\TipoUsuarioColeccion.cs" />
+    <Compile Include="ClasesListar\PacienteLColeccion.cs" />
+    <Compile Include="ClasesListar\PacienteListar.cs" />
     <Compile Include="Clases\Consultorio.cs" />
     <Compile Include="Clases\ConsultorioColeccion.cs" />
     <Compile Include="Clases\Enfermera.cs" />
@@ -107,6 +109,7 @@
   <ItemGroup>
     <None Include="App.Config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

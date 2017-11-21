@@ -31,7 +31,7 @@ namespace capaNegocio
             nombre = String.Empty;
         }
 
-        private bool Create() 
+        public bool Create() 
         {
             try
             {
@@ -52,7 +52,7 @@ namespace capaNegocio
             }
         }
 
-        private bool Read()
+        public bool Read()
         {
             try
             {
@@ -74,7 +74,7 @@ namespace capaNegocio
             }
         }
 
-        private bool Update()
+        public bool Update()
         {
             try
             {

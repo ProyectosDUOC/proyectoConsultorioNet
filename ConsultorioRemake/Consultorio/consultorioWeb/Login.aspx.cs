@@ -33,16 +33,17 @@ namespace consultorioWeb
           //  string user = Request.Form["txtUsuario"];
           //  string pass = Request.Form["txtPass"];
 
-           // ControlAcceso controlAcceso = new ControlAcceso();
+           // ControlAcceso controlAcceso = new ControlAcceso();           
 
             controlAcceso.Username = txtUsuario.Text;
-
             if (controlAcceso.Read())
-            {
+            {            
                 if (controlAcceso.Activo == 1)
                 {
                     if (controlAcceso.Pass.Equals(txtPass.Text))
-                    {                        
+                    {
+                        Session["usuario"] = controlAcceso;
+
                         if (controlAcceso.IdTipoUsuario == 2)
                         {
                             Response.Redirect("/Secretaria/MenuSecretaria.aspx");

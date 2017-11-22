@@ -111,31 +111,33 @@ namespace consultorioWeb.Secretaria
         protected void Button3_Click(object sender, EventArgs e)
         {
             FichaPaciente fichaPaciente = new FichaPaciente();
-
+            int contador = capaNegocio.Control.Contadores.contadorIdFichaPaciente();          
+            fichaPaciente.Id_ficha_paciente = contador + 1;
             fichaPaciente.Id_ficha_paciente = paciente.Id;
             capaNegocio.Secretaria secre = new capaNegocio.Secretaria();
-            secre.IdUsuario = controlAcceso.IdUsuario;
-
-            if (secre.ReadId()) {
-                fichaPaciente.IdSecretaria = secre.Id;
-                fichaPaciente.Motivo = txtArea.Text;
-                fichaPaciente.IdConsultorio = 1;              
-                if (fichaPaciente.Create())
-                {
-                    lblRespuesta.Text = "Se ha generado La ficha";
-                }
-                else
-                {
-                    lblRespuesta.Text = "No se ha creado !!" + fichaPaciente.ToString();
-                }
+            secre.IdUsuario = controlAcceso.IdUsuario;      
+            fichaPaciente.Motivo = txtArea.Text;
+            fichaPaciente.IdConsultorio = 1;              
+            if (fichaPaciente.Create())
+            {
+                lblRespuesta.Text = "Se ha generado La ficha";
             }
-            else{
-                lblRespuesta.Text = "No se encontro secre";
+            else
+            {
+                lblRespuesta.Text = "No se ha creado !!" + fichaPaciente.ToString();
             }
+                     
             
             
             
            
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            int contador = capaNegocio.Control.Contadores.contadorIdFichaPaciente();
+
+            lblRespuesta.Text = contador.ToString();
         }
     }
 }

@@ -2858,6 +2858,54 @@ namespace capaDatos
         private global::System.Int32 _diastolica;
         partial void OndiastolicaChanging(global::System.Int32 value);
         partial void OndiastolicaChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String motivos
+        {
+            get
+            {
+                return _motivos;
+            }
+            set
+            {
+                OnmotivosChanging(value);
+                ReportPropertyChanging("motivos");
+                _motivos = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("motivos");
+                OnmotivosChanged();
+            }
+        }
+        private global::System.String _motivos;
+        partial void OnmotivosChanging(global::System.String value);
+        partial void OnmotivosChanged();
+    
+        /// <summary>
+        /// No hay documentación de metadatos disponible.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String diagnostico
+        {
+            get
+            {
+                return _diagnostico;
+            }
+            set
+            {
+                OndiagnosticoChanging(value);
+                ReportPropertyChanging("diagnostico");
+                _diagnostico = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("diagnostico");
+                OndiagnosticoChanged();
+            }
+        }
+        private global::System.String _diagnostico;
+        partial void OndiagnosticoChanging(global::System.String value);
+        partial void OndiagnosticoChanged();
 
         #endregion
 

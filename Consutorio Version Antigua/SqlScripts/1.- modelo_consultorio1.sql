@@ -106,7 +106,9 @@ CREATE TABLE Ficha_Paciente
     sistonica         INT NOT NULL ,
     distolica         INT NOT NULL ,
     pulsacion         INT NOT NULL ,
-    diastolica        INT NOT NULL
+    diastolica        INT NOT NULL,
+    motivos NVARCHAR(300),
+    diagnostico NVARCHAR(500)
   ) ;
 
 

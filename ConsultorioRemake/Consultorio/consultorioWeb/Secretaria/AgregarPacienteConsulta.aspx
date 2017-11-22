@@ -91,7 +91,8 @@
             </td>
             <td class="style13">
                 <asp:TextBox ID="txtArea" TextMode="MultiLine" runat="server" Height="151px" Width="188px"></asp:TextBox>
-                <asp:Button ID="Button3" runat="server" Text="Agregar" />
+                <asp:Button ID="Button3" runat="server" Text="Agregar" 
+                    onclick="Button3_Click" />
             </td>
             <td class="style10">
                 &nbsp;

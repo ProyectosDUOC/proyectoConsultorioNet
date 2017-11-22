@@ -266,6 +266,8 @@
           <Property Name="distolica" Type="int" Nullable="false" />
           <Property Name="pulsacion" Type="int" Nullable="false" />
           <Property Name="diastolica" Type="int" Nullable="false" />
+          <Property Name="motivos" Type="nvarchar" MaxLength="300" />
+          <Property Name="diagnostico" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="Genero">
           <Key>
@@ -1129,6 +1131,8 @@
           <Property Name="distolica" Type="Int32" Nullable="false" />
           <Property Name="pulsacion" Type="Int32" Nullable="false" />
           <Property Name="diastolica" Type="Int32" Nullable="false" />
+          <Property Name="motivos" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="diagnostico" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Consultorio" Relationship="ConsultoriosModel.Ficha_Paciente_Consultori_FK" FromRole="Ficha_Paciente" ToRole="Consultorio" />
           <NavigationProperty Name="Enfermera" Relationship="ConsultoriosModel.Ficha_Paciente_Enfermera_FK" FromRole="Ficha_Paciente" ToRole="Enfermera" />
           <NavigationProperty Name="Medico" Relationship="ConsultoriosModel.Ficha_Paciente_Medico_FK" FromRole="Ficha_Paciente" ToRole="Medico" />
@@ -1869,6 +1873,8 @@
                 <ScalarProperty Name="distolica" ColumnName="distolica" />
                 <ScalarProperty Name="pulsacion" ColumnName="pulsacion" />
                 <ScalarProperty Name="diastolica" ColumnName="diastolica" />
+                <ScalarProperty Name="motivos" ColumnName="motivos" />
+                <ScalarProperty Name="diagnostico" ColumnName="diagnostico" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2091,7 +2097,7 @@
         <EntityTypeShape EntityType="ConsultoriosModel.Desvinculado" Width="1.5" PointX="15" PointY="10.375" Height="2.3648893229166674" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Enfermera" Width="1.5" PointX="15" PointY="7.5" Height="2.1725878906249996" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Especialidad" Width="1.5" PointX="14.75" PointY="24.75" Height="1.5956835937500031" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Ficha_Paciente" Width="1.5" PointX="12" PointY="13.875" Height="5.2494108072916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Ficha_Paciente" Width="1.5" PointX="12" PointY="13.75" Height="5.6340136718750031" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Genero" Width="1.5" PointX="7.5" PointY="9.625" Height="1.5956835937500031" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Grupo_sanguineo" Width="1.5" PointX="15.75" PointY="1.625" Height="1.5956835937500031" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Jornada_laboral" Width="1.5" PointX="12.75" PointY="2.75" Height="3.7109993489583388" IsExpanded="true" />
@@ -2193,9 +2199,9 @@
           <ConnectorPoint PointX="14.871425565098878" PointY="9.80116232552612" />
           <ConnectorPoint PointX="14.753574434901122" PointY="9.9190134557238778" />
           <ConnectorPoint PointX="14.625" PointY="10.047587890625" />
-          <ConnectorPoint PointX="14.625" PointY="13.5" />
-          <ConnectorPoint PointX="13.850769230769231" PointY="13.5" />
-          <ConnectorPoint PointX="13.475769230769231" PointY="13.875" />
+          <ConnectorPoint PointX="14.625" PointY="13.375" />
+          <ConnectorPoint PointX="13.850769230769231" PointY="13.375" />
+          <ConnectorPoint PointX="13.475769230769231" PointY="13.75" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Medico_Especialidad_FK" ManuallyRouted="false">
           <ConnectorPoint PointX="16.25" PointY="25.547841796875" />
@@ -2228,11 +2234,11 @@
         <AssociationConnector Association="ConsultoriosModel.Ficha_Paciente_Secretaria_FK" ManuallyRouted="false">
           <ConnectorPoint PointX="15.062306692307693" PointY="6.67258789062501" />
           <ConnectorPoint PointX="14.8125" PointY="6.9223945829327036" />
-          <ConnectorPoint PointX="14.8125" PointY="13.75" />
-          <ConnectorPoint PointX="13.958333333333334" PointY="13.75" />
-          <ConnectorPoint PointX="13.791666666666666" PointY="13.75" />
-          <ConnectorPoint PointX="13.650383615384616" PointY="13.75" />
-          <ConnectorPoint PointX="13.5" PointY="13.900383615384616" />
+          <ConnectorPoint PointX="14.8125" PointY="13.625" />
+          <ConnectorPoint PointX="13.958333333333334" PointY="13.625" />
+          <ConnectorPoint PointX="13.791666666666666" PointY="13.625" />
+          <ConnectorPoint PointX="13.650383615384616" PointY="13.625" />
+          <ConnectorPoint PointX="13.5" PointY="13.775383615384616" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Lic_Medica_Ficha_Paciente_FK" ManuallyRouted="false">
           <ConnectorPoint PointX="13.5" PointY="16.490143229166669" />
@@ -2287,16 +2293,14 @@
           <ConnectorPoint PointX="17.25" PointY="19.557444661458334" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Medico_Usuario_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.25" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="13.791666666666666" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="13.958333333333334" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="14.541666666666666" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="14.708333333333334" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="14.729166666666666" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="14.895833333333334" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="16.651041666666668" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="16.817708333333332" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="17.2812475" PointY="13.348297526041669" />
+          <ConnectorPoint PointX="11.25" PointY="13.5" />
+          <ConnectorPoint PointX="13.642435897435897" PointY="13.499999999999998" />
+          <ConnectorPoint PointX="13.958333333333334" PointY="13.5" />
+          <ConnectorPoint PointX="14.729166666666666" PointY="13.5" />
+          <ConnectorPoint PointX="14.895833333333334" PointY="13.5" />
+          <ConnectorPoint PointX="16.651041666666668" PointY="13.5" />
+          <ConnectorPoint PointX="16.817708333333332" PointY="13.5" />
+          <ConnectorPoint PointX="17.2812475" PointY="13.5" />
           <ConnectorPoint PointX="17.2812475" PointY="14.125" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Usuario_Nacionalidad_FK" ManuallyRouted="false">

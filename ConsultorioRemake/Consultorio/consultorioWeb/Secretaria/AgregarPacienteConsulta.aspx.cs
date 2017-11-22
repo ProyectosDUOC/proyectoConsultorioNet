@@ -10,7 +10,8 @@ namespace consultorioWeb.Secretaria
 {
     public partial class AgregarPacienteConsulta : System.Web.UI.Page
     {
-
+        Paciente paciente = new Paciente();
+        Usuario usuario = new Usuario();
         private ControlAcceso controlAcceso
         {
             get
@@ -35,8 +36,7 @@ namespace consultorioWeb.Secretaria
 
         protected void btn_Buscar_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
-            usuario.Rut = Convert.ToInt32(txt_Rut.Text);
+           usuario.Rut = Convert.ToInt32(txt_Rut.Text);
 
             if (usuario.ReadRut())
             {
@@ -51,7 +51,7 @@ namespace consultorioWeb.Secretaria
                     visible();
 
 
-                    Paciente paciente = new Paciente();
+                   
                     paciente.IdUsuario = usuario.Id;
 
                     ln.Text = paciente.Id.ToString();
@@ -106,6 +106,29 @@ namespace consultorioWeb.Secretaria
             lSector.Enabled = false;
             lGrupoS.Enabled = false;
             lRsan.Enabled = false;
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            FichaPaciente fichaPaciente = new FichaPaciente();
+
+            fichaPaciente.Id_ficha_paciente = paciente.Id;
+            capaNegocio.Secretaria secre = new capaNegocio.Secretaria();
+            secre.IdUsuario = controlAcceso.IdUsuario;
+            secre.Read();
+            fichaPaciente.IdSecretaria = secre.Id;
+            fichaPaciente.Motivo = txtArea.Text;
+            fichaPaciente.IdConsultorio = 1;
+
+            if (fichaPaciente.Create())
+            {
+                lblRespuesta.Text = "Se ha generado La ficha";
+            }
+            else {
+                lblRespuesta.Text = "No se ha creado";
+            }
+            
+           
         }
     }
 }

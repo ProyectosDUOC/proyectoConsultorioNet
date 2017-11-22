@@ -33,5 +33,7 @@ namespace capaNegocio
             var consultorios = CommonBC.ModeloConsultorio.Consultorio;
             return GenerarListado(consultorios.ToList());
         }
+
+       
     }
 }

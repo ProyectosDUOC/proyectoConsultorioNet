@@ -34,7 +34,7 @@ namespace capaNegocio
             return fichasPacientes;
         }
 
-        public List<FichaPaciente> ReadAll() {
+        public static List<FichaPaciente> ReadAll() {
             var fichaPaciente = CommonBC.ModeloConsultorio.Ficha_Paciente;
             return GenerarListado(fichaPaciente.ToList());
         }

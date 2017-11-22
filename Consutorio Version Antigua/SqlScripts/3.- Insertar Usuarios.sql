@@ -107,3 +107,13 @@ INSERT INTO [Consultorios].[dbo].[Control_Acceso]  VALUES (18,'Agustin','1234',5
 INSERT INTO [Consultorios].[dbo].[Control_Acceso]  VALUES (19,'Bruno','1234',5,28,1)
 INSERT INTO [Consultorios].[dbo].[Control_Acceso]  VALUES (20,'Guillermo','1234',5,29,1)
 INSERT INTO [Consultorios].[dbo].[Control_Acceso]  VALUES (21,'Raul','1234',5,30,1)
+
+INSERT INTO [Consultorios].[dbo].[Medicamentos] VALUES (1, 'Paracetamol', 'Paracetamol','Paracetamol', '1', 'Dolor de cabeza') 
+
+INSERT INTO [Consultorios].[dbo].[Medicamentos] VALUES (2, 'Levorigotax 5 mg', 'Levorigotax 5 mg','Levorigotax 5 mg', '2', 'Alergia')
+
+INSERT INTO [Consultorios].[dbo].[Medicamentos] VALUES (3, 'Ketoprofeno 200 mg', 'Ketoprofeno 200 mg','Ketoprofeno 200 mg','3','Dolor de garganta')  
+
+INSERT INTO [Consultorios].[dbo].[Medicamentos] VALUES (4, 'Vitamina C', 'Vitamina C','Vitamina C','4','Defensas bajas') 
+
+INSERT INTO [Consultorios].[dbo].[Medicamentos] VALUES (5, 'Azitromicina 500 mg', 'Azitromicina 500 mg','Azitromicina 500 mg','5', 'Resfriado') 

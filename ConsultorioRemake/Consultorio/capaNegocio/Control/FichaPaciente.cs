@@ -172,6 +172,8 @@ namespace capaNegocio
            {
                capaDatos.Ficha_Paciente fichaPac = new capaDatos.Ficha_Paciente();
 
+               int id = Control.Contadores
+
                fichaPac.fecha = DateTime.Now;
                fichaPac.id_consultorio = 0;
                fichaPac.id_Medico = 0;

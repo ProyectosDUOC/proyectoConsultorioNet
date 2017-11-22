@@ -39,7 +39,7 @@ namespace capaNegocio
 
         //Listado de todos los elementos
 
-        public List<Usuario> ReadAll()
+        public static List<Usuario> ReadAll()
         {
             var usuarios = CommonBC.ModeloConsultorio.Usuario;
             return GenerarListado(usuarios.ToList());

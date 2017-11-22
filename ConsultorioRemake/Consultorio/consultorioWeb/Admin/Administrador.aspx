@@ -64,7 +64,7 @@
                     </tr>
                     <tr>
                         <td class="style8">
-                            <img alt="" src="/Imagen/Foto3.jpg" style="height: 194px; width: 186px" /></td>
+                            <img alt="" src="" style="height: 194px; width: 186px" /></td>
                         <td class="style9"></td>
                         <td class="style10">
                             <table>
@@ -72,13 +72,13 @@
                                     <td>Nombre : </td>
                                     <td class="style6">
                                         <asp:Label ID="lbl_Nombre" runat="server" Text=" "></asp:Label>
-                                        Carlos Orellana</td>
+                                        </td>
                                 </tr>
                                 <tr>
                                     <td>Rut :</td>
                                     <td class="style6">
                                         <asp:Label ID="lbl_rut" runat="server" Text=" "></asp:Label>
-                                        11.111.111-1</td>
+                                        </td>
                                 </tr>
                             </table>
                         </td>

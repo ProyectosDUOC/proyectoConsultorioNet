@@ -123,6 +123,21 @@ namespace capaNegocio
             set { diastolica = value; }
         }
 
+        private String motivo;
+
+        public String Motivo
+        {
+            get { return motivo; }
+            set { motivo = value; }
+        }
+
+        private String diagnostico;
+
+        public String Diagnostico
+        {
+            get { return diagnostico; }
+            set { diagnostico = value; }
+        }
        public FichaPaciente() {
            Init();
        }
@@ -143,15 +158,21 @@ namespace capaNegocio
            distolica = 0;
            pulsacion = 0;
            diastolica = 0;
+           motivo = " ";
+           diagnostico = " ";
 
        }
 
+       public override string ToString()
+       {
+           return base.ToString();
+       }
        public bool Create() {
            try
            {
                capaDatos.Ficha_Paciente fichaPac = new capaDatos.Ficha_Paciente();
-               fichaPac.id_ficha_paciente = this.Id_ficha_paciente;
-               fichaPac.fecha = this.Fecha;
+
+               fichaPac.fecha = DateTime.Now;
                fichaPac.id_consultorio = this.idConsultorio;
                fichaPac.id_secretaria = this.idSecretaria;
                fichaPac.id_Medico = this.idMedico;
@@ -165,6 +186,8 @@ namespace capaNegocio
                fichaPac.distolica = this.Distolica;
                fichaPac.pulsacion = this.Pulsacion;
                fichaPac.diastolica = this.Diastolica;
+               fichaPac.motivos = this.motivo;
+               fichaPac.diagnostico = this.diagnostico;
 
                CommonBC.ModeloConsultorio.AddToFicha_Paciente(fichaPac);
                CommonBC.ModeloConsultorio.SaveChanges();
@@ -172,8 +195,8 @@ namespace capaNegocio
            }
            catch (Exception ex)
            {
-
                return false;
+               
            }
        }
        public bool Read()
@@ -185,19 +208,19 @@ namespace capaNegocio
                     fic => fic.id_ficha_paciente == this.Id_ficha_paciente
                    );             
                this.Fecha = (DateTime)fichaPac.fecha;
-               this.idConsultorio = fichaPac.id_consultorio;
-               this.idSecretaria = fichaPac.id_secretaria;
-               this.idMedico = fichaPac.id_Medico;
-               this.idEnfermera = fichaPac.id_enfermera ;
-               this.idPaciente = fichaPac.id_paciente;
-               this.Peso = fichaPac.peso;
-               this.Estatura = fichaPac.estatura;
-               this.Imc = fichaPac.imc;
-               this.Temperatura = fichaPac.temperatura;
-               this.Sistonica = fichaPac.sistonica;
-               this.Distolica = fichaPac.distolica;
-               this.Pulsacion = fichaPac.pulsacion;
-               this.Diastolica = fichaPac.diastolica;
+               this.idConsultorio = (int)fichaPac.id_consultorio;
+               this.idSecretaria = (int)fichaPac.id_secretaria;
+               this.idMedico = (int)fichaPac.id_Medico;
+               this.idEnfermera = (int)fichaPac.id_enfermera;
+               this.idPaciente = (int)fichaPac.id_paciente;
+               this.Peso = (int)fichaPac.peso;
+               this.Estatura = (int)fichaPac.estatura;
+               this.Imc = (int)fichaPac.imc;
+               this.Temperatura = (int)fichaPac.temperatura;
+               this.Sistonica = (int)fichaPac.sistonica;
+               this.Distolica = (int)fichaPac.distolica;
+               this.Pulsacion = (int)fichaPac.pulsacion;
+               this.Diastolica = (int)fichaPac.diastolica;
                
                return true;
            }
@@ -214,10 +237,7 @@ namespace capaNegocio
                capaDatos.Ficha_Paciente fichaPac = CommonBC.ModeloConsultorio.Ficha_Paciente.First
                    (
                     fic => fic.id_ficha_paciente == this.Id_ficha_paciente
-                   );             
-               fichaPac.fecha = this.Fecha;
-               fichaPac.id_consultorio = this.idConsultorio;
-               fichaPac.id_secretaria = this.idSecretaria;
+                   );                 
                fichaPac.id_Medico = this.idMedico;
                fichaPac.id_enfermera = this.idEnfermera;
                fichaPac.id_paciente = this.idPaciente;
@@ -228,7 +248,8 @@ namespace capaNegocio
                fichaPac.sistonica = this.Sistonica;
                fichaPac.distolica = this.Distolica;
                fichaPac.pulsacion = this.Pulsacion;
-               fichaPac.diastolica = this.Diastolica;
+               fichaPac.diastolica = this.Diastolica;              
+               fichaPac.diagnostico = this.diagnostico;
                CommonBC.ModeloConsultorio.SaveChanges();
                return true;
            }

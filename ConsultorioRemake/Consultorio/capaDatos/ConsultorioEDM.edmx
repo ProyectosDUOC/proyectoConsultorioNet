@@ -176,7 +176,7 @@
             <PropertyRef Name="id_administrador" />
           </Key>
           <Property Name="id_administrador" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="int" Nullable="false" />
+          <Property Name="id_usuario" Type="int" />
         </EntityType>
         <EntityType Name="Alergia">
           <Key>
@@ -208,7 +208,7 @@
           <Property Name="id_consultorio" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="rut_consultorio" Type="int" />
           <Property Name="dv" Type="char" MaxLength="1" />
-          <Property Name="id_comuna" Type="int" Nullable="false" />
+          <Property Name="id_comuna" Type="int" />
           <Property Name="nombre" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Control_Acceso">
@@ -216,10 +216,10 @@
             <PropertyRef Name="id_control_acceso" />
           </Key>
           <Property Name="id_control_acceso" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="usuario_login" Type="nvarchar" Nullable="false" MaxLength="30" />
-          <Property Name="contrasena" Type="nvarchar" Nullable="false" MaxLength="30" />
-          <Property Name="id_tipo_usuario" Type="int" Nullable="false" />
-          <Property Name="id_usuario" Type="int" Nullable="false" />
+          <Property Name="usuario_login" Type="nvarchar" MaxLength="30" />
+          <Property Name="contrasena" Type="nvarchar" MaxLength="30" />
+          <Property Name="id_tipo_usuario" Type="int" />
+          <Property Name="id_usuario" Type="int" />
           <Property Name="activo" Type="int" />
         </EntityType>
         <EntityType Name="Desvinculado">
@@ -227,9 +227,9 @@
             <PropertyRef Name="id_desvinculado" />
           </Key>
           <Property Name="id_desvinculado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="int" Nullable="false" />
+          <Property Name="id_usuario" Type="int" />
           <Property Name="fecha" Type="date" />
-          <Property Name="id_tipo_desvin" Type="int" Nullable="false" />
+          <Property Name="id_tipo_desvin" Type="int" />
           <Property Name="glosa" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Enfermera">
@@ -237,8 +237,8 @@
             <PropertyRef Name="id_enfermera" />
           </Key>
           <Property Name="id_enfermera" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="int" Nullable="false" />
-          <Property Name="id_jornada_laboral" Type="int" Nullable="false" />
+          <Property Name="id_usuario" Type="int" />
+          <Property Name="id_jornada_laboral" Type="int" />
         </EntityType>
         <EntityType Name="Especialidad">
           <Key>
@@ -253,19 +253,21 @@
           </Key>
           <Property Name="id_ficha_paciente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="fecha" Type="date" />
-          <Property Name="id_consultorio" Type="int" Nullable="false" />
-          <Property Name="id_secretaria" Type="int" Nullable="false" />
-          <Property Name="id_Medico" Type="int" Nullable="false" />
-          <Property Name="id_enfermera" Type="int" Nullable="false" />
-          <Property Name="id_paciente" Type="int" Nullable="false" />
-          <Property Name="peso" Type="int" Nullable="false" />
-          <Property Name="estatura" Type="int" Nullable="false" />
-          <Property Name="imc" Type="int" Nullable="false" />
-          <Property Name="temperatura" Type="int" Nullable="false" />
-          <Property Name="sistonica" Type="int" Nullable="false" />
-          <Property Name="distolica" Type="int" Nullable="false" />
-          <Property Name="pulsacion" Type="int" Nullable="false" />
-          <Property Name="diastolica" Type="int" Nullable="false" />
+          <Property Name="id_consultorio" Type="int" />
+          <Property Name="id_secretaria" Type="int" />
+          <Property Name="id_Medico" Type="int" />
+          <Property Name="id_enfermera" Type="int" />
+          <Property Name="id_paciente" Type="int" />
+          <Property Name="peso" Type="int" />
+          <Property Name="estatura" Type="int" />
+          <Property Name="imc" Type="int" />
+          <Property Name="temperatura" Type="int" />
+          <Property Name="sistonica" Type="int" />
+          <Property Name="distolica" Type="int" />
+          <Property Name="pulsacion" Type="int" />
+          <Property Name="diastolica" Type="int" />
+          <Property Name="motivos" Type="nvarchar" MaxLength="300" />
+          <Property Name="diagnostico" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="Genero">
           <Key>
@@ -293,7 +295,7 @@
           <Property Name="viernes" Type="int" />
           <Property Name="sabado" Type="int" />
           <Property Name="domingo" Type="int" />
-          <Property Name="id_sector" Type="int" Nullable="false" />
+          <Property Name="id_sector" Type="int" />
           <Property Name="glosa" Type="nvarchar" MaxLength="30" />
         </EntityType>
         <EntityType Name="Licencia_Medica">
@@ -301,9 +303,9 @@
             <PropertyRef Name="id_licencia_medica" />
           </Key>
           <Property Name="id_licencia_medica" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="numero_de_dias" Type="int" Nullable="false" />
-          <Property Name="motivos" Type="nvarchar" Nullable="false" MaxLength="30" />
-          <Property Name="id_ficha_paciente" Type="int" Nullable="false" />
+          <Property Name="numero_de_dias" Type="int" />
+          <Property Name="motivos" Type="nvarchar" MaxLength="30" />
+          <Property Name="id_ficha_paciente" Type="int" />
         </EntityType>
         <EntityType Name="Medicamentos">
           <Key>
@@ -321,11 +323,11 @@
             <PropertyRef Name="id_Medico" />
           </Key>
           <Property Name="id_Medico" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="rut_medico" Type="int" Nullable="false" />
-          <Property Name="dv_medico" Type="char" Nullable="false" MaxLength="1" />
-          <Property Name="id_usuario" Type="int" Nullable="false" />
-          <Property Name="id_especialidad" Type="int" Nullable="false" />
-          <Property Name="id_jornada_laboral" Type="int" Nullable="false" />
+          <Property Name="rut_medico" Type="int" />
+          <Property Name="dv_medico" Type="char" MaxLength="1" />
+          <Property Name="id_usuario" Type="int" />
+          <Property Name="id_especialidad" Type="int" />
+          <Property Name="id_jornada_laboral" Type="int" />
         </EntityType>
         <EntityType Name="Nacionalidad">
           <Key>
@@ -339,10 +341,10 @@
             <PropertyRef Name="id_paciente" />
           </Key>
           <Property Name="id_paciente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="int" Nullable="false" />
-          <Property Name="id_grupo_sanguineo" Type="int" Nullable="false" />
-          <Property Name="id_rh" Type="int" Nullable="false" />
-          <Property Name="id_sector" Type="int" Nullable="false" />
+          <Property Name="id_usuario" Type="int" />
+          <Property Name="id_grupo_sanguineo" Type="int" />
+          <Property Name="id_rh" Type="int" />
+          <Property Name="id_sector" Type="int" />
         </EntityType>
         <EntityType Name="Pais">
           <Key>
@@ -364,13 +366,13 @@
             <PropertyRef Name="id_Receta_Medica" />
           </Key>
           <Property Name="id_Receta_Medica" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="fecha" Type="date" Nullable="false" />
-          <Property Name="cantidad" Type="int" Nullable="false" />
-          <Property Name="hora" Type="int" Nullable="false" />
-          <Property Name="dia" Type="int" Nullable="false" />
-          <Property Name="glosa" Type="nvarchar" Nullable="false" MaxLength="300" />
-          <Property Name="id_ficha_paciente" Type="int" Nullable="false" />
-          <Property Name="id_medicamentos" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="cantidad" Type="int" />
+          <Property Name="hora" Type="int" />
+          <Property Name="dia" Type="int" />
+          <Property Name="glosa" Type="nvarchar" MaxLength="300" />
+          <Property Name="id_ficha_paciente" Type="int" />
+          <Property Name="id_medicamentos" Type="int" />
         </EntityType>
         <EntityType Name="Region">
           <Key>
@@ -392,8 +394,8 @@
             <PropertyRef Name="id_secretaria" />
           </Key>
           <Property Name="id_secretaria" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="int" Nullable="false" />
-          <Property Name="id_jornada_laboral" Type="int" Nullable="false" />
+          <Property Name="id_usuario" Type="int" />
+          <Property Name="id_jornada_laboral" Type="int" />
         </EntityType>
         <EntityType Name="Sector">
           <Key>
@@ -422,24 +424,24 @@
             <PropertyRef Name="id_usuario" />
           </Key>
           <Property Name="id_usuario" Type="int" Nullable="false" />
-          <Property Name="rut_usuario" Type="int" Nullable="false" />
-          <Property Name="dv_usuario" Type="char" Nullable="false" MaxLength="1" />
-          <Property Name="foto" Type="nvarchar" Nullable="false" MaxLength="30" />
-          <Property Name="pnombre" Type="nvarchar" Nullable="false" MaxLength="30" />
+          <Property Name="rut_usuario" Type="int" />
+          <Property Name="dv_usuario" Type="char" MaxLength="1" />
+          <Property Name="foto" Type="nvarchar" MaxLength="30" />
+          <Property Name="pnombre" Type="nvarchar" MaxLength="30" />
           <Property Name="snombre" Type="nvarchar" MaxLength="30" />
-          <Property Name="appaterno" Type="nvarchar" Nullable="false" MaxLength="30" />
-          <Property Name="apmaterno" Type="nvarchar" Nullable="false" MaxLength="30" />
-          <Property Name="fecha_nacimiento" Type="date" Nullable="false" />
+          <Property Name="appaterno" Type="nvarchar" MaxLength="30" />
+          <Property Name="apmaterno" Type="nvarchar" MaxLength="30" />
+          <Property Name="fecha_nacimiento" Type="date" />
           <Property Name="direccion" Type="nvarchar" MaxLength="30" />
           <Property Name="fono1" Type="int" />
           <Property Name="fono2" Type="int" />
-          <Property Name="id_comuna" Type="int" Nullable="false" />
-          <Property Name="id_nacionalidad" Type="int" Nullable="false" />
-          <Property Name="id_genero" Type="int" Nullable="false" />
-          <Property Name="activo" Type="int" Nullable="false" />
+          <Property Name="id_comuna" Type="int" />
+          <Property Name="id_nacionalidad" Type="int" />
+          <Property Name="id_genero" Type="int" />
+          <Property Name="activo" Type="int" />
         </EntityType>
         <Association Name="Admin_Usuario_FK">
-          <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="0..1" />
           <End Role="Administrador" Type="ConsultoriosModel.Store.Administrador" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -487,7 +489,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Consultorio_Comuna_FK">
-          <End Role="Comuna" Type="ConsultoriosModel.Store.Comuna" Multiplicity="1" />
+          <End Role="Comuna" Type="ConsultoriosModel.Store.Comuna" Multiplicity="0..1" />
           <End Role="Consultorio" Type="ConsultoriosModel.Store.Consultorio" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Comuna">
@@ -499,7 +501,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Control_Acceso_Tipo_Usuario_FK">
-          <End Role="Tipo_Usuario" Type="ConsultoriosModel.Store.Tipo_Usuario" Multiplicity="1" />
+          <End Role="Tipo_Usuario" Type="ConsultoriosModel.Store.Tipo_Usuario" Multiplicity="0..1" />
           <End Role="Control_Acceso" Type="ConsultoriosModel.Store.Control_Acceso" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tipo_Usuario">
@@ -511,7 +513,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Control_Acceso_Usuario_FK">
-          <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="0..1" />
           <End Role="Control_Acceso" Type="ConsultoriosModel.Store.Control_Acceso" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -523,7 +525,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Enfermera_Jornada_laboral_FK">
-          <End Role="Jornada_laboral" Type="ConsultoriosModel.Store.Jornada_laboral" Multiplicity="1" />
+          <End Role="Jornada_laboral" Type="ConsultoriosModel.Store.Jornada_laboral" Multiplicity="0..1" />
           <End Role="Enfermera" Type="ConsultoriosModel.Store.Enfermera" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Jornada_laboral">
@@ -535,7 +537,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Enfermera_Usuario_FK">
-          <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="0..1" />
           <End Role="Enfermera" Type="ConsultoriosModel.Store.Enfermera" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -547,7 +549,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Ficha_Paciente_Consultori_FK">
-          <End Role="Consultorio" Type="ConsultoriosModel.Store.Consultorio" Multiplicity="1" />
+          <End Role="Consultorio" Type="ConsultoriosModel.Store.Consultorio" Multiplicity="0..1" />
           <End Role="Ficha_Paciente" Type="ConsultoriosModel.Store.Ficha_Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Consultorio">
@@ -559,7 +561,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Ficha_Paciente_Enfermera_FK">
-          <End Role="Enfermera" Type="ConsultoriosModel.Store.Enfermera" Multiplicity="1" />
+          <End Role="Enfermera" Type="ConsultoriosModel.Store.Enfermera" Multiplicity="0..1" />
           <End Role="Ficha_Paciente" Type="ConsultoriosModel.Store.Ficha_Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Enfermera">
@@ -571,7 +573,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Ficha_Paciente_Medico_FK">
-          <End Role="Medico" Type="ConsultoriosModel.Store.Medico" Multiplicity="1" />
+          <End Role="Medico" Type="ConsultoriosModel.Store.Medico" Multiplicity="0..1" />
           <End Role="Ficha_Paciente" Type="ConsultoriosModel.Store.Ficha_Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Medico">
@@ -583,7 +585,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Ficha_Paciente_Paciente_FK">
-          <End Role="Paciente" Type="ConsultoriosModel.Store.Paciente" Multiplicity="1" />
+          <End Role="Paciente" Type="ConsultoriosModel.Store.Paciente" Multiplicity="0..1" />
           <End Role="Ficha_Paciente" Type="ConsultoriosModel.Store.Ficha_Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Paciente">
@@ -595,7 +597,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Ficha_Paciente_Secretaria_FK">
-          <End Role="Secretaria" Type="ConsultoriosModel.Store.Secretaria" Multiplicity="1" />
+          <End Role="Secretaria" Type="ConsultoriosModel.Store.Secretaria" Multiplicity="0..1" />
           <End Role="Ficha_Paciente" Type="ConsultoriosModel.Store.Ficha_Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Secretaria">
@@ -607,7 +609,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Jornada_laboral_Sector_FK">
-          <End Role="Sector" Type="ConsultoriosModel.Store.Sector" Multiplicity="1" />
+          <End Role="Sector" Type="ConsultoriosModel.Store.Sector" Multiplicity="0..1" />
           <End Role="Jornada_laboral" Type="ConsultoriosModel.Store.Jornada_laboral" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sector">
@@ -619,7 +621,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Lic_Medica_Ficha_Paciente_FK">
-          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Store.Ficha_Paciente" Multiplicity="1" />
+          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Store.Ficha_Paciente" Multiplicity="0..1" />
           <End Role="Licencia_Medica" Type="ConsultoriosModel.Store.Licencia_Medica" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Ficha_Paciente">
@@ -631,7 +633,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Medico_Especialidad_FK">
-          <End Role="Especialidad" Type="ConsultoriosModel.Store.Especialidad" Multiplicity="1" />
+          <End Role="Especialidad" Type="ConsultoriosModel.Store.Especialidad" Multiplicity="0..1" />
           <End Role="Medico" Type="ConsultoriosModel.Store.Medico" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Especialidad">
@@ -643,7 +645,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Medico_Jornada_laboral_FK">
-          <End Role="Jornada_laboral" Type="ConsultoriosModel.Store.Jornada_laboral" Multiplicity="1" />
+          <End Role="Jornada_laboral" Type="ConsultoriosModel.Store.Jornada_laboral" Multiplicity="0..1" />
           <End Role="Medico" Type="ConsultoriosModel.Store.Medico" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Jornada_laboral">
@@ -655,7 +657,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Medico_Usuario_FK">
-          <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="0..1" />
           <End Role="Medico" Type="ConsultoriosModel.Store.Medico" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -667,7 +669,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Paciente_Grupo_sanguineo_FK">
-          <End Role="Grupo_sanguineo" Type="ConsultoriosModel.Store.Grupo_sanguineo" Multiplicity="1" />
+          <End Role="Grupo_sanguineo" Type="ConsultoriosModel.Store.Grupo_sanguineo" Multiplicity="0..1" />
           <End Role="Paciente" Type="ConsultoriosModel.Store.Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Grupo_sanguineo">
@@ -679,7 +681,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Paciente_Rh_sanguineo_FK">
-          <End Role="Rh_sanguineo" Type="ConsultoriosModel.Store.Rh_sanguineo" Multiplicity="1" />
+          <End Role="Rh_sanguineo" Type="ConsultoriosModel.Store.Rh_sanguineo" Multiplicity="0..1" />
           <End Role="Paciente" Type="ConsultoriosModel.Store.Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Rh_sanguineo">
@@ -691,7 +693,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Paciente_Sector_FK">
-          <End Role="Sector" Type="ConsultoriosModel.Store.Sector" Multiplicity="1" />
+          <End Role="Sector" Type="ConsultoriosModel.Store.Sector" Multiplicity="0..1" />
           <End Role="Paciente" Type="ConsultoriosModel.Store.Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sector">
@@ -703,7 +705,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Paciente_Usuario_FK">
-          <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="0..1" />
           <End Role="Paciente" Type="ConsultoriosModel.Store.Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -727,7 +729,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Rec_Medica_Ficha_Paciente_FK">
-          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Store.Ficha_Paciente" Multiplicity="1" />
+          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Store.Ficha_Paciente" Multiplicity="0..1" />
           <End Role="Receta_Medica" Type="ConsultoriosModel.Store.Receta_Medica" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Ficha_Paciente">
@@ -739,7 +741,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Rec_Medica_Medicamentos_FK">
-          <End Role="Medicamentos" Type="ConsultoriosModel.Store.Medicamentos" Multiplicity="1" />
+          <End Role="Medicamentos" Type="ConsultoriosModel.Store.Medicamentos" Multiplicity="0..1" />
           <End Role="Receta_Medica" Type="ConsultoriosModel.Store.Receta_Medica" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Medicamentos">
@@ -763,7 +765,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Secretaria_Jornada_laboral_FK">
-          <End Role="Jornada_laboral" Type="ConsultoriosModel.Store.Jornada_laboral" Multiplicity="1" />
+          <End Role="Jornada_laboral" Type="ConsultoriosModel.Store.Jornada_laboral" Multiplicity="0..1" />
           <End Role="Secretaria" Type="ConsultoriosModel.Store.Secretaria" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Jornada_laboral">
@@ -775,7 +777,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Secretaria_Usuario_FK">
-          <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="0..1" />
           <End Role="Secretaria" Type="ConsultoriosModel.Store.Secretaria" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -787,7 +789,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tipoDesc_Desvinculado_FK">
-          <End Role="Tipo_Desvinculado" Type="ConsultoriosModel.Store.Tipo_Desvinculado" Multiplicity="1" />
+          <End Role="Tipo_Desvinculado" Type="ConsultoriosModel.Store.Tipo_Desvinculado" Multiplicity="0..1" />
           <End Role="Desvinculado" Type="ConsultoriosModel.Store.Desvinculado" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tipo_Desvinculado">
@@ -799,7 +801,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Usuario_Comuna_FK">
-          <End Role="Comuna" Type="ConsultoriosModel.Store.Comuna" Multiplicity="1" />
+          <End Role="Comuna" Type="ConsultoriosModel.Store.Comuna" Multiplicity="0..1" />
           <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Comuna">
@@ -811,7 +813,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Usuario_Desvinculado_FK">
-          <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="0..1" />
           <End Role="Desvinculado" Type="ConsultoriosModel.Store.Desvinculado" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -823,7 +825,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Usuario_Genero_FK">
-          <End Role="Genero" Type="ConsultoriosModel.Store.Genero" Multiplicity="1" />
+          <End Role="Genero" Type="ConsultoriosModel.Store.Genero" Multiplicity="0..1" />
           <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Genero">
@@ -835,7 +837,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Usuario_Nacionalidad_FK">
-          <End Role="Nacionalidad" Type="ConsultoriosModel.Store.Nacionalidad" Multiplicity="1" />
+          <End Role="Nacionalidad" Type="ConsultoriosModel.Store.Nacionalidad" Multiplicity="0..1" />
           <End Role="Usuario" Type="ConsultoriosModel.Store.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Nacionalidad">
@@ -1022,7 +1024,7 @@
             <PropertyRef Name="id_administrador" />
           </Key>
           <Property Name="id_administrador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="Int32" Nullable="false" />
+          <Property Name="id_usuario" Type="Int32" />
           <NavigationProperty Name="Usuario" Relationship="ConsultoriosModel.Admin_Usuario_FK" FromRole="Administrador" ToRole="Usuario" />
         </EntityType>
         <EntityType Name="Alergia">
@@ -1061,7 +1063,7 @@
           <Property Name="id_consultorio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="rut_consultorio" Type="Int32" />
           <Property Name="dv" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
-          <Property Name="id_comuna" Type="Int32" Nullable="false" />
+          <Property Name="id_comuna" Type="Int32" />
           <Property Name="nombre" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Comuna" Relationship="ConsultoriosModel.Consultorio_Comuna_FK" FromRole="Consultorio" ToRole="Comuna" />
           <NavigationProperty Name="Ficha_Paciente" Relationship="ConsultoriosModel.Ficha_Paciente_Consultori_FK" FromRole="Consultorio" ToRole="Ficha_Paciente" />
@@ -1071,10 +1073,10 @@
             <PropertyRef Name="id_control_acceso" />
           </Key>
           <Property Name="id_control_acceso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="usuario_login" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
-          <Property Name="contrasena" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
-          <Property Name="id_tipo_usuario" Type="Int32" Nullable="false" />
-          <Property Name="id_usuario" Type="Int32" Nullable="false" />
+          <Property Name="usuario_login" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="contrasena" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="id_tipo_usuario" Type="Int32" />
+          <Property Name="id_usuario" Type="Int32" />
           <Property Name="activo" Type="Int32" />
           <NavigationProperty Name="Tipo_Usuario" Relationship="ConsultoriosModel.Control_Acceso_Tipo_Usuario_FK" FromRole="Control_Acceso" ToRole="Tipo_Usuario" />
           <NavigationProperty Name="Usuario" Relationship="ConsultoriosModel.Control_Acceso_Usuario_FK" FromRole="Control_Acceso" ToRole="Usuario" />
@@ -1084,9 +1086,9 @@
             <PropertyRef Name="id_desvinculado" />
           </Key>
           <Property Name="id_desvinculado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="Int32" Nullable="false" />
+          <Property Name="id_usuario" Type="Int32" />
           <Property Name="fecha" Type="DateTime" />
-          <Property Name="id_tipo_desvin" Type="Int32" Nullable="false" />
+          <Property Name="id_tipo_desvin" Type="Int32" />
           <Property Name="glosa" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Tipo_Desvinculado" Relationship="ConsultoriosModel.tipoDesc_Desvinculado_FK" FromRole="Desvinculado" ToRole="Tipo_Desvinculado" />
           <NavigationProperty Name="Usuario" Relationship="ConsultoriosModel.Usuario_Desvinculado_FK" FromRole="Desvinculado" ToRole="Usuario" />
@@ -1096,8 +1098,8 @@
             <PropertyRef Name="id_enfermera" />
           </Key>
           <Property Name="id_enfermera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="Int32" Nullable="false" />
-          <Property Name="id_jornada_laboral" Type="Int32" Nullable="false" />
+          <Property Name="id_usuario" Type="Int32" />
+          <Property Name="id_jornada_laboral" Type="Int32" />
           <NavigationProperty Name="Jornada_laboral" Relationship="ConsultoriosModel.Enfermera_Jornada_laboral_FK" FromRole="Enfermera" ToRole="Jornada_laboral" />
           <NavigationProperty Name="Usuario" Relationship="ConsultoriosModel.Enfermera_Usuario_FK" FromRole="Enfermera" ToRole="Usuario" />
           <NavigationProperty Name="Ficha_Paciente" Relationship="ConsultoriosModel.Ficha_Paciente_Enfermera_FK" FromRole="Enfermera" ToRole="Ficha_Paciente" />
@@ -1116,19 +1118,21 @@
           </Key>
           <Property Name="id_ficha_paciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="fecha" Type="DateTime" />
-          <Property Name="id_consultorio" Type="Int32" Nullable="false" />
-          <Property Name="id_secretaria" Type="Int32" Nullable="false" />
-          <Property Name="id_Medico" Type="Int32" Nullable="false" />
-          <Property Name="id_enfermera" Type="Int32" Nullable="false" />
-          <Property Name="id_paciente" Type="Int32" Nullable="false" />
-          <Property Name="peso" Type="Int32" Nullable="false" />
-          <Property Name="estatura" Type="Int32" Nullable="false" />
-          <Property Name="imc" Type="Int32" Nullable="false" />
-          <Property Name="temperatura" Type="Int32" Nullable="false" />
-          <Property Name="sistonica" Type="Int32" Nullable="false" />
-          <Property Name="distolica" Type="Int32" Nullable="false" />
-          <Property Name="pulsacion" Type="Int32" Nullable="false" />
-          <Property Name="diastolica" Type="Int32" Nullable="false" />
+          <Property Name="id_consultorio" Type="Int32" />
+          <Property Name="id_secretaria" Type="Int32" />
+          <Property Name="id_Medico" Type="Int32" />
+          <Property Name="id_enfermera" Type="Int32" />
+          <Property Name="id_paciente" Type="Int32" />
+          <Property Name="peso" Type="Int32" />
+          <Property Name="estatura" Type="Int32" />
+          <Property Name="imc" Type="Int32" />
+          <Property Name="temperatura" Type="Int32" />
+          <Property Name="sistonica" Type="Int32" />
+          <Property Name="distolica" Type="Int32" />
+          <Property Name="pulsacion" Type="Int32" />
+          <Property Name="diastolica" Type="Int32" />
+          <Property Name="motivos" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="diagnostico" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Consultorio" Relationship="ConsultoriosModel.Ficha_Paciente_Consultori_FK" FromRole="Ficha_Paciente" ToRole="Consultorio" />
           <NavigationProperty Name="Enfermera" Relationship="ConsultoriosModel.Ficha_Paciente_Enfermera_FK" FromRole="Ficha_Paciente" ToRole="Enfermera" />
           <NavigationProperty Name="Medico" Relationship="ConsultoriosModel.Ficha_Paciente_Medico_FK" FromRole="Ficha_Paciente" ToRole="Medico" />
@@ -1165,7 +1169,7 @@
           <Property Name="viernes" Type="Int32" />
           <Property Name="sabado" Type="Int32" />
           <Property Name="domingo" Type="Int32" />
-          <Property Name="id_sector" Type="Int32" Nullable="false" />
+          <Property Name="id_sector" Type="Int32" />
           <Property Name="glosa" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Enfermera" Relationship="ConsultoriosModel.Enfermera_Jornada_laboral_FK" FromRole="Jornada_laboral" ToRole="Enfermera" />
           <NavigationProperty Name="Sector" Relationship="ConsultoriosModel.Jornada_laboral_Sector_FK" FromRole="Jornada_laboral" ToRole="Sector" />
@@ -1177,9 +1181,9 @@
             <PropertyRef Name="id_licencia_medica" />
           </Key>
           <Property Name="id_licencia_medica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="numero_de_dias" Type="Int32" Nullable="false" />
-          <Property Name="motivos" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
-          <Property Name="id_ficha_paciente" Type="Int32" Nullable="false" />
+          <Property Name="numero_de_dias" Type="Int32" />
+          <Property Name="motivos" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="id_ficha_paciente" Type="Int32" />
           <NavigationProperty Name="Ficha_Paciente" Relationship="ConsultoriosModel.Lic_Medica_Ficha_Paciente_FK" FromRole="Licencia_Medica" ToRole="Ficha_Paciente" />
         </EntityType>
         <EntityType Name="Medicamentos">
@@ -1199,11 +1203,11 @@
             <PropertyRef Name="id_Medico" />
           </Key>
           <Property Name="id_Medico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="rut_medico" Type="Int32" Nullable="false" />
-          <Property Name="dv_medico" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
-          <Property Name="id_usuario" Type="Int32" Nullable="false" />
-          <Property Name="id_especialidad" Type="Int32" Nullable="false" />
-          <Property Name="id_jornada_laboral" Type="Int32" Nullable="false" />
+          <Property Name="rut_medico" Type="Int32" />
+          <Property Name="dv_medico" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="id_usuario" Type="Int32" />
+          <Property Name="id_especialidad" Type="Int32" />
+          <Property Name="id_jornada_laboral" Type="Int32" />
           <NavigationProperty Name="Especialidad" Relationship="ConsultoriosModel.Medico_Especialidad_FK" FromRole="Medico" ToRole="Especialidad" />
           <NavigationProperty Name="Ficha_Paciente" Relationship="ConsultoriosModel.Ficha_Paciente_Medico_FK" FromRole="Medico" ToRole="Ficha_Paciente" />
           <NavigationProperty Name="Jornada_laboral" Relationship="ConsultoriosModel.Medico_Jornada_laboral_FK" FromRole="Medico" ToRole="Jornada_laboral" />
@@ -1222,10 +1226,10 @@
             <PropertyRef Name="id_paciente" />
           </Key>
           <Property Name="id_paciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="Int32" Nullable="false" />
-          <Property Name="id_grupo_sanguineo" Type="Int32" Nullable="false" />
-          <Property Name="id_rh" Type="Int32" Nullable="false" />
-          <Property Name="id_sector" Type="Int32" Nullable="false" />
+          <Property Name="id_usuario" Type="Int32" />
+          <Property Name="id_grupo_sanguineo" Type="Int32" />
+          <Property Name="id_rh" Type="Int32" />
+          <Property Name="id_sector" Type="Int32" />
           <NavigationProperty Name="Alergia_Paciente" Relationship="ConsultoriosModel.Aler_Pac_Paciente_FK" FromRole="Paciente" ToRole="Alergia_Paciente" />
           <NavigationProperty Name="Ficha_Paciente" Relationship="ConsultoriosModel.Ficha_Paciente_Paciente_FK" FromRole="Paciente" ToRole="Ficha_Paciente" />
           <NavigationProperty Name="Grupo_sanguineo" Relationship="ConsultoriosModel.Paciente_Grupo_sanguineo_FK" FromRole="Paciente" ToRole="Grupo_sanguineo" />
@@ -1256,13 +1260,13 @@
             <PropertyRef Name="id_Receta_Medica" />
           </Key>
           <Property Name="id_Receta_Medica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="fecha" Type="DateTime" Nullable="false" />
-          <Property Name="cantidad" Type="Int32" Nullable="false" />
-          <Property Name="hora" Type="Int32" Nullable="false" />
-          <Property Name="dia" Type="Int32" Nullable="false" />
-          <Property Name="glosa" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
-          <Property Name="id_ficha_paciente" Type="Int32" Nullable="false" />
-          <Property Name="id_medicamentos" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" />
+          <Property Name="cantidad" Type="Int32" />
+          <Property Name="hora" Type="Int32" />
+          <Property Name="dia" Type="Int32" />
+          <Property Name="glosa" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="id_ficha_paciente" Type="Int32" />
+          <Property Name="id_medicamentos" Type="Int32" />
           <NavigationProperty Name="Ficha_Paciente" Relationship="ConsultoriosModel.Rec_Medica_Ficha_Paciente_FK" FromRole="Receta_Medica" ToRole="Ficha_Paciente" />
           <NavigationProperty Name="Medicamentos" Relationship="ConsultoriosModel.Rec_Medica_Medicamentos_FK" FromRole="Receta_Medica" ToRole="Medicamentos" />
         </EntityType>
@@ -1289,8 +1293,8 @@
             <PropertyRef Name="id_secretaria" />
           </Key>
           <Property Name="id_secretaria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="id_usuario" Type="Int32" Nullable="false" />
-          <Property Name="id_jornada_laboral" Type="Int32" Nullable="false" />
+          <Property Name="id_usuario" Type="Int32" />
+          <Property Name="id_jornada_laboral" Type="Int32" />
           <NavigationProperty Name="Ficha_Paciente" Relationship="ConsultoriosModel.Ficha_Paciente_Secretaria_FK" FromRole="Secretaria" ToRole="Ficha_Paciente" />
           <NavigationProperty Name="Jornada_laboral" Relationship="ConsultoriosModel.Secretaria_Jornada_laboral_FK" FromRole="Secretaria" ToRole="Jornada_laboral" />
           <NavigationProperty Name="Usuario" Relationship="ConsultoriosModel.Secretaria_Usuario_FK" FromRole="Secretaria" ToRole="Usuario" />
@@ -1326,21 +1330,21 @@
             <PropertyRef Name="id_usuario" />
           </Key>
           <Property Name="id_usuario" Type="Int32" Nullable="false" />
-          <Property Name="rut_usuario" Type="Int32" Nullable="false" />
-          <Property Name="dv_usuario" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
-          <Property Name="foto" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
-          <Property Name="pnombre" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="rut_usuario" Type="Int32" />
+          <Property Name="dv_usuario" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+          <Property Name="foto" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="pnombre" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
           <Property Name="snombre" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
-          <Property Name="appaterno" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
-          <Property Name="apmaterno" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
-          <Property Name="fecha_nacimiento" Type="DateTime" Nullable="false" />
+          <Property Name="appaterno" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="apmaterno" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
+          <Property Name="fecha_nacimiento" Type="DateTime" />
           <Property Name="direccion" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
           <Property Name="fono1" Type="Int32" />
           <Property Name="fono2" Type="Int32" />
-          <Property Name="id_comuna" Type="Int32" Nullable="false" />
-          <Property Name="id_nacionalidad" Type="Int32" Nullable="false" />
-          <Property Name="id_genero" Type="Int32" Nullable="false" />
-          <Property Name="activo" Type="Int32" Nullable="false" />
+          <Property Name="id_comuna" Type="Int32" />
+          <Property Name="id_nacionalidad" Type="Int32" />
+          <Property Name="id_genero" Type="Int32" />
+          <Property Name="activo" Type="Int32" />
           <NavigationProperty Name="Administrador" Relationship="ConsultoriosModel.Admin_Usuario_FK" FromRole="Usuario" ToRole="Administrador" />
           <NavigationProperty Name="Comuna" Relationship="ConsultoriosModel.Usuario_Comuna_FK" FromRole="Usuario" ToRole="Comuna" />
           <NavigationProperty Name="Control_Acceso" Relationship="ConsultoriosModel.Control_Acceso_Usuario_FK" FromRole="Usuario" ToRole="Control_Acceso" />
@@ -1353,7 +1357,7 @@
           <NavigationProperty Name="Secretaria" Relationship="ConsultoriosModel.Secretaria_Usuario_FK" FromRole="Usuario" ToRole="Secretaria" />
         </EntityType>
         <Association Name="Admin_Usuario_FK">
-          <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="0..1" />
           <End Role="Administrador" Type="ConsultoriosModel.Administrador" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -1401,7 +1405,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Consultorio_Comuna_FK">
-          <End Role="Comuna" Type="ConsultoriosModel.Comuna" Multiplicity="1" />
+          <End Role="Comuna" Type="ConsultoriosModel.Comuna" Multiplicity="0..1" />
           <End Role="Consultorio" Type="ConsultoriosModel.Consultorio" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Comuna">
@@ -1413,7 +1417,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Usuario_Comuna_FK">
-          <End Role="Comuna" Type="ConsultoriosModel.Comuna" Multiplicity="1" />
+          <End Role="Comuna" Type="ConsultoriosModel.Comuna" Multiplicity="0..1" />
           <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Comuna">
@@ -1425,7 +1429,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Ficha_Paciente_Consultori_FK">
-          <End Role="Consultorio" Type="ConsultoriosModel.Consultorio" Multiplicity="1" />
+          <End Role="Consultorio" Type="ConsultoriosModel.Consultorio" Multiplicity="0..1" />
           <End Role="Ficha_Paciente" Type="ConsultoriosModel.Ficha_Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Consultorio">
@@ -1437,7 +1441,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Control_Acceso_Tipo_Usuario_FK">
-          <End Role="Tipo_Usuario" Type="ConsultoriosModel.Tipo_Usuario" Multiplicity="1" />
+          <End Role="Tipo_Usuario" Type="ConsultoriosModel.Tipo_Usuario" Multiplicity="0..1" />
           <End Role="Control_Acceso" Type="ConsultoriosModel.Control_Acceso" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tipo_Usuario">
@@ -1449,7 +1453,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Control_Acceso_Usuario_FK">
-          <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="0..1" />
           <End Role="Control_Acceso" Type="ConsultoriosModel.Control_Acceso" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -1461,7 +1465,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="tipoDesc_Desvinculado_FK">
-          <End Role="Tipo_Desvinculado" Type="ConsultoriosModel.Tipo_Desvinculado" Multiplicity="1" />
+          <End Role="Tipo_Desvinculado" Type="ConsultoriosModel.Tipo_Desvinculado" Multiplicity="0..1" />
           <End Role="Desvinculado" Type="ConsultoriosModel.Desvinculado" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Tipo_Desvinculado">
@@ -1473,7 +1477,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Usuario_Desvinculado_FK">
-          <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="0..1" />
           <End Role="Desvinculado" Type="ConsultoriosModel.Desvinculado" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -1485,7 +1489,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Enfermera_Jornada_laboral_FK">
-          <End Role="Jornada_laboral" Type="ConsultoriosModel.Jornada_laboral" Multiplicity="1" />
+          <End Role="Jornada_laboral" Type="ConsultoriosModel.Jornada_laboral" Multiplicity="0..1" />
           <End Role="Enfermera" Type="ConsultoriosModel.Enfermera" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Jornada_laboral">
@@ -1497,7 +1501,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Enfermera_Usuario_FK">
-          <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="0..1" />
           <End Role="Enfermera" Type="ConsultoriosModel.Enfermera" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -1509,7 +1513,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Ficha_Paciente_Enfermera_FK">
-          <End Role="Enfermera" Type="ConsultoriosModel.Enfermera" Multiplicity="1" />
+          <End Role="Enfermera" Type="ConsultoriosModel.Enfermera" Multiplicity="0..1" />
           <End Role="Ficha_Paciente" Type="ConsultoriosModel.Ficha_Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Enfermera">
@@ -1521,7 +1525,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Medico_Especialidad_FK">
-          <End Role="Especialidad" Type="ConsultoriosModel.Especialidad" Multiplicity="1" />
+          <End Role="Especialidad" Type="ConsultoriosModel.Especialidad" Multiplicity="0..1" />
           <End Role="Medico" Type="ConsultoriosModel.Medico" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Especialidad">
@@ -1533,7 +1537,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Ficha_Paciente_Medico_FK">
-          <End Role="Medico" Type="ConsultoriosModel.Medico" Multiplicity="1" />
+          <End Role="Medico" Type="ConsultoriosModel.Medico" Multiplicity="0..1" />
           <End Role="Ficha_Paciente" Type="ConsultoriosModel.Ficha_Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Medico">
@@ -1545,7 +1549,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Ficha_Paciente_Paciente_FK">
-          <End Role="Paciente" Type="ConsultoriosModel.Paciente" Multiplicity="1" />
+          <End Role="Paciente" Type="ConsultoriosModel.Paciente" Multiplicity="0..1" />
           <End Role="Ficha_Paciente" Type="ConsultoriosModel.Ficha_Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Paciente">
@@ -1557,7 +1561,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Ficha_Paciente_Secretaria_FK">
-          <End Role="Secretaria" Type="ConsultoriosModel.Secretaria" Multiplicity="1" />
+          <End Role="Secretaria" Type="ConsultoriosModel.Secretaria" Multiplicity="0..1" />
           <End Role="Ficha_Paciente" Type="ConsultoriosModel.Ficha_Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Secretaria">
@@ -1569,7 +1573,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Lic_Medica_Ficha_Paciente_FK">
-          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Ficha_Paciente" Multiplicity="1" />
+          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Ficha_Paciente" Multiplicity="0..1" />
           <End Role="Licencia_Medica" Type="ConsultoriosModel.Licencia_Medica" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Ficha_Paciente">
@@ -1581,7 +1585,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Rec_Medica_Ficha_Paciente_FK">
-          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Ficha_Paciente" Multiplicity="1" />
+          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Ficha_Paciente" Multiplicity="0..1" />
           <End Role="Receta_Medica" Type="ConsultoriosModel.Receta_Medica" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Ficha_Paciente">
@@ -1593,7 +1597,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Usuario_Genero_FK">
-          <End Role="Genero" Type="ConsultoriosModel.Genero" Multiplicity="1" />
+          <End Role="Genero" Type="ConsultoriosModel.Genero" Multiplicity="0..1" />
           <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Genero">
@@ -1605,7 +1609,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Paciente_Grupo_sanguineo_FK">
-          <End Role="Grupo_sanguineo" Type="ConsultoriosModel.Grupo_sanguineo" Multiplicity="1" />
+          <End Role="Grupo_sanguineo" Type="ConsultoriosModel.Grupo_sanguineo" Multiplicity="0..1" />
           <End Role="Paciente" Type="ConsultoriosModel.Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Grupo_sanguineo">
@@ -1617,7 +1621,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Jornada_laboral_Sector_FK">
-          <End Role="Sector" Type="ConsultoriosModel.Sector" Multiplicity="1" />
+          <End Role="Sector" Type="ConsultoriosModel.Sector" Multiplicity="0..1" />
           <End Role="Jornada_laboral" Type="ConsultoriosModel.Jornada_laboral" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sector">
@@ -1629,7 +1633,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Medico_Jornada_laboral_FK">
-          <End Role="Jornada_laboral" Type="ConsultoriosModel.Jornada_laboral" Multiplicity="1" />
+          <End Role="Jornada_laboral" Type="ConsultoriosModel.Jornada_laboral" Multiplicity="0..1" />
           <End Role="Medico" Type="ConsultoriosModel.Medico" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Jornada_laboral">
@@ -1641,7 +1645,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Secretaria_Jornada_laboral_FK">
-          <End Role="Jornada_laboral" Type="ConsultoriosModel.Jornada_laboral" Multiplicity="1" />
+          <End Role="Jornada_laboral" Type="ConsultoriosModel.Jornada_laboral" Multiplicity="0..1" />
           <End Role="Secretaria" Type="ConsultoriosModel.Secretaria" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Jornada_laboral">
@@ -1653,7 +1657,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Rec_Medica_Medicamentos_FK">
-          <End Role="Medicamentos" Type="ConsultoriosModel.Medicamentos" Multiplicity="1" />
+          <End Role="Medicamentos" Type="ConsultoriosModel.Medicamentos" Multiplicity="0..1" />
           <End Role="Receta_Medica" Type="ConsultoriosModel.Receta_Medica" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Medicamentos">
@@ -1665,7 +1669,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Medico_Usuario_FK">
-          <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="0..1" />
           <End Role="Medico" Type="ConsultoriosModel.Medico" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -1677,7 +1681,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Usuario_Nacionalidad_FK">
-          <End Role="Nacionalidad" Type="ConsultoriosModel.Nacionalidad" Multiplicity="1" />
+          <End Role="Nacionalidad" Type="ConsultoriosModel.Nacionalidad" Multiplicity="0..1" />
           <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Nacionalidad">
@@ -1689,7 +1693,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Paciente_Rh_sanguineo_FK">
-          <End Role="Rh_sanguineo" Type="ConsultoriosModel.Rh_sanguineo" Multiplicity="1" />
+          <End Role="Rh_sanguineo" Type="ConsultoriosModel.Rh_sanguineo" Multiplicity="0..1" />
           <End Role="Paciente" Type="ConsultoriosModel.Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Rh_sanguineo">
@@ -1701,7 +1705,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Paciente_Sector_FK">
-          <End Role="Sector" Type="ConsultoriosModel.Sector" Multiplicity="1" />
+          <End Role="Sector" Type="ConsultoriosModel.Sector" Multiplicity="0..1" />
           <End Role="Paciente" Type="ConsultoriosModel.Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Sector">
@@ -1713,7 +1717,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Paciente_Usuario_FK">
-          <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="0..1" />
           <End Role="Paciente" Type="ConsultoriosModel.Paciente" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -1749,7 +1753,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="Secretaria_Usuario_FK">
-          <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="1" />
+          <End Role="Usuario" Type="ConsultoriosModel.Usuario" Multiplicity="0..1" />
           <End Role="Secretaria" Type="ConsultoriosModel.Secretaria" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Usuario">
@@ -1869,6 +1873,8 @@
                 <ScalarProperty Name="distolica" ColumnName="distolica" />
                 <ScalarProperty Name="pulsacion" ColumnName="pulsacion" />
                 <ScalarProperty Name="diastolica" ColumnName="diastolica" />
+                <ScalarProperty Name="motivos" ColumnName="motivos" />
+                <ScalarProperty Name="diagnostico" ColumnName="diagnostico" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -2091,7 +2097,7 @@
         <EntityTypeShape EntityType="ConsultoriosModel.Desvinculado" Width="1.5" PointX="15" PointY="10.375" Height="2.3648893229166674" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Enfermera" Width="1.5" PointX="15" PointY="7.5" Height="2.1725878906249996" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Especialidad" Width="1.5" PointX="14.75" PointY="24.75" Height="1.5956835937500031" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Ficha_Paciente" Width="1.5" PointX="12" PointY="13.875" Height="5.2494108072916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Ficha_Paciente" Width="1.5" PointX="12" PointY="13.75" Height="5.6340136718750031" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Genero" Width="1.5" PointX="7.5" PointY="9.625" Height="1.5956835937500031" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Grupo_sanguineo" Width="1.5" PointX="15.75" PointY="1.625" Height="1.5956835937500031" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Jornada_laboral" Width="1.5" PointX="12.75" PointY="2.75" Height="3.7109993489583388" IsExpanded="true" />
@@ -2193,9 +2199,9 @@
           <ConnectorPoint PointX="14.871425565098878" PointY="9.80116232552612" />
           <ConnectorPoint PointX="14.753574434901122" PointY="9.9190134557238778" />
           <ConnectorPoint PointX="14.625" PointY="10.047587890625" />
-          <ConnectorPoint PointX="14.625" PointY="13.5" />
-          <ConnectorPoint PointX="13.850769230769231" PointY="13.5" />
-          <ConnectorPoint PointX="13.475769230769231" PointY="13.875" />
+          <ConnectorPoint PointX="14.625" PointY="13.375" />
+          <ConnectorPoint PointX="13.850769230769231" PointY="13.375" />
+          <ConnectorPoint PointX="13.475769230769231" PointY="13.75" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Medico_Especialidad_FK" ManuallyRouted="false">
           <ConnectorPoint PointX="16.25" PointY="25.547841796875" />
@@ -2228,11 +2234,11 @@
         <AssociationConnector Association="ConsultoriosModel.Ficha_Paciente_Secretaria_FK" ManuallyRouted="false">
           <ConnectorPoint PointX="15.062306692307693" PointY="6.67258789062501" />
           <ConnectorPoint PointX="14.8125" PointY="6.9223945829327036" />
-          <ConnectorPoint PointX="14.8125" PointY="13.75" />
-          <ConnectorPoint PointX="13.958333333333334" PointY="13.75" />
-          <ConnectorPoint PointX="13.791666666666666" PointY="13.75" />
-          <ConnectorPoint PointX="13.650383615384616" PointY="13.75" />
-          <ConnectorPoint PointX="13.5" PointY="13.900383615384616" />
+          <ConnectorPoint PointX="14.8125" PointY="13.625" />
+          <ConnectorPoint PointX="13.958333333333334" PointY="13.625" />
+          <ConnectorPoint PointX="13.791666666666666" PointY="13.625" />
+          <ConnectorPoint PointX="13.650383615384616" PointY="13.625" />
+          <ConnectorPoint PointX="13.5" PointY="13.775383615384616" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Lic_Medica_Ficha_Paciente_FK" ManuallyRouted="false">
           <ConnectorPoint PointX="13.5" PointY="16.490143229166669" />
@@ -2287,16 +2293,14 @@
           <ConnectorPoint PointX="17.25" PointY="19.557444661458334" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Medico_Usuario_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.25" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="13.791666666666666" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="13.958333333333334" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="14.541666666666666" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="14.708333333333334" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="14.729166666666666" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="14.895833333333334" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="16.651041666666668" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="16.817708333333332" PointY="13.348297526041669" />
-          <ConnectorPoint PointX="17.2812475" PointY="13.348297526041669" />
+          <ConnectorPoint PointX="11.25" PointY="13.5" />
+          <ConnectorPoint PointX="13.642435897435897" PointY="13.499999999999998" />
+          <ConnectorPoint PointX="13.958333333333334" PointY="13.5" />
+          <ConnectorPoint PointX="14.729166666666666" PointY="13.5" />
+          <ConnectorPoint PointX="14.895833333333334" PointY="13.5" />
+          <ConnectorPoint PointX="16.651041666666668" PointY="13.5" />
+          <ConnectorPoint PointX="16.817708333333332" PointY="13.5" />
+          <ConnectorPoint PointX="17.2812475" PointY="13.5" />
           <ConnectorPoint PointX="17.2812475" PointY="14.125" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Usuario_Nacionalidad_FK" ManuallyRouted="false">

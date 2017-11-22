@@ -26,6 +26,18 @@ namespace consultorioWeb.Admin
         protected void Page_Load(object sender, EventArgs e)
         {
             lbl_Nombre.Text = controlAcceso.Id.ToString();
+
+            capaNegocio.Usuario usuario = new Usuario();
+            usuario.Id = controlAcceso.IdUsuario;
+            usuario.Read();
+            lbl_Nombre.Text = "";
+            lbl_rut.Text  = "";
+
+            lbl_Nombre.Text = usuario.Pnombre + " " + usuario.Snombre + " " + usuario.Appaterno + " " + usuario.Apmaterno;
+            lbl_rut.Text = usuario.Rut + "-" + usuario.Dv;
+            DateTime hoy = DateTime.Now;
+            lblFecha.Text = "Fecha: " + hoy;
+
             if (!IsPostBack)
             {
                 if (controlAcceso.Id==0)
@@ -57,7 +69,9 @@ namespace consultorioWeb.Admin
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
+            controlAcceso = new ControlAcceso();
             Response.Redirect("/Login.aspx");
+
         }
       
     }

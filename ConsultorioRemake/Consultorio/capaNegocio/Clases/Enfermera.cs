@@ -71,10 +71,11 @@ namespace capaNegocio
                 capaDatos.Enfermera enfermera = CommonBC.ModeloConsultorio.Enfermera.First
                     (
                         enfer => enfer.id_enfermera== this.id
-                    );               
+                    );  
+					
                 this.idUsuario = enfermera.id_usuario;
                 this.idJornadaLaboral = enfermera.id_jornada_laboral;
-
+				
                 return true;
             }
             catch (Exception ex)

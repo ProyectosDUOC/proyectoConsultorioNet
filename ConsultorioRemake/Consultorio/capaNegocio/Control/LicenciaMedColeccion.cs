@@ -17,8 +17,8 @@ namespace capaNegocio
 
                 licenciasMe.IdLicencia = lm.id_licencia_medica;
                 licenciasMe.Motivo = lm.motivos;
-                licenciasMe.NumeroDias = lm.numero_de_dias;
-                licenciasMe.IdPaciente = lm.id_ficha_paciente;
+                licenciasMe.NumeroDias = (int)lm.numero_de_dias;
+                licenciasMe.IdPaciente = (int)lm.id_ficha_paciente;
 
                 licenciasMedicas.Add(licenciasMe);
             }

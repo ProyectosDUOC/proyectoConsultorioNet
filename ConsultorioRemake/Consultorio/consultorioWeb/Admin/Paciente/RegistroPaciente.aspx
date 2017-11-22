@@ -33,8 +33,8 @@
                 </td>
             </tr>
         </table>
-        <br>
-        <br>
+        </ br>
+        </ br>
         <table>
             <tr>
                 <td>Primer nombre</td>

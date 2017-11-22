@@ -140,7 +140,7 @@ namespace capaNegocio
                 this.Viernes = (int)jornadalaboral.viernes;
                 this.Sabado = (int)jornadalaboral.sabado;
                 this.Domingo = (int)jornadalaboral.domingo;
-                this.IdSector = jornadalaboral.id_sector;
+                this.IdSector = (int)jornadalaboral.id_sector;
                 this.Glosa = jornadalaboral.glosa;
                 return true;
             }

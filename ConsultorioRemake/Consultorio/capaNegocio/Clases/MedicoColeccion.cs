@@ -16,10 +16,10 @@ namespace capaNegocio
                 capaNegocio.Medico medico = new Medico();
 
                 medico.Id = medic.id_Medico;
-                medico.Rut = medic.rut_medico;
-                medico.IdUsuario = medic.id_usuario;
-                medico.IdEspecialidad = medic.id_especialidad;
-                medico.IdJornadaLaboral = medic.id_jornada_laboral;
+                medico.Rut = (int)medic.rut_medico;
+                medico.IdUsuario = (int)medic.id_usuario;
+                medico.IdEspecialidad = (int)medic.id_especialidad;
+                medico.IdJornadaLaboral = (int)medic.id_jornada_laboral;
                 
                 medicos.Add(medico);
             }

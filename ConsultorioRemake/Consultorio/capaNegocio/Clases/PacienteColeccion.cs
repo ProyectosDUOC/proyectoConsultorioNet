@@ -20,13 +20,13 @@ namespace capaNegocio
             foreach (capaDatos.Paciente pac in paci.ToList())
             {
                 capaNegocio.Paciente paciente = new Paciente();
-               
 
-                paciente.Id = pac.id_paciente;
-                paciente.IdUsuario = pac.id_usuario;
-                paciente.IdGrupoSanguineo = pac.id_grupo_sanguineo;
-                paciente.IdRh = pac.id_rh;
-                paciente.IdSector = pac.id_sector;
+
+                paciente.Id = (int)pac.id_paciente;
+                paciente.IdUsuario = (int)pac.id_usuario;
+                paciente.IdGrupoSanguineo = (int)pac.id_grupo_sanguineo;
+                paciente.IdRh = (int)pac.id_rh;
+                paciente.IdSector = (int)pac.id_sector;
 
                 pacientes.Add(paciente);
             }
@@ -66,10 +66,10 @@ namespace capaNegocio
                 
 
                 paciente.Id = pac.id_paciente;
-                paciente.IdUsuario = pac.id_usuario;
-                paciente.IdGrupoSanguineo = pac.id_grupo_sanguineo;
-                paciente.IdRh = pac.id_rh;
-                paciente.IdSector = pac.id_sector;
+                paciente.IdUsuario = (int)pac.id_usuario;
+                paciente.IdGrupoSanguineo = (int)pac.id_grupo_sanguineo;
+                paciente.IdRh = (int)pac.id_rh;
+                paciente.IdSector = (int)pac.id_sector;
 
                 pacientes.Add(paciente);
             }

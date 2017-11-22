@@ -10,7 +10,18 @@ namespace consultorioWeb.Admin.Paciente
 {
     public partial class RegistroPaciente : System.Web.UI.Page
     {
-
+        private ControlAcceso controlAcceso
+        {
+            get
+            {
+                if (Session["MiUsuario"] == null)
+                {
+                    Session["MiUsuario"] = new ControlAcceso();
+                }
+                return (ControlAcceso)Session["MiUsuario"];
+            }
+            set { Session["MiUsuario"] = value; }
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -29,6 +40,10 @@ namespace consultorioWeb.Admin.Paciente
                 ddRh.DataBind();
                 ddGrupoS.DataSource = capaNegocio.GrupoSanguineoColeccion.ReadAll();
                 ddGrupoS.DataBind();
+                if (controlAcceso.Id == 0)
+                {
+                    Response.Redirect("/Login.aspx");
+                }
 
             }
         }
@@ -47,10 +62,13 @@ namespace consultorioWeb.Admin.Paciente
             {
                 if (usuario.Dv == Convert.ToChar(txt_dv.Text))
                 {
+                   
+
                    capaNegocio.Paciente paciente = new capaNegocio.Paciente();
                     paciente.IdUsuario = usuario.Id;
                     if (paciente.ReadIdUsuario())
                     {
+
                         txt_pNombre.Text = usuario.Pnombre;
                         txt_sNombre.Text = usuario.Snombre;
                         txt_apMaterno.Text = usuario.Apmaterno;

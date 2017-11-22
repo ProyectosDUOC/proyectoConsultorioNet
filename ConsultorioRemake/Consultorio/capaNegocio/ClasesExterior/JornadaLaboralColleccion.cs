@@ -21,7 +21,7 @@ namespace capaNegocio
                 jornadaLaboral.Miercoles = (int)jornada.miercoles;
                 jornadaLaboral.Jueves = (int)jornada.jueves;
                 jornadaLaboral.Viernes =(int) jornada.viernes;
-                jornadaLaboral.IdSector = jornada.id_sector;
+                jornadaLaboral.IdSector = (int)jornada.id_sector;
                 jornadaLaboral.Glosa = jornada.glosa;
 
                 jornadaLaborales.Add(jornadaLaboral);

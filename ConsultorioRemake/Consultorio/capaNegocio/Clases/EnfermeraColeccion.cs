@@ -16,8 +16,8 @@ namespace capaNegocio
                 capaNegocio.Enfermera enfermera = new Enfermera();
 
                 enfermera.Id = enfer.id_enfermera;               
-                enfermera.IdUsuario = enfer.id_usuario;
-                enfermera.IdJornadaLaboral= enfer.id_jornada_laboral;
+                enfermera.IdUsuario = (int)enfer.id_usuario;
+                enfermera.IdJornadaLaboral = (int)enfer.id_jornada_laboral;
 
                 enfermeras.Add(enfermera);
             }

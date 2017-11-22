@@ -47,9 +47,9 @@ namespace capaNegocio
             {
                 capaDatos.Secretaria secretaria = new capaDatos.Secretaria();
 
-                secretaria.id_secretaria = this.Id;
-                secretaria.id_usuario = this.IdUsuario;
-                secretaria.id_jornada_laboral = this.IdJornadaLaboral;
+                secretaria.id_secretaria = this.id;
+                secretaria.id_usuario = this.idUsuario;
+                secretaria.id_jornada_laboral = this.idJornadaLaboral;
 
                 CommonBC.ModeloConsultorio.AddToSecretaria(secretaria);
                 CommonBC.ModeloConsultorio.SaveChanges();
@@ -66,10 +66,10 @@ namespace capaNegocio
             {
                 capaDatos.Secretaria secretaria = CommonBC.ModeloConsultorio.Secretaria.First
                     (
-                        secre => secre.id_secretaria == this.Id
-                    );               
-                this.IdUsuario = secretaria.id_usuario;
-                this.IdJornadaLaboral = secretaria.id_jornada_laboral;
+                        secre => secre.id_secretaria == this.id
+                    );
+                this.IdUsuario = (int)secretaria.id_usuario;
+                this.IdJornadaLaboral = (int)secretaria.id_jornada_laboral;
 
                 return true;
             }
@@ -77,6 +77,24 @@ namespace capaNegocio
             {                
                return false;
             }        
+        }
+        public bool ReadId()
+        {
+            try
+            {
+                capaDatos.Secretaria secretaria = CommonBC.ModeloConsultorio.Secretaria.First
+                    (
+                        secre => secre.id_usuario == this.idUsuario
+                    );
+                this.id = secretaria.id_secretaria;
+                this.IdJornadaLaboral = (int)secretaria.id_jornada_laboral;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         public bool Update() {

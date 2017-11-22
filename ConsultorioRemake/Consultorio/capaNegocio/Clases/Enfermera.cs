@@ -73,8 +73,8 @@ namespace capaNegocio
                         enfer => enfer.id_enfermera== this.id
                     );  
 					
-                this.idUsuario = enfermera.id_usuario;
-                this.idJornadaLaboral = enfermera.id_jornada_laboral;
+                this.idUsuario = (int)enfermera.id_usuario;
+                this.idJornadaLaboral = (int)enfermera.id_jornada_laboral;
 				
                 return true;
             }
@@ -128,7 +128,7 @@ namespace capaNegocio
                         enfer => enfer.id_usuario == this.IdUsuario
                     );
                 this.id = enfermera.id_enfermera;
-                this.idJornadaLaboral = enfermera.id_jornada_laboral;
+                this.idJornadaLaboral = (int)enfermera.id_jornada_laboral;
 
                 return true;
             }

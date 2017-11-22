@@ -18,12 +18,10 @@ namespace consultorioWeb.Admin.Enfermera
                 ddGenero.DataSource = capaNegocio.GeneroColeccion.ReadAll();
                 ddNacionalidad.DataSource = capaNegocio.NacionalidadColeccion.ReadAll();
                 ddComuna.DataSource = capaNegocio.ComunaColeccion.ReadAll();
-                ddSector.DataSource = capaNegocio.SectorColeccion.ReadAll();
 
                 ddGenero.DataBind();
                 ddNacionalidad.DataBind();
                 ddComuna.DataBind();
-                ddSector.DataBind();
             }
 
         }

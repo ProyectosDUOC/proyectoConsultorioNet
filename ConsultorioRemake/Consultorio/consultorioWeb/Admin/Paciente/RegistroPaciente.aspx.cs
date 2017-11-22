@@ -58,10 +58,13 @@ namespace consultorioWeb.Admin.Paciente
             {
                 if (usuario.Dv == Convert.ToChar(txt_dv.Text))
                 {
+                   
+
                    capaNegocio.Paciente paciente = new capaNegocio.Paciente();
                     paciente.IdUsuario = usuario.Id;
                     if (paciente.ReadIdUsuario())
                     {
+
                         txt_pNombre.Text = usuario.Pnombre;
                         txt_sNombre.Text = usuario.Snombre;
                         txt_apMaterno.Text = usuario.Apmaterno;

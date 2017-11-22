@@ -23,7 +23,7 @@ go
 
 CREATE TABLE Consultorio
   (
-    id_consultorio int NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    id_consultorio int NOT NULL PRIMARY KEY,
     rut_consultorio int,
     dv char(1),
     id_comuna INT ,
@@ -32,13 +32,13 @@ CREATE TABLE Consultorio
 
 CREATE TABLE Alergia
   (
-    id_alergia INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    id_alergia INT NOT NULL PRIMARY KEY,
     nombre NVARCHAR (30) NOT NULL
   ) ;
 
 CREATE TABLE Alergia_Paciente
 (
-  id_alergia_paciente INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  id_alergia_paciente INT NOT NULL PRIMARY KEY,
   id_alergia INT NOT NULL,
   id_paciente INT NOT NULL
 );
@@ -64,7 +64,7 @@ ALTER TABLE Comuna ADD CONSTRAINT Comuna_PK PRIMARY KEY ( id_comuna ) ;
 
 CREATE TABLE Control_Acceso
   (
-    id_control_acceso INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    id_control_acceso INT NOT NULL PRIMARY KEY,
     usuario_login NVARCHAR (30)  ,
     contrasena NVARCHAR (30) ,
     id_tipo_usuario INT ,
@@ -76,7 +76,7 @@ CREATE TABLE Control_Acceso
 
 CREATE TABLE Enfermera
   (
-    id_enfermera       INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    id_enfermera       INT NOT NULL PRIMARY KEY,
     id_usuario         INT  ,
     id_jornada_laboral INT ,
   ) ;
@@ -92,10 +92,9 @@ ALTER TABLE Especialidad ADD CONSTRAINT Especialidad_PK PRIMARY KEY ( id_especia
 
 CREATE TABLE Ficha_Paciente
   (
-    id_ficha_paciente INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    id_ficha_paciente INT NOT NULL PRIMARY KEY,
     fecha             DATE,
-    id_consultorio    INT  ,
-    id_secretaria     INT  ,
+    id_consultorio    INT  ,   
     id_Medico         INT  ,
     id_enfermera      INT ,
     id_paciente       INT ,
@@ -146,7 +145,7 @@ ALTER TABLE Jornada_laboral ADD CONSTRAINT Jornada_laboral_PK PRIMARY KEY ( id_j
 
 CREATE TABLE Licencia_Medica
   (
-    id_licencia_medica INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    id_licencia_medica INT NOT NULL PRIMARY KEY,
     numero_de_dias     INT  ,
     motivos NVARCHAR (30)  ,
     id_ficha_paciente INT 
@@ -155,7 +154,7 @@ CREATE TABLE Licencia_Medica
 
 CREATE TABLE Medicamentos
   (
-    id_medicamentos INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    id_medicamentos INT NOT NULL PRIMARY KEY,
     principio_activo NVARCHAR(30),
     producto_referencia NVARCHAR(30),
     nombre_producto NVARCHAR (60),
@@ -166,7 +165,7 @@ CREATE TABLE Medicamentos
 
 CREATE TABLE Medico
   (
-    id_Medico  INT IDENTITY(1,1) PRIMARY KEY,
+    id_Medico  INT PRIMARY KEY,
     rut_medico INT  ,
     dv_medico CHAR(1)  ,
     id_usuario         INT  ,
@@ -176,7 +175,7 @@ CREATE TABLE Medico
 
 CREATE TABLE Administrador
   (
-    id_administrador  INT NOT NULL IDENTITY(1,1) PRIMARY KEY, 
+    id_administrador  INT NOT NULL PRIMARY KEY, 
     id_usuario INT 
   ) ;
 
@@ -190,7 +189,7 @@ ALTER TABLE Nacionalidad ADD CONSTRAINT Nacionalidad_PK PRIMARY KEY ( id_naciona
 
 CREATE TABLE Paciente
   (
-    id_paciente        INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    id_paciente        INT NOT NULL PRIMARY KEY,
     id_usuario         INT  ,
     id_grupo_sanguineo INT  ,
     id_rh              INT  ,
@@ -207,7 +206,7 @@ ALTER TABLE Pais ADD CONSTRAINT Pais_PK PRIMARY KEY ( id_pais ) ;
 
 CREATE TABLE Receta_Medica
   (
-    id_Receta_Medica INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    id_Receta_Medica INT NOT NULL PRIMARY KEY,
     fecha            DATE ,
     cantidad         INT ,
     hora             INT  ,
@@ -236,7 +235,7 @@ ALTER TABLE Rh_sanguineo ADD CONSTRAINT Rh_sanguineo_PK PRIMARY KEY ( id_rh ) ;
 
 CREATE TABLE Secretaria
   (
-    id_secretaria      INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+    id_secretaria      INT NOT NULL  PRIMARY KEY,
     id_usuario         INT  ,
     id_jornada_laboral INT 
   ) ;
@@ -289,7 +288,7 @@ ALTER TABLE Tipo_Desvinculado ADD CONSTRAINT Tipo_Desvincu_PK PRIMARY KEY ( id_t
 
 CREATE TABLE Desvinculado
 (
-  id_desvinculado INT NOT NULL IDENTITY(1,1) PRIMARY KEY,
+  id_desvinculado INT PRIMARY KEY,
   id_usuario      INT ,
   fecha           DATE,
   id_tipo_desvin  INT ,
@@ -311,19 +310,7 @@ ALTER TABLE Enfermera ADD CONSTRAINT Enfermera_Jornada_laboral_FK FOREIGN KEY ( 
 
 ALTER TABLE Enfermera ADD CONSTRAINT Enfermera_Usuario_FK FOREIGN KEY ( id_usuario ) REFERENCES Usuario ( id_usuario ) ;
 
-ALTER TABLE Ficha_Paciente ADD CONSTRAINT Ficha_Paciente_Enfermera_FK FOREIGN KEY ( id_enfermera ) REFERENCES Enfermera ( id_enfermera ) ;
-
-ALTER TABLE Ficha_Paciente ADD CONSTRAINT Ficha_Paciente_Medico_FK FOREIGN KEY ( id_Medico ) REFERENCES Medico ( id_Medico ) ;
-
-ALTER TABLE Ficha_Paciente ADD CONSTRAINT Ficha_Paciente_Paciente_FK FOREIGN KEY ( id_paciente ) REFERENCES Paciente ( id_paciente ) ;
-
-ALTER TABLE Ficha_Paciente ADD CONSTRAINT Ficha_Paciente_Secretaria_FK FOREIGN KEY ( id_secretaria ) REFERENCES Secretaria ( id_secretaria ) ;
-
-ALTER TABLE Ficha_Paciente ADD CONSTRAINT Ficha_Paciente_Consultori_FK FOREIGN KEY ( id_consultorio ) REFERENCES Consultorio ( id_consultorio ) ;
-
 ALTER TABLE Jornada_laboral ADD CONSTRAINT Jornada_laboral_Sector_FK FOREIGN KEY ( id_sector ) REFERENCES Sector ( id_sector ) ;
-
-ALTER TABLE Licencia_Medica ADD CONSTRAINT Lic_Medica_Ficha_Paciente_FK FOREIGN KEY ( id_ficha_paciente ) REFERENCES Ficha_Paciente ( id_ficha_paciente ) ;
 
 ALTER TABLE Medico ADD CONSTRAINT Medico_Especialidad_FK FOREIGN KEY ( id_especialidad ) REFERENCES Especialidad ( id_especialidad ) ;
 

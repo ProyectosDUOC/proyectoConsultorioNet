@@ -15,11 +15,10 @@ namespace capaNegocio
                 capaNegocio.FichaPaciente ficha = new FichaPaciente();
                 ficha.Id_ficha_paciente = fp.id_ficha_paciente;
                 ficha.Fecha = (DateTime)fp.fecha;
-                ficha.IdConsultorio = fp.Consultorio.id_consultorio;
-                ficha.IdSecretaria = fp.Secretaria.id_secretaria;
-                ficha.IdMedico = fp.Medico.id_Medico;
-                ficha.IdEnfermera = fp.Enfermera.id_enfermera;
-                ficha.IdPaciente = fp.Paciente.id_paciente;
+                ficha.IdConsultorio = (int)fp.id_consultorio;
+                ficha.IdMedico = (int)fp.id_Medico;
+                ficha.IdEnfermera = (int)fp.id_enfermera;
+                ficha.IdPaciente = (int)fp.id_paciente;
                 ficha.Peso = (int)fp.peso;
                 ficha.Estatura = (int)fp.estatura;
                 ficha.Imc = (int)fp.imc;

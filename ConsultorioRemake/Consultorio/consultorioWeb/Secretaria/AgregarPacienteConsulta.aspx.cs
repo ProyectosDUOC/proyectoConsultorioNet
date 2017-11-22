@@ -119,8 +119,7 @@ namespace consultorioWeb.Secretaria
             if (secre.ReadId()) {
                 fichaPaciente.IdSecretaria = secre.Id;
                 fichaPaciente.Motivo = txtArea.Text;
-                fichaPaciente.IdConsultorio = 1;
-
+                fichaPaciente.IdConsultorio = 1;              
                 if (fichaPaciente.Create())
                 {
                     lblRespuesta.Text = "Se ha generado La ficha";

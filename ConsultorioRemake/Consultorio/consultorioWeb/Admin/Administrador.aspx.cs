@@ -71,6 +71,7 @@ namespace consultorioWeb.Admin
         {
             controlAcceso = new ControlAcceso();
             Response.Redirect("/Login.aspx");
+
         }
       
     }

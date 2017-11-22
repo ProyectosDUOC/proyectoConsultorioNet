@@ -40,6 +40,10 @@ namespace consultorioWeb.Admin.Paciente
                 ddRh.DataBind();
                 ddGrupoS.DataSource = capaNegocio.GrupoSanguineoColeccion.ReadAll();
                 ddGrupoS.DataBind();
+                if (controlAcceso.Id == 0)
+                {
+                    Response.Redirect("/Login.aspx");
+                }
 
             }
         }

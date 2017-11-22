@@ -29,6 +29,10 @@ namespace consultorioWeb.Admin.Paciente
             {
                 GridView1.DataSource = capaNegocio.ClasesListar.PacienteLColeccion.GenerarListado();
                 GridView1.DataBind();
+                if (controlAcceso.Id == 0)
+                {
+                    Response.Redirect("/Login.aspx");
+                }
             }
         }
 

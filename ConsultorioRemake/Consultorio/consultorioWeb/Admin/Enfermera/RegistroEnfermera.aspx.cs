@@ -45,7 +45,6 @@ namespace consultorioWeb.Admin.Enfermera
             ddNacionalidad.Enabled = false;
             txt_Domicilio.Enabled = false;
             ddComuna.Enabled = false;
-            ddSector.Enabled = false;
             txt_nCasa.Enabled = false;
             txt_nCelular.Enabled = false;
         }
@@ -75,8 +74,9 @@ namespace consultorioWeb.Admin.Enfermera
             {
                 capaNegocio.Enfermera enfermera = new capaNegocio.Enfermera();
                 enfermera.IdUsuario = usuario.Id;
-                if (enfermera.Read())
+                if (enfermera.ReadUsuarioId())
                 {
+                    txt_dv.Text = usuario.Dv.ToString();
                     txt_pNombre.Text = usuario.Pnombre;
                     txt_sNombre.Text = usuario.Snombre;
                     txt_apMaterno.Text = usuario.Apmaterno;
@@ -96,14 +96,72 @@ namespace consultorioWeb.Admin.Enfermera
                 {
                     lblRespuesta.Text = "No entro enfermera ";
                 }
-
-
             }
             else
             {
                 lblRespuesta.Text = "No se encontro";
-                //limpiar();
+                limpiar();
+            }
+        }
+
+        private void limpiar()
+        {
+            txt_nFicha.Text = "";
+            txt_pNombre.Text = "";
+            txt_sNombre.Text = "";
+            txt_apPaterno.Text = "";
+            txt_apMaterno.Text = "";
+            txt_Fecha.Text = "";
+            txt_Domicilio.Text = "";
+            txt_nCasa.Text = "";
+            txt_nCelular.Text = "";
+        }
+
+        protected void btn_Guardar_Click(object sender, EventArgs e)
+        {
+            Usuario user = new Usuario();
+            user.Rut = Convert.ToInt32(txt_Rut);
+
+            if (user.ReadRut())
+            {
+                capaNegocio.Enfermera enfermera = new capaNegocio.Enfermera();
+                enfermera.IdUsuario = user.Id;
+
+                if (enfermera.ReadUsuarioId())
+                {
+                    user.Pnombre = txt_pNombre.Text;
+                    user.Snombre = txt_sNombre.Text;
+                    user.Appaterno = txt_apPaterno.Text;
+                    user.Apmaterno = txt_apMaterno.Text;
+                    user.FechaNacimiento = Convert.ToDateTime(txt_Fecha.Text);
+                    user.IdGenero = ddGenero.SelectedIndex;
+                    user.IdNacionalidad = ddNacionalidad.SelectedIndex;
+                    user.Direccion = txt_Domicilio.Text;
+                    user.IdComuna = ddComuna.SelectedIndex;
+                    lbl_Edad.Text = (DateTime.Today.AddTicks(-user.FechaNacimiento.Ticks).Year - 1).ToString();
+                    user.Fono1 = txt_nCasa.Text;
+                    user.Fono2 = txt_nCelular.Text;
+
+                    lblRespuesta.Text = user.imprimir() + "ok";
+                    if (user.UpdateNuevo())
+                    {
+                        if (enfermera.Update())
+                        {
+                            lblRespuesta.Text = "Exito!. Se ha actualizado";
+                        }
+                        else {
+                            lblRespuesta.Text = "Erooorororooror";
+                        }
+                    }
+                    else {
+                        lblRespuesta.Text = "No se actualizo";
+                    }                    
+                }
+            }   //Caso usuario no exite se agrega
+            else {
+                lblRespuesta.Text = "Se crea";            
             }
         }
     }
+
 }

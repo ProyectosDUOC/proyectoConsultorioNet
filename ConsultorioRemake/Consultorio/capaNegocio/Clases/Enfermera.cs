@@ -70,9 +70,9 @@ namespace capaNegocio
             {
                 capaDatos.Enfermera enfermera = CommonBC.ModeloConsultorio.Enfermera.First
                     (
-                        enfer => enfer.id_usuario == this.idUsuario
+                        enfer => enfer.id_enfermera== this.id
                     );               
-                this.id = enfermera.id_enfermera;
+                this.idUsuario = enfermera.id_usuario;
                 this.idJornadaLaboral = enfermera.id_jornada_laboral;
 
                 return true;
@@ -117,8 +117,25 @@ namespace capaNegocio
                 return false;
             }        
         }
-        
-        
+
+        public bool ReadUsuarioId()
+        {
+            try
+            {
+                capaDatos.Enfermera enfermera = CommonBC.ModeloConsultorio.Enfermera.First
+                    (
+                        enfer => enfer.id_usuario == this.IdUsuario
+                    );
+                this.id = enfermera.id_enfermera;
+                this.idJornadaLaboral = enfermera.id_jornada_laboral;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
 
     }
 }

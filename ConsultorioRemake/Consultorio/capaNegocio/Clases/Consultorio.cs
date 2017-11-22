@@ -90,7 +90,7 @@ namespace capaNegocio
                                 );              
                 this.Rut = consultorio.id_consultorio;
                 this.Dv = Char.Parse(consultorio.dv);
-                this.IdComuna = consultorio.id_comuna;
+                this.IdComuna = (int)consultorio.id_comuna;
                 this.Nombre = consultorio.nombre;
                 return true;
             }

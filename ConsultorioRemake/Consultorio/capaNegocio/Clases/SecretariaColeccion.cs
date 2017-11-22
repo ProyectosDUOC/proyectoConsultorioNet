@@ -16,8 +16,8 @@ namespace capaNegocio
                 capaNegocio.Secretaria secretaria= new Secretaria();
 
                 secretaria.Id = secre.id_secretaria;
-                secretaria.IdUsuario = secre.id_usuario;
-                secretaria.IdJornadaLaboral = secre.id_jornada_laboral;
+                secretaria.IdUsuario = (int)secre.id_usuario;
+                secretaria.IdJornadaLaboral = (int)secre.id_jornada_laboral;
                 
                 secretarias.Add(secretaria);
             }

@@ -19,40 +19,40 @@ using System.Xml.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region Metadatos de relaciones en EDM
 
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Admin_Usuario_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Usuario), "Administrador", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Administrador), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Admin_Usuario_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Usuario), "Administrador", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Administrador), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Aler_Pac_Alerg_FK", "Alergia", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Alergia), "Alergia_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Alergia_Paciente), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Aler_Pac_Paciente_FK", "Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Paciente), "Alergia_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Alergia_Paciente), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Comuna_Provincia_FK", "Provincia", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Provincia), "Comuna", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Comuna), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Consultorio_Comuna_FK", "Comuna", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Comuna), "Consultorio", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Consultorio), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Usuario_Comuna_FK", "Comuna", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Comuna), "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Usuario), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Ficha_Paciente_Consultori_FK", "Consultorio", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Consultorio), "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Ficha_Paciente), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Control_Acceso_Tipo_Usuario_FK", "Tipo_Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Tipo_Usuario), "Control_Acceso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Control_Acceso), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Control_Acceso_Usuario_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Usuario), "Control_Acceso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Control_Acceso), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "tipoDesc_Desvinculado_FK", "Tipo_Desvinculado", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Tipo_Desvinculado), "Desvinculado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Desvinculado), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Usuario_Desvinculado_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Usuario), "Desvinculado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Desvinculado), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Enfermera_Jornada_laboral_FK", "Jornada_laboral", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Jornada_laboral), "Enfermera", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Enfermera), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Enfermera_Usuario_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Usuario), "Enfermera", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Enfermera), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Ficha_Paciente_Enfermera_FK", "Enfermera", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Enfermera), "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Ficha_Paciente), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Medico_Especialidad_FK", "Especialidad", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Especialidad), "Medico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Medico), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Ficha_Paciente_Medico_FK", "Medico", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Medico), "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Ficha_Paciente), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Ficha_Paciente_Paciente_FK", "Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Paciente), "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Ficha_Paciente), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Ficha_Paciente_Secretaria_FK", "Secretaria", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Secretaria), "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Ficha_Paciente), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Lic_Medica_Ficha_Paciente_FK", "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Ficha_Paciente), "Licencia_Medica", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Licencia_Medica), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Rec_Medica_Ficha_Paciente_FK", "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Ficha_Paciente), "Receta_Medica", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Receta_Medica), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Usuario_Genero_FK", "Genero", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Genero), "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Usuario), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Paciente_Grupo_sanguineo_FK", "Grupo_sanguineo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Grupo_sanguineo), "Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Paciente), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Jornada_laboral_Sector_FK", "Sector", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Sector), "Jornada_laboral", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Jornada_laboral), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Medico_Jornada_laboral_FK", "Jornada_laboral", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Jornada_laboral), "Medico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Medico), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Secretaria_Jornada_laboral_FK", "Jornada_laboral", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Jornada_laboral), "Secretaria", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Secretaria), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Rec_Medica_Medicamentos_FK", "Medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Medicamentos), "Receta_Medica", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Receta_Medica), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Medico_Usuario_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Usuario), "Medico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Medico), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Usuario_Nacionalidad_FK", "Nacionalidad", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Nacionalidad), "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Usuario), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Paciente_Rh_sanguineo_FK", "Rh_sanguineo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Rh_sanguineo), "Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Paciente), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Paciente_Sector_FK", "Sector", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Sector), "Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Paciente), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Paciente_Usuario_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Usuario), "Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Paciente), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Consultorio_Comuna_FK", "Comuna", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Comuna), "Consultorio", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Consultorio), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Usuario_Comuna_FK", "Comuna", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Comuna), "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Usuario), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Ficha_Paciente_Consultori_FK", "Consultorio", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Consultorio), "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Ficha_Paciente), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Control_Acceso_Tipo_Usuario_FK", "Tipo_Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Tipo_Usuario), "Control_Acceso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Control_Acceso), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Control_Acceso_Usuario_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Usuario), "Control_Acceso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Control_Acceso), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "tipoDesc_Desvinculado_FK", "Tipo_Desvinculado", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Tipo_Desvinculado), "Desvinculado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Desvinculado), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Usuario_Desvinculado_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Usuario), "Desvinculado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Desvinculado), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Enfermera_Jornada_laboral_FK", "Jornada_laboral", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Jornada_laboral), "Enfermera", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Enfermera), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Enfermera_Usuario_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Usuario), "Enfermera", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Enfermera), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Ficha_Paciente_Enfermera_FK", "Enfermera", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Enfermera), "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Ficha_Paciente), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Medico_Especialidad_FK", "Especialidad", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Especialidad), "Medico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Medico), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Ficha_Paciente_Medico_FK", "Medico", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Medico), "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Ficha_Paciente), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Ficha_Paciente_Paciente_FK", "Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Paciente), "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Ficha_Paciente), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Ficha_Paciente_Secretaria_FK", "Secretaria", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Secretaria), "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Ficha_Paciente), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Lic_Medica_Ficha_Paciente_FK", "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Ficha_Paciente), "Licencia_Medica", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Licencia_Medica), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Rec_Medica_Ficha_Paciente_FK", "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Ficha_Paciente), "Receta_Medica", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Receta_Medica), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Usuario_Genero_FK", "Genero", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Genero), "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Usuario), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Paciente_Grupo_sanguineo_FK", "Grupo_sanguineo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Grupo_sanguineo), "Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Paciente), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Jornada_laboral_Sector_FK", "Sector", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Sector), "Jornada_laboral", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Jornada_laboral), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Medico_Jornada_laboral_FK", "Jornada_laboral", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Jornada_laboral), "Medico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Medico), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Secretaria_Jornada_laboral_FK", "Jornada_laboral", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Jornada_laboral), "Secretaria", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Secretaria), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Rec_Medica_Medicamentos_FK", "Medicamentos", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Medicamentos), "Receta_Medica", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Receta_Medica), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Medico_Usuario_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Usuario), "Medico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Medico), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Usuario_Nacionalidad_FK", "Nacionalidad", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Nacionalidad), "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Usuario), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Paciente_Rh_sanguineo_FK", "Rh_sanguineo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Rh_sanguineo), "Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Paciente), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Paciente_Sector_FK", "Sector", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Sector), "Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Paciente), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Paciente_Usuario_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Usuario), "Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Paciente), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Region_Pais_FK", "Pais", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Pais), "Region", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Region), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Provincia_Region_FK", "Region", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Region), "Provincia", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Provincia), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Secretaria_Usuario_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Usuario), "Secretaria", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Secretaria), true)]
+[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Secretaria_Usuario_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Usuario), "Secretaria", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Secretaria), true)]
 
 #endregion
 
@@ -802,12 +802,10 @@ namespace capaDatos
         /// Crear un nuevo objeto Administrador.
         /// </summary>
         /// <param name="id_administrador">Valor inicial de la propiedad id_administrador.</param>
-        /// <param name="id_usuario">Valor inicial de la propiedad id_usuario.</param>
-        public static Administrador CreateAdministrador(global::System.Int32 id_administrador, global::System.Int32 id_usuario)
+        public static Administrador CreateAdministrador(global::System.Int32 id_administrador)
         {
             Administrador administrador = new Administrador();
             administrador.id_administrador = id_administrador;
-            administrador.id_usuario = id_usuario;
             return administrador;
         }
 
@@ -845,9 +843,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_usuario
+        public Nullable<global::System.Int32> id_usuario
         {
             get
             {
@@ -862,8 +860,8 @@ namespace capaDatos
                 Onid_usuarioChanged();
             }
         }
-        private global::System.Int32 _id_usuario;
-        partial void Onid_usuarioChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_usuario;
+        partial void Onid_usuarioChanging(Nullable<global::System.Int32> value);
         partial void Onid_usuarioChanged();
 
         #endregion
@@ -1418,12 +1416,10 @@ namespace capaDatos
         /// Crear un nuevo objeto Consultorio.
         /// </summary>
         /// <param name="id_consultorio">Valor inicial de la propiedad id_consultorio.</param>
-        /// <param name="id_comuna">Valor inicial de la propiedad id_comuna.</param>
-        public static Consultorio CreateConsultorio(global::System.Int32 id_consultorio, global::System.Int32 id_comuna)
+        public static Consultorio CreateConsultorio(global::System.Int32 id_consultorio)
         {
             Consultorio consultorio = new Consultorio();
             consultorio.id_consultorio = id_consultorio;
-            consultorio.id_comuna = id_comuna;
             return consultorio;
         }
 
@@ -1509,9 +1505,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_comuna
+        public Nullable<global::System.Int32> id_comuna
         {
             get
             {
@@ -1526,8 +1522,8 @@ namespace capaDatos
                 Onid_comunaChanged();
             }
         }
-        private global::System.Int32 _id_comuna;
-        partial void Onid_comunaChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_comuna;
+        partial void Onid_comunaChanging(Nullable<global::System.Int32> value);
         partial void Onid_comunaChanged();
     
         /// <summary>
@@ -1637,18 +1633,10 @@ namespace capaDatos
         /// Crear un nuevo objeto Control_Acceso.
         /// </summary>
         /// <param name="id_control_acceso">Valor inicial de la propiedad id_control_acceso.</param>
-        /// <param name="usuario_login">Valor inicial de la propiedad usuario_login.</param>
-        /// <param name="contrasena">Valor inicial de la propiedad contrasena.</param>
-        /// <param name="id_tipo_usuario">Valor inicial de la propiedad id_tipo_usuario.</param>
-        /// <param name="id_usuario">Valor inicial de la propiedad id_usuario.</param>
-        public static Control_Acceso CreateControl_Acceso(global::System.Int32 id_control_acceso, global::System.String usuario_login, global::System.String contrasena, global::System.Int32 id_tipo_usuario, global::System.Int32 id_usuario)
+        public static Control_Acceso CreateControl_Acceso(global::System.Int32 id_control_acceso)
         {
             Control_Acceso control_Acceso = new Control_Acceso();
             control_Acceso.id_control_acceso = id_control_acceso;
-            control_Acceso.usuario_login = usuario_login;
-            control_Acceso.contrasena = contrasena;
-            control_Acceso.id_tipo_usuario = id_tipo_usuario;
-            control_Acceso.id_usuario = id_usuario;
             return control_Acceso;
         }
 
@@ -1686,7 +1674,7 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String usuario_login
         {
@@ -1698,7 +1686,7 @@ namespace capaDatos
             {
                 Onusuario_loginChanging(value);
                 ReportPropertyChanging("usuario_login");
-                _usuario_login = StructuralObject.SetValidValue(value, false);
+                _usuario_login = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("usuario_login");
                 Onusuario_loginChanged();
             }
@@ -1710,7 +1698,7 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String contrasena
         {
@@ -1722,7 +1710,7 @@ namespace capaDatos
             {
                 OncontrasenaChanging(value);
                 ReportPropertyChanging("contrasena");
-                _contrasena = StructuralObject.SetValidValue(value, false);
+                _contrasena = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("contrasena");
                 OncontrasenaChanged();
             }
@@ -1734,9 +1722,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_tipo_usuario
+        public Nullable<global::System.Int32> id_tipo_usuario
         {
             get
             {
@@ -1751,16 +1739,16 @@ namespace capaDatos
                 Onid_tipo_usuarioChanged();
             }
         }
-        private global::System.Int32 _id_tipo_usuario;
-        partial void Onid_tipo_usuarioChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_tipo_usuario;
+        partial void Onid_tipo_usuarioChanging(Nullable<global::System.Int32> value);
         partial void Onid_tipo_usuarioChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_usuario
+        public Nullable<global::System.Int32> id_usuario
         {
             get
             {
@@ -1775,8 +1763,8 @@ namespace capaDatos
                 Onid_usuarioChanged();
             }
         }
-        private global::System.Int32 _id_usuario;
-        partial void Onid_usuarioChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_usuario;
+        partial void Onid_usuarioChanging(Nullable<global::System.Int32> value);
         partial void Onid_usuarioChanged();
     
         /// <summary>
@@ -1902,14 +1890,10 @@ namespace capaDatos
         /// Crear un nuevo objeto Desvinculado.
         /// </summary>
         /// <param name="id_desvinculado">Valor inicial de la propiedad id_desvinculado.</param>
-        /// <param name="id_usuario">Valor inicial de la propiedad id_usuario.</param>
-        /// <param name="id_tipo_desvin">Valor inicial de la propiedad id_tipo_desvin.</param>
-        public static Desvinculado CreateDesvinculado(global::System.Int32 id_desvinculado, global::System.Int32 id_usuario, global::System.Int32 id_tipo_desvin)
+        public static Desvinculado CreateDesvinculado(global::System.Int32 id_desvinculado)
         {
             Desvinculado desvinculado = new Desvinculado();
             desvinculado.id_desvinculado = id_desvinculado;
-            desvinculado.id_usuario = id_usuario;
-            desvinculado.id_tipo_desvin = id_tipo_desvin;
             return desvinculado;
         }
 
@@ -1947,9 +1931,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_usuario
+        public Nullable<global::System.Int32> id_usuario
         {
             get
             {
@@ -1964,8 +1948,8 @@ namespace capaDatos
                 Onid_usuarioChanged();
             }
         }
-        private global::System.Int32 _id_usuario;
-        partial void Onid_usuarioChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_usuario;
+        partial void Onid_usuarioChanging(Nullable<global::System.Int32> value);
         partial void Onid_usuarioChanged();
     
         /// <summary>
@@ -1995,9 +1979,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_tipo_desvin
+        public Nullable<global::System.Int32> id_tipo_desvin
         {
             get
             {
@@ -2012,8 +1996,8 @@ namespace capaDatos
                 Onid_tipo_desvinChanged();
             }
         }
-        private global::System.Int32 _id_tipo_desvin;
-        partial void Onid_tipo_desvinChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_tipo_desvin;
+        partial void Onid_tipo_desvinChanging(Nullable<global::System.Int32> value);
         partial void Onid_tipo_desvinChanged();
     
         /// <summary>
@@ -2139,14 +2123,10 @@ namespace capaDatos
         /// Crear un nuevo objeto Enfermera.
         /// </summary>
         /// <param name="id_enfermera">Valor inicial de la propiedad id_enfermera.</param>
-        /// <param name="id_usuario">Valor inicial de la propiedad id_usuario.</param>
-        /// <param name="id_jornada_laboral">Valor inicial de la propiedad id_jornada_laboral.</param>
-        public static Enfermera CreateEnfermera(global::System.Int32 id_enfermera, global::System.Int32 id_usuario, global::System.Int32 id_jornada_laboral)
+        public static Enfermera CreateEnfermera(global::System.Int32 id_enfermera)
         {
             Enfermera enfermera = new Enfermera();
             enfermera.id_enfermera = id_enfermera;
-            enfermera.id_usuario = id_usuario;
-            enfermera.id_jornada_laboral = id_jornada_laboral;
             return enfermera;
         }
 
@@ -2184,9 +2164,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_usuario
+        public Nullable<global::System.Int32> id_usuario
         {
             get
             {
@@ -2201,16 +2181,16 @@ namespace capaDatos
                 Onid_usuarioChanged();
             }
         }
-        private global::System.Int32 _id_usuario;
-        partial void Onid_usuarioChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_usuario;
+        partial void Onid_usuarioChanging(Nullable<global::System.Int32> value);
         partial void Onid_usuarioChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_jornada_laboral
+        public Nullable<global::System.Int32> id_jornada_laboral
         {
             get
             {
@@ -2225,8 +2205,8 @@ namespace capaDatos
                 Onid_jornada_laboralChanged();
             }
         }
-        private global::System.Int32 _id_jornada_laboral;
-        partial void Onid_jornada_laboralChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_jornada_laboral;
+        partial void Onid_jornada_laboralChanging(Nullable<global::System.Int32> value);
         partial void Onid_jornada_laboralChanged();
 
         #endregion
@@ -2459,36 +2439,10 @@ namespace capaDatos
         /// Crear un nuevo objeto Ficha_Paciente.
         /// </summary>
         /// <param name="id_ficha_paciente">Valor inicial de la propiedad id_ficha_paciente.</param>
-        /// <param name="id_consultorio">Valor inicial de la propiedad id_consultorio.</param>
-        /// <param name="id_secretaria">Valor inicial de la propiedad id_secretaria.</param>
-        /// <param name="id_Medico">Valor inicial de la propiedad id_Medico.</param>
-        /// <param name="id_enfermera">Valor inicial de la propiedad id_enfermera.</param>
-        /// <param name="id_paciente">Valor inicial de la propiedad id_paciente.</param>
-        /// <param name="peso">Valor inicial de la propiedad peso.</param>
-        /// <param name="estatura">Valor inicial de la propiedad estatura.</param>
-        /// <param name="imc">Valor inicial de la propiedad imc.</param>
-        /// <param name="temperatura">Valor inicial de la propiedad temperatura.</param>
-        /// <param name="sistonica">Valor inicial de la propiedad sistonica.</param>
-        /// <param name="distolica">Valor inicial de la propiedad distolica.</param>
-        /// <param name="pulsacion">Valor inicial de la propiedad pulsacion.</param>
-        /// <param name="diastolica">Valor inicial de la propiedad diastolica.</param>
-        public static Ficha_Paciente CreateFicha_Paciente(global::System.Int32 id_ficha_paciente, global::System.Int32 id_consultorio, global::System.Int32 id_secretaria, global::System.Int32 id_Medico, global::System.Int32 id_enfermera, global::System.Int32 id_paciente, global::System.Int32 peso, global::System.Int32 estatura, global::System.Int32 imc, global::System.Int32 temperatura, global::System.Int32 sistonica, global::System.Int32 distolica, global::System.Int32 pulsacion, global::System.Int32 diastolica)
+        public static Ficha_Paciente CreateFicha_Paciente(global::System.Int32 id_ficha_paciente)
         {
             Ficha_Paciente ficha_Paciente = new Ficha_Paciente();
             ficha_Paciente.id_ficha_paciente = id_ficha_paciente;
-            ficha_Paciente.id_consultorio = id_consultorio;
-            ficha_Paciente.id_secretaria = id_secretaria;
-            ficha_Paciente.id_Medico = id_Medico;
-            ficha_Paciente.id_enfermera = id_enfermera;
-            ficha_Paciente.id_paciente = id_paciente;
-            ficha_Paciente.peso = peso;
-            ficha_Paciente.estatura = estatura;
-            ficha_Paciente.imc = imc;
-            ficha_Paciente.temperatura = temperatura;
-            ficha_Paciente.sistonica = sistonica;
-            ficha_Paciente.distolica = distolica;
-            ficha_Paciente.pulsacion = pulsacion;
-            ficha_Paciente.diastolica = diastolica;
             return ficha_Paciente;
         }
 
@@ -2550,9 +2504,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_consultorio
+        public Nullable<global::System.Int32> id_consultorio
         {
             get
             {
@@ -2567,16 +2521,16 @@ namespace capaDatos
                 Onid_consultorioChanged();
             }
         }
-        private global::System.Int32 _id_consultorio;
-        partial void Onid_consultorioChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_consultorio;
+        partial void Onid_consultorioChanging(Nullable<global::System.Int32> value);
         partial void Onid_consultorioChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_secretaria
+        public Nullable<global::System.Int32> id_secretaria
         {
             get
             {
@@ -2591,16 +2545,16 @@ namespace capaDatos
                 Onid_secretariaChanged();
             }
         }
-        private global::System.Int32 _id_secretaria;
-        partial void Onid_secretariaChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_secretaria;
+        partial void Onid_secretariaChanging(Nullable<global::System.Int32> value);
         partial void Onid_secretariaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_Medico
+        public Nullable<global::System.Int32> id_Medico
         {
             get
             {
@@ -2615,16 +2569,16 @@ namespace capaDatos
                 Onid_MedicoChanged();
             }
         }
-        private global::System.Int32 _id_Medico;
-        partial void Onid_MedicoChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_Medico;
+        partial void Onid_MedicoChanging(Nullable<global::System.Int32> value);
         partial void Onid_MedicoChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_enfermera
+        public Nullable<global::System.Int32> id_enfermera
         {
             get
             {
@@ -2639,16 +2593,16 @@ namespace capaDatos
                 Onid_enfermeraChanged();
             }
         }
-        private global::System.Int32 _id_enfermera;
-        partial void Onid_enfermeraChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_enfermera;
+        partial void Onid_enfermeraChanging(Nullable<global::System.Int32> value);
         partial void Onid_enfermeraChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_paciente
+        public Nullable<global::System.Int32> id_paciente
         {
             get
             {
@@ -2663,16 +2617,16 @@ namespace capaDatos
                 Onid_pacienteChanged();
             }
         }
-        private global::System.Int32 _id_paciente;
-        partial void Onid_pacienteChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_paciente;
+        partial void Onid_pacienteChanging(Nullable<global::System.Int32> value);
         partial void Onid_pacienteChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 peso
+        public Nullable<global::System.Int32> peso
         {
             get
             {
@@ -2687,16 +2641,16 @@ namespace capaDatos
                 OnpesoChanged();
             }
         }
-        private global::System.Int32 _peso;
-        partial void OnpesoChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _peso;
+        partial void OnpesoChanging(Nullable<global::System.Int32> value);
         partial void OnpesoChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 estatura
+        public Nullable<global::System.Int32> estatura
         {
             get
             {
@@ -2711,16 +2665,16 @@ namespace capaDatos
                 OnestaturaChanged();
             }
         }
-        private global::System.Int32 _estatura;
-        partial void OnestaturaChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _estatura;
+        partial void OnestaturaChanging(Nullable<global::System.Int32> value);
         partial void OnestaturaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 imc
+        public Nullable<global::System.Int32> imc
         {
             get
             {
@@ -2735,16 +2689,16 @@ namespace capaDatos
                 OnimcChanged();
             }
         }
-        private global::System.Int32 _imc;
-        partial void OnimcChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _imc;
+        partial void OnimcChanging(Nullable<global::System.Int32> value);
         partial void OnimcChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 temperatura
+        public Nullable<global::System.Int32> temperatura
         {
             get
             {
@@ -2759,16 +2713,16 @@ namespace capaDatos
                 OntemperaturaChanged();
             }
         }
-        private global::System.Int32 _temperatura;
-        partial void OntemperaturaChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _temperatura;
+        partial void OntemperaturaChanging(Nullable<global::System.Int32> value);
         partial void OntemperaturaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 sistonica
+        public Nullable<global::System.Int32> sistonica
         {
             get
             {
@@ -2783,16 +2737,16 @@ namespace capaDatos
                 OnsistonicaChanged();
             }
         }
-        private global::System.Int32 _sistonica;
-        partial void OnsistonicaChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _sistonica;
+        partial void OnsistonicaChanging(Nullable<global::System.Int32> value);
         partial void OnsistonicaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 distolica
+        public Nullable<global::System.Int32> distolica
         {
             get
             {
@@ -2807,16 +2761,16 @@ namespace capaDatos
                 OndistolicaChanged();
             }
         }
-        private global::System.Int32 _distolica;
-        partial void OndistolicaChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _distolica;
+        partial void OndistolicaChanging(Nullable<global::System.Int32> value);
         partial void OndistolicaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 pulsacion
+        public Nullable<global::System.Int32> pulsacion
         {
             get
             {
@@ -2831,16 +2785,16 @@ namespace capaDatos
                 OnpulsacionChanged();
             }
         }
-        private global::System.Int32 _pulsacion;
-        partial void OnpulsacionChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _pulsacion;
+        partial void OnpulsacionChanging(Nullable<global::System.Int32> value);
         partial void OnpulsacionChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 diastolica
+        public Nullable<global::System.Int32> diastolica
         {
             get
             {
@@ -2855,8 +2809,8 @@ namespace capaDatos
                 OndiastolicaChanged();
             }
         }
-        private global::System.Int32 _diastolica;
-        partial void OndiastolicaChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _diastolica;
+        partial void OndiastolicaChanging(Nullable<global::System.Int32> value);
         partial void OndiastolicaChanged();
     
         /// <summary>
@@ -3380,12 +3334,10 @@ namespace capaDatos
         /// Crear un nuevo objeto Jornada_laboral.
         /// </summary>
         /// <param name="id_jornada_laboral">Valor inicial de la propiedad id_jornada_laboral.</param>
-        /// <param name="id_sector">Valor inicial de la propiedad id_sector.</param>
-        public static Jornada_laboral CreateJornada_laboral(global::System.Int32 id_jornada_laboral, global::System.Int32 id_sector)
+        public static Jornada_laboral CreateJornada_laboral(global::System.Int32 id_jornada_laboral)
         {
             Jornada_laboral jornada_laboral = new Jornada_laboral();
             jornada_laboral.id_jornada_laboral = id_jornada_laboral;
-            jornada_laboral.id_sector = id_sector;
             return jornada_laboral;
         }
 
@@ -3591,9 +3543,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_sector
+        public Nullable<global::System.Int32> id_sector
         {
             get
             {
@@ -3608,8 +3560,8 @@ namespace capaDatos
                 Onid_sectorChanged();
             }
         }
-        private global::System.Int32 _id_sector;
-        partial void Onid_sectorChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_sector;
+        partial void Onid_sectorChanging(Nullable<global::System.Int32> value);
         partial void Onid_sectorChanged();
     
         /// <summary>
@@ -3763,16 +3715,10 @@ namespace capaDatos
         /// Crear un nuevo objeto Licencia_Medica.
         /// </summary>
         /// <param name="id_licencia_medica">Valor inicial de la propiedad id_licencia_medica.</param>
-        /// <param name="numero_de_dias">Valor inicial de la propiedad numero_de_dias.</param>
-        /// <param name="motivos">Valor inicial de la propiedad motivos.</param>
-        /// <param name="id_ficha_paciente">Valor inicial de la propiedad id_ficha_paciente.</param>
-        public static Licencia_Medica CreateLicencia_Medica(global::System.Int32 id_licencia_medica, global::System.Int32 numero_de_dias, global::System.String motivos, global::System.Int32 id_ficha_paciente)
+        public static Licencia_Medica CreateLicencia_Medica(global::System.Int32 id_licencia_medica)
         {
             Licencia_Medica licencia_Medica = new Licencia_Medica();
             licencia_Medica.id_licencia_medica = id_licencia_medica;
-            licencia_Medica.numero_de_dias = numero_de_dias;
-            licencia_Medica.motivos = motivos;
-            licencia_Medica.id_ficha_paciente = id_ficha_paciente;
             return licencia_Medica;
         }
 
@@ -3810,9 +3756,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 numero_de_dias
+        public Nullable<global::System.Int32> numero_de_dias
         {
             get
             {
@@ -3827,14 +3773,14 @@ namespace capaDatos
                 Onnumero_de_diasChanged();
             }
         }
-        private global::System.Int32 _numero_de_dias;
-        partial void Onnumero_de_diasChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _numero_de_dias;
+        partial void Onnumero_de_diasChanging(Nullable<global::System.Int32> value);
         partial void Onnumero_de_diasChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String motivos
         {
@@ -3846,7 +3792,7 @@ namespace capaDatos
             {
                 OnmotivosChanging(value);
                 ReportPropertyChanging("motivos");
-                _motivos = StructuralObject.SetValidValue(value, false);
+                _motivos = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("motivos");
                 OnmotivosChanged();
             }
@@ -3858,9 +3804,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_ficha_paciente
+        public Nullable<global::System.Int32> id_ficha_paciente
         {
             get
             {
@@ -3875,8 +3821,8 @@ namespace capaDatos
                 Onid_ficha_pacienteChanged();
             }
         }
-        private global::System.Int32 _id_ficha_paciente;
-        partial void Onid_ficha_pacienteChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_ficha_paciente;
+        partial void Onid_ficha_pacienteChanging(Nullable<global::System.Int32> value);
         partial void Onid_ficha_pacienteChanged();
 
         #endregion
@@ -4143,20 +4089,10 @@ namespace capaDatos
         /// Crear un nuevo objeto Medico.
         /// </summary>
         /// <param name="id_Medico">Valor inicial de la propiedad id_Medico.</param>
-        /// <param name="rut_medico">Valor inicial de la propiedad rut_medico.</param>
-        /// <param name="dv_medico">Valor inicial de la propiedad dv_medico.</param>
-        /// <param name="id_usuario">Valor inicial de la propiedad id_usuario.</param>
-        /// <param name="id_especialidad">Valor inicial de la propiedad id_especialidad.</param>
-        /// <param name="id_jornada_laboral">Valor inicial de la propiedad id_jornada_laboral.</param>
-        public static Medico CreateMedico(global::System.Int32 id_Medico, global::System.Int32 rut_medico, global::System.String dv_medico, global::System.Int32 id_usuario, global::System.Int32 id_especialidad, global::System.Int32 id_jornada_laboral)
+        public static Medico CreateMedico(global::System.Int32 id_Medico)
         {
             Medico medico = new Medico();
             medico.id_Medico = id_Medico;
-            medico.rut_medico = rut_medico;
-            medico.dv_medico = dv_medico;
-            medico.id_usuario = id_usuario;
-            medico.id_especialidad = id_especialidad;
-            medico.id_jornada_laboral = id_jornada_laboral;
             return medico;
         }
 
@@ -4194,9 +4130,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 rut_medico
+        public Nullable<global::System.Int32> rut_medico
         {
             get
             {
@@ -4211,14 +4147,14 @@ namespace capaDatos
                 Onrut_medicoChanged();
             }
         }
-        private global::System.Int32 _rut_medico;
-        partial void Onrut_medicoChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _rut_medico;
+        partial void Onrut_medicoChanging(Nullable<global::System.Int32> value);
         partial void Onrut_medicoChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String dv_medico
         {
@@ -4230,7 +4166,7 @@ namespace capaDatos
             {
                 Ondv_medicoChanging(value);
                 ReportPropertyChanging("dv_medico");
-                _dv_medico = StructuralObject.SetValidValue(value, false);
+                _dv_medico = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("dv_medico");
                 Ondv_medicoChanged();
             }
@@ -4242,9 +4178,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_usuario
+        public Nullable<global::System.Int32> id_usuario
         {
             get
             {
@@ -4259,16 +4195,16 @@ namespace capaDatos
                 Onid_usuarioChanged();
             }
         }
-        private global::System.Int32 _id_usuario;
-        partial void Onid_usuarioChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_usuario;
+        partial void Onid_usuarioChanging(Nullable<global::System.Int32> value);
         partial void Onid_usuarioChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_especialidad
+        public Nullable<global::System.Int32> id_especialidad
         {
             get
             {
@@ -4283,16 +4219,16 @@ namespace capaDatos
                 Onid_especialidadChanged();
             }
         }
-        private global::System.Int32 _id_especialidad;
-        partial void Onid_especialidadChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_especialidad;
+        partial void Onid_especialidadChanging(Nullable<global::System.Int32> value);
         partial void Onid_especialidadChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_jornada_laboral
+        public Nullable<global::System.Int32> id_jornada_laboral
         {
             get
             {
@@ -4307,8 +4243,8 @@ namespace capaDatos
                 Onid_jornada_laboralChanged();
             }
         }
-        private global::System.Int32 _id_jornada_laboral;
-        partial void Onid_jornada_laboralChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_jornada_laboral;
+        partial void Onid_jornada_laboralChanging(Nullable<global::System.Int32> value);
         partial void Onid_jornada_laboralChanged();
 
         #endregion
@@ -4577,18 +4513,10 @@ namespace capaDatos
         /// Crear un nuevo objeto Paciente.
         /// </summary>
         /// <param name="id_paciente">Valor inicial de la propiedad id_paciente.</param>
-        /// <param name="id_usuario">Valor inicial de la propiedad id_usuario.</param>
-        /// <param name="id_grupo_sanguineo">Valor inicial de la propiedad id_grupo_sanguineo.</param>
-        /// <param name="id_rh">Valor inicial de la propiedad id_rh.</param>
-        /// <param name="id_sector">Valor inicial de la propiedad id_sector.</param>
-        public static Paciente CreatePaciente(global::System.Int32 id_paciente, global::System.Int32 id_usuario, global::System.Int32 id_grupo_sanguineo, global::System.Int32 id_rh, global::System.Int32 id_sector)
+        public static Paciente CreatePaciente(global::System.Int32 id_paciente)
         {
             Paciente paciente = new Paciente();
             paciente.id_paciente = id_paciente;
-            paciente.id_usuario = id_usuario;
-            paciente.id_grupo_sanguineo = id_grupo_sanguineo;
-            paciente.id_rh = id_rh;
-            paciente.id_sector = id_sector;
             return paciente;
         }
 
@@ -4626,9 +4554,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_usuario
+        public Nullable<global::System.Int32> id_usuario
         {
             get
             {
@@ -4643,16 +4571,16 @@ namespace capaDatos
                 Onid_usuarioChanged();
             }
         }
-        private global::System.Int32 _id_usuario;
-        partial void Onid_usuarioChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_usuario;
+        partial void Onid_usuarioChanging(Nullable<global::System.Int32> value);
         partial void Onid_usuarioChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_grupo_sanguineo
+        public Nullable<global::System.Int32> id_grupo_sanguineo
         {
             get
             {
@@ -4667,16 +4595,16 @@ namespace capaDatos
                 Onid_grupo_sanguineoChanged();
             }
         }
-        private global::System.Int32 _id_grupo_sanguineo;
-        partial void Onid_grupo_sanguineoChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_grupo_sanguineo;
+        partial void Onid_grupo_sanguineoChanging(Nullable<global::System.Int32> value);
         partial void Onid_grupo_sanguineoChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_rh
+        public Nullable<global::System.Int32> id_rh
         {
             get
             {
@@ -4691,16 +4619,16 @@ namespace capaDatos
                 Onid_rhChanged();
             }
         }
-        private global::System.Int32 _id_rh;
-        partial void Onid_rhChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_rh;
+        partial void Onid_rhChanging(Nullable<global::System.Int32> value);
         partial void Onid_rhChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_sector
+        public Nullable<global::System.Int32> id_sector
         {
             get
             {
@@ -4715,8 +4643,8 @@ namespace capaDatos
                 Onid_sectorChanged();
             }
         }
-        private global::System.Int32 _id_sector;
-        partial void Onid_sectorChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_sector;
+        partial void Onid_sectorChanging(Nullable<global::System.Int32> value);
         partial void Onid_sectorChanged();
 
         #endregion
@@ -5218,24 +5146,10 @@ namespace capaDatos
         /// Crear un nuevo objeto Receta_Medica.
         /// </summary>
         /// <param name="id_Receta_Medica">Valor inicial de la propiedad id_Receta_Medica.</param>
-        /// <param name="fecha">Valor inicial de la propiedad fecha.</param>
-        /// <param name="cantidad">Valor inicial de la propiedad cantidad.</param>
-        /// <param name="hora">Valor inicial de la propiedad hora.</param>
-        /// <param name="dia">Valor inicial de la propiedad dia.</param>
-        /// <param name="glosa">Valor inicial de la propiedad glosa.</param>
-        /// <param name="id_ficha_paciente">Valor inicial de la propiedad id_ficha_paciente.</param>
-        /// <param name="id_medicamentos">Valor inicial de la propiedad id_medicamentos.</param>
-        public static Receta_Medica CreateReceta_Medica(global::System.Int32 id_Receta_Medica, global::System.DateTime fecha, global::System.Int32 cantidad, global::System.Int32 hora, global::System.Int32 dia, global::System.String glosa, global::System.Int32 id_ficha_paciente, global::System.Int32 id_medicamentos)
+        public static Receta_Medica CreateReceta_Medica(global::System.Int32 id_Receta_Medica)
         {
             Receta_Medica receta_Medica = new Receta_Medica();
             receta_Medica.id_Receta_Medica = id_Receta_Medica;
-            receta_Medica.fecha = fecha;
-            receta_Medica.cantidad = cantidad;
-            receta_Medica.hora = hora;
-            receta_Medica.dia = dia;
-            receta_Medica.glosa = glosa;
-            receta_Medica.id_ficha_paciente = id_ficha_paciente;
-            receta_Medica.id_medicamentos = id_medicamentos;
             return receta_Medica;
         }
 
@@ -5273,9 +5187,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.DateTime fecha
+        public Nullable<global::System.DateTime> fecha
         {
             get
             {
@@ -5290,16 +5204,16 @@ namespace capaDatos
                 OnfechaChanged();
             }
         }
-        private global::System.DateTime _fecha;
-        partial void OnfechaChanging(global::System.DateTime value);
+        private Nullable<global::System.DateTime> _fecha;
+        partial void OnfechaChanging(Nullable<global::System.DateTime> value);
         partial void OnfechaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 cantidad
+        public Nullable<global::System.Int32> cantidad
         {
             get
             {
@@ -5314,16 +5228,16 @@ namespace capaDatos
                 OncantidadChanged();
             }
         }
-        private global::System.Int32 _cantidad;
-        partial void OncantidadChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _cantidad;
+        partial void OncantidadChanging(Nullable<global::System.Int32> value);
         partial void OncantidadChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 hora
+        public Nullable<global::System.Int32> hora
         {
             get
             {
@@ -5338,16 +5252,16 @@ namespace capaDatos
                 OnhoraChanged();
             }
         }
-        private global::System.Int32 _hora;
-        partial void OnhoraChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _hora;
+        partial void OnhoraChanging(Nullable<global::System.Int32> value);
         partial void OnhoraChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 dia
+        public Nullable<global::System.Int32> dia
         {
             get
             {
@@ -5362,14 +5276,14 @@ namespace capaDatos
                 OndiaChanged();
             }
         }
-        private global::System.Int32 _dia;
-        partial void OndiaChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _dia;
+        partial void OndiaChanging(Nullable<global::System.Int32> value);
         partial void OndiaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String glosa
         {
@@ -5381,7 +5295,7 @@ namespace capaDatos
             {
                 OnglosaChanging(value);
                 ReportPropertyChanging("glosa");
-                _glosa = StructuralObject.SetValidValue(value, false);
+                _glosa = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("glosa");
                 OnglosaChanged();
             }
@@ -5393,9 +5307,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_ficha_paciente
+        public Nullable<global::System.Int32> id_ficha_paciente
         {
             get
             {
@@ -5410,16 +5324,16 @@ namespace capaDatos
                 Onid_ficha_pacienteChanged();
             }
         }
-        private global::System.Int32 _id_ficha_paciente;
-        partial void Onid_ficha_pacienteChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_ficha_paciente;
+        partial void Onid_ficha_pacienteChanging(Nullable<global::System.Int32> value);
         partial void Onid_ficha_pacienteChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_medicamentos
+        public Nullable<global::System.Int32> id_medicamentos
         {
             get
             {
@@ -5434,8 +5348,8 @@ namespace capaDatos
                 Onid_medicamentosChanged();
             }
         }
-        private global::System.Int32 _id_medicamentos;
-        partial void Onid_medicamentosChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_medicamentos;
+        partial void Onid_medicamentosChanging(Nullable<global::System.Int32> value);
         partial void Onid_medicamentosChanged();
 
         #endregion
@@ -5819,14 +5733,10 @@ namespace capaDatos
         /// Crear un nuevo objeto Secretaria.
         /// </summary>
         /// <param name="id_secretaria">Valor inicial de la propiedad id_secretaria.</param>
-        /// <param name="id_usuario">Valor inicial de la propiedad id_usuario.</param>
-        /// <param name="id_jornada_laboral">Valor inicial de la propiedad id_jornada_laboral.</param>
-        public static Secretaria CreateSecretaria(global::System.Int32 id_secretaria, global::System.Int32 id_usuario, global::System.Int32 id_jornada_laboral)
+        public static Secretaria CreateSecretaria(global::System.Int32 id_secretaria)
         {
             Secretaria secretaria = new Secretaria();
             secretaria.id_secretaria = id_secretaria;
-            secretaria.id_usuario = id_usuario;
-            secretaria.id_jornada_laboral = id_jornada_laboral;
             return secretaria;
         }
 
@@ -5864,9 +5774,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_usuario
+        public Nullable<global::System.Int32> id_usuario
         {
             get
             {
@@ -5881,16 +5791,16 @@ namespace capaDatos
                 Onid_usuarioChanged();
             }
         }
-        private global::System.Int32 _id_usuario;
-        partial void Onid_usuarioChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_usuario;
+        partial void Onid_usuarioChanging(Nullable<global::System.Int32> value);
         partial void Onid_usuarioChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_jornada_laboral
+        public Nullable<global::System.Int32> id_jornada_laboral
         {
             get
             {
@@ -5905,8 +5815,8 @@ namespace capaDatos
                 Onid_jornada_laboralChanged();
             }
         }
-        private global::System.Int32 _id_jornada_laboral;
-        partial void Onid_jornada_laboralChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_jornada_laboral;
+        partial void Onid_jornada_laboralChanging(Nullable<global::System.Int32> value);
         partial void Onid_jornada_laboralChanged();
 
         #endregion
@@ -6399,32 +6309,10 @@ namespace capaDatos
         /// Crear un nuevo objeto Usuario.
         /// </summary>
         /// <param name="id_usuario">Valor inicial de la propiedad id_usuario.</param>
-        /// <param name="rut_usuario">Valor inicial de la propiedad rut_usuario.</param>
-        /// <param name="dv_usuario">Valor inicial de la propiedad dv_usuario.</param>
-        /// <param name="foto">Valor inicial de la propiedad foto.</param>
-        /// <param name="pnombre">Valor inicial de la propiedad pnombre.</param>
-        /// <param name="appaterno">Valor inicial de la propiedad appaterno.</param>
-        /// <param name="apmaterno">Valor inicial de la propiedad apmaterno.</param>
-        /// <param name="fecha_nacimiento">Valor inicial de la propiedad fecha_nacimiento.</param>
-        /// <param name="id_comuna">Valor inicial de la propiedad id_comuna.</param>
-        /// <param name="id_nacionalidad">Valor inicial de la propiedad id_nacionalidad.</param>
-        /// <param name="id_genero">Valor inicial de la propiedad id_genero.</param>
-        /// <param name="activo">Valor inicial de la propiedad activo.</param>
-        public static Usuario CreateUsuario(global::System.Int32 id_usuario, global::System.Int32 rut_usuario, global::System.String dv_usuario, global::System.String foto, global::System.String pnombre, global::System.String appaterno, global::System.String apmaterno, global::System.DateTime fecha_nacimiento, global::System.Int32 id_comuna, global::System.Int32 id_nacionalidad, global::System.Int32 id_genero, global::System.Int32 activo)
+        public static Usuario CreateUsuario(global::System.Int32 id_usuario)
         {
             Usuario usuario = new Usuario();
             usuario.id_usuario = id_usuario;
-            usuario.rut_usuario = rut_usuario;
-            usuario.dv_usuario = dv_usuario;
-            usuario.foto = foto;
-            usuario.pnombre = pnombre;
-            usuario.appaterno = appaterno;
-            usuario.apmaterno = apmaterno;
-            usuario.fecha_nacimiento = fecha_nacimiento;
-            usuario.id_comuna = id_comuna;
-            usuario.id_nacionalidad = id_nacionalidad;
-            usuario.id_genero = id_genero;
-            usuario.activo = activo;
             return usuario;
         }
 
@@ -6462,9 +6350,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 rut_usuario
+        public Nullable<global::System.Int32> rut_usuario
         {
             get
             {
@@ -6479,14 +6367,14 @@ namespace capaDatos
                 Onrut_usuarioChanged();
             }
         }
-        private global::System.Int32 _rut_usuario;
-        partial void Onrut_usuarioChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _rut_usuario;
+        partial void Onrut_usuarioChanging(Nullable<global::System.Int32> value);
         partial void Onrut_usuarioChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String dv_usuario
         {
@@ -6498,7 +6386,7 @@ namespace capaDatos
             {
                 Ondv_usuarioChanging(value);
                 ReportPropertyChanging("dv_usuario");
-                _dv_usuario = StructuralObject.SetValidValue(value, false);
+                _dv_usuario = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("dv_usuario");
                 Ondv_usuarioChanged();
             }
@@ -6510,7 +6398,7 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String foto
         {
@@ -6522,7 +6410,7 @@ namespace capaDatos
             {
                 OnfotoChanging(value);
                 ReportPropertyChanging("foto");
-                _foto = StructuralObject.SetValidValue(value, false);
+                _foto = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("foto");
                 OnfotoChanged();
             }
@@ -6534,7 +6422,7 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String pnombre
         {
@@ -6546,7 +6434,7 @@ namespace capaDatos
             {
                 OnpnombreChanging(value);
                 ReportPropertyChanging("pnombre");
-                _pnombre = StructuralObject.SetValidValue(value, false);
+                _pnombre = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("pnombre");
                 OnpnombreChanged();
             }
@@ -6582,7 +6470,7 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String appaterno
         {
@@ -6594,7 +6482,7 @@ namespace capaDatos
             {
                 OnappaternoChanging(value);
                 ReportPropertyChanging("appaterno");
-                _appaterno = StructuralObject.SetValidValue(value, false);
+                _appaterno = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("appaterno");
                 OnappaternoChanged();
             }
@@ -6606,7 +6494,7 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
         public global::System.String apmaterno
         {
@@ -6618,7 +6506,7 @@ namespace capaDatos
             {
                 OnapmaternoChanging(value);
                 ReportPropertyChanging("apmaterno");
-                _apmaterno = StructuralObject.SetValidValue(value, false);
+                _apmaterno = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("apmaterno");
                 OnapmaternoChanged();
             }
@@ -6630,9 +6518,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.DateTime fecha_nacimiento
+        public Nullable<global::System.DateTime> fecha_nacimiento
         {
             get
             {
@@ -6647,8 +6535,8 @@ namespace capaDatos
                 Onfecha_nacimientoChanged();
             }
         }
-        private global::System.DateTime _fecha_nacimiento;
-        partial void Onfecha_nacimientoChanging(global::System.DateTime value);
+        private Nullable<global::System.DateTime> _fecha_nacimiento;
+        partial void Onfecha_nacimientoChanging(Nullable<global::System.DateTime> value);
         partial void Onfecha_nacimientoChanged();
     
         /// <summary>
@@ -6726,9 +6614,9 @@ namespace capaDatos
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_comuna
+        public Nullable<global::System.Int32> id_comuna
         {
             get
             {
@@ -6743,16 +6631,16 @@ namespace capaDatos
                 Onid_comunaChanged();
             }
         }
-        private global::System.Int32 _id_comuna;
-        partial void Onid_comunaChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_comuna;
+        partial void Onid_comunaChanging(Nullable<global::System.Int32> value);
         partial void Onid_comunaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_nacionalidad
+        public Nullable<global::System.Int32> id_nacionalidad
         {
             get
             {
@@ -6767,16 +6655,16 @@ namespace capaDatos
                 Onid_nacionalidadChanged();
             }
         }
-        private global::System.Int32 _id_nacionalidad;
-        partial void Onid_nacionalidadChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_nacionalidad;
+        partial void Onid_nacionalidadChanging(Nullable<global::System.Int32> value);
         partial void Onid_nacionalidadChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 id_genero
+        public Nullable<global::System.Int32> id_genero
         {
             get
             {
@@ -6791,16 +6679,16 @@ namespace capaDatos
                 Onid_generoChanged();
             }
         }
-        private global::System.Int32 _id_genero;
-        partial void Onid_generoChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _id_genero;
+        partial void Onid_generoChanging(Nullable<global::System.Int32> value);
         partial void Onid_generoChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
         /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.Int32 activo
+        public Nullable<global::System.Int32> activo
         {
             get
             {
@@ -6815,8 +6703,8 @@ namespace capaDatos
                 OnactivoChanged();
             }
         }
-        private global::System.Int32 _activo;
-        partial void OnactivoChanging(global::System.Int32 value);
+        private Nullable<global::System.Int32> _activo;
+        partial void OnactivoChanging(Nullable<global::System.Int32> value);
         partial void OnactivoChanged();
 
         #endregion

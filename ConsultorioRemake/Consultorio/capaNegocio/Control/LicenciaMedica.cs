@@ -75,9 +75,9 @@ namespace capaNegocio
                         licencia => licencia.id_licencia_medica == this.IdLicencia
                     );
 
-                this.NumeroDias = licenciaMe.numero_de_dias;
+                this.NumeroDias = (int)licenciaMe.numero_de_dias;
                 this.Motivo = licenciaMe.motivos;
-                this.idPaciente = licenciaMe.id_ficha_paciente;
+                this.idPaciente = (int)licenciaMe.id_ficha_paciente;
 
                 return true;
             }

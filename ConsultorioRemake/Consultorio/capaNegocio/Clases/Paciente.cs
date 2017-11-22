@@ -93,10 +93,10 @@ namespace capaNegocio
                 capaDatos.Paciente paciente = modelo.Paciente.First(
                         pa => pa.id_usuario == this.idUsuario
                     );
-                this.id = paciente.id_paciente;
-                this.idGrupoSanguineo = paciente.id_grupo_sanguineo;
-                this.idRh = paciente.id_rh;
-                this.idSector = paciente.id_sector;
+                this.id = (int)paciente.id_paciente;
+                this.idGrupoSanguineo = (int)paciente.id_grupo_sanguineo;
+                this.idRh = (int)paciente.id_rh;
+                this.idSector = (int)paciente.id_sector;
 
                 return true;
             }
@@ -114,10 +114,10 @@ namespace capaNegocio
                     (
                         pacien => pacien.id_paciente == this.id
                     );
-                this.IdUsuario = paciente.id_usuario;
-                this.IdGrupoSanguineo = paciente.id_grupo_sanguineo;
-                this.IdRh = paciente.id_rh;
-                this.IdSector = paciente.id_sector;
+                this.IdUsuario = (int)paciente.id_usuario;
+                this.IdGrupoSanguineo = (int)paciente.id_grupo_sanguineo;
+                this.IdRh = (int)paciente.id_rh;
+                this.IdSector = (int)paciente.id_sector;
 
                 return true;
             }

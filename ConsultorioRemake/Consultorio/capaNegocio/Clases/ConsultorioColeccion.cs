@@ -18,7 +18,7 @@ namespace capaNegocio
                 consultorio.Id = consul.id_consultorio;
                 consultorio.Rut = (int)consul.rut_consultorio;
                 consultorio.Dv = Char.Parse(consul.dv);
-                consultorio.IdComuna = consul.id_comuna;
+                consultorio.IdComuna = (int)consul.id_comuna;
                 consultorio.Nombre = consul.nombre;
                 
                 consultorios.Add(consultorio);

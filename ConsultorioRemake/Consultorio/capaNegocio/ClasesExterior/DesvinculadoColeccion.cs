@@ -16,7 +16,7 @@ namespace capaNegocio
                 capaNegocio.Desvinculado desvinculado = new Desvinculado();
 
                 desvinculado.Id = desvin.id_desvinculado;
-                desvinculado.IdUsuario = desvin.id_usuario;
+                desvinculado.IdUsuario = (int)desvin.id_usuario;
                 desvinculado.Fecha = (DateTime)desvin.fecha;
                 desvinculado.IdTipoDesvinculado = desvin.Tipo_Desvinculado.id_tipo_desvin;
                 desvinculado.Glosa = desvin.glosa; 

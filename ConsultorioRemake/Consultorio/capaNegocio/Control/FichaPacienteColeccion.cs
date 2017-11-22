@@ -20,14 +20,14 @@ namespace capaNegocio
                 ficha.IdMedico = fp.Medico.id_Medico;
                 ficha.IdEnfermera = fp.Enfermera.id_enfermera;
                 ficha.IdPaciente = fp.Paciente.id_paciente;
-                ficha.Peso = fp.peso;
-                ficha.Estatura = fp.estatura;
-                ficha.Imc = fp.imc;
-                ficha.Temperatura = fp.temperatura;
-                ficha.Sistonica = fp.sistonica;
-                ficha.Distolica = fp.distolica;
-                ficha.Pulsacion = fp.pulsacion;
-                ficha.Diastolica = fp.diastolica;
+                ficha.Peso = (int)fp.peso;
+                ficha.Estatura = (int)fp.estatura;
+                ficha.Imc = (int)fp.imc;
+                ficha.Temperatura = (int)fp.temperatura;
+                ficha.Sistonica = (int)fp.sistonica;
+                ficha.Distolica = (int)fp.distolica;
+                ficha.Pulsacion = (int)fp.pulsacion;
+                ficha.Diastolica = (int)fp.diastolica;
 
                 fichasPacientes.Add(ficha);
             }

@@ -200,21 +200,21 @@ namespace capaNegocio
                     );
                 
                 this.id = usuario.id_usuario;
-                this.rut = usuario.rut_usuario;
+                this.rut = (int)usuario.rut_usuario;
                 this.dv = Char.Parse(usuario.dv_usuario);
                 this.foto = usuario.foto;
                 this.pnombre = usuario.pnombre;
                 this.snombre = usuario.snombre;
                 this.appaterno = usuario.appaterno;
                 this.apmaterno = usuario.apmaterno;
-                this.fechaNacimiento = usuario.fecha_nacimiento;
-                this.idGenero = usuario.id_genero;
-                this.idNacionalidad = usuario.id_nacionalidad;
-                this.idComuna = usuario.id_comuna;
+                this.fechaNacimiento = (DateTime)usuario.fecha_nacimiento;
+                this.idGenero = (int)usuario.id_genero;
+                this.idNacionalidad = (int)usuario.id_nacionalidad;
+                this.idComuna = (int)usuario.id_comuna;
                 this.direccion = usuario.direccion;
                 this.fono1 = usuario.fono1.ToString();
                 this.fono2 = usuario.fono2.ToString();
-                this.activo = usuario.activo;
+                this.activo = (int)usuario.activo;
 
                 return true;
             }
@@ -232,21 +232,21 @@ namespace capaNegocio
                     (
                         usu => usu.id_usuario == this.id
                     );
-                this.Rut = usuario.rut_usuario;
+                this.Rut = (int)usuario.rut_usuario;
                 this.Dv = Char.Parse(usuario.dv_usuario);
                 this.Foto = usuario.foto;
                 this.Pnombre = usuario.pnombre;
                 this.Snombre = usuario.snombre;
                 this.Appaterno = usuario.appaterno;
                 this.Apmaterno = usuario.apmaterno;
-                this.FechaNacimiento = usuario.fecha_nacimiento;
-                this.IdGenero = usuario.id_genero;
-                this.IdNacionalidad = usuario.id_nacionalidad;
-                this.IdComuna = usuario.id_comuna;
+                this.FechaNacimiento = (DateTime)usuario.fecha_nacimiento;
+                this.IdGenero = (int)usuario.id_genero;
+                this.IdNacionalidad = (int)usuario.id_nacionalidad;
+                this.IdComuna = (int)usuario.id_comuna;
                 this.Direccion = usuario.direccion;
                 this.Fono1 = usuario.fono1.ToString();
                 this.Fono2 = usuario.fono2.ToString();
-                this.Activo = usuario.activo;
+                this.Activo = (int)usuario.activo;
 
                 return true;
             }

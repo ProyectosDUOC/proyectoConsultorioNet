@@ -106,8 +106,8 @@ namespace capaNegocio
                 this.id = controlAcceso.id_control_acceso;
                 this.Username = controlAcceso.usuario_login;
                 this.Pass = controlAcceso.contrasena;
-                this.idTipoUsuario = controlAcceso.id_tipo_usuario;
-                this.idUsuario = controlAcceso.id_usuario;
+                this.idTipoUsuario = (int)controlAcceso.id_tipo_usuario;
+                this.idUsuario = (int)controlAcceso.id_usuario;
                 this.Activo = (int)controlAcceso.activo;
                 return true;
             }

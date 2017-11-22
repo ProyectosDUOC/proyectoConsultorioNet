@@ -28,8 +28,8 @@ namespace capaNegocio.ClasesListar
                 capaNegocio.Comuna comuna = new Comuna();
                 capaNegocio.GrupoSanguineo gs = new GrupoSanguineo();
                 capaNegocio.Rh_sanguineo rh = new Rh_sanguineo();
-       
-                usuario.Id = pac.id_usuario;
+
+                usuario.Id = (int)pac.id_usuario;
                 usuario.Read();
                 paciente.Id = pac.id_paciente;
                 paciente.Rut = usuario.Rut;
@@ -57,15 +57,15 @@ namespace capaNegocio.ClasesListar
                 comuna.Read();
                 paciente.Comuna = comuna.Nombre;
 
-                gs.Id = pac.id_grupo_sanguineo;
+                gs.Id = (int)pac.id_grupo_sanguineo;
                 gs.Read();
                 paciente.GrupoSanguineo = gs.Nombre;
 
-                rh.Id = pac.id_rh;
+                rh.Id = (int)pac.id_rh;
                 rh.Read();
                 paciente.Rh = rh.Nombre;
 
-                sector.Id = pac.id_sector;
+                sector.Id = (int)pac.id_sector;
                 sector.Read();
                 paciente.Sector = sector.Nombre;
 
@@ -97,7 +97,7 @@ namespace capaNegocio.ClasesListar
                     capaNegocio.GrupoSanguineo gs = new GrupoSanguineo();
                     capaNegocio.Rh_sanguineo rh = new Rh_sanguineo();
 
-                    usuario.Id = pac.id_usuario;
+                    usuario.Id = (int)pac.id_usuario;
                     usuario.Read();
                     paciente.Id = pac.id_paciente;
                     paciente.Rut = usuario.Rut;
@@ -125,15 +125,15 @@ namespace capaNegocio.ClasesListar
                     comuna.Read();
                     paciente.Comuna = comuna.Nombre;
 
-                    gs.Id = pac.id_grupo_sanguineo;
+                    gs.Id = (int)pac.id_grupo_sanguineo;
                     gs.Read();
                     paciente.GrupoSanguineo = gs.Nombre;
 
-                    rh.Id = pac.id_rh;
+                    rh.Id = (int)pac.id_rh;
                     rh.Read();
                     paciente.Rh = rh.Nombre;
 
-                    sector.Id = pac.id_sector;
+                    sector.Id = (int)pac.id_sector;
                     sector.Read();
                     paciente.Sector = sector.Nombre;
 

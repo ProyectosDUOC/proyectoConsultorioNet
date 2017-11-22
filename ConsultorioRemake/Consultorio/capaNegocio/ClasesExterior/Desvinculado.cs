@@ -93,9 +93,9 @@ namespace capaNegocio
                             des => des.id_desvinculado == this.Id
                         );
 
-                this.IdUsuario = desvinculado.id_usuario;
+                this.IdUsuario = (int)desvinculado.id_usuario;
                 this.Fecha = (DateTime)desvinculado.fecha;
-                this.idTipoDesvinculado = desvinculado.id_tipo_desvin;
+                this.idTipoDesvinculado = (int)desvinculado.id_tipo_desvin;
                 this.Glosa = desvinculado.glosa;
 
                 return true;

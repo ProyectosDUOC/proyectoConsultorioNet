@@ -93,11 +93,11 @@ namespace capaNegocio
                     (
                         medi => medi.id_Medico == this.Id
                     );
-                this.Rut = medico.rut_medico;
+                this.Rut = (int)medico.rut_medico;
                 this.Dv = Char.Parse(medico.dv_medico);
-                this.IdUsuario= medico.id_usuario;
-                this.IdEspecialidad = medico.id_especialidad;
-                this.IdJornadaLaboral = medico.id_jornada_laboral;
+                this.IdUsuario = (int)medico.id_usuario;
+                this.IdEspecialidad = (int)medico.id_especialidad;
+                this.IdJornadaLaboral = (int)medico.id_jornada_laboral;
 
                 return true;
             }

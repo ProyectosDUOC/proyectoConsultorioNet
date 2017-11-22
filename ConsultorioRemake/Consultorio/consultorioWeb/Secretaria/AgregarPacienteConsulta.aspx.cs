@@ -12,6 +12,8 @@ namespace consultorioWeb.Secretaria
     {
         Paciente paciente = new Paciente();
         Usuario usuario = new Usuario();
+        capaNegocio.ClasesListar.PacienteListar pac = new capaNegocio.ClasesListar.PacienteListar();
+        int idPaciente;
         private ControlAcceso controlAcceso
         {
             get
@@ -31,6 +33,7 @@ namespace consultorioWeb.Secretaria
             {
                 invisible();
             }
+            invisible();
            
         }
 
@@ -43,20 +46,12 @@ namespace consultorioWeb.Secretaria
                 if (usuario.Dv.ToString().Equals(txt_dv.Text))
                 {
 
-                    capaNegocio.ClasesListar.PacienteListar pac= new capaNegocio.ClasesListar.PacienteListar();
-
                     pac = capaNegocio.ClasesListar.PacienteLColeccion.BuscarCompleto(usuario.Id);
-
-
-                    visible();
-
-
-                   
+                    visible();                   
                     paciente.IdUsuario = usuario.Id;
-
+                    paciente.ReadIdUsuario();
                     ln.Text = paciente.Id.ToString();
                     lnombre.Text = usuario.Pnombre + " " + usuario.Snombre + " " + usuario.Appaterno + " " + usuario.Apmaterno;
-                    
                     Nacionalidad nacio = new Nacionalidad();
                     nacio.Id = usuario.IdNacionalidad;
                     nacio.Read();
@@ -71,6 +66,7 @@ namespace consultorioWeb.Secretaria
                     lGrupoS.Text = pac.GrupoSanguineo;
                     lRsan.Text = pac.Rh;
                     txtArea.Text = "";
+                    lblRespuesta.Text = "id del paciente"+pac.Id.ToString();
 
                 }
             }
@@ -80,64 +76,47 @@ namespace consultorioWeb.Secretaria
             }
         }
         private void visible() {
-            ln.Enabled = true;
-            lnombre.Enabled = true;
-            lNacionalidad.Enabled = true;
-            lfecha.Enabled = true;
-            lf1.Enabled = true;
-            lf2.Enabled = true;
-            ledad.Enabled = true;
-            lDomicilio.Enabled = true;
-            lComuna.Enabled = true;
-            lSector.Enabled = true;
-            lGrupoS.Enabled = true;
-            lRsan.Enabled = true;
+            panel1.Visible = true;
+            
         }
         private void invisible() {
-            ln.Enabled = false;
-            lnombre.Enabled= false;
-            lNacionalidad.Enabled = false;
-            lfecha.Enabled = false;
-            lf1.Enabled = false;
-            lf2.Enabled = false;
-            ledad.Enabled = false;
-            lDomicilio.Enabled = false;
-            lComuna.Enabled = false;
-            lSector.Enabled = false;
-            lGrupoS.Enabled = false;
-            lRsan.Enabled = false;
+            panel1.Visible = false;
         }
 
         protected void Button3_Click(object sender, EventArgs e)
         {
             FichaPaciente fichaPaciente = new FichaPaciente();
+            
+
             int contador = capaNegocio.Control.Contadores.contadorIdFichaPaciente();          
             fichaPaciente.Id_ficha_paciente = contador + 1;
-            fichaPaciente.Id_ficha_paciente = paciente.Id;
-            capaNegocio.Secretaria secre = new capaNegocio.Secretaria();
-            secre.IdUsuario = controlAcceso.IdUsuario;      
+
+            usuario.Rut = Convert.ToInt32(txt_Rut.Text);
+            usuario.ReadRut();
+            pac = capaNegocio.ClasesListar.PacienteLColeccion.BuscarCompleto(usuario.Id);
+            fichaPaciente.IdPaciente = pac.Id;
+   
             fichaPaciente.Motivo = txtArea.Text;
-            fichaPaciente.IdConsultorio = 1;              
+            fichaPaciente.IdConsultorio = 1;
+
             if (fichaPaciente.Create())
             {
-                lblRespuesta.Text = "Se ha generado La ficha";
+                lblRespuesta.Text = "Se ha generado La ficha !!!! " + pac.Id;
             }
             else
             {
                 lblRespuesta.Text = "No se ha creado !!" + fichaPaciente.ToString();
             }
-                     
-            
-            
-            
-           
         }
 
         protected void Button4_Click(object sender, EventArgs e)
         {
             int contador = capaNegocio.Control.Contadores.contadorIdFichaPaciente();
+            usuario.Rut = Convert.ToInt32(txt_Rut.Text);
+            usuario.ReadRut();
+            pac = capaNegocio.ClasesListar.PacienteLColeccion.BuscarCompleto(usuario.Id);
 
-            lblRespuesta.Text = contador.ToString();
+            lblRespuesta.Text = pac.Id.ToString();
         }
     }
 }

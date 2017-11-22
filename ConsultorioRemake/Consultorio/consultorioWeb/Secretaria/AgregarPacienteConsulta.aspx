@@ -104,7 +104,8 @@
             </td>
         </tr>
     </table>
-    <table id="tabla1">
+    <asp:Panel ID="panel1" runat="server">
+    <table >
         <tr>
             <td class="style15">
                 &nbsp;
@@ -344,6 +345,8 @@
             </td>
         </tr>
     </table>
+    </asp:Panel>
+    
     <br />
     <br />
 </asp:Content>

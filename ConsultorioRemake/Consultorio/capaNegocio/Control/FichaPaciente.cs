@@ -172,23 +172,23 @@ namespace capaNegocio
            {
                capaDatos.Ficha_Paciente fichaPac = new capaDatos.Ficha_Paciente();
 
-             
 
+               fichaPac.id_ficha_paciente = this.id_ficha_paciente;
                fichaPac.fecha = DateTime.Now;
-               fichaPac.id_consultorio = 0;
+               fichaPac.id_consultorio = 1; // por defecto es 1 
                fichaPac.id_Medico = 0;
                fichaPac.id_enfermera = 0;
-               fichaPac.id_paciente = 0;
-               fichaPac.peso = this.Peso;
-               fichaPac.estatura = this.Estatura;
-               fichaPac.imc = this.Imc;
-               fichaPac.temperatura = this.Temperatura;
-               fichaPac.sistonica = this.Sistonica;
-               fichaPac.distolica = this.Distolica;
-               fichaPac.pulsacion = this.Pulsacion;
-               fichaPac.diastolica = this.Diastolica;
+               fichaPac.id_paciente = this.idPaciente;
+               fichaPac.peso = 0;
+               fichaPac.estatura = 0;
+               fichaPac.imc = 0;
+               fichaPac.temperatura = 0;
+               fichaPac.sistonica = 0;
+               fichaPac.distolica = 0;
+               fichaPac.pulsacion = 0;
+               fichaPac.diastolica = 0;
                fichaPac.motivos = this.motivo;
-               fichaPac.diagnostico = this.diagnostico;
+               fichaPac.diagnostico = " ";
 
                CommonBC.ModeloConsultorio.AddToFicha_Paciente(fichaPac);
                CommonBC.ModeloConsultorio.SaveChanges();

@@ -25,19 +25,13 @@ using System.Xml.Serialization;
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Comuna_Provincia_FK", "Provincia", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(capaDatos.Provincia), "Comuna", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Comuna), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Consultorio_Comuna_FK", "Comuna", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Comuna), "Consultorio", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Consultorio), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Usuario_Comuna_FK", "Comuna", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Comuna), "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Usuario), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Ficha_Paciente_Consultori_FK", "Consultorio", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Consultorio), "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Ficha_Paciente), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Control_Acceso_Tipo_Usuario_FK", "Tipo_Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Tipo_Usuario), "Control_Acceso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Control_Acceso), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Control_Acceso_Usuario_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Usuario), "Control_Acceso", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Control_Acceso), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "tipoDesc_Desvinculado_FK", "Tipo_Desvinculado", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Tipo_Desvinculado), "Desvinculado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Desvinculado), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Usuario_Desvinculado_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Usuario), "Desvinculado", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Desvinculado), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Enfermera_Jornada_laboral_FK", "Jornada_laboral", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Jornada_laboral), "Enfermera", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Enfermera), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Enfermera_Usuario_FK", "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Usuario), "Enfermera", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Enfermera), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Ficha_Paciente_Enfermera_FK", "Enfermera", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Enfermera), "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Ficha_Paciente), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Medico_Especialidad_FK", "Especialidad", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Especialidad), "Medico", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Medico), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Ficha_Paciente_Medico_FK", "Medico", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Medico), "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Ficha_Paciente), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Ficha_Paciente_Paciente_FK", "Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Paciente), "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Ficha_Paciente), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Ficha_Paciente_Secretaria_FK", "Secretaria", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Secretaria), "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Ficha_Paciente), true)]
-[assembly: EdmRelationshipAttribute("ConsultoriosModel", "Lic_Medica_Ficha_Paciente_FK", "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Ficha_Paciente), "Licencia_Medica", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Licencia_Medica), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Rec_Medica_Ficha_Paciente_FK", "Ficha_Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Ficha_Paciente), "Receta_Medica", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Receta_Medica), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Usuario_Genero_FK", "Genero", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Genero), "Usuario", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Usuario), true)]
 [assembly: EdmRelationshipAttribute("ConsultoriosModel", "Paciente_Grupo_sanguineo_FK", "Grupo_sanguineo", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(capaDatos.Grupo_sanguineo), "Paciente", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(capaDatos.Paciente), true)]
@@ -1592,28 +1586,6 @@ namespace capaDatos
                 }
             }
         }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ConsultoriosModel", "Ficha_Paciente_Consultori_FK", "Ficha_Paciente")]
-        public EntityCollection<Ficha_Paciente> Ficha_Paciente
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Ficha_Paciente>("ConsultoriosModel.Ficha_Paciente_Consultori_FK", "Ficha_Paciente");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Ficha_Paciente>("ConsultoriosModel.Ficha_Paciente_Consultori_FK", "Ficha_Paciente", value);
-                }
-            }
-        }
 
         #endregion
 
@@ -2289,28 +2261,6 @@ namespace capaDatos
                 }
             }
         }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ConsultoriosModel", "Ficha_Paciente_Enfermera_FK", "Ficha_Paciente")]
-        public EntityCollection<Ficha_Paciente> Ficha_Paciente
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Ficha_Paciente>("ConsultoriosModel.Ficha_Paciente_Enfermera_FK", "Ficha_Paciente");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Ficha_Paciente>("ConsultoriosModel.Ficha_Paciente_Enfermera_FK", "Ficha_Paciente", value);
-                }
-            }
-        }
 
         #endregion
 
@@ -2524,30 +2474,6 @@ namespace capaDatos
         private Nullable<global::System.Int32> _id_consultorio;
         partial void Onid_consultorioChanging(Nullable<global::System.Int32> value);
         partial void Onid_consultorioChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> id_secretaria
-        {
-            get
-            {
-                return _id_secretaria;
-            }
-            set
-            {
-                Onid_secretariaChanging(value);
-                ReportPropertyChanging("id_secretaria");
-                _id_secretaria = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("id_secretaria");
-                Onid_secretariaChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _id_secretaria;
-        partial void Onid_secretariaChanging(Nullable<global::System.Int32> value);
-        partial void Onid_secretariaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -2865,218 +2791,6 @@ namespace capaDatos
 
     
         #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ConsultoriosModel", "Ficha_Paciente_Consultori_FK", "Consultorio")]
-        public Consultorio Consultorio
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Consultorio>("ConsultoriosModel.Ficha_Paciente_Consultori_FK", "Consultorio").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Consultorio>("ConsultoriosModel.Ficha_Paciente_Consultori_FK", "Consultorio").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Consultorio> ConsultorioReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Consultorio>("ConsultoriosModel.Ficha_Paciente_Consultori_FK", "Consultorio");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Consultorio>("ConsultoriosModel.Ficha_Paciente_Consultori_FK", "Consultorio", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ConsultoriosModel", "Ficha_Paciente_Enfermera_FK", "Enfermera")]
-        public Enfermera Enfermera
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Enfermera>("ConsultoriosModel.Ficha_Paciente_Enfermera_FK", "Enfermera").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Enfermera>("ConsultoriosModel.Ficha_Paciente_Enfermera_FK", "Enfermera").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Enfermera> EnfermeraReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Enfermera>("ConsultoriosModel.Ficha_Paciente_Enfermera_FK", "Enfermera");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Enfermera>("ConsultoriosModel.Ficha_Paciente_Enfermera_FK", "Enfermera", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ConsultoriosModel", "Ficha_Paciente_Medico_FK", "Medico")]
-        public Medico Medico
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Medico>("ConsultoriosModel.Ficha_Paciente_Medico_FK", "Medico").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Medico>("ConsultoriosModel.Ficha_Paciente_Medico_FK", "Medico").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Medico> MedicoReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Medico>("ConsultoriosModel.Ficha_Paciente_Medico_FK", "Medico");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Medico>("ConsultoriosModel.Ficha_Paciente_Medico_FK", "Medico", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ConsultoriosModel", "Ficha_Paciente_Paciente_FK", "Paciente")]
-        public Paciente Paciente
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Paciente>("ConsultoriosModel.Ficha_Paciente_Paciente_FK", "Paciente").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Paciente>("ConsultoriosModel.Ficha_Paciente_Paciente_FK", "Paciente").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Paciente> PacienteReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Paciente>("ConsultoriosModel.Ficha_Paciente_Paciente_FK", "Paciente");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Paciente>("ConsultoriosModel.Ficha_Paciente_Paciente_FK", "Paciente", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ConsultoriosModel", "Ficha_Paciente_Secretaria_FK", "Secretaria")]
-        public Secretaria Secretaria
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Secretaria>("ConsultoriosModel.Ficha_Paciente_Secretaria_FK", "Secretaria").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Secretaria>("ConsultoriosModel.Ficha_Paciente_Secretaria_FK", "Secretaria").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Secretaria> SecretariaReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Secretaria>("ConsultoriosModel.Ficha_Paciente_Secretaria_FK", "Secretaria");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Secretaria>("ConsultoriosModel.Ficha_Paciente_Secretaria_FK", "Secretaria", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ConsultoriosModel", "Lic_Medica_Ficha_Paciente_FK", "Licencia_Medica")]
-        public EntityCollection<Licencia_Medica> Licencia_Medica
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Licencia_Medica>("ConsultoriosModel.Lic_Medica_Ficha_Paciente_FK", "Licencia_Medica");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Licencia_Medica>("ConsultoriosModel.Lic_Medica_Ficha_Paciente_FK", "Licencia_Medica", value);
-                }
-            }
-        }
     
         /// <summary>
         /// No hay documentación de metadatos disponible.
@@ -3828,48 +3542,6 @@ namespace capaDatos
         #endregion
 
     
-        #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ConsultoriosModel", "Lic_Medica_Ficha_Paciente_FK", "Ficha_Paciente")]
-        public Ficha_Paciente Ficha_Paciente
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Ficha_Paciente>("ConsultoriosModel.Lic_Medica_Ficha_Paciente_FK", "Ficha_Paciente").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Ficha_Paciente>("ConsultoriosModel.Lic_Medica_Ficha_Paciente_FK", "Ficha_Paciente").Value = value;
-            }
-        }
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<Ficha_Paciente> Ficha_PacienteReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Ficha_Paciente>("ConsultoriosModel.Lic_Medica_Ficha_Paciente_FK", "Ficha_Paciente");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Ficha_Paciente>("ConsultoriosModel.Lic_Medica_Ficha_Paciente_FK", "Ficha_Paciente", value);
-                }
-            }
-        }
-
-        #endregion
-
     }
     
     /// <summary>
@@ -4296,28 +3968,6 @@ namespace capaDatos
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ConsultoriosModel", "Ficha_Paciente_Medico_FK", "Ficha_Paciente")]
-        public EntityCollection<Ficha_Paciente> Ficha_Paciente
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Ficha_Paciente>("ConsultoriosModel.Ficha_Paciente_Medico_FK", "Ficha_Paciente");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Ficha_Paciente>("ConsultoriosModel.Ficha_Paciente_Medico_FK", "Ficha_Paciente", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("ConsultoriosModel", "Medico_Jornada_laboral_FK", "Jornada_laboral")]
         public Jornada_laboral Jornada_laboral
         {
@@ -4670,28 +4320,6 @@ namespace capaDatos
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Alergia_Paciente>("ConsultoriosModel.Aler_Pac_Paciente_FK", "Alergia_Paciente", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ConsultoriosModel", "Ficha_Paciente_Paciente_FK", "Ficha_Paciente")]
-        public EntityCollection<Ficha_Paciente> Ficha_Paciente
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Ficha_Paciente>("ConsultoriosModel.Ficha_Paciente_Paciente_FK", "Ficha_Paciente");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Ficha_Paciente>("ConsultoriosModel.Ficha_Paciente_Paciente_FK", "Ficha_Paciente", value);
                 }
             }
         }
@@ -5823,28 +5451,6 @@ namespace capaDatos
 
     
         #region Propiedades de navegación
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ConsultoriosModel", "Ficha_Paciente_Secretaria_FK", "Ficha_Paciente")]
-        public EntityCollection<Ficha_Paciente> Ficha_Paciente
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<Ficha_Paciente>("ConsultoriosModel.Ficha_Paciente_Secretaria_FK", "Ficha_Paciente");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<Ficha_Paciente>("ConsultoriosModel.Ficha_Paciente_Secretaria_FK", "Ficha_Paciente", value);
-                }
-            }
-        }
     
         /// <summary>
         /// No hay documentación de metadatos disponible.

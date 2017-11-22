@@ -70,33 +70,9 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Enfermera" EntitySet="Enfermera" />
           </AssociationSet>
-          <AssociationSet Name="Ficha_Paciente_Consultori_FK" Association="ConsultoriosModel.Store.Ficha_Paciente_Consultori_FK">
-            <End Role="Consultorio" EntitySet="Consultorio" />
-            <End Role="Ficha_Paciente" EntitySet="Ficha_Paciente" />
-          </AssociationSet>
-          <AssociationSet Name="Ficha_Paciente_Enfermera_FK" Association="ConsultoriosModel.Store.Ficha_Paciente_Enfermera_FK">
-            <End Role="Enfermera" EntitySet="Enfermera" />
-            <End Role="Ficha_Paciente" EntitySet="Ficha_Paciente" />
-          </AssociationSet>
-          <AssociationSet Name="Ficha_Paciente_Medico_FK" Association="ConsultoriosModel.Store.Ficha_Paciente_Medico_FK">
-            <End Role="Medico" EntitySet="Medico" />
-            <End Role="Ficha_Paciente" EntitySet="Ficha_Paciente" />
-          </AssociationSet>
-          <AssociationSet Name="Ficha_Paciente_Paciente_FK" Association="ConsultoriosModel.Store.Ficha_Paciente_Paciente_FK">
-            <End Role="Paciente" EntitySet="Paciente" />
-            <End Role="Ficha_Paciente" EntitySet="Ficha_Paciente" />
-          </AssociationSet>
-          <AssociationSet Name="Ficha_Paciente_Secretaria_FK" Association="ConsultoriosModel.Store.Ficha_Paciente_Secretaria_FK">
-            <End Role="Secretaria" EntitySet="Secretaria" />
-            <End Role="Ficha_Paciente" EntitySet="Ficha_Paciente" />
-          </AssociationSet>
           <AssociationSet Name="Jornada_laboral_Sector_FK" Association="ConsultoriosModel.Store.Jornada_laboral_Sector_FK">
             <End Role="Sector" EntitySet="Sector" />
             <End Role="Jornada_laboral" EntitySet="Jornada_laboral" />
-          </AssociationSet>
-          <AssociationSet Name="Lic_Medica_Ficha_Paciente_FK" Association="ConsultoriosModel.Store.Lic_Medica_Ficha_Paciente_FK">
-            <End Role="Ficha_Paciente" EntitySet="Ficha_Paciente" />
-            <End Role="Licencia_Medica" EntitySet="Licencia_Medica" />
           </AssociationSet>
           <AssociationSet Name="Medico_Especialidad_FK" Association="ConsultoriosModel.Store.Medico_Especialidad_FK">
             <End Role="Especialidad" EntitySet="Especialidad" />
@@ -175,21 +151,21 @@
           <Key>
             <PropertyRef Name="id_administrador" />
           </Key>
-          <Property Name="id_administrador" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_administrador" Type="int" Nullable="false" />
           <Property Name="id_usuario" Type="int" />
         </EntityType>
         <EntityType Name="Alergia">
           <Key>
             <PropertyRef Name="id_alergia" />
           </Key>
-          <Property Name="id_alergia" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_alergia" Type="int" Nullable="false" />
           <Property Name="nombre" Type="nvarchar" Nullable="false" MaxLength="30" />
         </EntityType>
         <EntityType Name="Alergia_Paciente">
           <Key>
             <PropertyRef Name="id_alergia_paciente" />
           </Key>
-          <Property Name="id_alergia_paciente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_alergia_paciente" Type="int" Nullable="false" />
           <Property Name="id_alergia" Type="int" Nullable="false" />
           <Property Name="id_paciente" Type="int" Nullable="false" />
         </EntityType>
@@ -205,7 +181,7 @@
           <Key>
             <PropertyRef Name="id_consultorio" />
           </Key>
-          <Property Name="id_consultorio" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_consultorio" Type="int" Nullable="false" />
           <Property Name="rut_consultorio" Type="int" />
           <Property Name="dv" Type="char" MaxLength="1" />
           <Property Name="id_comuna" Type="int" />
@@ -215,7 +191,7 @@
           <Key>
             <PropertyRef Name="id_control_acceso" />
           </Key>
-          <Property Name="id_control_acceso" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_control_acceso" Type="int" Nullable="false" />
           <Property Name="usuario_login" Type="nvarchar" MaxLength="30" />
           <Property Name="contrasena" Type="nvarchar" MaxLength="30" />
           <Property Name="id_tipo_usuario" Type="int" />
@@ -226,7 +202,7 @@
           <Key>
             <PropertyRef Name="id_desvinculado" />
           </Key>
-          <Property Name="id_desvinculado" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_desvinculado" Type="int" Nullable="false" />
           <Property Name="id_usuario" Type="int" />
           <Property Name="fecha" Type="date" />
           <Property Name="id_tipo_desvin" Type="int" />
@@ -236,7 +212,7 @@
           <Key>
             <PropertyRef Name="id_enfermera" />
           </Key>
-          <Property Name="id_enfermera" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_enfermera" Type="int" Nullable="false" />
           <Property Name="id_usuario" Type="int" />
           <Property Name="id_jornada_laboral" Type="int" />
         </EntityType>
@@ -251,10 +227,9 @@
           <Key>
             <PropertyRef Name="id_ficha_paciente" />
           </Key>
-          <Property Name="id_ficha_paciente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_ficha_paciente" Type="int" Nullable="false" />
           <Property Name="fecha" Type="date" />
           <Property Name="id_consultorio" Type="int" />
-          <Property Name="id_secretaria" Type="int" />
           <Property Name="id_Medico" Type="int" />
           <Property Name="id_enfermera" Type="int" />
           <Property Name="id_paciente" Type="int" />
@@ -302,7 +277,7 @@
           <Key>
             <PropertyRef Name="id_licencia_medica" />
           </Key>
-          <Property Name="id_licencia_medica" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_licencia_medica" Type="int" Nullable="false" />
           <Property Name="numero_de_dias" Type="int" />
           <Property Name="motivos" Type="nvarchar" MaxLength="30" />
           <Property Name="id_ficha_paciente" Type="int" />
@@ -311,7 +286,7 @@
           <Key>
             <PropertyRef Name="id_medicamentos" />
           </Key>
-          <Property Name="id_medicamentos" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_medicamentos" Type="int" Nullable="false" />
           <Property Name="principio_activo" Type="nvarchar" MaxLength="30" />
           <Property Name="producto_referencia" Type="nvarchar" MaxLength="30" />
           <Property Name="nombre_producto" Type="nvarchar" MaxLength="60" />
@@ -322,7 +297,7 @@
           <Key>
             <PropertyRef Name="id_Medico" />
           </Key>
-          <Property Name="id_Medico" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_Medico" Type="int" Nullable="false" />
           <Property Name="rut_medico" Type="int" />
           <Property Name="dv_medico" Type="char" MaxLength="1" />
           <Property Name="id_usuario" Type="int" />
@@ -340,7 +315,7 @@
           <Key>
             <PropertyRef Name="id_paciente" />
           </Key>
-          <Property Name="id_paciente" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_paciente" Type="int" Nullable="false" />
           <Property Name="id_usuario" Type="int" />
           <Property Name="id_grupo_sanguineo" Type="int" />
           <Property Name="id_rh" Type="int" />
@@ -365,7 +340,7 @@
           <Key>
             <PropertyRef Name="id_Receta_Medica" />
           </Key>
-          <Property Name="id_Receta_Medica" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_Receta_Medica" Type="int" Nullable="false" />
           <Property Name="fecha" Type="date" />
           <Property Name="cantidad" Type="int" />
           <Property Name="hora" Type="int" />
@@ -393,7 +368,7 @@
           <Key>
             <PropertyRef Name="id_secretaria" />
           </Key>
-          <Property Name="id_secretaria" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_secretaria" Type="int" Nullable="false" />
           <Property Name="id_usuario" Type="int" />
           <Property Name="id_jornada_laboral" Type="int" />
         </EntityType>
@@ -548,66 +523,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Ficha_Paciente_Consultori_FK">
-          <End Role="Consultorio" Type="ConsultoriosModel.Store.Consultorio" Multiplicity="0..1" />
-          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Store.Ficha_Paciente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Consultorio">
-              <PropertyRef Name="id_consultorio" />
-            </Principal>
-            <Dependent Role="Ficha_Paciente">
-              <PropertyRef Name="id_consultorio" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Ficha_Paciente_Enfermera_FK">
-          <End Role="Enfermera" Type="ConsultoriosModel.Store.Enfermera" Multiplicity="0..1" />
-          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Store.Ficha_Paciente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Enfermera">
-              <PropertyRef Name="id_enfermera" />
-            </Principal>
-            <Dependent Role="Ficha_Paciente">
-              <PropertyRef Name="id_enfermera" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Ficha_Paciente_Medico_FK">
-          <End Role="Medico" Type="ConsultoriosModel.Store.Medico" Multiplicity="0..1" />
-          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Store.Ficha_Paciente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Medico">
-              <PropertyRef Name="id_Medico" />
-            </Principal>
-            <Dependent Role="Ficha_Paciente">
-              <PropertyRef Name="id_Medico" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Ficha_Paciente_Paciente_FK">
-          <End Role="Paciente" Type="ConsultoriosModel.Store.Paciente" Multiplicity="0..1" />
-          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Store.Ficha_Paciente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Paciente">
-              <PropertyRef Name="id_paciente" />
-            </Principal>
-            <Dependent Role="Ficha_Paciente">
-              <PropertyRef Name="id_paciente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Ficha_Paciente_Secretaria_FK">
-          <End Role="Secretaria" Type="ConsultoriosModel.Store.Secretaria" Multiplicity="0..1" />
-          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Store.Ficha_Paciente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Secretaria">
-              <PropertyRef Name="id_secretaria" />
-            </Principal>
-            <Dependent Role="Ficha_Paciente">
-              <PropertyRef Name="id_secretaria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="Jornada_laboral_Sector_FK">
           <End Role="Sector" Type="ConsultoriosModel.Store.Sector" Multiplicity="0..1" />
           <End Role="Jornada_laboral" Type="ConsultoriosModel.Store.Jornada_laboral" Multiplicity="*" />
@@ -617,18 +532,6 @@
             </Principal>
             <Dependent Role="Jornada_laboral">
               <PropertyRef Name="id_sector" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Lic_Medica_Ficha_Paciente_FK">
-          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Store.Ficha_Paciente" Multiplicity="0..1" />
-          <End Role="Licencia_Medica" Type="ConsultoriosModel.Store.Licencia_Medica" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ficha_Paciente">
-              <PropertyRef Name="id_ficha_paciente" />
-            </Principal>
-            <Dependent Role="Licencia_Medica">
-              <PropertyRef Name="id_ficha_paciente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -906,10 +809,6 @@
             <End Role="Comuna" EntitySet="Comuna" />
             <End Role="Usuario" EntitySet="Usuario" />
           </AssociationSet>
-          <AssociationSet Name="Ficha_Paciente_Consultori_FK" Association="ConsultoriosModel.Ficha_Paciente_Consultori_FK">
-            <End Role="Consultorio" EntitySet="Consultorio" />
-            <End Role="Ficha_Paciente" EntitySet="Ficha_Paciente" />
-          </AssociationSet>
           <AssociationSet Name="Control_Acceso_Tipo_Usuario_FK" Association="ConsultoriosModel.Control_Acceso_Tipo_Usuario_FK">
             <End Role="Tipo_Usuario" EntitySet="Tipo_Usuario" />
             <End Role="Control_Acceso" EntitySet="Control_Acceso" />
@@ -934,29 +833,9 @@
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="Enfermera" EntitySet="Enfermera" />
           </AssociationSet>
-          <AssociationSet Name="Ficha_Paciente_Enfermera_FK" Association="ConsultoriosModel.Ficha_Paciente_Enfermera_FK">
-            <End Role="Enfermera" EntitySet="Enfermera" />
-            <End Role="Ficha_Paciente" EntitySet="Ficha_Paciente" />
-          </AssociationSet>
           <AssociationSet Name="Medico_Especialidad_FK" Association="ConsultoriosModel.Medico_Especialidad_FK">
             <End Role="Especialidad" EntitySet="Especialidad" />
             <End Role="Medico" EntitySet="Medico" />
-          </AssociationSet>
-          <AssociationSet Name="Ficha_Paciente_Medico_FK" Association="ConsultoriosModel.Ficha_Paciente_Medico_FK">
-            <End Role="Medico" EntitySet="Medico" />
-            <End Role="Ficha_Paciente" EntitySet="Ficha_Paciente" />
-          </AssociationSet>
-          <AssociationSet Name="Ficha_Paciente_Paciente_FK" Association="ConsultoriosModel.Ficha_Paciente_Paciente_FK">
-            <End Role="Paciente" EntitySet="Paciente" />
-            <End Role="Ficha_Paciente" EntitySet="Ficha_Paciente" />
-          </AssociationSet>
-          <AssociationSet Name="Ficha_Paciente_Secretaria_FK" Association="ConsultoriosModel.Ficha_Paciente_Secretaria_FK">
-            <End Role="Secretaria" EntitySet="Secretaria" />
-            <End Role="Ficha_Paciente" EntitySet="Ficha_Paciente" />
-          </AssociationSet>
-          <AssociationSet Name="Lic_Medica_Ficha_Paciente_FK" Association="ConsultoriosModel.Lic_Medica_Ficha_Paciente_FK">
-            <End Role="Ficha_Paciente" EntitySet="Ficha_Paciente" />
-            <End Role="Licencia_Medica" EntitySet="Licencia_Medica" />
           </AssociationSet>
           <AssociationSet Name="Rec_Medica_Ficha_Paciente_FK" Association="ConsultoriosModel.Rec_Medica_Ficha_Paciente_FK">
             <End Role="Ficha_Paciente" EntitySet="Ficha_Paciente" />
@@ -1023,7 +902,7 @@
           <Key>
             <PropertyRef Name="id_administrador" />
           </Key>
-          <Property Name="id_administrador" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_administrador" Type="Int32" Nullable="false" />
           <Property Name="id_usuario" Type="Int32" />
           <NavigationProperty Name="Usuario" Relationship="ConsultoriosModel.Admin_Usuario_FK" FromRole="Administrador" ToRole="Usuario" />
         </EntityType>
@@ -1031,7 +910,7 @@
           <Key>
             <PropertyRef Name="id_alergia" />
           </Key>
-          <Property Name="id_alergia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_alergia" Type="Int32" Nullable="false" />
           <Property Name="nombre" Type="String" Nullable="false" MaxLength="30" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Alergia_Paciente" Relationship="ConsultoriosModel.Aler_Pac_Alerg_FK" FromRole="Alergia" ToRole="Alergia_Paciente" />
         </EntityType>
@@ -1039,7 +918,7 @@
           <Key>
             <PropertyRef Name="id_alergia_paciente" />
           </Key>
-          <Property Name="id_alergia_paciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_alergia_paciente" Type="Int32" Nullable="false" />
           <Property Name="id_alergia" Type="Int32" Nullable="false" />
           <Property Name="id_paciente" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Alergia" Relationship="ConsultoriosModel.Aler_Pac_Alerg_FK" FromRole="Alergia_Paciente" ToRole="Alergia" />
@@ -1060,19 +939,18 @@
           <Key>
             <PropertyRef Name="id_consultorio" />
           </Key>
-          <Property Name="id_consultorio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_consultorio" Type="Int32" Nullable="false" />
           <Property Name="rut_consultorio" Type="Int32" />
           <Property Name="dv" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
           <Property Name="id_comuna" Type="Int32" />
           <Property Name="nombre" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Comuna" Relationship="ConsultoriosModel.Consultorio_Comuna_FK" FromRole="Consultorio" ToRole="Comuna" />
-          <NavigationProperty Name="Ficha_Paciente" Relationship="ConsultoriosModel.Ficha_Paciente_Consultori_FK" FromRole="Consultorio" ToRole="Ficha_Paciente" />
         </EntityType>
         <EntityType Name="Control_Acceso">
           <Key>
             <PropertyRef Name="id_control_acceso" />
           </Key>
-          <Property Name="id_control_acceso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_control_acceso" Type="Int32" Nullable="false" />
           <Property Name="usuario_login" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
           <Property Name="contrasena" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
           <Property Name="id_tipo_usuario" Type="Int32" />
@@ -1085,7 +963,7 @@
           <Key>
             <PropertyRef Name="id_desvinculado" />
           </Key>
-          <Property Name="id_desvinculado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_desvinculado" Type="Int32" Nullable="false" />
           <Property Name="id_usuario" Type="Int32" />
           <Property Name="fecha" Type="DateTime" />
           <Property Name="id_tipo_desvin" Type="Int32" />
@@ -1097,12 +975,11 @@
           <Key>
             <PropertyRef Name="id_enfermera" />
           </Key>
-          <Property Name="id_enfermera" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_enfermera" Type="Int32" Nullable="false" />
           <Property Name="id_usuario" Type="Int32" />
           <Property Name="id_jornada_laboral" Type="Int32" />
           <NavigationProperty Name="Jornada_laboral" Relationship="ConsultoriosModel.Enfermera_Jornada_laboral_FK" FromRole="Enfermera" ToRole="Jornada_laboral" />
           <NavigationProperty Name="Usuario" Relationship="ConsultoriosModel.Enfermera_Usuario_FK" FromRole="Enfermera" ToRole="Usuario" />
-          <NavigationProperty Name="Ficha_Paciente" Relationship="ConsultoriosModel.Ficha_Paciente_Enfermera_FK" FromRole="Enfermera" ToRole="Ficha_Paciente" />
         </EntityType>
         <EntityType Name="Especialidad">
           <Key>
@@ -1116,10 +993,9 @@
           <Key>
             <PropertyRef Name="id_ficha_paciente" />
           </Key>
-          <Property Name="id_ficha_paciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_ficha_paciente" Type="Int32" Nullable="false" />
           <Property Name="fecha" Type="DateTime" />
           <Property Name="id_consultorio" Type="Int32" />
-          <Property Name="id_secretaria" Type="Int32" />
           <Property Name="id_Medico" Type="Int32" />
           <Property Name="id_enfermera" Type="Int32" />
           <Property Name="id_paciente" Type="Int32" />
@@ -1133,12 +1009,6 @@
           <Property Name="diastolica" Type="Int32" />
           <Property Name="motivos" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
           <Property Name="diagnostico" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Consultorio" Relationship="ConsultoriosModel.Ficha_Paciente_Consultori_FK" FromRole="Ficha_Paciente" ToRole="Consultorio" />
-          <NavigationProperty Name="Enfermera" Relationship="ConsultoriosModel.Ficha_Paciente_Enfermera_FK" FromRole="Ficha_Paciente" ToRole="Enfermera" />
-          <NavigationProperty Name="Medico" Relationship="ConsultoriosModel.Ficha_Paciente_Medico_FK" FromRole="Ficha_Paciente" ToRole="Medico" />
-          <NavigationProperty Name="Paciente" Relationship="ConsultoriosModel.Ficha_Paciente_Paciente_FK" FromRole="Ficha_Paciente" ToRole="Paciente" />
-          <NavigationProperty Name="Secretaria" Relationship="ConsultoriosModel.Ficha_Paciente_Secretaria_FK" FromRole="Ficha_Paciente" ToRole="Secretaria" />
-          <NavigationProperty Name="Licencia_Medica" Relationship="ConsultoriosModel.Lic_Medica_Ficha_Paciente_FK" FromRole="Ficha_Paciente" ToRole="Licencia_Medica" />
           <NavigationProperty Name="Receta_Medica" Relationship="ConsultoriosModel.Rec_Medica_Ficha_Paciente_FK" FromRole="Ficha_Paciente" ToRole="Receta_Medica" />
         </EntityType>
         <EntityType Name="Genero">
@@ -1180,17 +1050,16 @@
           <Key>
             <PropertyRef Name="id_licencia_medica" />
           </Key>
-          <Property Name="id_licencia_medica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_licencia_medica" Type="Int32" Nullable="false" />
           <Property Name="numero_de_dias" Type="Int32" />
           <Property Name="motivos" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
           <Property Name="id_ficha_paciente" Type="Int32" />
-          <NavigationProperty Name="Ficha_Paciente" Relationship="ConsultoriosModel.Lic_Medica_Ficha_Paciente_FK" FromRole="Licencia_Medica" ToRole="Ficha_Paciente" />
         </EntityType>
         <EntityType Name="Medicamentos">
           <Key>
             <PropertyRef Name="id_medicamentos" />
           </Key>
-          <Property Name="id_medicamentos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_medicamentos" Type="Int32" Nullable="false" />
           <Property Name="principio_activo" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
           <Property Name="producto_referencia" Type="String" MaxLength="30" Unicode="true" FixedLength="false" />
           <Property Name="nombre_producto" Type="String" MaxLength="60" Unicode="true" FixedLength="false" />
@@ -1202,14 +1071,13 @@
           <Key>
             <PropertyRef Name="id_Medico" />
           </Key>
-          <Property Name="id_Medico" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_Medico" Type="Int32" Nullable="false" />
           <Property Name="rut_medico" Type="Int32" />
           <Property Name="dv_medico" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
           <Property Name="id_usuario" Type="Int32" />
           <Property Name="id_especialidad" Type="Int32" />
           <Property Name="id_jornada_laboral" Type="Int32" />
           <NavigationProperty Name="Especialidad" Relationship="ConsultoriosModel.Medico_Especialidad_FK" FromRole="Medico" ToRole="Especialidad" />
-          <NavigationProperty Name="Ficha_Paciente" Relationship="ConsultoriosModel.Ficha_Paciente_Medico_FK" FromRole="Medico" ToRole="Ficha_Paciente" />
           <NavigationProperty Name="Jornada_laboral" Relationship="ConsultoriosModel.Medico_Jornada_laboral_FK" FromRole="Medico" ToRole="Jornada_laboral" />
           <NavigationProperty Name="Usuario" Relationship="ConsultoriosModel.Medico_Usuario_FK" FromRole="Medico" ToRole="Usuario" />
         </EntityType>
@@ -1225,13 +1093,12 @@
           <Key>
             <PropertyRef Name="id_paciente" />
           </Key>
-          <Property Name="id_paciente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_paciente" Type="Int32" Nullable="false" />
           <Property Name="id_usuario" Type="Int32" />
           <Property Name="id_grupo_sanguineo" Type="Int32" />
           <Property Name="id_rh" Type="Int32" />
           <Property Name="id_sector" Type="Int32" />
           <NavigationProperty Name="Alergia_Paciente" Relationship="ConsultoriosModel.Aler_Pac_Paciente_FK" FromRole="Paciente" ToRole="Alergia_Paciente" />
-          <NavigationProperty Name="Ficha_Paciente" Relationship="ConsultoriosModel.Ficha_Paciente_Paciente_FK" FromRole="Paciente" ToRole="Ficha_Paciente" />
           <NavigationProperty Name="Grupo_sanguineo" Relationship="ConsultoriosModel.Paciente_Grupo_sanguineo_FK" FromRole="Paciente" ToRole="Grupo_sanguineo" />
           <NavigationProperty Name="Rh_sanguineo" Relationship="ConsultoriosModel.Paciente_Rh_sanguineo_FK" FromRole="Paciente" ToRole="Rh_sanguineo" />
           <NavigationProperty Name="Sector" Relationship="ConsultoriosModel.Paciente_Sector_FK" FromRole="Paciente" ToRole="Sector" />
@@ -1259,7 +1126,7 @@
           <Key>
             <PropertyRef Name="id_Receta_Medica" />
           </Key>
-          <Property Name="id_Receta_Medica" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_Receta_Medica" Type="Int32" Nullable="false" />
           <Property Name="fecha" Type="DateTime" />
           <Property Name="cantidad" Type="Int32" />
           <Property Name="hora" Type="Int32" />
@@ -1292,10 +1159,9 @@
           <Key>
             <PropertyRef Name="id_secretaria" />
           </Key>
-          <Property Name="id_secretaria" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_secretaria" Type="Int32" Nullable="false" />
           <Property Name="id_usuario" Type="Int32" />
           <Property Name="id_jornada_laboral" Type="Int32" />
-          <NavigationProperty Name="Ficha_Paciente" Relationship="ConsultoriosModel.Ficha_Paciente_Secretaria_FK" FromRole="Secretaria" ToRole="Ficha_Paciente" />
           <NavigationProperty Name="Jornada_laboral" Relationship="ConsultoriosModel.Secretaria_Jornada_laboral_FK" FromRole="Secretaria" ToRole="Jornada_laboral" />
           <NavigationProperty Name="Usuario" Relationship="ConsultoriosModel.Secretaria_Usuario_FK" FromRole="Secretaria" ToRole="Usuario" />
         </EntityType>
@@ -1428,18 +1294,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Ficha_Paciente_Consultori_FK">
-          <End Role="Consultorio" Type="ConsultoriosModel.Consultorio" Multiplicity="0..1" />
-          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Ficha_Paciente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Consultorio">
-              <PropertyRef Name="id_consultorio" />
-            </Principal>
-            <Dependent Role="Ficha_Paciente">
-              <PropertyRef Name="id_consultorio" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="Control_Acceso_Tipo_Usuario_FK">
           <End Role="Tipo_Usuario" Type="ConsultoriosModel.Tipo_Usuario" Multiplicity="0..1" />
           <End Role="Control_Acceso" Type="ConsultoriosModel.Control_Acceso" Multiplicity="*" />
@@ -1512,18 +1366,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="Ficha_Paciente_Enfermera_FK">
-          <End Role="Enfermera" Type="ConsultoriosModel.Enfermera" Multiplicity="0..1" />
-          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Ficha_Paciente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Enfermera">
-              <PropertyRef Name="id_enfermera" />
-            </Principal>
-            <Dependent Role="Ficha_Paciente">
-              <PropertyRef Name="id_enfermera" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="Medico_Especialidad_FK">
           <End Role="Especialidad" Type="ConsultoriosModel.Especialidad" Multiplicity="0..1" />
           <End Role="Medico" Type="ConsultoriosModel.Medico" Multiplicity="*" />
@@ -1533,54 +1375,6 @@
             </Principal>
             <Dependent Role="Medico">
               <PropertyRef Name="id_especialidad" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Ficha_Paciente_Medico_FK">
-          <End Role="Medico" Type="ConsultoriosModel.Medico" Multiplicity="0..1" />
-          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Ficha_Paciente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Medico">
-              <PropertyRef Name="id_Medico" />
-            </Principal>
-            <Dependent Role="Ficha_Paciente">
-              <PropertyRef Name="id_Medico" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Ficha_Paciente_Paciente_FK">
-          <End Role="Paciente" Type="ConsultoriosModel.Paciente" Multiplicity="0..1" />
-          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Ficha_Paciente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Paciente">
-              <PropertyRef Name="id_paciente" />
-            </Principal>
-            <Dependent Role="Ficha_Paciente">
-              <PropertyRef Name="id_paciente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Ficha_Paciente_Secretaria_FK">
-          <End Role="Secretaria" Type="ConsultoriosModel.Secretaria" Multiplicity="0..1" />
-          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Ficha_Paciente" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Secretaria">
-              <PropertyRef Name="id_secretaria" />
-            </Principal>
-            <Dependent Role="Ficha_Paciente">
-              <PropertyRef Name="id_secretaria" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="Lic_Medica_Ficha_Paciente_FK">
-          <End Role="Ficha_Paciente" Type="ConsultoriosModel.Ficha_Paciente" Multiplicity="0..1" />
-          <End Role="Licencia_Medica" Type="ConsultoriosModel.Licencia_Medica" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Ficha_Paciente">
-              <PropertyRef Name="id_ficha_paciente" />
-            </Principal>
-            <Dependent Role="Licencia_Medica">
-              <PropertyRef Name="id_ficha_paciente" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1861,7 +1655,6 @@
                 <ScalarProperty Name="id_ficha_paciente" ColumnName="id_ficha_paciente" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
                 <ScalarProperty Name="id_consultorio" ColumnName="id_consultorio" />
-                <ScalarProperty Name="id_secretaria" ColumnName="id_secretaria" />
                 <ScalarProperty Name="id_Medico" ColumnName="id_Medico" />
                 <ScalarProperty Name="id_enfermera" ColumnName="id_enfermera" />
                 <ScalarProperty Name="id_paciente" ColumnName="id_paciente" />
@@ -2087,288 +1880,206 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="ConsultorioEDM">
-        <EntityTypeShape EntityType="ConsultoriosModel.Administrador" Width="1.5" PointX="12" PointY="10.75" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Alergia" Width="1.5" PointX="18" PointY="6.75" Height="1.5956835937499996" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Alergia_Paciente" Width="1.5" PointX="20.25" PointY="10.5" Height="1.9802864583333317" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Comuna" Width="1.5" PointX="7.5" PointY="15.5" Height="2.1725878906250014" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Consultorio" Width="1.5" PointX="9.75" PointY="15.375" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Control_Acceso" Width="1.5" PointX="12" PointY="7.25" Height="2.5571907552083317" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Desvinculado" Width="1.5" PointX="15" PointY="10.375" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Enfermera" Width="1.5" PointX="15" PointY="7.5" Height="2.1725878906249996" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Especialidad" Width="1.5" PointX="14.75" PointY="24.75" Height="1.5956835937500031" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Ficha_Paciente" Width="1.5" PointX="12" PointY="13.75" Height="5.6340136718750031" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Genero" Width="1.5" PointX="7.5" PointY="9.625" Height="1.5956835937500031" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Grupo_sanguineo" Width="1.5" PointX="15.75" PointY="1.625" Height="1.5956835937500031" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Jornada_laboral" Width="1.5" PointX="12.75" PointY="2.75" Height="3.7109993489583388" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Licencia_Medica" Width="1.5" PointX="14.25" PointY="15.5" Height="1.9802864583333388" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Medicamentos" Width="1.5" PointX="15" PointY="18.375" Height="2.3648893229166674" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Medico" Width="1.5" PointX="17" PointY="14.125" Height="2.9417936197916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Nacionalidad" Width="1.5" PointX="7.5" PointY="11.875" Height="1.5956835937500031" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Paciente" Width="1.5" PointX="18" PointY="10" Height="3.1340950520833388" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Pais" Width="1.5" PointX="0.75" PointY="15.75" Height="1.5956835937500031" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Provincia" Width="1.5" PointX="5.25" PointY="15.5" Height="1.9802864583333388" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Receta_Medica" Width="1.5" PointX="17.25" PointY="18.125" Height="2.9417936197916674" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Region" Width="1.5" PointX="3" PointY="15.5" Height="1.9802864583333388" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Rh_sanguineo" Width="1.5" PointX="15.75" PointY="21.875" Height="1.595683593749996" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Secretaria" Width="1.5" PointX="15" PointY="4.5" Height="2.1725878906250102" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Sector" Width="1.5" PointX="10.5" PointY="3.625" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Tipo_Desvinculado" Width="1.5" PointX="12.75" PointY="20.625" Height="1.7879850260416674" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Tipo_Usuario" Width="1.5" PointX="9.75" PointY="0.75" Height="1.595683593749996" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Usuario" Width="1.5" PointX="9.75" PointY="8.5" Height="6.0186165364583246" IsExpanded="true" />
+      <Diagram Name="ConsultorioEDM" ZoomLevel="35">
+        <EntityTypeShape EntityType="ConsultoriosModel.Administrador" Width="1.5" PointX="15" PointY="13" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Alergia" Width="1.5" PointX="18" PointY="21" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Alergia_Paciente" Width="1.5" PointX="20.25" PointY="16.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Comuna" Width="1.5" PointX="7.5" PointY="12.75" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Consultorio" Width="1.5" PointX="6.875" PointY="9.625" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Control_Acceso" Width="1.5" PointX="15" PointY="9.5" Height="2.5571907552083317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Desvinculado" Width="1.5" PointX="15" PointY="15.625" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Enfermera" Width="1.5" PointX="18" PointY="12.75" Height="1.9802864583333317" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Especialidad" Width="1.5" PointX="15.75" PointY="4" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Ficha_Paciente" Width="1.5" PointX="0.75" PointY="1" Height="4.2879036458333353" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Genero" Width="1.5" PointX="10.5" PointY="9.875" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Grupo_sanguineo" Width="1.5" PointX="15.75" PointY="18.875" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Jornada_laboral" Width="1.5" PointX="12.75" PointY="5" Height="3.7109993489583388" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Licencia_Medica" Width="1.5" PointX="5.75" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Medicamentos" Width="1.5" PointX="0.75" PointY="7" Height="2.3648893229166674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Medico" Width="1.5" PointX="18" PointY="8.375" Height="2.7494921875000031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Nacionalidad" Width="1.5" PointX="10.5" PointY="16.125" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Paciente" Width="1.5" PointX="18" PointY="16.375" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Pais" Width="1.5" PointX="0.75" PointY="13" Height="1.5956835937500031" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Provincia" Width="1.5" PointX="5.25" PointY="12.75" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Receta_Medica" Width="1.5" PointX="3" PointY="1.75" Height="2.9417936197916674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Region" Width="1.5" PointX="3" PointY="12.75" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Rh_sanguineo" Width="1.5" PointX="15.75" PointY="21.125" Height="1.595683593749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Secretaria" Width="1.5" PointX="15" PointY="6.75" Height="1.9802864583333388" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Sector" Width="1.5" PointX="10.5" PointY="5.875" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Tipo_Desvinculado" Width="1.5" PointX="12.75" PointY="17.875" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Tipo_Usuario" Width="1.5" PointX="12.75" PointY="2" Height="1.595683593749996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Usuario" Width="1.5" PointX="12.75" PointY="10.75" Height="6.0186165364583264" IsExpanded="true" />
         <AssociationConnector Association="ConsultoriosModel.Admin_Usuario_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.25" PointY="11.547841796875" />
-          <ConnectorPoint PointX="11.666666666666666" PointY="11.547841796875" />
-          <ConnectorPoint PointX="11.833333333333334" PointY="11.547841796875" />
-          <ConnectorPoint PointX="12" PointY="11.547841796875" />
+          <ConnectorPoint PointX="14.25" PointY="13.797841796875" />
+          <ConnectorPoint PointX="15" PointY="13.797841796875" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Aler_Pac_Alerg_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="19.5" PointY="7.547841796875" />
-          <ConnectorPoint PointX="21" PointY="7.547841796875" />
-          <ConnectorPoint PointX="21" PointY="10.5" />
+          <ConnectorPoint PointX="19.5" PointY="21.797841796875" />
+          <ConnectorPoint PointX="21" PointY="21.797841796875" />
+          <ConnectorPoint PointX="21" PointY="18.730286458333332" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Aler_Pac_Paciente_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="19.5" PointY="11.490143229166666" />
-          <ConnectorPoint PointX="20.25" PointY="11.490143229166666" />
+          <ConnectorPoint PointX="19.5" PointY="17.740143229166666" />
+          <ConnectorPoint PointX="20.25" PointY="17.740143229166666" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Comuna_Provincia_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="6.75" PointY="16.490143229166669" />
-          <ConnectorPoint PointX="7.5" PointY="16.490143229166669" />
+          <ConnectorPoint PointX="6.75" PointY="13.740143229166669" />
+          <ConnectorPoint PointX="7.5" PointY="13.740143229166669" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Consultorio_Comuna_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="9" PointY="16.5862939453125" />
-          <ConnectorPoint PointX="9.75" PointY="16.5862939453125" />
+          <ConnectorPoint PointX="7.9375" PointY="12.75" />
+          <ConnectorPoint PointX="7.9375" PointY="11.797587890625" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Usuario_Comuna_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="9.0000000000000018" PointY="15.5" />
-          <ConnectorPoint PointX="9.375" PointY="15.125" />
-          <ConnectorPoint PointX="9.375" PointY="11.509308268229162" />
-          <ConnectorPoint PointX="9.75" PointY="11.509308268229162" />
-        </AssociationConnector>
-        <AssociationConnector Association="ConsultoriosModel.Ficha_Paciente_Consultori_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.25" PointY="16.557444661458334" />
-          <ConnectorPoint PointX="12" PointY="16.557444661458334" />
+          <ConnectorPoint PointX="8.25" PointY="14.922587890625" />
+          <ConnectorPoint PointX="8.25" PointY="15.4925444453125" />
+          <ConnectorPoint PointX="12.75" PointY="15.4925444453125" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Control_Acceso_Tipo_Usuario_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.25" PointY="1.547841796874998" />
-          <ConnectorPoint PointX="12.375" PointY="1.547841796874998" />
-          <ConnectorPoint PointX="12.375" PointY="7.25" />
+          <ConnectorPoint PointX="14.25" PointY="3.59452874759615" />
+          <ConnectorPoint PointX="14.625" PointY="3.9695287475961507" />
+          <ConnectorPoint PointX="14.625" PointY="10.778595377604166" />
+          <ConnectorPoint PointX="14.729166666666666" PointY="10.778595377604166" />
+          <ConnectorPoint PointX="14.895833333333334" PointY="10.778595377604166" />
+          <ConnectorPoint PointX="15" PointY="10.778595377604166" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Control_Acceso_Usuario_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.25" PointY="9.1535953776041659" />
-          <ConnectorPoint PointX="12" PointY="9.1535953776041659" />
+          <ConnectorPoint PointX="14.25" PointY="11.480393066406249" />
+          <ConnectorPoint PointX="14.729166666666666" PointY="11.480393066406249" />
+          <ConnectorPoint PointX="14.895833333333334" PointY="11.480393066406249" />
+          <ConnectorPoint PointX="15" PointY="11.480393066406249" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.tipoDesc_Desvinculado_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="13.875" PointY="20.625" />
-          <ConnectorPoint PointX="13.875" PointY="12.574036458333334" />
-          <ConnectorPoint PointX="14.541666666666666" PointY="12.574036458333334" />
-          <ConnectorPoint PointX="14.708333333333334" PointY="12.574036458333334" />
-          <ConnectorPoint PointX="14.729166666666666" PointY="12.574036458333334" />
-          <ConnectorPoint PointX="14.895833333333334" PointY="12.574036458333334" />
-          <ConnectorPoint PointX="15" PointY="12.574036458333334" />
+          <ConnectorPoint PointX="14.25" PointY="18.401195161458332" />
+          <ConnectorPoint PointX="15.34375" PointY="18.401195161458332" />
+          <ConnectorPoint PointX="15.34375" PointY="17.989889322916667" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Usuario_Desvinculado_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.25" PointY="10.53125" />
-          <ConnectorPoint PointX="11.666666666666666" PointY="10.53125" />
-          <ConnectorPoint PointX="11.833333333333334" PointY="10.53125" />
-          <ConnectorPoint PointX="14.541666666666666" PointY="10.53125" />
-          <ConnectorPoint PointX="14.708333333333334" PointY="10.53125" />
-          <ConnectorPoint PointX="14.729166666666666" PointY="10.53125" />
-          <ConnectorPoint PointX="14.895833333333334" PointY="10.53125" />
-          <ConnectorPoint PointX="15" PointY="10.53125" />
+          <ConnectorPoint PointX="14.25" PointY="16.196808268229162" />
+          <ConnectorPoint PointX="15" PointY="16.196808268229162" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Enfermera_Jornada_laboral_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="14.25" PointY="6.4598445028044926" />
-          <ConnectorPoint PointX="14.625" PointY="6.8348445028044926" />
-          <ConnectorPoint PointX="14.625" PointY="8.5862939453125" />
-          <ConnectorPoint PointX="14.729166666666666" PointY="8.5862939453125" />
-          <ConnectorPoint PointX="14.895833333333334" PointY="8.5862939453125" />
-          <ConnectorPoint PointX="15" PointY="8.5862939453125" />
+          <ConnectorPoint PointX="14.25" PointY="8.6486906566506487" />
+          <ConnectorPoint PointX="14.566074434901122" PointY="8.9647650915517687" />
+          <ConnectorPoint PointX="14.746425565098878" PointY="9.145116221749527" />
+          <ConnectorPoint PointX="14.8125" PointY="9.2111906566506487" />
+          <ConnectorPoint PointX="14.8125" PointY="12.375" />
+          <ConnectorPoint PointX="17.625" PointY="12.375" />
+          <ConnectorPoint PointX="17.691074434901122" PointY="12.44107443490112" />
+          <ConnectorPoint PointX="17.808925565098878" PointY="12.558925565098878" />
+          <ConnectorPoint PointX="18" PointY="12.75" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Enfermera_Usuario_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.25" PointY="13.064481166666656" />
-          <ConnectorPoint PointX="11.75" PointY="13.064481166666656" />
-          <ConnectorPoint PointX="11.75" PointY="10.125" />
-          <ConnectorPoint PointX="14.729166666666666" PointY="10.125" />
-          <ConnectorPoint PointX="14.895833333333334" PointY="10.125" />
-          <ConnectorPoint PointX="15.75" PointY="10.125" />
-          <ConnectorPoint PointX="15.75" PointY="9.672587890625" />
-        </AssociationConnector>
-        <AssociationConnector Association="ConsultoriosModel.Ficha_Paciente_Enfermera_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="15" PointY="9.672587890625" />
-          <ConnectorPoint PointX="14.871425565098878" PointY="9.80116232552612" />
-          <ConnectorPoint PointX="14.753574434901122" PointY="9.9190134557238778" />
-          <ConnectorPoint PointX="14.625" PointY="10.047587890625" />
-          <ConnectorPoint PointX="14.625" PointY="13.375" />
-          <ConnectorPoint PointX="13.850769230769231" PointY="13.375" />
-          <ConnectorPoint PointX="13.475769230769231" PointY="13.75" />
+          <ConnectorPoint PointX="14.25" PointY="12.8750025" />
+          <ConnectorPoint PointX="17.666666666666668" PointY="12.8750025" />
+          <ConnectorPoint PointX="17.833333333333332" PointY="12.8750025" />
+          <ConnectorPoint PointX="18" PointY="12.8750025" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Medico_Especialidad_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="16.25" PointY="25.547841796875" />
-          <ConnectorPoint PointX="17.75" PointY="25.547841796875" />
-          <ConnectorPoint PointX="17.75" PointY="21.316793619791667" />
-          <ConnectorPoint PointX="17" PointY="21.316793619791667" />
-          <ConnectorPoint PointX="17" PointY="17.441793619791667" />
-          <ConnectorPoint PointX="17.75" PointY="17.441793619791667" />
-          <ConnectorPoint PointX="17.75" PointY="17.066793619791667" />
-        </AssociationConnector>
-        <AssociationConnector Association="ConsultoriosModel.Ficha_Paciente_Medico_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="17" PointY="14.78125" />
-          <ConnectorPoint PointX="16.817708333333332" PointY="14.78125" />
-          <ConnectorPoint PointX="16.651041666666668" PointY="14.78125" />
-          <ConnectorPoint PointX="13.958333333333334" PointY="14.78125" />
-          <ConnectorPoint PointX="13.791666666666666" PointY="14.78125" />
-          <ConnectorPoint PointX="13.5" PointY="14.78125" />
-        </AssociationConnector>
-        <AssociationConnector Association="ConsultoriosModel.Ficha_Paciente_Paciente_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="19.15625" PointY="13.134095052083339" />
-          <ConnectorPoint PointX="19.15625" PointY="17.802643229166669" />
-          <ConnectorPoint PointX="17.083333333333332" PointY="17.802643229166669" />
-          <ConnectorPoint PointX="16.916666666666668" PointY="17.802643229166669" />
-          <ConnectorPoint PointX="16.817708333333332" PointY="17.802643229166669" />
-          <ConnectorPoint PointX="16.651041666666668" PointY="17.802643229166669" />
-          <ConnectorPoint PointX="13.958333333333334" PointY="17.802643229166669" />
-          <ConnectorPoint PointX="13.791666666666666" PointY="17.802643229166669" />
-          <ConnectorPoint PointX="13.5" PointY="17.802643229166669" />
-        </AssociationConnector>
-        <AssociationConnector Association="ConsultoriosModel.Ficha_Paciente_Secretaria_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="15.062306692307693" PointY="6.67258789062501" />
-          <ConnectorPoint PointX="14.8125" PointY="6.9223945829327036" />
-          <ConnectorPoint PointX="14.8125" PointY="13.625" />
-          <ConnectorPoint PointX="13.958333333333334" PointY="13.625" />
-          <ConnectorPoint PointX="13.791666666666666" PointY="13.625" />
-          <ConnectorPoint PointX="13.650383615384616" PointY="13.625" />
-          <ConnectorPoint PointX="13.5" PointY="13.775383615384616" />
-        </AssociationConnector>
-        <AssociationConnector Association="ConsultoriosModel.Lic_Medica_Ficha_Paciente_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="13.5" PointY="16.490143229166669" />
-          <ConnectorPoint PointX="13.791666666666666" PointY="16.490143229166669" />
-          <ConnectorPoint PointX="13.958333333333334" PointY="16.490143229166669" />
-          <ConnectorPoint PointX="14.25" PointY="16.490143229166669" />
+          <ConnectorPoint PointX="16.90625" PointY="5.59568359375" />
+          <ConnectorPoint PointX="16.90625" PointY="9.11514322916667" />
+          <ConnectorPoint PointX="17.666666666666668" PointY="9.11514322916667" />
+          <ConnectorPoint PointX="17.833333333333332" PointY="9.11514322916667" />
+          <ConnectorPoint PointX="18" PointY="9.11514322916667" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Rec_Medica_Ficha_Paciente_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="13.5" PointY="18.21875" />
-          <ConnectorPoint PointX="13.791666666666666" PointY="18.21875" />
-          <ConnectorPoint PointX="13.958333333333334" PointY="18.21875" />
-          <ConnectorPoint PointX="16.651041666666668" PointY="18.21875" />
-          <ConnectorPoint PointX="16.817708333333332" PointY="18.21875" />
-          <ConnectorPoint PointX="16.916666666666668" PointY="18.21875" />
-          <ConnectorPoint PointX="17.083333333333332" PointY="18.21875" />
-          <ConnectorPoint PointX="17.25" PointY="18.21875" />
+          <ConnectorPoint PointX="2.25" PointY="3.2208968098958337" />
+          <ConnectorPoint PointX="3" PointY="3.2208968098958337" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Usuario_Genero_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="9" PointY="10.422841796875002" />
-          <ConnectorPoint PointX="9.75" PointY="10.422841796875002" />
+          <ConnectorPoint PointX="12" PointY="11.110341796875002" />
+          <ConnectorPoint PointX="12.75" PointY="11.110341796875002" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Paciente_Grupo_sanguineo_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="16.90625" PointY="3.2206835937500031" />
-          <ConnectorPoint PointX="16.90625" PointY="12.968242187500003" />
-          <ConnectorPoint PointX="17.541666666666668" PointY="12.968242187500003" />
-          <ConnectorPoint PointX="17.708333333333332" PointY="12.968242187500003" />
-          <ConnectorPoint PointX="18" PointY="12.968242187500003" />
+          <ConnectorPoint PointX="17.25" PointY="19.095896809895834" />
+          <ConnectorPoint PointX="17.541666666666668" PointY="19.095896809895834" />
+          <ConnectorPoint PointX="17.708333333333332" PointY="19.095896809895834" />
+          <ConnectorPoint PointX="18" PointY="19.095896809895834" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Jornada_laboral_Sector_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="12" PointY="4.5189925130208337" />
-          <ConnectorPoint PointX="12.291666666666666" PointY="4.5189925130208328" />
-          <ConnectorPoint PointX="12.458333333333334" PointY="4.5189925130208337" />
-          <ConnectorPoint PointX="12.75" PointY="4.5189925130208337" />
+          <ConnectorPoint PointX="12" PointY="6.7689925130208337" />
+          <ConnectorPoint PointX="12.75" PointY="6.7689925130208337" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Medico_Jornada_laboral_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="14.25" PointY="3.8603417968750016" />
-          <ConnectorPoint PointX="16.822916666666668" PointY="3.8603417968750011" />
-          <ConnectorPoint PointX="16.989583333333332" PointY="3.8603417968750016" />
-          <ConnectorPoint PointX="17.625" PointY="3.8603417968750016" />
-          <ConnectorPoint PointX="17.625" PointY="14.125" />
+          <ConnectorPoint PointX="14.25" PointY="6.172841796875" />
+          <ConnectorPoint PointX="14.541666666666666" PointY="6.1728417968749989" />
+          <ConnectorPoint PointX="14.708333333333334" PointY="6.172841796875" />
+          <ConnectorPoint PointX="16.822916666666668" PointY="6.1728417968749989" />
+          <ConnectorPoint PointX="16.989583333333332" PointY="6.172841796875" />
+          <ConnectorPoint PointX="18.75" PointY="6.172841796875" />
+          <ConnectorPoint PointX="18.75" PointY="8.375" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Secretaria_Jornada_laboral_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="14.25" PointY="5.4486697514022531" />
-          <ConnectorPoint PointX="15" PointY="5.4486697514022531" />
+          <ConnectorPoint PointX="14.25" PointY="7.6680928283253307" />
+          <ConnectorPoint PointX="14.541666666666666" PointY="7.66809282832533" />
+          <ConnectorPoint PointX="14.708333333333334" PointY="7.6680928283253307" />
+          <ConnectorPoint PointX="15" PointY="7.6680928283253307" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Rec_Medica_Medicamentos_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="16.5" PointY="19.557444661458334" />
-          <ConnectorPoint PointX="16.651041666666668" PointY="19.557444661458334" />
-          <ConnectorPoint PointX="16.817708333333332" PointY="19.557444661458334" />
-          <ConnectorPoint PointX="16.916666666666668" PointY="19.557444661458334" />
-          <ConnectorPoint PointX="17.083333333333332" PointY="19.557444661458334" />
-          <ConnectorPoint PointX="17.25" PointY="19.557444661458334" />
+          <ConnectorPoint PointX="2.25" PointY="8.1824446614583337" />
+          <ConnectorPoint PointX="3.75" PointY="8.1824446614583337" />
+          <ConnectorPoint PointX="3.75" PointY="4.6917936197916674" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Medico_Usuario_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.25" PointY="13.5" />
-          <ConnectorPoint PointX="13.642435897435897" PointY="13.499999999999998" />
-          <ConnectorPoint PointX="13.958333333333334" PointY="13.5" />
-          <ConnectorPoint PointX="14.729166666666666" PointY="13.5" />
-          <ConnectorPoint PointX="14.895833333333334" PointY="13.5" />
-          <ConnectorPoint PointX="16.651041666666668" PointY="13.5" />
-          <ConnectorPoint PointX="16.817708333333332" PointY="13.5" />
-          <ConnectorPoint PointX="17.2812475" PointY="13.5" />
-          <ConnectorPoint PointX="17.2812475" PointY="14.125" />
+          <ConnectorPoint PointX="13.5" PointY="10.75" />
+          <ConnectorPoint PointX="13.5" PointY="9.25" />
+          <ConnectorPoint PointX="14.541666666666666" PointY="9.25" />
+          <ConnectorPoint PointX="14.770833333333334" PointY="9.25" />
+          <ConnectorPoint PointX="17.625" PointY="9.25" />
+          <ConnectorPoint PointX="17.625" PointY="10.151069708333331" />
+          <ConnectorPoint PointX="17.666666666666668" PointY="10.151069708333331" />
+          <ConnectorPoint PointX="17.833333333333332" PointY="10.151069708333331" />
+          <ConnectorPoint PointX="18" PointY="10.151069708333331" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Usuario_Nacionalidad_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="9" PointY="12.672841796875002" />
-          <ConnectorPoint PointX="9.2916666666666661" PointY="12.672841796875002" />
-          <ConnectorPoint PointX="9.4583333333333339" PointY="12.672841796875002" />
-          <ConnectorPoint PointX="9.75" PointY="12.672841796875002" />
+          <ConnectorPoint PointX="12" PointY="16.446808268229162" />
+          <ConnectorPoint PointX="12.75" PointY="16.446808268229162" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Paciente_Rh_sanguineo_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="16.734375" PointY="21.875" />
-          <ConnectorPoint PointX="16.734375" PointY="10.15625" />
-          <ConnectorPoint PointX="16.822916666666668" PointY="10.15625" />
-          <ConnectorPoint PointX="16.989583333333332" PointY="10.15625" />
-          <ConnectorPoint PointX="17.541666666666668" PointY="10.15625" />
-          <ConnectorPoint PointX="17.708333333333332" PointY="10.15625" />
-          <ConnectorPoint PointX="18" PointY="10.15625" />
+          <ConnectorPoint PointX="17.25" PointY="21.125" />
+          <ConnectorPoint PointX="17.625" PointY="20.75" />
+          <ConnectorPoint PointX="17.625" PointY="17.704196404947922" />
+          <ConnectorPoint PointX="18" PointY="17.704196404947922" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Paciente_Sector_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="12" PointY="4.9972407695312437" />
-          <ConnectorPoint PointX="12.291666666666666" PointY="4.9972407695312429" />
-          <ConnectorPoint PointX="12.458333333333334" PointY="4.9972407695312437" />
-          <ConnectorPoint PointX="12.5" PointY="4.9972407695312437" />
-          <ConnectorPoint PointX="12.5" PointY="6.92258789062501" />
-          <ConnectorPoint PointX="14.541666666666666" PointY="6.9225878906250093" />
-          <ConnectorPoint PointX="14.708333333333334" PointY="6.92258789062501" />
-          <ConnectorPoint PointX="16.822916666666668" PointY="6.9225878906250093" />
-          <ConnectorPoint PointX="16.989583333333332" PointY="6.92258789062501" />
-          <ConnectorPoint PointX="17.541666666666668" PointY="6.9225878906250093" />
-          <ConnectorPoint PointX="17.708333333333332" PointY="6.92258789062501" />
-          <ConnectorPoint PointX="17.75" PointY="6.92258789062501" />
-          <ConnectorPoint PointX="17.75" PointY="8.59568359375" />
-          <ConnectorPoint PointX="18.75" PointY="8.59568359375" />
-          <ConnectorPoint PointX="18.75" PointY="10" />
+          <ConnectorPoint PointX="12" PointY="7.2472407695312437" />
+          <ConnectorPoint PointX="12.5" PointY="7.2472407695312437" />
+          <ConnectorPoint PointX="12.5" PointY="8.9802864583333388" />
+          <ConnectorPoint PointX="14.498262468349356" PointY="8.9802864583333371" />
+          <ConnectorPoint PointX="14.770833333333332" PointY="8.9802864583333388" />
+          <ConnectorPoint PointX="16.822916666666668" PointY="8.9802864583333388" />
+          <ConnectorPoint PointX="16.989583333333332" PointY="8.9802864583333388" />
+          <ConnectorPoint PointX="17.75" PointY="8.9802864583333388" />
+          <ConnectorPoint PointX="17.75" PointY="16" />
+          <ConnectorPoint PointX="18.75" PointY="16" />
+          <ConnectorPoint PointX="18.75" PointY="16.375" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Paciente_Usuario_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="11.25" PointY="12.822815755208335" />
-          <ConnectorPoint PointX="11.666666666666666" PointY="12.822815755208335" />
-          <ConnectorPoint PointX="11.833333333333334" PointY="12.822815755208335" />
-          <ConnectorPoint PointX="13.791666666666666" PointY="12.822815755208335" />
-          <ConnectorPoint PointX="13.958333333333334" PointY="12.822815755208335" />
-          <ConnectorPoint PointX="14.541666666666666" PointY="12.822815755208335" />
-          <ConnectorPoint PointX="14.708333333333334" PointY="12.822815755208335" />
-          <ConnectorPoint PointX="14.729166666666666" PointY="12.822815755208335" />
-          <ConnectorPoint PointX="14.895833333333334" PointY="12.822815755208335" />
-          <ConnectorPoint PointX="16.651041666666668" PointY="12.822815755208335" />
-          <ConnectorPoint PointX="16.817708333333332" PointY="12.822815755208335" />
-          <ConnectorPoint PointX="16.822916666666668" PointY="12.822815755208335" />
-          <ConnectorPoint PointX="16.989583333333332" PointY="12.822815755208335" />
-          <ConnectorPoint PointX="17.541666666666668" PointY="12.822815755208335" />
-          <ConnectorPoint PointX="17.708333333333332" PointY="12.822815755208335" />
-          <ConnectorPoint PointX="18" PointY="12.822815755208335" />
+          <ConnectorPoint PointX="13.5" PointY="16.768616536458325" />
+          <ConnectorPoint PointX="13.5" PointY="17.625" />
+          <ConnectorPoint PointX="14.75" PointY="17.625" />
+          <ConnectorPoint PointX="14.75" PointY="18.239889322916667" />
+          <ConnectorPoint PointX="15.260416666666666" PointY="18.239889322916667" />
+          <ConnectorPoint PointX="15.427083333333334" PointY="18.239889322916667" />
+          <ConnectorPoint PointX="17.375" PointY="18.239889322916667" />
+          <ConnectorPoint PointX="17.375" PointY="17.008346202473966" />
+          <ConnectorPoint PointX="18" PointY="17.008346202473966" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Region_Pais_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="16.547841796875" />
-          <ConnectorPoint PointX="3" PointY="16.547841796875" />
+          <ConnectorPoint PointX="2.25" PointY="13.797841796875002" />
+          <ConnectorPoint PointX="3" PointY="13.797841796875002" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Provincia_Region_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="16.490143229166669" />
-          <ConnectorPoint PointX="5.25" PointY="16.490143229166669" />
+          <ConnectorPoint PointX="4.5" PointY="13.740143229166669" />
+          <ConnectorPoint PointX="5.25" PointY="13.740143229166669" />
         </AssociationConnector>
         <AssociationConnector Association="ConsultoriosModel.Secretaria_Usuario_FK" ManuallyRouted="false">
-          <ConnectorPoint PointX="10.09375" PointY="8.5" />
-          <ConnectorPoint PointX="10.09375" PointY="6.5980436197916745" />
-          <ConnectorPoint PointX="12.291666666666666" PointY="6.5980436197916736" />
-          <ConnectorPoint PointX="12.583333333333334" PointY="6.5980436197916745" />
-          <ConnectorPoint PointX="14.304865783653847" PointY="6.5980436197916736" />
-          <ConnectorPoint PointX="14.471532450320515" PointY="6.5980436197916745" />
-          <ConnectorPoint PointX="15" PointY="6.5980436197916745" />
+          <ConnectorPoint PointX="14.25" PointY="10.812306692307692" />
+          <ConnectorPoint PointX="14.56607443490112" PointY="10.496232257406572" />
+          <ConnectorPoint PointX="14.683925565098878" PointY="10.378381127208815" />
+          <ConnectorPoint PointX="14.6875" PointY="10.374806692307693" />
+          <ConnectorPoint PointX="14.6875" PointY="8.2304416433293284" />
+          <ConnectorPoint PointX="15" PointY="8.2304416433293284" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

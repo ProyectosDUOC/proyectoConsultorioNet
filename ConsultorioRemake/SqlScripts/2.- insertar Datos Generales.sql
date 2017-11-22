@@ -1,14 +1,14 @@
 ﻿
 
 
-INSERT INTO [Consultorios].[dbo].[Alergia] (nombre) VALUES ('NA')
-INSERT INTO [Consultorios].[dbo].[Alergia] (nombre) VALUES ('Polen')
-INSERT INTO [Consultorios].[dbo].[Alergia] (nombre) VALUES ('Acaros')
-INSERT INTO [Consultorios].[dbo].[Alergia] (nombre) VALUES ('Polvo')
-INSERT INTO [Consultorios].[dbo].[Alergia] (nombre) VALUES ('Penicilina')
-INSERT INTO [Consultorios].[dbo].[Alergia] (nombre) VALUES ('Aspirina')
-INSERT INTO [Consultorios].[dbo].[Alergia] (nombre) VALUES ('Lactosa')
-INSERT INTO [Consultorios].[dbo].[Alergia] (nombre) VALUES ('Gluten')
+INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (1,'NA')
+INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (2,'Polen')
+INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (3,'Acaros')
+INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (4,'Polvo')
+INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (5,'Penicilina')
+INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (6,'Aspirina')
+INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (7,'Lactosa')
+INSERT INTO [Consultorios].[dbo].[Alergia] VALUES (8,'Gluten')
 
 
 INSERT INTO [Consultorios].[dbo].[Pais] VALUES (1,'Chile')
@@ -79,9 +79,7 @@ INSERT INTO [Consultorios].[dbo].[Comuna] VALUES (51,'El Monte',4)
 INSERT INTO [Consultorios].[dbo].[Comuna] VALUES (52,'Padre Hurtado',4)
 
 
-INSERT INTO [Consultorios].[dbo].[Consultorio] (rut_consultorio, dv, id_comuna, nombre) VALUES (19999992,'1',1,'Consutorio mi Duoc')
-INSERT INTO [Consultorios].[dbo].[Consultorio] (rut_consultorio, dv, id_comuna, nombre) VALUES (19999911,'k',2,'Consutorio el Campo')
-  
+INSERT INTO [Consultorios].[dbo].[Consultorio] VALUES (1,19999992,'1',1,'Consutorio mi Duoc')
 
 INSERT INTO [Consultorios].[dbo].[Tipo_Usuario] VALUES (1,'paciente')
 INSERT INTO [Consultorios].[dbo].[Tipo_Usuario] VALUES (2,'secretaria')

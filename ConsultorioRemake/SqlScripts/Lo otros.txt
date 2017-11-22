@@ -1,0 +1,504 @@
+SET QUOTED_IDENTIFIER ON
+
+go
+
+
+/* Create Empresas database.                                                                  */
+use master  
+
+go
+
+create database "Cesfam"  
+
+go
+
+use "Cesfam"  
+
+go
+
+
+CREATE
+  TABLE administrador
+  (
+    rut           VARCHAR (10) NOT NULL ,
+    nombres       VARCHAR (60) NOT NULL ,
+    apellidos     VARCHAR (60) NOT NULL ,
+    edad          NUMERIC (2) NOT NULL ,
+    genero        VARCHAR (20) NOT NULL ,
+    direccion     VARCHAR (30) NOT NULL ,
+    correo        VARCHAR (60) NOT NULL ,
+    contacto      NUMERIC (20) ,
+    usuario_admin VARCHAR (30) NOT NULL ,
+    pass_admin    VARCHAR (30) NOT NULL ,
+    comuna_codigo NUMERIC (9) NOT NULL
+  )
+  ON "default"
+GO
+ALTER TABLE administrador ADD CONSTRAINT administrador_PK PRIMARY KEY CLUSTERED
+(rut)
+WITH
+  (
+    ALLOW_PAGE_LOCKS = ON ,
+    ALLOW_ROW_LOCKS  = ON
+  )
+  ON "default"
+GO
+
+CREATE
+  TABLE comuna
+  (
+    codigo      NUMERIC (9) NOT NULL ,
+    nombre      VARCHAR (30) NOT NULL ,
+    pais_codigo NUMERIC (9) NOT NULL
+  )
+  ON "default"
+GO
+ALTER TABLE comuna ADD CONSTRAINT comuna_PK PRIMARY KEY CLUSTERED (codigo)
+WITH
+  (
+    ALLOW_PAGE_LOCKS = ON ,
+    ALLOW_ROW_LOCKS  = ON
+  )
+  ON "default"
+GO
+
+CREATE
+  TABLE farmaceutico
+  (
+    rut           VARCHAR (10) NOT NULL ,
+    nombres       VARCHAR (60) NOT NULL ,
+    apellidos     VARCHAR (60) NOT NULL ,
+    edad          NUMERIC (2) NOT NULL ,
+    genero        VARCHAR (20) NOT NULL ,
+    direccion     VARCHAR (30) NOT NULL ,
+    correo        VARCHAR (60) NOT NULL ,
+    contacto      NUMERIC (20) ,
+    usuario_farma VARCHAR (30) NOT NULL ,
+    pass_farma    VARCHAR (30) NOT NULL ,
+    comuna_codigo NUMERIC (9) NOT NULL
+  )
+  ON "default"
+GO
+ALTER TABLE farmaceutico ADD CONSTRAINT farmaceutico_PK PRIMARY KEY CLUSTERED (
+rut)
+WITH
+  (
+    ALLOW_PAGE_LOCKS = ON ,
+    ALLOW_ROW_LOCKS  = ON
+  )
+  ON "default"
+GO
+
+CREATE
+  TABLE inventario
+  (
+    cod_inventario     NUMERIC (4) NOT NULL ,
+    fecha_entrada      VARCHAR (30) ,
+    fecha_salida       VARCHAR (30) ,
+    medicamento_codigo NUMERIC (4) NOT NULL
+  )
+  ON "default"
+GO
+ALTER TABLE inventario ADD CONSTRAINT inventario_PK PRIMARY KEY CLUSTERED (
+cod_inventario)
+WITH
+  (
+    ALLOW_PAGE_LOCKS = ON ,
+    ALLOW_ROW_LOCKS  = ON
+  )
+  ON "default"
+GO
+
+CREATE
+  TABLE medicamento
+  (
+    codigo      NUMERIC (4) NOT NULL ,
+    nombre      VARCHAR (30) NOT NULL ,
+    tipo        VARCHAR (30) NOT NULL ,
+    laboratorio VARCHAR (30) NOT NULL ,
+    descripcion VARCHAR (60) NOT NULL ,
+    stock       NUMERIC (4) NOT NULL ,
+    estado 	VARCHAR (8) NOT NULL
+  )
+  ON "default"
+GO
+ALTER TABLE medicamento ADD CONSTRAINT medicamento_PK PRIMARY KEY CLUSTERED (
+codigo)
+WITH
+  (
+    ALLOW_PAGE_LOCKS = ON ,
+    ALLOW_ROW_LOCKS  = ON
+  )
+  ON "default"
+GO
+
+CREATE
+  TABLE paciente
+  (
+    rut           VARCHAR (10) NOT NULL ,
+    nombres       VARCHAR (60) NOT NULL ,
+    apellidos     VARCHAR (60) NOT NULL ,
+    edad          NUMERIC (2) NOT NULL ,
+    genero        VARCHAR (20) NOT NULL ,
+    direccion     VARCHAR (30) NOT NULL ,
+    correo        VARCHAR (60) NOT NULL ,
+    contacto      NUMERIC (20) ,
+    comuna_codigo NUMERIC (9) NOT NULL
+  )
+  ON "default"
+GO
+ALTER TABLE paciente ADD CONSTRAINT paciente_PKv2 PRIMARY KEY CLUSTERED (rut)
+WITH
+  (
+    ALLOW_PAGE_LOCKS = ON ,
+    ALLOW_ROW_LOCKS  = ON
+  )
+  ON "default"
+GO
+
+CREATE
+  TABLE pais
+  (
+    codigo NUMERIC (9) NOT NULL ,
+    nombre VARCHAR (30) NOT NULL
+  )
+  ON "default"
+GO
+ALTER TABLE pais ADD CONSTRAINT pais_PK PRIMARY KEY CLUSTERED (codigo)
+WITH
+  (
+    ALLOW_PAGE_LOCKS = ON ,
+    ALLOW_ROW_LOCKS  = ON
+  )
+  ON "default"
+GO
+
+CREATE
+  TABLE receta
+  (
+    cod_receta         NUMERIC (4) NOT NULL ,
+    fecha              VARCHAR (30) NOT NULL ,
+    descripcion        VARCHAR (100) ,
+    paciente_rut       VARCHAR (10) NOT NULL ,
+    medicamento_codigo NUMERIC (4) NOT NULL ,
+    farmaceutico_rut   VARCHAR (10) NOT NULL
+  )
+  ON "default"
+GO
+ALTER TABLE receta ADD CONSTRAINT receta_PK PRIMARY KEY CLUSTERED (cod_receta)
+WITH
+  (
+    ALLOW_PAGE_LOCKS = ON ,
+    ALLOW_ROW_LOCKS  = ON
+  )
+  ON "default"
+GO
+
+CREATE
+  TABLE registro_entrega
+  (
+    cod_entrega   NUMERIC (4) NOT NULL ,
+    fecha_entrega VARCHAR (30) NOT NULL ,
+    estado 	  VARCHAR (8) NOT NULL ,
+    receta_cod_receta NUMERIC (4) NOT NULL
+  )
+  ON "default"
+GO
+ALTER TABLE registro_entrega ADD CONSTRAINT registro_entrega_PK PRIMARY KEY
+CLUSTERED (cod_entrega)
+WITH
+  (
+    ALLOW_PAGE_LOCKS = ON ,
+    ALLOW_ROW_LOCKS  = ON
+  )
+  ON "default"
+GO
+
+CREATE
+  TABLE solicitud
+  (
+    codigo_solicitud NUMERIC (4) NOT NULL ,
+    cantidad         NUMERIC (4) NOT NULL ,
+    estado 		VARCHAR (8) NOT NULL ,
+    farmaceutico_rut   VARCHAR (10) NOT NULL ,
+    medicamento_codigo NUMERIC (4) NOT NULL
+  )
+  ON "default"
+GO
+ALTER TABLE solicitud ADD CONSTRAINT solicitud_PK PRIMARY KEY CLUSTERED (
+codigo_solicitud)
+WITH
+  (
+    ALLOW_PAGE_LOCKS = ON ,
+    ALLOW_ROW_LOCKS  = ON
+  )
+  ON "default"
+GO
+
+ALTER TABLE administrador
+ADD CONSTRAINT administrador_comuna_FK FOREIGN KEY
+(
+comuna_codigo
+)
+REFERENCES comuna
+(
+codigo
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
+
+ALTER TABLE comuna
+ADD CONSTRAINT comuna_pais_FK FOREIGN KEY
+(
+pais_codigo
+)
+REFERENCES pais
+(
+codigo
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
+
+ALTER TABLE farmaceutico
+ADD CONSTRAINT farmaceutico_comuna_FK FOREIGN KEY
+(
+comuna_codigo
+)
+REFERENCES comuna
+(
+codigo
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
+
+ALTER TABLE inventario
+ADD CONSTRAINT inventario_medicamento_FK FOREIGN KEY
+(
+medicamento_codigo
+)
+REFERENCES medicamento
+(
+codigo
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
+
+ALTER TABLE paciente
+ADD CONSTRAINT paciente_comuna_FK FOREIGN KEY
+(
+comuna_codigo
+)
+REFERENCES comuna
+(
+codigo
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
+
+ALTER TABLE receta
+ADD CONSTRAINT receta_farmaceutico_FK FOREIGN KEY
+(
+farmaceutico_rut
+)
+REFERENCES farmaceutico
+(
+rut
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
+
+ALTER TABLE receta
+ADD CONSTRAINT receta_medicamento_FK FOREIGN KEY
+(
+medicamento_codigo
+)
+REFERENCES medicamento
+(
+codigo
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
+
+ALTER TABLE receta
+ADD CONSTRAINT receta_paciente_FK FOREIGN KEY
+(
+paciente_rut
+)
+REFERENCES paciente
+(
+rut
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
+
+ALTER TABLE registro_entrega
+ADD CONSTRAINT registro_entrega_receta_FK FOREIGN KEY
+(
+receta_cod_receta
+)
+REFERENCES receta
+(
+cod_receta
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
+
+ALTER TABLE solicitud
+ADD CONSTRAINT solicitud_farmaceutico_FK FOREIGN KEY
+(
+farmaceutico_rut
+)
+REFERENCES farmaceutico
+(
+rut
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
+
+ALTER TABLE solicitud
+ADD CONSTRAINT solicitud_medicamento_FK FOREIGN KEY
+(
+medicamento_codigo
+)
+REFERENCES medicamento
+(
+codigo
+)
+ON
+DELETE
+  NO ACTION ON
+UPDATE NO ACTION
+GO
+
+--pais
+
+INSERT INTO [Cesfam].[dbo].[pais] VALUES (1, 'Chile')
+
+
+--comuna 
+INSERT INTO [Cesfam].[dbo].[comuna] VALUES (1, 'San Bernardo', 1)
+INSERT INTO [Cesfam].[dbo].[comuna] VALUES (2, 'Buin', 1)
+INSERT INTO [Cesfam].[dbo].[comuna] VALUES (3, 'Paine', 1)
+
+
+--paciente
+INSERT INTO [Cesfam].[dbo].[paciente] VALUES ('19720601-2', 'Juan Carlos', 'Pena Silva', 20, 'Masculino', 'Manuel Rodriguez 306', 'ju.penas@gmail.com', 982384587, 3)
+
+INSERT INTO [Cesfam].[dbo].[paciente] VALUES ('78954561-1', 'Jose Miguel', 'Pena Calderon', 42, 'Masculino', 'Manuel Rodriguez 306', 'jo.penac@gmail.com', 984218422, 3)
+
+INSERT INTO [Cesfam].[dbo].[paciente] VALUES ('12231344-1', 'Alejandra Maria', 'Cortes Silva', 30, 'Femenino', 'Cobre 444', 'ale.cortes@gmail.com', 982384597, 1)
+
+INSERT INTO [Cesfam].[dbo].[paciente] VALUES ('18785544-3', 'Carla Constanza', 'Munoz Carrasco', 23, 'Femenino', 'Capas 22', 'car.munoz@gmail.com', 982531387, 2)
+
+INSERT INTO [Cesfam].[dbo].[paciente] VALUES ('15665648-k', 'Andrea Fernanda', 'Bustamante Medina', 28, 'Femenino', 'Acuario 555', 'and.bustamante@gmail.com', 978384569, 1)
+
+
+--medicamento
+INSERT INTO [Cesfam].[dbo].[medicamento] VALUES (1, 'Paracetamol', 'Bioequivalente', 'Laboratorio Chile', 'Dolor de cabeza', 30, 'true') 
+
+INSERT INTO [Cesfam].[dbo].[medicamento] VALUES (2, 'Levorigotax 5 mg', 'Bioequivalente', 'Laboratorios Prater', 'Alergia', 12, 'true')
+
+INSERT INTO [Cesfam].[dbo].[medicamento] VALUES (3, 'Ketoprofeno 200 mg', 'Bioequivalente', 'Laboratorio Mintlab', 'Dolor de garganta', 25, 'true')  
+
+INSERT INTO [Cesfam].[dbo].[medicamento] VALUES (4, 'Vitamina C', 'Bioequivalente','Laboratorio Chile', 'Defensas bajas', 25, 'true') 
+
+INSERT INTO [Cesfam].[dbo].[medicamento] VALUES (5, 'Azitromicina 500 mg', 'Bioequivalente','Laboratorio Chile', 'Resfriado', 10, 'true') 
+
+
+--inventario
+INSERT INTO [Cesfam].[dbo].[inventario] VALUES (1, '05/01/2017', '15/03/2017', 1)
+
+INSERT INTO [Cesfam].[dbo].[inventario] VALUES (2, '05/01/2017', '16/02/2017', 2)
+
+INSERT INTO [Cesfam].[dbo].[inventario] VALUES (3, '05/01/2017', '05/04/2017', 3)
+
+INSERT INTO [Cesfam].[dbo].[inventario] VALUES (4, '05/01/2017', '27/03/2017', 4)
+
+INSERT INTO [Cesfam].[dbo].[inventario] VALUES (5, '05/01/2017', '29/01/2017', 5)
+
+
+
+--administrador
+
+INSERT INTO [Cesfam].[dbo].[administrador] VALUES ('19631250-1', 'Sebastian Ignacio', 'Ravelo Hormazabal', 20, 'Masculino', 'Gran Avenida 33', 'esKoriaPro@gmail.com', 974033091, 's.ravelo', '12345', 1)
+
+INSERT INTO [Cesfam].[dbo].[administrador] VALUES ('16631250-2', 'Matias Ignacio', 'Arevalo Merino', 28, 'Masculino', 'Acuario 22', 'mi.arevalo@gmail.com', 984532771, 'm.arevalo', '12345', 1)
+
+INSERT INTO [Cesfam].[dbo].[administrador] VALUES ('17530520-k', 'David Ignacio', 'Castro Soto', 25, 'Masculino', 'Santa Marta 112', 'david.castro@gmail.com', 972532884, 'd.castro', '12345', 1)
+
+
+--farmaceutico
+INSERT INTO [Cesfam].[dbo].[farmaceutico] VALUES ('12656123-2', 'Mariela Antonia', 'Bustos Perez', 38, 'Femenino', 'San Jose 443', 'mari.bustos@gmail.com', 967855224, 'm.bustos', '12345', 1)
+
+INSERT INTO [Cesfam].[dbo].[farmaceutico] VALUES ('11566222-5', 'Christian Antonio', 'Orellana Gonzalez', 41, 'Masculino', 'San Jose 445', 'chris.orellana@gmail.com', 977825251, 'c.orellana', '12345', 1)
+
+INSERT INTO [Cesfam].[dbo].[farmaceutico] VALUES ('11553424-1', 'Andres Fabian', 'Acevedo Gonzalez', 41, 'Masculino', 'San Jose 555', 'andy.acevedo@gmail.com', 987654255, 'a.acevedo', '12345', 1)
+
+--solicitud
+INSERT INTO [Cesfam].[dbo].[solicitud] VALUES (1, 30, 'true', '12656123-2', 1)
+
+INSERT INTO [Cesfam].[dbo].[solicitud] VALUES (2, 20, 'true', '12656123-2', 2)
+
+INSERT INTO [Cesfam].[dbo].[solicitud] VALUES (3, 25, 'true', '11566222-5', 3)
+
+INSERT INTO [Cesfam].[dbo].[solicitud] VALUES (4, 25, 'true', '11566222-5', 4)
+
+INSERT INTO [Cesfam].[dbo].[solicitud] VALUES (5, 25, 'true', '11553424-1', 5)
+
+
+--receta
+INSERT INTO [Cesfam].[dbo].[receta] VALUES (1, '07/01/2017', 'jaqueca', '19720601-2', 1, '12656123-2')
+
+INSERT INTO [Cesfam].[dbo].[receta] VALUES (2, '05/02/2017', 'alergia al polen', '78954561-1', 2, '12656123-2')
+
+INSERT INTO [Cesfam].[dbo].[receta] VALUES (3, '27/01/2017', 'resfriado comun', '12231344-1', 3, '11566222-5')
+
+INSERT INTO [Cesfam].[dbo].[receta] VALUES (4, '13/02/2017', 'suplemento vitaminico', '18785544-3', 4, '11566222-5')
+
+INSERT INTO [Cesfam].[dbo].[receta] VALUES (5, '22/02/2017', 'bronquitis aguda', '15665648-k', 5, '11553424-1')
+
+
+--registro entrega
+INSERT INTO [Cesfam].[dbo].[registro_entrega] VALUES (1, '09/01/2017', 'true', 1)
+
+INSERT INTO [Cesfam].[dbo].[registro_entrega] VALUES (2, '06/02/2017', 'true', 2)
+
+INSERT INTO [Cesfam].[dbo].[registro_entrega] VALUES (3, '29/01/2017', 'true', 3)
+
+INSERT INTO [Cesfam].[dbo].[registro_entrega] VALUES (4, '16/02/2017', 'false', 4)
+
+INSERT INTO [Cesfam].[dbo].[registro_entrega] VALUES (5, '23/02/2017', 'true', 5)
+
+
+
+

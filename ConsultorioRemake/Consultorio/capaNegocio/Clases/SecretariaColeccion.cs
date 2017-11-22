@@ -27,7 +27,7 @@ namespace capaNegocio
         
         //Listado de todos los elementos
 
-        public List<Secretaria> ReadAll()
+        public static List<Secretaria> ReadAll()
         {
             var secretarias = CommonBC.ModeloConsultorio.Secretaria;
             return GenerarListado(secretarias.ToList());

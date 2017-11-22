@@ -92,6 +92,7 @@
     <Compile Include="Clases\Usuario.cs" />
     <Compile Include="Clases\UsuarioColeccion.cs" />
     <Compile Include="CommonBC.cs" />
+    <Compile Include="Control\Contadores.cs" />
     <Compile Include="Control\ControlAcceso.cs" />
     <Compile Include="Control\ControlAccesoColeccion.cs" />
     <Compile Include="Control\FichaPaciente.cs" />

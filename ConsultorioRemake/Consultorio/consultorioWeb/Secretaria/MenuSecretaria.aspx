@@ -12,7 +12,8 @@
                             <td class="style18">
                                 &nbsp;</td>
                             <td class="style19">
-                                <asp:Label ID="Label3" runat="server" Text="Panel Control Consultorio"></asp:Label>
+                                <asp:Label ID="Label3" runat="server" Text="Panel Control Consultorio" 
+                                    style="font-weight: 700; font-size: xx-large"></asp:Label>
                             </td>
                             <td class="style6">
                                 <asp:Label ID="lblFecha" ForeColor="Red" runat="server" Text=""></asp:Label>
@@ -61,14 +62,15 @@
                         </tr>
                         <tr>
                             <td class="style22">
-                                <asp:Image ID="Image1" runat="server" Height="88px" Width="147px" />
-                            </td>
+                                &nbsp;</td>
                             <td class="style23">
                                 &nbsp;</td>
                             <td class="style24">
                                 &nbsp;</td>
                             <td class="style25">
-                                &nbsp;</td>
+                                <asp:Button ID="Button1" runat="server" Height="100px" onclick="Button1_Click" 
+                                    Text="Agregar Consulta" Width="300px" />
+                            </td>
                             <td class="style29">
                                 &nbsp;</td>
                             <td class="style27">
@@ -76,8 +78,7 @@
                         </tr>
                         <tr>
                             <td class="style13">
-                                <asp:Label ID="Label1" runat="server" Text="Nombre:"></asp:Label>
-                            </td>
+                                &nbsp;</td>
                             <td class="style18">
                                 <asp:Label ID="Label4" runat="server" Text="<poner nombre Secretaria>"></asp:Label>
                             </td>
@@ -106,7 +107,6 @@
                             <td>
                                 <asp:Button ID="btnBuscarDoctor" runat="server" Height="100px" Text="Buscar Doctor" Width="300px" onclick="Button2_Click"
                                 />
-                                <asp:Button ID="Button1" runat="server" Height="100px" Width="300px" Text="Agregar Consulta" onclick="Button1_Click" />
                                 <asp:Button ID="Button3" runat="server" Height="100px" onclick="Button3_Click" Text="Agendar Hora" Width="300px" />
                             </td>
                             <td>

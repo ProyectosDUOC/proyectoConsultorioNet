@@ -24,7 +24,11 @@ namespace consultorioWeb.Secretaria
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                GridView1.DataSource = capaNegocio.ClasesListar.FichaLColeccion.generarListado();
+                GridView1.DataBind();
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -36,5 +40,14 @@ namespace consultorioWeb.Secretaria
         {
             Response.Redirect("/Secretaria/AgregarPacienteConsulta.aspx");
         }
+
+        protected void cambioPagina(object sender, GridViewPageEventArgs e)
+        {
+            GridView1.PageIndex = e.NewPageIndex;
+            GridView1.DataSource = capaNegocio.ClasesListar.FichaLColeccion.generarListado();
+            GridView1.DataBind();
+        }
+
+       
     }
 }

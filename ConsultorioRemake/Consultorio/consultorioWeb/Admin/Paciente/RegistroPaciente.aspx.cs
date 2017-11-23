@@ -24,7 +24,6 @@ namespace consultorioWeb.Admin.Paciente
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-
             if (!IsPostBack)
             {    
                 bloqueo();
@@ -44,11 +43,9 @@ namespace consultorioWeb.Admin.Paciente
                 {
                     Response.Redirect("/Login.aspx");
                 }
-
             }
         }
-
-
+        
         protected void btn_Buscar_Click(object sender, EventArgs e)
         {            
             Usuario usuario = new Usuario();           
@@ -81,7 +78,6 @@ namespace consultorioWeb.Admin.Paciente
 
                         ddGrupoS.SelectedIndex = ddGrupoS.Items.IndexOf(ddGrupoS.Items.FindByValue(paciente.IdGrupoSanguineo.ToString()));
                         ddRh.SelectedIndex = ddRh.Items.IndexOf(ddRh.Items.FindByValue(paciente.IdRh.ToString()));
-                        //lblRespuesta.Text = "no exite paciente";
                         lblRespuesta.Text = usuario.FechaNacimiento.ToString();
                         desbloqueo();
                         btnGuardarActualizar.Enabled = true;
@@ -99,10 +95,10 @@ namespace consultorioWeb.Admin.Paciente
             }
             else {
                 lblRespuesta.Text = "Usuario no Registrado";                
-                limpiar();
+                limpiar();              
+                bloqueo();
                 btnHabilitar.Enabled = true;
                 btnHabilitar.Visible = true;
-                bloqueo();
                            
             }
         }

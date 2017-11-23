@@ -35,7 +35,8 @@ namespace consultorioWeb.Secretaria
             lblRut.Text = usuario.Rut + "-" + usuario.Dv;
             DateTime hoy = DateTime.Now;
             lblFecha.Text = "Fecha: " + hoy;
-
+            btnBuscarDoctor.Visible = false;
+            Button3.Visible = false;
             if (!IsPostBack)
             {
                 if (controlAcceso.Id == 0)

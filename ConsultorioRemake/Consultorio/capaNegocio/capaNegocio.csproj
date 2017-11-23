@@ -79,6 +79,8 @@
     <Compile Include="ClasesExterior\TipoUsuarioColeccion.cs" />
     <Compile Include="ClasesListar\EnfermeraLColeccion.cs" />
     <Compile Include="ClasesListar\EnfermeraListar.cs" />
+    <Compile Include="ClasesListar\FichaLColeccion.cs" />
+    <Compile Include="ClasesListar\FichaLListar.cs" />
     <Compile Include="ClasesListar\PacienteLColeccion.cs" />
     <Compile Include="ClasesListar\PacienteListar.cs" />
     <Compile Include="Clases\Consultorio.cs" />

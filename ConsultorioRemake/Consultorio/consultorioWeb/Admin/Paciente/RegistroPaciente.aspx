@@ -29,18 +29,20 @@
                 </td>
                 <td>
                     <asp:Label ID="lblRespuesta" runat="server" ForeColor="Red" Text=""></asp:Label>
-                    <asp:Button ID="btnHabilitar" runat="server" Text="Habilitar Edicion" OnClick="btnHabilitar_Click" />
+                    <asp:Button ID="btnHabilitar" runat="server" Height="47px" Text="Habilitar Agregar" 
+                        Width="85px" onclick="btnHabilitar_Click1" />
                 </td>
             </tr>
         </table>
-        </ br>
-        </ br>
+        <br />
+        <br />
+        <asp:Panel ID="PContenido" runat="server">
         <table>
             <tr>
                 <td>Primer nombre</td>
-                <td>Segundo </td>
-                <td>Primer apellido</td>
-                <td>Segundo nombre</td>
+                <td>Segundo Nombre</td>
+                <td>Apellido Paterno</td>
+                <td>Apellido Materno</td>
             </tr>
             <tr>
                 <td>
@@ -82,7 +84,7 @@
                 <td>
                     <asp:Label ID="lbl_Edad" runat="server" Text=" "></asp:Label>
                     <asp:Label ID="lblAnios" runat="server" Text="0"></asp:Label>
-                    <asp:Label runat="server" Text="años"></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text="años"></asp:Label>
                 </td>
                 <td>
                     <asp:DropDownList ID="ddGenero" runat="server" DataTextField="Nombre" DataValueField="Id">
@@ -166,10 +168,14 @@
                 </td>
             </tr>
         </table>
+        </asp:Panel>
+        
+        <asp:Button ID="btnAgregar" runat="server" Height="79px" Text="Agregar" 
+            Width="158px" onclick="btnAgregar_Click" />
         <asp:Button ID="btnGuardarActualizar" runat="server" Height="79px" Text="Guardar" 
-            Width="158px" onclick="btnGuardarActualizar_Click" />
-        <br>
-        <br>
+            Width="158px" onclick="btnGuardarActualizar_Click" />        
+        <br />
+        <br />
         <a href="../PanelPaciente.aspx" 
             style="font-size: xx-large; font-weight: 700">Volver</a>
     </div>

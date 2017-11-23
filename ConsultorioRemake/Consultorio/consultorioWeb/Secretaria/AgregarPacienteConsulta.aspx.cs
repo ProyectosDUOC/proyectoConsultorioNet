@@ -106,7 +106,7 @@ namespace consultorioWeb.Secretaria
             else
             {
                 lblRespuesta.Text = "No se ha creado !!" + fichaPaciente.ToString();
-            }
+            } 
         }
 
         protected void Button4_Click(object sender, EventArgs e)

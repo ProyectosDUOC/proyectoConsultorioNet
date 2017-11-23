@@ -117,6 +117,31 @@ namespace capaNegocio
             }
         }
 
+        public bool ReadRut()
+        {
+            try
+            {
+                ConsultoriosEntities modelo = new ConsultoriosEntities();
+
+                capaDatos.Control_Acceso controlAcceso = modelo.Control_Acceso.First
+                    (
+                        contro => contro.id_usuario == this.idUsuario
+                    );
+
+                this.id = controlAcceso.id_control_acceso;
+                this.Username = controlAcceso.usuario_login;
+                this.Pass = controlAcceso.contrasena;
+                this.idTipoUsuario = (int)controlAcceso.id_tipo_usuario;
+                this.idUsuario = (int)controlAcceso.id_usuario;
+                this.Activo = (int)controlAcceso.activo;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
         public bool Update()
         {
             try

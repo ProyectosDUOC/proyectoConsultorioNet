@@ -30,7 +30,7 @@ namespace capaNegocio
 
         //Listado de todos los elementos
 
-        public List<ControlAcceso> ReadAll() {
+        public static List<ControlAcceso> ReadAll() {
             var controlAccesos = CommonBC.ModeloConsultorio.Control_Acceso;
             return GenerarListado(controlAccesos.ToList());            
         }

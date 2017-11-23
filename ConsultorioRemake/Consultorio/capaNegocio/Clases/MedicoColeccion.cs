@@ -28,7 +28,7 @@ namespace capaNegocio
 
         //Listado de todos los elementos
 
-        public List<Medico> ReadAll()
+        public static List<Medico> ReadAll()
         {
             var medicos = CommonBC.ModeloConsultorio.Medico;
             return GenerarListado(medicos.ToList());

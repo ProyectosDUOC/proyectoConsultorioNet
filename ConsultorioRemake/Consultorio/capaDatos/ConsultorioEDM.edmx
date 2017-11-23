@@ -1880,7 +1880,7 @@
     </Options>
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
-      <Diagram Name="ConsultorioEDM" ZoomLevel="35">
+      <Diagram Name="ConsultorioEDM" ZoomLevel="52">
         <EntityTypeShape EntityType="ConsultoriosModel.Administrador" Width="1.5" PointX="15" PointY="13" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Alergia" Width="1.5" PointX="18" PointY="21" Height="1.5956835937500031" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Alergia_Paciente" Width="1.5" PointX="20.25" PointY="16.75" Height="1.9802864583333317" IsExpanded="true" />
@@ -1894,7 +1894,7 @@
         <EntityTypeShape EntityType="ConsultoriosModel.Genero" Width="1.5" PointX="10.5" PointY="9.875" Height="1.5956835937500031" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Grupo_sanguineo" Width="1.5" PointX="15.75" PointY="18.875" Height="1.5956835937500031" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Jornada_laboral" Width="1.5" PointX="12.75" PointY="5" Height="3.7109993489583388" IsExpanded="true" />
-        <EntityTypeShape EntityType="ConsultoriosModel.Licencia_Medica" Width="1.5" PointX="5.75" PointY="0.75" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="ConsultoriosModel.Licencia_Medica" Width="1.5" PointX="7.375" PointY="3.125" Height="1.7879850260416674" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Medicamentos" Width="1.5" PointX="0.75" PointY="7" Height="2.3648893229166674" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Medico" Width="1.5" PointX="18" PointY="8.375" Height="2.7494921875000031" IsExpanded="true" />
         <EntityTypeShape EntityType="ConsultoriosModel.Nacionalidad" Width="1.5" PointX="10.5" PointY="16.125" Height="1.5956835937500031" IsExpanded="true" />

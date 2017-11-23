@@ -167,7 +167,7 @@ namespace capaNegocio
                 usuario.id_usuario = this.Id;
                 usuario.rut_usuario = this.Rut;
                 usuario.dv_usuario = this.Dv.ToString();
-                usuario.foto = this.Foto;
+                usuario.foto = " ";
                 usuario.pnombre = this.Pnombre;
                 usuario.snombre = this.Snombre;
                 usuario.appaterno = this.Appaterno;
@@ -179,7 +179,7 @@ namespace capaNegocio
                 usuario.direccion = this.Direccion;
                 usuario.fono1 = int.Parse(this.Fono1);
                 usuario.fono2 = int.Parse(this.Fono2);
-                usuario.activo = this.Activo;
+                usuario.activo = 1;
 
                 CommonBC.ModeloConsultorio.AddToUsuario(usuario);
                 CommonBC.ModeloConsultorio.SaveChanges();
@@ -264,8 +264,8 @@ namespace capaNegocio
                     (
                         usu => usu.rut_usuario == this.rut
                     );
-                usuario.rut_usuario = this.rut;
-                usuario.dv_usuario = this.dv.ToString();
+               // usuario.rut_usuario = this.rut;
+               // usuario.dv_usuario = this.dv.ToString();
                // usuario.foto = this.foto;
                 usuario.pnombre = this.pnombre;
                 usuario.snombre = this.snombre;

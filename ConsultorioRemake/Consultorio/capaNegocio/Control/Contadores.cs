@@ -62,18 +62,43 @@ namespace capaNegocio.Control
             return max;
         }
 
-        public static int contadoridEnfemera()
+        public static int contadorIdEnfemera()
         {
             int max = 0;
-            List<capaNegocio.FichaPaciente> fichas = new List<FichaPaciente>();
-            fichas = FichaPacienteColeccion.ReadAll();
+            List<capaNegocio.Enfermera> enfermeras = new List<capaNegocio.Enfermera>();
+            enfermeras = EnfermeraColeccion.ReadAll();
 
-            foreach (FichaPaciente xx in fichas.ToList())
+            foreach (Enfermera xx in enfermeras.ToList())
             {
-                max = xx.Id_ficha_paciente;
+                max = xx.Id;
             }
             return max;
         }
 
+        public static int contadorIdMedico()
+        {
+            int max = 0;
+            List<capaNegocio.Medico> medicos = new List<capaNegocio.Medico>();
+            medicos = MedicoColeccion.ReadAll();
+
+            foreach (Medico xx in medicos.ToList())
+            {
+                max = xx.Id;
+            }
+            return max;
+        }
+
+        public static int contadorIdControlAcceso()
+        {
+            int max = 0;
+            List<capaNegocio.ControlAcceso> controlA = new List<capaNegocio.ControlAcceso>();
+            controlA = ControlAccesoColeccion.ReadAll();
+
+            foreach (ControlAcceso xx in controlA.ToList())
+            {
+                max = xx.Id;
+            }
+            return max;
+        }
     }
 }

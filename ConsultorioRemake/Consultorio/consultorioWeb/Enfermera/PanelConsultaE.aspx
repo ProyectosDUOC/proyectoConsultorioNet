@@ -10,31 +10,31 @@
                         <td class="style4">
                             <table style="width: 100%; height: 114px;">
                                 <tr>
-                                    <td class="style2">Nombre:</td>
+                                    <td class="style2">Nombre: <asp:Label ID="lblNombre" runat="server" Text=""></asp:Label>
+                                    </td>
                                     <td class="style3">
-                                        Patricia</td>
+                                        &nbsp;</td>
                                     <td>
                                         <asp:Button ID="Button2" runat="server" Text="Cerrar Sesión" onclick="Button2_Click" />
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="style2">
-                                        <asp:Label ID="Label1" runat="server" Text="Rut:"></asp:Label>
+                                    <td class="style2">Rut: 
+                                        
+                                        <asp:Label ID="lblRut" runat="server" Text=""></asp:Label>
                                     </td>
                                     <td class="style3">
-                                        77.777.777-7</td>
+                                        </td>
                                     <td>
-                                        Sector
-                                        <asp:DropDownList ID="DropDownList1" runat="server">
-                                        </asp:DropDownList>
-                                    </td>
+                                        &nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td class="style2">
                                         <asp:Label ID="Label2" runat="server" Text="Fecha: "></asp:Label>
+                                        <asp:Label ID="lblFecha" runat="server" Text=""></asp:Label>
                                     </td>
                                     <td class="style3">
-                                        15-09-2017</td>
+                                        &nbsp;</td>
                                     <td>
                                         &nbsp;</td>
                                 </tr>
@@ -48,6 +48,18 @@
                             &nbsp;</td>
                         <td class="style4">
                             <asp:Label ID="Label3" runat="server" Text="Lista Pacientes"></asp:Label>
+                            :
+                        </td>
+                        <td>
+                            &nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="style1">
+                            &nbsp;</td>
+                        <td class="style4">Ha seleccionado: 
+                            <asp:Label ID="Label6" runat="server" ForeColor="Red" Text=""></asp:Label>
+                            <asp:Button ID="bntRevisar" runat="server" Text="Ficha Paciente" 
+                                onclick="bntRevisar_Click" />
                         </td>
                         <td>
                             &nbsp;</td>
@@ -56,9 +68,35 @@
                         <td class="style1">
                             &nbsp;</td>
                         <td class="style4">
-                            <asp:GridView ID="GridView1" runat="server" Width="467px">
+                            <asp:GridView ID="GridView1" runat="server" Width="467px" AllowPaging="True" 
+                                AutoGenerateColumns="False" BackColor="White" BorderColor="#3366CC" 
+                                BorderStyle="None" BorderWidth="1px" CellPadding="4" 
+                                DataKeyNames="IdFicha,Rut,Fecha"
+                                onpageindexchanging="GridView1_PageIndexChanging" 
+                                onselectedindexchanged="seleccion">
+                                <Columns>
+                                    <asp:CommandField ShowSelectButton="True" />
+                                    <asp:BoundField DataField="IdFicha" HeaderText="IdFicha" 
+                                        SortExpression="IdFicha" />
+                                    <asp:BoundField DataField="Fecha" HeaderText="Fecha" SortExpression="Fecha" />
+                                    <asp:BoundField DataField="Rut" HeaderText="Rut" SortExpression="Rut" />
+                                    <asp:BoundField DataField="Nombre" HeaderText="Nombre" 
+                                        SortExpression="Nombre" />
+                                    <asp:BoundField DataField="Sector" HeaderText="Sector" 
+                                        SortExpression="Sector" />
+                                    <asp:BoundField DataField="Chequeo" HeaderText="Chequeo" 
+                                        SortExpression="Chequeo" />
+                                </Columns>
+                                <FooterStyle BackColor="#99CCCC" ForeColor="#003399" />
+                                <HeaderStyle BackColor="#003399" Font-Bold="True" ForeColor="#CCCCFF" />
+                                <PagerStyle BackColor="#99CCCC" ForeColor="#003399" HorizontalAlign="Left" />
+                                <RowStyle BackColor="White" ForeColor="#003399" />
+                                <SelectedRowStyle BackColor="#009999" Font-Bold="True" ForeColor="#CCFF99" />
+                                <SortedAscendingCellStyle BackColor="#EDF6F6" />
+                                <SortedAscendingHeaderStyle BackColor="#0D4AC4" />
+                                <SortedDescendingCellStyle BackColor="#D6DFDF" />
+                                <SortedDescendingHeaderStyle BackColor="#002876" />
                             </asp:GridView>
-                            <asp:Button ID="Button3" runat="server" Text="btnFichaPacienteBorrar Despues" onclick="Button3_Click" />
                         </td>
                         <td>
                             &nbsp;</td>

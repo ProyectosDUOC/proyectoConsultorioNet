@@ -44,6 +44,18 @@ namespace capaNegocio.ClasesListar
             set { sector = value; }
         }
 
+        private String chequeo;
+
+        public String Chequeo
+        {
+            get { return chequeo; }
+            set { chequeo = value; }
+        }
+
+      
+
+        
+
 
     }
 }

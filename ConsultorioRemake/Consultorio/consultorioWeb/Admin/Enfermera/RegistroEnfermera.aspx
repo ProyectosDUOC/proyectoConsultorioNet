@@ -65,7 +65,7 @@
             <tr>
                 <td>Domicilio</td>
                 <td>Comuna</td>
-                <td>Sector</td>
+                <td>Jornada Laboral</td>
             </tr>
             <tr>
                 <td>
@@ -77,8 +77,6 @@
                     DataTextField="Nombre" DataValueField="Id"/>
                 </td>
                 <td>
-                    <asp:DropDownList ID="ddSector" runat="server"
-                    DataTextField="Nombre" DataValueField="Id"/>
                 </td>
             </tr>
             <tr>
@@ -97,8 +95,9 @@
                 </td>
             </tr>
         </table>
-        <asp:Button ID="btn_Guardar" runat="server" Text="Guardar" Height="47px" Width="232px" />
-        <asp:Button ID="btn_Atras" runat="server" Text="Atrás" Width="188px" Height="55px"
+        <asp:Button ID="btn_Guardar" runat="server" Text="Guardar" Height="55px" 
+            Width="200px" onclick="btn_Guardar_Click" />
+        <asp:Button ID="btn_Atras" runat="server" Text="Atrás" Width="200px" Height="55px"
             OnClick="btn_Atras_Click" />
             <asp:Label ID="lblRespuesta" runat="server" Text=" "></asp:Label>
     </div>

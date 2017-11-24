@@ -80,9 +80,9 @@ namespace capaNegocio
             get { return estatura; }
             set { estatura = value; }
         }
-        private int imc;
+        private String imc;
 
-        public int Imc
+        public String Imc
         {
             get { return imc; }
             set { imc = value; }
@@ -100,14 +100,7 @@ namespace capaNegocio
         {
             get { return sistonica; }
             set { sistonica = value; }
-        }
-        private int distolica;
-
-        public int Distolica
-        {
-            get { return distolica; }
-            set { distolica = value; }
-        }
+        }     
         private int pulsacion;
 
         public int Pulsacion
@@ -152,10 +145,9 @@ namespace capaNegocio
            idPaciente = 0;
            peso = 0;
            estatura = 0;
-           imc = 0;
+           imc = "0";
            temperatura = 0;
-           sistonica = 0;
-           distolica = 0;
+           sistonica = 0;          
            pulsacion = 0;
            diastolica = 0;
            motivo = " ";
@@ -180,10 +172,9 @@ namespace capaNegocio
                fichaPac.id_paciente = this.idPaciente;
                fichaPac.peso = 0;
                fichaPac.estatura = 0;
-               fichaPac.imc = 0;
+               fichaPac.imc = "0";
                fichaPac.temperatura = 0;
                fichaPac.sistonica = 0;
-               fichaPac.distolica = 0;
                fichaPac.pulsacion = 0;
                fichaPac.diastolica = 0;
                fichaPac.motivos = this.motivo;
@@ -214,10 +205,9 @@ namespace capaNegocio
                this.idPaciente = (int)fichaPac.id_paciente;
                this.Peso = (int)fichaPac.peso;
                this.Estatura = (int)fichaPac.estatura;
-               this.Imc = (int)fichaPac.imc;
+               this.Imc = fichaPac.imc;
                this.Temperatura = (int)fichaPac.temperatura;
                this.Sistonica = (int)fichaPac.sistonica;
-               this.Distolica = (int)fichaPac.distolica;
                this.Pulsacion = (int)fichaPac.pulsacion;
                this.Diastolica = (int)fichaPac.diastolica;
                this.diagnostico = fichaPac.diagnostico;
@@ -247,7 +237,6 @@ namespace capaNegocio
                fichaPac.imc = this.imc;
                fichaPac.temperatura = this.temperatura;
                fichaPac.sistonica = this.sistonica;
-               fichaPac.distolica = this.distolica;
                fichaPac.pulsacion = this.pulsacion;
                fichaPac.diastolica = this.diastolica;
                fichaPac.motivos = this.motivo;

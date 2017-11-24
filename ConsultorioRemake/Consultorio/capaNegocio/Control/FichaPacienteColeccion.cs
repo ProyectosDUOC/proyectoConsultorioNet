@@ -21,10 +21,10 @@ namespace capaNegocio
                 ficha.IdPaciente = (int)fp.id_paciente;
                 ficha.Peso = (int)fp.peso;
                 ficha.Estatura = (int)fp.estatura;
-                ficha.Imc = (int)fp.imc;
+                ficha.Imc = fp.imc;
                 ficha.Temperatura = (int)fp.temperatura;
                 ficha.Sistonica = (int)fp.sistonica;
-                ficha.Distolica = (int)fp.distolica;
+                ficha.Diastolica = (int)fp.diastolica;
                 ficha.Pulsacion = (int)fp.pulsacion;
                 ficha.Diastolica = (int)fp.diastolica;
 

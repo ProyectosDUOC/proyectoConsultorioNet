@@ -100,11 +100,10 @@ CREATE TABLE Ficha_Paciente
     id_paciente       INT ,
     peso              INT ,
     estatura          INT  ,
-    imc               INT  ,
+    imc               NVARCHAR(30)  ,
     temperatura       INT ,
     sistonica         INT ,
-    distolica         INT  ,
-    pulsacion         INT  ,
+    pulsacion         INT ,
     diastolica        INT ,
     motivos NVARCHAR(300),
     diagnostico NVARCHAR(500)

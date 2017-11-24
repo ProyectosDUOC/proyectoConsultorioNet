@@ -2600,7 +2600,7 @@ namespace capaDatos
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Int32> imc
+        public global::System.String imc
         {
             get
             {
@@ -2610,13 +2610,13 @@ namespace capaDatos
             {
                 OnimcChanging(value);
                 ReportPropertyChanging("imc");
-                _imc = StructuralObject.SetValidValue(value);
+                _imc = StructuralObject.SetValidValue(value, true);
                 ReportPropertyChanged("imc");
                 OnimcChanged();
             }
         }
-        private Nullable<global::System.Int32> _imc;
-        partial void OnimcChanging(Nullable<global::System.Int32> value);
+        private global::System.String _imc;
+        partial void OnimcChanging(global::System.String value);
         partial void OnimcChanged();
     
         /// <summary>
@@ -2666,30 +2666,6 @@ namespace capaDatos
         private Nullable<global::System.Int32> _sistonica;
         partial void OnsistonicaChanging(Nullable<global::System.Int32> value);
         partial void OnsistonicaChanged();
-    
-        /// <summary>
-        /// No hay documentación de metadatos disponible.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public Nullable<global::System.Int32> distolica
-        {
-            get
-            {
-                return _distolica;
-            }
-            set
-            {
-                OndistolicaChanging(value);
-                ReportPropertyChanging("distolica");
-                _distolica = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("distolica");
-                OndistolicaChanged();
-            }
-        }
-        private Nullable<global::System.Int32> _distolica;
-        partial void OndistolicaChanging(Nullable<global::System.Int32> value);
-        partial void OndistolicaChanged();
     
         /// <summary>
         /// No hay documentación de metadatos disponible.

@@ -59,6 +59,10 @@ namespace consultorioWeb.Secretaria
                     lfecha.Text = usuario.FechaNacimiento.ToString();
                     lf1.Text = usuario.Fono1;
                     lf2.Text = usuario.Fono2;
+                    Genero gener = new Genero();
+                    gener.Id = usuario.IdGenero;
+                    gener.Read();
+                    lGenero.Text = gener.Nombre;
                     ledad.Text = (DateTime.Today.AddTicks(-usuario.FechaNacimiento.Ticks).Year - 1).ToString();
                     lDomicilio.Text = usuario.Direccion;
                     lComuna.Text = pac.Comuna;

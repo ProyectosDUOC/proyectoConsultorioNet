@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Enfermera/Enfermera.Master" AutoEventWireup="true" CodeBehind="FichaPacienteE.aspx.cs" Inherits="consultorioWeb.Enfermera.FichaPacienteE" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
- <style type="text/css">
+    <style type="text/css">
             .style1 {
                 width: 268px;
             }
@@ -39,7 +39,7 @@
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <div>
+    <div>
                 <table style="width:100%;">
                     <tr>
                         <td class="style6">
@@ -74,7 +74,9 @@
                                         <asp:Label ID="lblRut" runat="server" Text=""></asp:Label>
                                     </td>
                                     <td class="style12">
-                                        &nbsp;</td>
+                                        <asp:Label ID="lblEstado" ForeColor="Red" runat="server" Text="" 
+                                            style="font-weight: 700; font-size: x-large"></asp:Label>
+                                    </td>
 
                                 </tr>
 
@@ -94,32 +96,49 @@
                                         <asp:Label ID="Label3" runat="server" Text="Peso:"></asp:Label>
                                     </td>
                                     <td class="style11">
-                                        <asp:TextBox ID="txtPeso" TextMode="Number" runat="server" Width="192px"></asp:TextBox>
+                                        <asp:TextBox ID="txtPeso" TextMode="Number" MaxLength="3" runat="server" Width="192px"></asp:TextBox>
                                     </td>
                                     <td>
-                                        &nbsp;</td>
+                                    Kg
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                           ControlToValidate="txtPeso" ForeColor="Red" ErrorMessage="*"></asp:RequiredFieldValidator>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td class="style8">
                                         <asp:Label ID="Label4" runat="server" Text="Estatura:"></asp:Label>
                                     </td>
                                     <td class="style11">
-                                        <asp:TextBox ID="txtEstatura"  TextMode="Number" runat="server" Width="190px"></asp:TextBox>
+                                        <asp:TextBox ID="txtEstatura" MaxLength="3" TextMode="Number" runat="server" Width="190px"></asp:TextBox>
+                                    </td>
+                                    <td>cm
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
+                                            ControlToValidate="txtEstatura" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style8">
+                                        <asp:Label ID="Label9" runat="server" Text="IMC"></asp:Label>
+                                        :</td>
+                                    <td class="style11">
+                                        <asp:Label ID="IMC" ForeColor="Red" runat="server" Text=""></asp:Label>
                                     </td>
                                     <td>
-                                        <asp:Label ID="Label9" runat="server" Text="IMC"></asp:Label>
-                                        :<asp:Label ID="IMC" ForeColor="Red" runat="server" Text=""></asp:Label>
-                                    </td>
+                                <img alt="" src="../Imagen/imc.gif" style="height: 143px; width: 277px" /></td>
                                 </tr>
                                 <tr>
                                     <td class="style8">
                                         <asp:Label ID="Label5" runat="server" Text="Temperatura:"></asp:Label>
                                     </td>
                                     <td class="style11">
-                                        <asp:TextBox ID="txtTemperatura" TextMode="Number" runat="server" Width="189px"></asp:TextBox>
+                                        <asp:TextBox ID="txtTemperatura"  TextMode="Number" runat="server" Width="189px"></asp:TextBox>
                                     </td>
                                     <td>
-                                        &nbsp;</td>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                                            ControlToValidate="txtTemperatura" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                                        <asp:RangeValidator ID="RangeValidator1" ControlToValidate="txtTemperatura" MaximumValue="40" MinimumValue="0" runat="server" 
+                                            ForeColor="Blue" ErrorMessage="*Rango [20-40]°c"></asp:RangeValidator>
+                                    </td>
                                 </tr>
                             </table>
                             <table style="width: 83%;">
@@ -131,6 +150,8 @@
                         <td>
                             <asp:Label ID="Label6" runat="server" Text="Presión"></asp:Label>
                         </td>
+                        <td>
+                            &nbsp;</td>
                         </tr>
                         <tr>
 
@@ -138,8 +159,14 @@
                                 <asp:Label ID="Label8" runat="server" Text="DIA"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtDia" runat="server" Width="77px" style="margin-left: 0px"></asp:TextBox>
+                                <asp:TextBox ID="txtDia" runat="server" TextMode="Number" Width="77px" style="margin-left: 0px"></asp:TextBox>
                                 <asp:Label ID="Label10" runat="server" Text="mmHg"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" 
+                                    ControlToValidate="txtDia" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:RangeValidator ID="RangeValidator4" runat="server" ControlToValidate="txtDia" 
+                                    ForeColor="Blue" MinimumValue="0" MaximumValue="500" ErrorMessage="*Mayor de 0 o menor a 500"></asp:RangeValidator>
                             </td>
                         </tr>
                         <tr>
@@ -147,16 +174,28 @@
                             <td>
                                 SYS</td>
                             <td>
-                                <asp:TextBox ID="txtSys" runat="server" Width="78px" style="margin-left: 0px"></asp:TextBox>
+                                <asp:TextBox ID="txtSys" runat="server"  TextMode="Number"  Width="78px" style="margin-left: 0px"></asp:TextBox>
                                 <asp:Label ID="Label11" runat="server" Text="mmHg"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" 
+                                    ControlToValidate="txtSys" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:RangeValidator ID="RangeValidator5" runat="server" ControlToValidate="txtSys" 
+                                    ForeColor="Blue" MinimumValue="0" MaximumValue="500" ErrorMessage="*Mayor de 0 o menos a 500"></asp:RangeValidator>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 Pulsacion</td>
                             <td>
-                                <asp:TextBox ID="txtPulsaciones" runat="server" Width="86px" style="margin-left: 0px"></asp:TextBox>
+                                <asp:TextBox ID="txtPulsaciones"  TextMode="Number"  runat="server" Width="86px" style="margin-left: 0px"></asp:TextBox>
                                 <asp:Label ID="Label12" runat="server" Text="/min"></asp:Label>
+                            </td>
+                            <td>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" 
+                                    ControlToValidate="txtPulsaciones" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                                <asp:RangeValidator ID="RangeValidator6" runat="server" ControlToValidate="txtPulsaciones" 
+                                    ForeColor="Blue" MinimumValue="0" MaximumValue="500" ErrorMessage="*Mayor de 0 o menos a 500"></asp:RangeValidator>
                             </td>
                         </tr>
                         <tr>
@@ -166,12 +205,18 @@
                             <td class="style10">
                                 <asp:TextBox ID="txtMotivo" TextMode="MultiLine" runat="server" Height="210px" Width="199px" style="margin-top: 6px"></asp:TextBox>
                             </td>
+                            <td class="style10">
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
+                                    ControlToValidate="txtMotivo" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
+                            </td>
                             <td>
                                 &nbsp;</td>
                         </tr>
                         <tr>
                             <td class="style9">
                                 <a href="PanelConsultaE.aspx" style="font-weight: 700; font-size: x-large">Volver</a> </td>
+                            <td class="style10">
+                                &nbsp;</td>
                             <td class="style10">
                                 &nbsp;</td>
                             <td>

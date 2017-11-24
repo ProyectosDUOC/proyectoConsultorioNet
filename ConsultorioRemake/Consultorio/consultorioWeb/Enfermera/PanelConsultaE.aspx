@@ -57,7 +57,7 @@
                         <td class="style1">
                             &nbsp;</td>
                         <td class="style4">Ha seleccionado: 
-                            <asp:Label ID="Label6" runat="server" ForeColor="Red" Text=""></asp:Label>
+                            <asp:Label ID="lblResultado" runat="server" ForeColor="Red" Text=""></asp:Label>
                             <asp:Button ID="bntRevisar" runat="server" Text="Ficha Paciente" 
                                 onclick="bntRevisar_Click" />
                         </td>

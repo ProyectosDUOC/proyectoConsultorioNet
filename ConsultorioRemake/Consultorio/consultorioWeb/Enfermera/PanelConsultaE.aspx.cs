@@ -34,6 +34,7 @@ namespace consultorioWeb.Enfermera
             usuario.Read();
             lblNombre.Text = usuario.Pnombre + " " + usuario.Snombre + " " + usuario.Appaterno + " " + usuario.Apmaterno;
             lblRut.Text = usuario.Rut.ToString();
+            lblResultado.Text = "";
 
             if (!IsPostBack)
             {
@@ -51,7 +52,8 @@ namespace consultorioWeb.Enfermera
         protected void seleccion(object sender, EventArgs e)
         {
             bntRevisar.Enabled = true;
-
+            lblResultado.Text = " Ficha Paciente:" + GridView1.SelectedRow.Cells[1].Text + " Rut: " + GridView1.SelectedRow.Cells[3].Text + " Nombre: " + GridView1.SelectedRow.Cells[4].Text;
+            idFicha = Convert.ToInt32(GridView1.SelectedRow.Cells[1].Text);
         }
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -67,9 +69,10 @@ namespace consultorioWeb.Enfermera
             Response.Redirect("/Login.aspx");
         }
 
-        protected void bntRevisar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("/Login.aspx");
+        protected void bntRevisar_Click(object sender, EventArgs e){
+        
+            String id = GridView1.SelectedRow.Cells[1].Text;
+            Response.Redirect("FichaPacienteE.aspx?id="+id);
         }
     }
 }

@@ -72,7 +72,7 @@ namespace consultorioWeb.Enfermera
         protected void bntRevisar_Click(object sender, EventArgs e){
         
             String id = GridView1.SelectedRow.Cells[1].Text;
-            Response.Redirect("FichaPacienteE.aspx?id="+id);
+            Response.Redirect("FichaPaciente.aspx?id="+id);
         }
     }
 }

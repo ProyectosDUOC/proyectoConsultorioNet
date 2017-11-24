@@ -28,13 +28,14 @@ namespace consultorioWeb.Medico
 
             if (!IsPostBack)
             {
-                GridView1.DataSource = capaNegocio.MedicamentosColeccion.ReadAll();
-                GridView1.DataBind();
                 if (Request.Params["id"] != null)
                 {
                     int id = Convert.ToInt32(Request.Params["id"]);
                     controlAcceso.Activo = id;
                     capaNegocio.FichaPaciente ficha = new capaNegocio.FichaPaciente();
+
+                    GridView1.DataSource = capaNegocio.MedicamentosColeccion.ReadAll();
+                    GridView1.DataBind();
 
                     ficha.Id_ficha_paciente = id;
                     ficha.Read();
@@ -87,7 +88,7 @@ namespace consultorioWeb.Medico
                 receta.Glosa = txtGlosa.Text;
                 receta.IdReceta = capaNegocio.Control.Contadores.contadorIdReceta() + 1;
                 receta.IdMedicamento = Convert.ToInt32(GridView1.SelectedRow.Cells[1].Text);
-
+                lblMensaje.Text = "";
                 if (receta.Create())
                 {
                     lblMensaje.Text = "Creado";
@@ -107,8 +108,31 @@ namespace consultorioWeb.Medico
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            panel.Enabled = true;
-            lblMedicamento.Text = GridView1.SelectedRow.Cells[2].Text;
+
+            int id = Convert.ToInt32(lblID.Text);
+            List<capaNegocio.Clases.RecetaMedica> listar = new List<capaNegocio.Clases.RecetaMedica>();
+            listar = capaNegocio.Clases.RecetaListar.generarReceta();
+            bool estado = false;
+            foreach (capaNegocio.Clases.RecetaMedica item in listar)
+            {
+                if (item.IdMedicamento == Convert.ToInt32(GridView1.SelectedRow.Cells[1].Text))
+                {
+                    estado = true;
+                    break;
+                }
+            }
+            if (estado)
+            {
+                panel.Enabled = true;
+                lblMedicamento.Text = GridView1.SelectedRow.Cells[2].Text;
+            }
+            else {
+                lblMensaje.Text = "Medicamento ya utilizado";
+                panel.Enabled = false;
+                lblMedicamento.Text = GridView1.SelectedRow.Cells[2].Text;
+            }
+
+
        }
 
     

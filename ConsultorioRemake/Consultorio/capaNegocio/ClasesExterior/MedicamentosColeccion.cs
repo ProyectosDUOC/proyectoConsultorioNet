@@ -31,5 +31,8 @@ namespace capaNegocio
             var nacionalidades = CommonBC.ModeloConsultorio.Medicamentos;
             return GenerarListado(nacionalidades.ToList());
         }
+
+
+        
     }
 }

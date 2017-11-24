@@ -28,7 +28,6 @@ namespace capaNegocio.Clases
                 re.Fecha = (DateTime)xx.fecha;
                 re.Cant = (int)xx.cantidad;
                 re.Dia = (int)xx.dia;
-
                 listar.Add(re);
             }
             return listar;        

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using capaDatos;
+using System.Data.Entity;
 
 namespace capaNegocio
 {
@@ -225,7 +227,11 @@ namespace capaNegocio
        {
            try
            {
-               capaDatos.Ficha_Paciente fichaPac = CommonBC.ModeloConsultorio.Ficha_Paciente.First
+               ConsultoriosEntities modelo = new ConsultoriosEntities();
+
+
+
+               capaDatos.Ficha_Paciente fichaPac = modelo.Ficha_Paciente.First
                    (
                     fic => fic.id_ficha_paciente == this.Id_ficha_paciente
                    );
@@ -241,7 +247,7 @@ namespace capaNegocio
                fichaPac.diastolica = this.diastolica;
                fichaPac.motivos = this.motivo;
                fichaPac.diagnostico = this.diagnostico;
-               CommonBC.ModeloConsultorio.SaveChanges();
+               modelo.SaveChanges();
                return true;
            }
            catch (Exception ex)

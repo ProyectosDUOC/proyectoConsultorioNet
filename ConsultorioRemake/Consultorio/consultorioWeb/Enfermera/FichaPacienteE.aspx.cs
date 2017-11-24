@@ -52,6 +52,10 @@ namespace consultorioWeb.Enfermera
                     txtPulsaciones.Text = ficha.Pulsacion.ToString();
                     IMC.Text = ficha.Imc;
                 }
+                if (controlAcceso.IdUsuario==0)
+                {
+                    Response.Redirect("/Login.aspx");
+                }
 
                 
             }

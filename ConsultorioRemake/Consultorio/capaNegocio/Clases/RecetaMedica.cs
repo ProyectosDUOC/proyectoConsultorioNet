@@ -92,7 +92,7 @@ namespace capaNegocio.Clases
                 recete.hora = this.hora;
                 recete.dia = this.dia;
                 recete.glosa = this.glosa;
-                recete.id_Receta_Medica = this.idFicha;
+                recete.id_Receta_Medica = this.idReceta;
                 recete.id_medicamentos = this.IdMedicamento;
 
                 modelo.AddToReceta_Medica(recete);
@@ -105,7 +105,7 @@ namespace capaNegocio.Clases
                 return false;
             }   
         }
-        public bool Read() {
+        public bool ReadFicha() {
             try
             {
                 ConsultoriosEntities modelo = new ConsultoriosEntities();
@@ -129,6 +129,32 @@ namespace capaNegocio.Clases
                 return false;
             }
         
+         }
+        public bool ReadIDReceta()
+        {
+            try
+            {
+                ConsultoriosEntities modelo = new ConsultoriosEntities();
+                capaDatos.Receta_Medica recete = modelo.Receta_Medica.First(
+                        rec => rec.id_Receta_Medica == this.idReceta
+
+                    );
+                recete.id_ficha_paciente = this.idFicha;
+                recete.id_medicamentos = this.idMedicamento;
+                recete.id_Receta_Medica = this.idReceta;
+                recete.fecha = this.fecha;
+                recete.cantidad = this.cant;
+                recete.hora = this.hora;
+                recete.dia = this.dia;
+                recete.glosa = this.glosa;
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+
         }
     }
 }

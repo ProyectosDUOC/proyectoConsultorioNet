@@ -19,10 +19,6 @@
         {
             width: 14px;
         }
-        .style8
-        {
-            width: 18px;
-        }
         .style9
         {
             width: 19px;
@@ -34,15 +30,6 @@
         .style11
         {
             width: 337px;
-        }
-        .style13
-        {
-            width: 69px;
-        }
-        .style16
-        {
-            height: 12px;
-            width: 69px;
         }
         .style17
         {
@@ -150,11 +137,8 @@
                     <table style="width: 98%; height: 379px;">
                         <tr>
                             <td class="style4">
-                                <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" SelectMethod="ReadAll"
-                                    TypeName="capaNegocio.MedicamentosColeccion"></asp:ObjectDataSource>
-                            </td>
-                            <td class="style8">
-                                &nbsp;
+                                <asp:Label ID="Label16" runat="server" style="font-size: large; color: #FF3300" 
+                                    Text="Medicamentos"></asp:Label>
                             </td>
                             <td class="style17">
                                 <asp:Label ID="lblMedicamento" runat="server" Style="font-weight: 700; color: #FF6600;
@@ -164,8 +148,9 @@
                         <tr>
                             <td class="style4">
                                 <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False"
-                                    CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None"
-                                    OnPageIndexChanging="paginacion" OnSelectedIndexChanging="GridView1_SelectedIndexChanging">
+                                    CellPadding="4"  ForeColor="#333333" GridLines="None"
+                                    OnPageIndexChanging="paginacion"                                      
+                                    onselectedindexchanged="GridView1_SelectedIndexChanged">
                                     <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                                     <Columns>
                                         <asp:CommandField ShowSelectButton="True" />
@@ -185,52 +170,56 @@
                                     <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
                                 </asp:GridView>
                             </td>
-                            <td class="style8">
-                                &nbsp;
-                            </td>
                             <td class="style17">
-                                <table style="width: 108%;">
+                                <asp:Panel ID="panel" runat="server">
+                                
+                                <table style="width: 242px; height: 292px;">
                                     <tr>
                                         <td>
-                                            &nbsp;</td>
-                                        <td>
-                                            &nbsp;</td>
-                                        <td>
-                                            &nbsp;</td>
+                                            Cantidad:
+                                            <asp:TextBox ID="txtCantidad" TextMode="Number" runat="server"></asp:TextBox>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            &nbsp;</td>
-                                        <td>
-                                            &nbsp;</td>
-                                        <td>
-                                            &nbsp;</td>
+                                            Por cada :<asp:TextBox ID="txtHoras"  TextMode="Number"  runat="server"></asp:TextBox>
+                                            Horas</td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            &nbsp;</td>
+                                            En
+                                            <asp:TextBox ID="txtDias"  TextMode="Number"  runat="server"></asp:TextBox>
+&nbsp;Dias totales</td>
+                                    </tr>
+                                    <tr>
                                         <td>
-                                            &nbsp;</td>
+                                            Cantidad Total<asp:TextBox ID="txtGlosa"  ReadOnly TextMode="Number"  runat="server" 
+                                               ></asp:TextBox>
+                                            <asp:Button ID="btnCalculate" runat="server" Text="Calcular" 
+                                                onclick="btnCalculate_Click" />
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td>
                                             &nbsp;</td>
                                     </tr>
                                 </table>
+                                </asp:Panel>
                             </td>
                         </tr>
                         <tr>
                             <td class="style4">
-                                &nbsp;</td>
-                            <td class="style8">
                                 &nbsp;</td>
                             <td class="style17">
-                                &nbsp;</td>
+                                <asp:Button ID="btnAgregar" runat="server" Text="Agregar" Height="54px" 
+                                    Width="236px" onclick="btnAgregar_Click" />
+                                        </td>
                         </tr>
                         <tr>
                             <td class="style4">
                                 &nbsp;
-                            </td>
-                            <td class="style8">
-                                &nbsp;
+                                <asp:Button ID="btnVolver" runat="server" Text="Volver" 
+                                    onclick="btnVolver_Click" />
                             </td>
                             <td class="style17">
                                 &nbsp;
@@ -240,12 +229,10 @@
                     <table style="width: 96%;">
                         <tr>
                             <td class="style9">
-                                <a href="PanelConsultaM.aspx" style="font-weight: 700; font-size: x-large">Volver</a>
+                                
                             </td>
                             <td class="style10">
-                                <asp:Button ID="btnGuardarMedico" runat="server" Text="Guardar" Height="54px" OnClick="btnGuardarMedico_Click"
-                                    Width="236px" />
-                            </td>
+                                &nbsp;</td>
                             <td class="style11">
                                 &nbsp;
                             </td>

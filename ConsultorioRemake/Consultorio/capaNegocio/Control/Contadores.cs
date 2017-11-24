@@ -100,5 +100,18 @@ namespace capaNegocio.Control
             }
             return max;
         }
+
+        public static int contadorIdReceta()
+        {
+            int max = 0;
+            List<capaNegocio.Clases.RecetaMedica> r = new List<capaNegocio.Clases.RecetaMedica>();
+            r = capaNegocio.Clases.RecetaListar.generarReceta();
+
+            foreach (capaNegocio.Clases.RecetaMedica xx in r.ToList())
+            {
+                max = xx.IdReceta;
+            }
+            return max;
+        }
     }
 }

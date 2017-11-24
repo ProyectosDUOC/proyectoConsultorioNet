@@ -93,6 +93,7 @@
     <Compile Include="Clases\MedicoColeccion.cs" />
     <Compile Include="Clases\Paciente.cs" />
     <Compile Include="Clases\PacienteColeccion.cs" />
+    <Compile Include="Clases\RecetaListar.cs" />
     <Compile Include="Clases\RecetaMedica.cs" />
     <Compile Include="Clases\Secretaria.cs" />
     <Compile Include="Clases\SecretariaColeccion.cs" />

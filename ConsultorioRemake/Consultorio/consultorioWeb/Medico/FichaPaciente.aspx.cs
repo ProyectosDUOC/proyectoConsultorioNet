@@ -107,7 +107,7 @@ namespace consultorioWeb.Medico
         protected void btnMedicamentos_Click(object sender, EventArgs e)
         {
             String idFicha = lblID.Text;
-
+            Response.Redirect("/Medico/RecetaMedica.aspx?id="+idFicha);
         }
     }
 }

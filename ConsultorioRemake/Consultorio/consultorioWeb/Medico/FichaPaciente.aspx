@@ -92,9 +92,7 @@
                             <td class="style3">
                                 &nbsp;</td>
                             <td>
-                                <asp:Button ID="Button1" runat="server" Text="Licencia" Width="86px" 
-                                    style="height: 26px" onclick="Button1_Click" />
-                            </td>
+                                &nbsp;</td>
                         </tr>
                         <tr>
                             <td class="style5">

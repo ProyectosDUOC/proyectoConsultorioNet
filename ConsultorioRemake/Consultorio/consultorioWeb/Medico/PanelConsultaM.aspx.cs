@@ -25,8 +25,8 @@ namespace consultorioWeb.Medico
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-            bntRevisar.Enabled = false;
+
+            btnFicha.Enabled = false;
             lblFecha.Text = DateTime.Now.ToString();
             Usuario usuario = new Usuario();
             usuario.Id = controlAcceso.IdUsuario;
@@ -64,7 +64,7 @@ namespace consultorioWeb.Medico
 
         protected void Seleccionar(object sender, EventArgs e)
         {
-            bntRevisar.Enabled = true;
+            btnFicha.Enabled = true;
             String id = GridView1.SelectedRow.Cells[1].Text;
             capaNegocio.FichaPaciente ficha = new capaNegocio.FichaPaciente();
             ficha.Id_ficha_paciente = Convert.ToInt32(id);
@@ -72,18 +72,19 @@ namespace consultorioWeb.Medico
             if (ficha.IdEnfermera == 0)
             {
                 lblError.Text = "Falta Atencion de la Enfermera";
-                bntRevisar.Enabled = false;
+                btnFicha.Enabled = false;
             }
             else
             {
                 lblResultado.Text = " Ficha Paciente:" + GridView1.SelectedRow.Cells[1].Text + " Rut: " + GridView1.SelectedRow.Cells[3].Text + " Nombre: " + GridView1.SelectedRow.Cells[4].Text;
                 lblError.Text = "";
-                bntRevisar.Enabled = true;
+                btnFicha.Enabled = true; 
             }
            
         }
 
-        protected void bntRevisar_Click(object sender, EventArgs e)
+
+        protected void btnFicha_Click(object sender, EventArgs e)
         {
             String id = GridView1.SelectedRow.Cells[1].Text;
             capaNegocio.FichaPaciente ficha = new capaNegocio.FichaPaciente();
@@ -93,9 +94,10 @@ namespace consultorioWeb.Medico
             {
                 lblError.Text = "Falta Atencion de la Enfermera";
                 lblResultado.Text = "";
-                bntRevisar.Enabled = false;
+                btnFicha.Enabled = false;
             }
-            else {
+            else
+            {
                 Response.Redirect("FichaPaciente.aspx?id=" + id);
             }
         }

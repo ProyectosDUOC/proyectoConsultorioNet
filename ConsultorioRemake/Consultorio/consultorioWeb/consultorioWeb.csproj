@@ -197,6 +197,7 @@
     <Content Include="Medico\HistorialMedico.aspx" />
     <Content Include="Medico\LicenciaMedica.aspx" />
     <Content Include="Medico\PanelConsultaM.aspx" />
+    <Content Include="Medico\RecetaMedica.aspx" />
     <Content Include="Medico\VisualizarHistorial.aspx" />
     <Content Include="Secretaria\AgendarHora.aspx" />
     <Content Include="Secretaria\AgregarPacienteConsulta.aspx" />
@@ -380,6 +381,13 @@
     </Compile>
     <Compile Include="Medico\PanelConsultaM.aspx.designer.cs">
       <DependentUpon>PanelConsultaM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Medico\RecetaMedica.aspx.cs">
+      <DependentUpon>RecetaMedica.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Medico\RecetaMedica.aspx.designer.cs">
+      <DependentUpon>RecetaMedica.aspx</DependentUpon>
     </Compile>
     <Compile Include="Medico\VisualizarHistorial.aspx.cs">
       <DependentUpon>VisualizarHistorial.aspx</DependentUpon>

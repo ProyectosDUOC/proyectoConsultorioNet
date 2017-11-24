@@ -7,7 +7,7 @@ namespace capaNegocio
 {
     public class MedicamentosColeccion
     {
-        public List<Medicamentos> GenerarListado(List<capaDatos.Medicamentos> medicamentosDALC)
+        public static List<Medicamentos> GenerarListado(List<capaDatos.Medicamentos> medicamentosDALC)
         {
             List<capaNegocio.Medicamentos> medicamentos = new List<Medicamentos>();
 
@@ -24,6 +24,12 @@ namespace capaNegocio
                 medicamentos.Add(medicamento);
             }
             return medicamentos;
+        }
+
+        public static List<Medicamentos> ReadAll()
+        {
+            var nacionalidades = CommonBC.ModeloConsultorio.Medicamentos;
+            return GenerarListado(nacionalidades.ToList());
         }
     }
 }

@@ -106,7 +106,29 @@ namespace capaNegocio
                 return false;
             }
         }
+        public bool ReadIdUsuario()
+        {
+            try
+            {
+                capaDatos.Medico medico = CommonBC.ModeloConsultorio.Medico.First
+                    (
 
+                        medi => medi.id_usuario == this.idUsuario  
+                        );
+
+                this.Rut = (int)medico.rut_medico;
+                this.Dv = Char.Parse(medico.dv_medico);
+                this.id = (int)medico.id_Medico;
+                this.IdEspecialidad = (int)medico.id_especialidad;
+                this.IdJornadaLaboral = (int)medico.id_jornada_laboral;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
 
         public bool Update() {
             try

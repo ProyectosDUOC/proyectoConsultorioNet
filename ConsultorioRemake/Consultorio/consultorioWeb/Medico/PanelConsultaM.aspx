@@ -90,11 +90,10 @@
                         <td class="style1">
                             &nbsp;</td>
                         <td class="style4">
-                            <asp:Button ID="bntRevisar" runat="server" Text="Ficha Paciente" 
-                                onclick="bntRevisar_Click" Height="82px" style="text-align: center" 
-                                Width="170px" />
                             <asp:Label ID="lblError" runat="server" ForeColor="Blue" Text="" 
                                 style="font-weight: 700; font-size: xx-large; text-align: center;"></asp:Label>
+                            <asp:Button ID="btnFicha" runat="server" Height="100px" Text="Ficha Paciente" 
+                                Width="216px" onclick="btnFicha_Click" />
                         </td>
                         <td class="style4">&nbsp;</td>
                         <td>

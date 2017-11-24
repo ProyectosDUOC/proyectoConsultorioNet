@@ -63,50 +63,45 @@ namespace consultorioWeb.Enfermera
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-           int idficha =  Convert.ToInt32(Request.Params["id"]);
-           FichaPaciente ficha = new FichaPaciente();
-           ficha.Id_ficha_paciente = idficha;
-           ficha.Read();
-          // try
-         //  {
-               ficha.Peso = Convert.ToInt32(txtPeso.Text);
-               ficha.Estatura = Convert.ToInt32(txtEstatura.Text);          
-               int kg= Convert.ToInt32(txtPeso.Text);
-               double alto = (ficha.Estatura/100.0);              
-               double resultado = (kg /(alto*alto));
-               IMC.Text = resultado.ToString();
-               ficha.Imc = resultado.ToString();
-               ficha.Temperatura = Convert.ToInt32(txtTemperatura.Text);
-               ficha.Diastolica= Convert.ToInt32(txtDia.Text);
-               ficha.Sistonica = Convert.ToInt32(txtSys.Text);
-               ficha.Pulsacion = Convert.ToInt32(txtPulsaciones.Text);
-               ficha.Motivo = txtMotivo.Text;
-               //Busco a la enfermera               
-               capaNegocio.Enfermera enfe = new capaNegocio.Enfermera();
-               enfe.IdUsuario = controlAcceso.IdUsuario;
-               enfe.ReadUsuarioId();
-               ficha.IdEnfermera = enfe.Id;
+            int idficha = Convert.ToInt32(Request.Params["id"]);
+            FichaPaciente ficha = new FichaPaciente();
+            ficha.Id_ficha_paciente = idficha;
+            ficha.Read();
+            try
+            {
+                ficha.Peso = Convert.ToInt32(txtPeso.Text);
+                ficha.Estatura = Convert.ToInt32(txtEstatura.Text);
+                int kg = Convert.ToInt32(txtPeso.Text);
+                double alto = (ficha.Estatura / 100.0);
+                double resultado = (kg / (alto * alto));
+                IMC.Text = resultado.ToString();
+                ficha.Imc = resultado.ToString();
+                ficha.Temperatura = Convert.ToInt32(txtTemperatura.Text);
+                ficha.Diastolica = Convert.ToInt32(txtDia.Text);
+                ficha.Sistonica = Convert.ToInt32(txtSys.Text);
+                ficha.Pulsacion = Convert.ToInt32(txtPulsaciones.Text);
+                ficha.Motivo = txtMotivo.Text;
+                //Busco a la enfermera               
+                capaNegocio.Enfermera enfe = new capaNegocio.Enfermera();
+                enfe.IdUsuario = controlAcceso.IdUsuario;
+                enfe.ReadUsuarioId();
+                ficha.IdEnfermera = enfe.Id;
 
+                if (ficha.Update())
+                {
 
-               if (ficha.Update())
-               {
-
-                   lblEstado.Text = "Registrado";
-               }
-               else {
-                   lblEstado.Text = "No se ha podido Registrar";
-               }
-
-
-
-
-
-           }
-        //   catch (Exception ex)
-        //   {
-        //       lblEstado.Text = ex.Message;              
-       //    }
-           
+                    lblEstado.Text = "Registrado";
+                }
+                else
+                {
+                    lblEstado.Text = "No se ha podido Registrar";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblEstado.Text = ex.Message;
+            }
+        }
         
     }
 }

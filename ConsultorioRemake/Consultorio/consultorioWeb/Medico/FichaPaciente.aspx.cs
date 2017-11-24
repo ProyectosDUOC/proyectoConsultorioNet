@@ -32,6 +32,9 @@ namespace consultorioWeb.Medico
                     int id = Convert.ToInt32(Request.Params["id"]);
                     capaNegocio.FichaPaciente ficha = new capaNegocio.FichaPaciente();
 
+                    GridView1.DataSource = capaNegocio.ClasesListar.RecetaMedicametosColeecion.generalListado(id);
+                    GridView1.DataBind();
+
                     ficha.Id_ficha_paciente = id;
                     ficha.Read();
                     lblID.Text = id.ToString();

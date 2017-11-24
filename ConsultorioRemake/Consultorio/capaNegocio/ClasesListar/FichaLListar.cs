@@ -52,10 +52,6 @@ namespace capaNegocio.ClasesListar
             set { chequeo = value; }
         }
 
-      
-
-        
-
 
     }
 }

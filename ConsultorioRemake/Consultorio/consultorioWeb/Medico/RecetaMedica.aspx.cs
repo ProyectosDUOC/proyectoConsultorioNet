@@ -111,11 +111,12 @@ namespace consultorioWeb.Medico
 
             int id = Convert.ToInt32(lblID.Text);
             List<capaNegocio.Clases.RecetaMedica> listar = new List<capaNegocio.Clases.RecetaMedica>();
-            listar = capaNegocio.Clases.RecetaListar.generarReceta();
+            listar = capaNegocio.Clases.RecetaListar.generarReceta(id);
             bool estado = false;
+            int idMe = Convert.ToInt32(GridView1.SelectedRow.Cells[1].Text);
             foreach (capaNegocio.Clases.RecetaMedica item in listar)
             {
-                if (item.IdMedicamento == Convert.ToInt32(GridView1.SelectedRow.Cells[1].Text))
+                if (item.IdMedicamento == idMe)
                 {
                     estado = true;
                     break;
@@ -123,13 +124,14 @@ namespace consultorioWeb.Medico
             }
             if (estado)
             {
-                panel.Enabled = true;
-                lblMedicamento.Text = GridView1.SelectedRow.Cells[2].Text;
+                lblMensaje.Text = "Medicamento ya fue utilizado";
+                panel.Enabled = false;
+                lblMedicamento.Text = "";
             }
             else {
-                lblMensaje.Text = "Medicamento ya utilizado";
-                panel.Enabled = false;
+                panel.Enabled = true;
                 lblMedicamento.Text = GridView1.SelectedRow.Cells[2].Text;
+                lblMensaje.Text = "";
             }
 
 

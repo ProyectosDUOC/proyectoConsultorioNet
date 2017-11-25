@@ -62,8 +62,6 @@
                 </td>
                 <td class="style7">
                     <center>
-                        <asp:Label ID="lblMensaje" runat="server" Style="font-weight: 700; color: #FF5050;
-                            font-size: xx-large;" Text=""></asp:Label>
                     </center>
                 </td>
                 <td class="style7">
@@ -121,6 +119,8 @@
                             </td>
                             <td class="style3">
                                 &nbsp;
+                            <asp:Label ID="lblMensaje" runat="server" Style="font-weight: 700; color: #FF5050;
+                            font-size: xx-large;" Text=""></asp:Label>
                             </td>
                             <td>
                                 &nbsp;

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using capaDatos;
 using System.Data.Entity;
+using capaDatos;
+using System.Data.Entity;
 
 namespace capaNegocio
 {
@@ -186,7 +188,7 @@ namespace capaNegocio
                CommonBC.ModeloConsultorio.SaveChanges();
                return true;
            }
-           catch (Exception ex)
+           catch (Exception)
            {
                return false;
                
@@ -196,7 +198,9 @@ namespace capaNegocio
        {
            try
            {
-               capaDatos.Ficha_Paciente fichaPac = CommonBC.ModeloConsultorio.Ficha_Paciente.First
+               ConsultoriosEntities modelo = new capaDatos.ConsultoriosEntities();
+
+               capaDatos.Ficha_Paciente fichaPac = modelo.Ficha_Paciente.First
                    (
                     fic => fic.id_ficha_paciente == this.Id_ficha_paciente
                    );             
@@ -217,7 +221,7 @@ namespace capaNegocio
                
                return true;
            }
-           catch (Exception ex)
+           catch (Exception)
            {
 
                return false;

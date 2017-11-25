@@ -64,7 +64,8 @@
                                         <asp:Label ID="lblNombre" runat="server" Text=""></asp:Label>
                                     </td>
                                     <td class="style12">
-                                        &nbsp;</td>
+                                        <img alt="" src="../Imagen/009-botiquin-de-primeros-auxilios.png" 
+                                            style="height: 109px; width: 106px" /></td>
                                     <td>
                                         &nbsp;</td>
                                 </tr>

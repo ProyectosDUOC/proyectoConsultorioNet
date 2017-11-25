@@ -71,7 +71,7 @@ namespace consultorioWeb.Medico
             ficha.Read();
             if (ficha.IdEnfermera == 0)
             {
-                lblError.Text = "Falta Atencion de la Enfermera";
+                lblError.Text = "Falta Atencion de la Enfermera" + ficha.IdEnfermera + " : "+ ficha.Id_ficha_paciente +"  "+ ficha.Estatura ;
                 btnFicha.Enabled = false;
             }
             else

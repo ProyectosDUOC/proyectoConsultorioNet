@@ -47,7 +47,8 @@
             <tr>
                 <td class="style18">
                     &nbsp;
-                </td>
+                    </td>
+               
                 <td class="style7">
                     <asp:Label ID="Label1" runat="server" Text="Ficha Paciente - Medicamentos" Style="font-weight: 700;
                         font-size: xx-large; color: #FFFFFF; text-align: center; background-color: #003366;"></asp:Label>
@@ -70,7 +71,8 @@
             <tr>
                 <td class="style18">
                     &nbsp;
-                </td>
+                    <img alt="" src="../Imagen/044-pildora.png" 
+                        style="height: 85px; width: 86px; float: right;" /></td>
                 <td>
                     <table style="width: 100%; height: 130px;">
                         <tr>

@@ -1,10 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Medico/Medico.Master" AutoEventWireup="true" CodeBehind="FichaPaciente.aspx.cs" Inherits="consultorioWeb.Medico.FichaPaciente" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <style type="text/css">
-        .style1
-        {
-            width: 199px;
-        }
         .style3
         {
             width: 230px;
@@ -16,10 +12,6 @@
         .style5
         {
             width: 442px;
-        }
-        .style6
-        {
-            width: 9px;
         }
         .style7
         {
@@ -37,9 +29,26 @@
         {
             width: 20px;
         }
-        .style11
+        .style12
         {
-            width: 337px;
+            width: 284px;
+        }
+        .style13
+        {
+            width: 100px;
+        }
+        .style17
+        {
+            height: 59px;
+        }
+        .style18
+        {
+            width: 140px;
+            height: 59px;
+        }
+        .style19
+        {
+            width: 140px;
         }
     </style>
 </asp:Content>
@@ -47,8 +56,12 @@
  <div>
         <table style="width:100%;">
             <tr>
-                <td class="style6">&nbsp;</td>
-                <td class="style7">
+                <td class="style12">
+                    &nbsp;</td>
+                <td class="style13">
+                    <img alt="" src="../Imagen/031-doctor.png" 
+                        style="height: 132px; width: 138px" /></td>
+                <td>
                     <asp:Label ID="Label1" runat="server" Text="Ficha Paciente"                         
                         
                         style="font-weight: 700; font-size: xx-large; color: #FFFFFF; text-align: center; background-color: #003366;"></asp:Label>
@@ -57,8 +70,9 @@
                     &nbsp;</td>
             </tr>
             <tr>
-                <td class="style6">&nbsp;</td>
-                <td class="style7">
+                <td class="style12">&nbsp;</td>
+                <td class="style13">&nbsp;</td>
+                <td>
                 <center>
                     <asp:Label ID="lblMensaje" runat="server" 
                         style="font-weight: 700; color: #FF5050; font-size: xx-large;" Text=""></asp:Label>
@@ -68,8 +82,11 @@
                     </td>
             </tr>
             <tr>
-                <td class="style1">
+                <td class="style12">
                     &nbsp;</td>
+                <td class="style13">
+                    <img alt="" src="../Imagen/001-plan-de-estudios.png" 
+                        style="height: 132px; width: 138px" /></td>
                 <td>
                     <table style="width: 100%; height: 130px;">
                         <tr>
@@ -120,7 +137,9 @@
                 </td>
             </tr>
             <tr>
-                <td class="style1">
+                <td class="style12">
+                    &nbsp;</td>
+                <td class="style13">
                     &nbsp;</td>
                 <td>
                     <table style="width: 83%; height: 71px;">
@@ -168,7 +187,7 @@
                             
                                 <asp:Label ID="Label6" runat="server" Text="Presión"></asp:Label>
                             </td>
-                            <td class="style11">
+                            <td class="style19">
                             
                                 &nbsp;</td>
                         </tr>
@@ -181,7 +200,7 @@
                                         <asp:Label ID="lblDia" runat="server" Text=""></asp:Label>
                             <asp:Label ID="Label10" runat="server" Text="mmHg"></asp:Label>
                         </td>
-                        <td class="style11">
+                        <td class="style19">
                                         &nbsp;</td>
                         </tr>
                          <tr>
@@ -192,18 +211,18 @@
                                         <asp:Label ID="lblSys" runat="server" Text=""></asp:Label>
                             <asp:Label ID="Label11" runat="server" Text="mmHg"></asp:Label>
                         </td>
-                        <td class="style11">
+                        <td class="style19">
                                         &nbsp;</td>
                         </tr>
                          <tr>
-                        <td>
+                        <td class="style17">
                             Pulsacion</td>
-                        <td>
+                        <td class="style17">
                                         <asp:Label ID="lblPul" runat="server" Text=""></asp:Label>
                             <asp:Label ID="Label12" runat="server" Text="/min"></asp:Label>
                         </td>
-                        <td class="style11">
-                                        &nbsp;</td>
+                        <td class="style18">
+                                        </td>
                         </tr>
                         <tr>
                             <td class="style9">
@@ -212,10 +231,12 @@
                             <td class="style10">
                                         <asp:Label ID="lblMotivo" runat="server" Text=""></asp:Label>
                                     </td>
-                            <td class="style11">
+                            <td class="style19">
                                         <asp:Button ID="btnMedicamentos" runat="server" Text="Medicamentos" 
-                                            Width="132px" style="text-align: center" onclick="btnMedicamentos_Click" />
-                             </td>                            
+                                            Width="105px" style="text-align: justify" onclick="btnMedicamentos_Click" 
+                                            Height="71px" />
+                    <img alt="" src="../Imagen/018-drogas-3.png" 
+                        style="height: 85px; width: 99px; float: right; text-align: justify;" /></td>                            
                         </tr>
                         <tr>
                             <td>
@@ -228,7 +249,7 @@
                                 <asp:TextBox ID="txtDiagnostico" runat="server" TextMode="MultiLine" Height="165px" Width="231px"></asp:TextBox>
                             
                             </td>
-                            <td class="style11">
+                            <td class="style19">
                             
                                 <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
                                     BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" 
@@ -262,7 +283,7 @@
                                     onclick="btnGuardarMedico_Click" Width="236px" 
                                   />
                             </td>
-                            <td class="style11">
+                            <td class="style19">
                                 &nbsp;</td>
                             <td>
                                 &nbsp;</td>

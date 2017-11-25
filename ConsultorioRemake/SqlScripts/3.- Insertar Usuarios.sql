@@ -16,10 +16,10 @@ INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (12,19431300,'8','foto5','Rodr
 INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (13,19431400,'2','foto5','Secilia','Fernanda','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
 INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (14,19431500,'5','foto5','Silvia','Fernanda','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
 --5 secretarias
-INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (15,19432000,'4','foto5','Camila','Fernanda','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
-INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (16,19433000,'4','foto5','Fernanda',' ','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
-INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (17,19434000,'4','foto5','Maria','Soledad','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
-INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (18,19435000,'4','foto5','Teresa','Gabriela','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
+INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (15,19432010,'4','foto5','Camila','Fernanda','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
+INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (16,19434000,'4','foto5','Fernanda',' ','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
+INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (17,19434002,'4','foto5','Maria','Soledad','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
+INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (18,19243500,'4','foto5','Teresa','Gabriela','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
 INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (19,19436000,'4','foto5','Teodora','Sofia','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
 --5 enfermeras
 INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (20,19431010,'4','foto5','Emeli','Fernanda','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
@@ -32,7 +32,7 @@ INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (25,19431060,'4','foto5','Este
 INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (26,19431070,'4','foto5','Maximiliam','Fernanda','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
 INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (27,19431080,'4','foto5','Agustin','Fernanda','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
 INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (28,19431090,'4','foto5','Bruno','Fernanda','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
-INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (29,19431100,'4','foto5','Guillermo','Fernanda','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
+INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (29,18431200,'4','foto5','Guillermo','Fernanda','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
 INSERT INTO [Consultorios].[dbo].[Usuario] VALUES (30,19431110,'4','foto5','Raul','Fernanda','Campos','Garate','1996-03-23' ,'Los crisantemos 329',9829339,2354550,2,3,2,1)
 
 --9 pacientes

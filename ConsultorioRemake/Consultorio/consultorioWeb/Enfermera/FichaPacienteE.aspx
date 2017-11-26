@@ -5,10 +5,6 @@
                 width: 268px;
             }
 
-            .style2 {
-                width: 256px;
-            }
-
             .style6 {
                 width: 205px;
             }
@@ -33,9 +29,34 @@
                 width: 192px;
             }
 
-            .style12 {
-                width: 251px;
-            }
+            .style13
+        {
+            width: 633px;
+        }
+        .style14
+        {
+            width: 256px;
+            height: 41px;
+        }
+        .style15
+        {
+            width: 251px;
+            height: 41px;
+        }
+        .style16
+        {
+            height: 41px;
+        }
+        .style17
+        {
+            width: 256px;
+            height: 34px;
+        }
+        .style18
+        {
+            width: 251px;
+            height: 34px;
+        }
         </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -59,22 +80,22 @@
                         <td>
                             <table style="width: 100%; height: 130px;">
                                 <tr>
-                                    <td class="style2">
+                                    <td class="style14">
                                         <asp:Label ID="Label2" runat="server" Text="Nombre:"></asp:Label>
                                         <asp:Label ID="lblNombre" runat="server" Text=""></asp:Label>
                                     </td>
-                                    <td class="style12">
+                                    <td class="style15">
                                         <img alt="" src="../Imagen/009-botiquin-de-primeros-auxilios.png" 
-                                            style="height: 109px; width: 106px" /></td>
-                                    <td>
-                                        &nbsp;</td>
+                                            style="height: 73px; width: 83px" /></td>
+                                    <td class="style16">
+                                        </td>
                                 </tr>
                                 <tr>
-                                    <td class="style2">
+                                    <td class="style17">
                                         Rut:
                                         <asp:Label ID="lblRut" runat="server" Text=""></asp:Label>
                                     </td>
-                                    <td class="style12">
+                                    <td class="style18">
                                         <asp:Label ID="lblEstado" ForeColor="Red" runat="server" Text="" 
                                             style="font-weight: 700; font-size: x-large"></asp:Label>
                                     </td>
@@ -142,7 +163,7 @@
                                     </td>
                                 </tr>
                             </table>
-                            <table style="width: 83%;">
+                            <table style="width: 83%; margin-right: 0px;">
                                 <tr>
                                     <td class="style9">
 
@@ -152,6 +173,8 @@
                             <asp:Label ID="Label6" runat="server" Text="Presión"></asp:Label>
                         </td>
                         <td>
+                            &nbsp;</td>
+                        <td class="style13">
                             &nbsp;</td>
                         </tr>
                         <tr>
@@ -169,6 +192,8 @@
                                 <asp:RangeValidator ID="RangeValidator4" runat="server" ControlToValidate="txtDia" 
                                     ForeColor="Blue" MinimumValue="0" MaximumValue="500" ErrorMessage="*Mayor de 0 o menor a 500"></asp:RangeValidator>
                             </td>
+                            <td class="style13">
+                                <img alt="" src="../Imagen/Presion.jpg" style="height: 159px; width: 339px" /></td>
                         </tr>
                         <tr>
 
@@ -198,6 +223,8 @@
                                 <asp:RangeValidator ID="RangeValidator6" runat="server" ControlToValidate="txtPulsaciones" 
                                     ForeColor="Blue" MinimumValue="0" MaximumValue="500" ErrorMessage="*Mayor de 0 o menos a 500"></asp:RangeValidator>
                             </td>
+                            <td class="style13">
+                                &nbsp;</td>
                         </tr>
                         <tr>
                             <td class="style9">
@@ -210,19 +237,21 @@
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" 
                                     ControlToValidate="txtMotivo" ErrorMessage="*" ForeColor="Red"></asp:RequiredFieldValidator>
                             </td>
-                            <td>
-                                &nbsp;</td>
+                            <td class="style13">
+                                <img alt="" src="../Imagen/Pulsaciones.png" 
+                                    style="height: 210px; width: 354px" /></td>
                         </tr>
                         <tr>
                             <td class="style9">
                                 <a href="PanelConsultaE.aspx" style="font-weight: 700; font-size: x-large">Volver</a> </td>
                             <td class="style10">
-                                &nbsp;</td>
+                                <asp:Button ID="btnGuardar" runat="server" Text="Guardar" 
+                                    onclick="Button4_Click" Height="31px" Width="198px" />
+                            </td>
                             <td class="style10">
                                 &nbsp;</td>
-                            <td>
-                                <asp:Button ID="btnGuardar" runat="server" Text="Guardar" onclick="Button4_Click" />
-                            </td>
+                            <td class="style13">
+                                &nbsp;</td>
                         </tr>
                         </table>
                         </td>

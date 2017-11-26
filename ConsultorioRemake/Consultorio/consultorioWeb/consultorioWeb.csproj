@@ -205,7 +205,9 @@
     <Content Include="Secretaria\BuscarDoctor.aspx" />
     <Content Include="Secretaria\MenuSecretaria.aspx" />
     <Content Include="Secretaria\PanelConsultaS.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -453,7 +455,9 @@
       <Name>capaNegocio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Content Include="Web.sitemap">

@@ -31,14 +31,14 @@ namespace consultorioWeb.Admin.Paciente
                 GridView1.DataBind();
                 if (controlAcceso.Id == 0)
                 {
-                    Response.Redirect("Login.aspx");
+                    Response.Redirect("../../Login.aspx");
                 }
             }
         }
 
         protected void btn_Atras_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Admin/PanelPaciente.aspx");
+            Response.Redirect("../PanelPaciente.aspx");
         }
     }
 }

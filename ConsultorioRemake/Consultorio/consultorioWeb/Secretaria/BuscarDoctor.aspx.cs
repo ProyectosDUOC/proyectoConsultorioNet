@@ -16,7 +16,7 @@ namespace consultorioWeb.Secretaria
 
         protected void btnAtras_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Secretaria/MenuSecretaria.aspx");
+            Response.Redirect("MenuSecretaria.aspx");
         }
     }
 }

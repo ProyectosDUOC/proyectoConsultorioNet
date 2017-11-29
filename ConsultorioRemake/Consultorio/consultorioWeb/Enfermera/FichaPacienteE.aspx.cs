@@ -54,7 +54,7 @@ namespace consultorioWeb.Enfermera
                 }
                 if (controlAcceso.IdUsuario==0)
                 {
-                    Response.Redirect("Login.aspx");
+                    Response.Redirect("../Login.aspx");
                 }
 
                 

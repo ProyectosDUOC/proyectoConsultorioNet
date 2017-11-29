@@ -44,7 +44,7 @@ namespace consultorioWeb.Medico
 
             if (controlAcceso.Id==0)
             {
-                Response.Redirect("Login.aspx");
+                Response.Redirect("../Login.aspx");
             }
 
         }
@@ -52,7 +52,7 @@ namespace consultorioWeb.Medico
         protected void Button2_Click(object sender, EventArgs e)
         {
             controlAcceso = new ControlAcceso();
-            Response.Redirect("Login.aspx");
+            Response.Redirect("../Login.aspx");
         }  
 
         protected void GridView1_PageIndexChanging(object sender, GridViewPageEventArgs e)

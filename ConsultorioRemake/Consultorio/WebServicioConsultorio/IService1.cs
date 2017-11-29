@@ -14,34 +14,34 @@ namespace WebServicioConsultorio
     {
 
         [OperationContract]
-        string GetData(int value);
+        string glosaRecetaMedica(int idFicha, int idMedicamento);
 
         [OperationContract]
-        CompositeType GetDataUsingDataContract(CompositeType composite);
+        string buscarRutDoctor(int idFichaPaciente);
 
-        // TODO: agregue aquí sus operaciones de servicio
-    }
+        [OperationContract]
+        string buscarNombreDoctor(int idFichaPaciente);
+
+        [OperationContract]
+        string buscarRutPaciente(int idFichaPaciente);
+
+        [OperationContract]
+        string buscarNombrePaciente(int idFichaPaciente);
 
 
-    // Utilice un contrato de datos, como se ilustra en el ejemplo siguiente, para agregar tipos compuestos a las operaciones de servicio.
-    [DataContract]
-    public class CompositeType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
+        [OperationContract]
+        String rutPacienteId(int id);
 
-        [DataMember]
-        public bool BoolValue
-        {
-            get { return boolValue; }
-            set { boolValue = value; }
-        }
+        [OperationContract]
+        String nombrePacienteIdFicha(int id);
 
-        [DataMember]
-        public string StringValue
-        {
-            get { return stringValue; }
-            set { stringValue = value; }
-        }
+        [OperationContract]
+        String rutMedicoIdFicha(int id);
+
+        [OperationContract]
+        String nombreMedicoId(int id);
+
+        [OperationContract]
+        String cantidadMedicamento(int idFicha, int idMedicamento);
     }
 }

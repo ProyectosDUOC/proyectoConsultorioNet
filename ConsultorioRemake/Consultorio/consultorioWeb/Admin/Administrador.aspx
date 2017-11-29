@@ -95,21 +95,21 @@
             <td class="style13">
                 &nbsp;</td>
             <td class="style12">
-                <img alt="/Imagen/Iconos/001-personas-1.png" 
-                    src="/Imagen/Iconos/001-personas-1.png" style="height: 44px; width: 79px" />
+                <img alt="Imagen/001-personas-1.png" 
+                    src="../Imagen/Iconos/001-personas-1.png" style="height: 44px; width: 79px" />
                 <asp:Button ID="btnPaci" runat="server" Text="Panel Paciente" 
                     onclick="btnPaci_Click" />
             </td>
         </tr>
         <tr>
             <td class="style13">
-                <img alt="/Imagen/Iconos/001-plan-de-estudios.png" 
-                    src="/Imagen/Iconos/001-plan-de-estudios.png" 
+                <img alt="Imagen/001-plan-de-estudios.png" 
+                    src="../Imagen/Iconos/001-plan-de-estudios.png" 
                     style="height: 80px; width: 92px" /><asp:Button 
                     ID="Button1" runat="server" Text="Desvincular" />
             </td>
             <td class="style12">
-                <img alt="" src="/Imagen/Iconos/016-enfermera-1.png" 
+                <img alt="" src="../Imagen/Iconos/016-enfermera-1.png" 
                     style="height: 49px; width: 100px" />
                     <asp:Button ID="btnEnfermera" 
                     runat="server" Text="Panel Enfermera" onclick="btnEnfermera_Click" />
@@ -119,7 +119,7 @@
             <td class="style13">
                 &nbsp;</td>
             <td class="style12">
-                <img alt="" src="/Imagen/Iconos/021-doctor-2.png" 
+                <img alt="" src="../Imagen/Iconos/021-doctor-2.png" 
                     style="height: 58px; width: 80px" /><asp:Button ID="btnMedico" runat="server" 
                     Text="Panel Medico" onclick="btnMedico_Click" />
             </td>
@@ -128,7 +128,7 @@
             <td class="style13">
                 &nbsp;</td>
             <td class="style12">
-                <img alt="" src="/Imagen/Iconos/006-estuche.png" 
+                <img alt="" src="../Imagen/Iconos/006-estuche.png" 
                     style="height: 62px; width: 92px" /><asp:Button ID="btnSecretaria" runat="server" 
                     Text="Panel Secretaria" onclick="btnSecretaria_Click" 
                     style="height: 26px" />

@@ -44,7 +44,7 @@
                 &nbsp;
             </td>
             <td class="style8">
-                <img src="/Imagen/logoGobierno.png" alt="ministerio de la salud" />
+                <img src="../Imagen/logoGobierno.png" alt="ministerio de la salud" />
             </td>
             <td class="style13">
                 &nbsp;

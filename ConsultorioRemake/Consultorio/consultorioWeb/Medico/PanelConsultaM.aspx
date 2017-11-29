@@ -19,7 +19,7 @@
                 <table style="width:100%;">
                     <tr>
                         <td class="style1">
-                            <img alt="" src="/Imagen/Foto1.jpg" style="height: 164px; width: 161px" />
+                            <img alt="" src="../Imagen/Foto1.jpg" style="height: 164px; width: 161px" />
                         </td>
                         <td class="style4">
                             <table style="width: 100%; height: 114px;">

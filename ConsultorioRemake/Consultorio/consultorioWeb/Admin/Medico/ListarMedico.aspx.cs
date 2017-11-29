@@ -16,7 +16,7 @@ namespace consultorioWeb.Admin.Medico
 
         protected void btn_Atras_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/PanelMedico.aspx");
+            Response.Redirect("../PanelMedico.aspx");
         }
     }
 }

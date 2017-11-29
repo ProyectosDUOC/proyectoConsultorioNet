@@ -28,7 +28,7 @@ namespace consultorioWeb.Admin.Enfermera
 
         protected void btn_Atras_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/PanelEnfermera.aspx");
+            Response.Redirect("../PanelEnfermera.aspx");
         }
 
         private void bloqueo()

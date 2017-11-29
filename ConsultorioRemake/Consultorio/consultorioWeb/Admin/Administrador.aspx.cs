@@ -42,35 +42,35 @@ namespace consultorioWeb.Admin
             {
                 if (controlAcceso.Id==0)
                 {                    
-                    Response.Redirect("/Login.aspx");
+                    Response.Redirect("../Login.aspx");
                 }
             }
         }
 
         protected void btnPaci_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/PanelPaciente.aspx");
+            Response.Redirect("PanelPaciente.aspx");
         }
 
         protected void btnEnfermera_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/PanelEnfermera.aspx");
+            Response.Redirect("PanelEnfermera.aspx");
         }
 
         protected void btnMedico_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/PanelMedico.aspx");
+            Response.Redirect("PanelMedico.aspx");
         }
 
         protected void btnSecretaria_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/PanelSecretaria.aspx");
+            Response.Redirect("PanelSecretaria.aspx");
         }
 
         protected void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             controlAcceso = new ControlAcceso();
-            Response.Redirect("/Login.aspx");
+            Response.Redirect("../Login.aspx");
 
         }
       

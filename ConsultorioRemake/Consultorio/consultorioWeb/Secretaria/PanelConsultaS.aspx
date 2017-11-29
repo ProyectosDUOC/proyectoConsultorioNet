@@ -29,7 +29,7 @@
                 <table style="width: 100%;">
                     <tr>
                         <td class="style2">
-                            <img src="/Imagen/LogoGobierno.png" alt="ministerio de la salud" />
+                            <img src="../Imagen/LogoGobierno.png" alt="ministerio de la salud" />
                         </td>
                         <td class="style5">
                             &nbsp;

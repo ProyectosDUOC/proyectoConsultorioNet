@@ -41,7 +41,7 @@ namespace consultorioWeb.Secretaria
             {
                 if (controlAcceso.Id == 0)
                 {
-                    Response.Redirect("/Login.aspx");
+                    Response.Redirect("../Login.aspx");
                 }
             }
         }
@@ -49,23 +49,23 @@ namespace consultorioWeb.Secretaria
         protected void Button7_Click(object sender, EventArgs e)
         {
             controlAcceso = new ControlAcceso();
-            Response.Redirect("/Login.aspx");
+            Response.Redirect("../Login.aspx");
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Secretaria/BuscarDoctor.aspx");
+            Response.Redirect("BuscarDoctor.aspx");
 
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Secretaria/PanelConsultaS.aspx");
+            Response.Redirect("PanelConsultaS.aspx");
         }
 
         protected void Button3_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Secretaria/AgendarHora.aspx");
+            Response.Redirect("AgendarHora.aspx");
         }
     }
 }

@@ -46,19 +46,19 @@ namespace consultorioWeb
 
                         if (controlAcceso.IdTipoUsuario == 2)
                         {
-                            Response.Redirect("/Secretaria/MenuSecretaria.aspx");
+                            Response.Redirect("Secretaria/MenuSecretaria.aspx");
                         }
                         if (controlAcceso.IdTipoUsuario == 3)
                         {
-                            Response.Redirect("/Enfermera/PanelConsultaE.aspx");
+                            Response.Redirect("Enfermera/PanelConsultaE.aspx");
                         }
                         if (controlAcceso.IdTipoUsuario == 4)
                         {
-                            Response.Redirect("/Medico/PanelConsultaM.aspx");
+                            Response.Redirect("Medico/PanelConsultaM.aspx");
                         }
                         if (controlAcceso.IdTipoUsuario == 5)
                         {
-                            Response.Redirect("/Admin/Administrador.aspx");
+                            Response.Redirect("Admin/Administrador.aspx");
                             //Response.Redirect("/Admin/Administrador.aspx?login="+login);
                         }
                     }
@@ -66,7 +66,6 @@ namespace consultorioWeb
                     {
                         lblMensaje.Text = "Clave incorrecta";
                     }
-
                 }
                 else
                 {

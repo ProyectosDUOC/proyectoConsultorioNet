@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
  <title>Acceso Plataforma Virtual <3</title>
-        <link href="/CSS/estilo.css" rel="stylesheet" type="text/css" />
+        <link href="CSS/estilo.css" rel="stylesheet" type="text/css" />
         <style type="text/css">
             .style1 {
                 height: 182px;
@@ -62,7 +62,7 @@
                     </tr>
                     <tr>
                         <td class="style10">
-                            <img alt="ministerio de la salud" src="/Imagen/LogoGobierno.png" /> </td>
+                            <img alt="ministerio de la salud" src="Imagen/LogoGobierno.png" /> </td>
                         <td class="style6">
                             <center>
                                 <asp:Label ID="Label4" runat="server" Text="ACCESO PLATAFORMA VIRTUAL CONSULTORIO"></asp:Label>
@@ -160,10 +160,10 @@
                 </table>
             </div>
         </form>
-        <footer id="footer">
-            <center>
+        <div class="footer">
+       <center>
                 <asp:Label ID="Label1" runat="server" Text="@ConsultorioWebNet"></asp:Label>
             </center>
-        </footer>
+        </div>
     </body>
 </html>

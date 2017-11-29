@@ -13,7 +13,7 @@ namespace consultorioWeb.Secretaria
         Paciente paciente = new Paciente();
         Usuario usuario = new Usuario();
         capaNegocio.ClasesListar.PacienteListar pac = new capaNegocio.ClasesListar.PacienteListar();
-        int idPaciente;
+    
         private ControlAcceso controlAcceso
         {
             get

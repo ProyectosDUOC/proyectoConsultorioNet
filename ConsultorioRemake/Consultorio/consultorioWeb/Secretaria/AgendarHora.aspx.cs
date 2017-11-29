@@ -16,12 +16,12 @@ namespace consultorioWeb.Secretaria
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Secretaria/MenuSecretaria.aspx");
+            Response.Redirect("Secretaria/MenuSecretaria.aspx");
         }
 
         protected void Button2_Click1(object sender, EventArgs e)
         {
-            Response.Redirect("/Secretaria/AgregarPacienteHora.aspx");
+            Response.Redirect("Secretaria/AgregarPacienteHora.aspx");
         }
     }
 }

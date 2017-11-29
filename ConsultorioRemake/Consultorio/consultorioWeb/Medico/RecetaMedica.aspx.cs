@@ -54,7 +54,7 @@ namespace consultorioWeb.Medico
                 }
                 else {
 
-                    Response.Redirect("/Login.aspx");
+                    Response.Redirect("Login.aspx");
                 }
                 
             }
@@ -62,7 +62,7 @@ namespace consultorioWeb.Medico
 
             if (controlAcceso.Id == 0)
             {
-                Response.Redirect("/login.aspx");
+                Response.Redirect("Login.aspx");
             }          
         }
 

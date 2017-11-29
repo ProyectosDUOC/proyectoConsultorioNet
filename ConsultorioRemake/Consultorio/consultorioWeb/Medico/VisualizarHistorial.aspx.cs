@@ -16,7 +16,7 @@ namespace consultorioWeb.Medico
 
         protected void btnAtras_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Medico/HistorialMedico.aspx");
+            Response.Redirect("Medico/HistorialMedico.aspx");
         }
     }
 }

@@ -6,7 +6,7 @@
                 <table style="width:100%;">
                     <tr>
                         <td class="style1">
-                            <img alt="" src="/Imagen/Foto4.jpg" style="height: 149px; width: 140px" /></td>
+                            <img alt="" src="Imagen/Foto4.jpg" style="height: 149px; width: 140px" /></td>
                         <td class="style4">
                             <table style="width: 100%; height: 114px;">
                                 <tr>

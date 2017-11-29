@@ -16,17 +16,17 @@ namespace consultorioWeb.Admin
 
         protected void btn_Agregar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/Enfermera/RegistroEnfermera.aspx");
+            Response.Redirect("Admin/Enfermera/RegistroEnfermera.aspx");
         }
 
         protected void btn_Listar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/Enfermera/ListarEnfermera.aspx");
+            Response.Redirect("Admin/Enfermera/ListarEnfermera.aspx");
         }
 
         protected void btn_Atras_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/Administrador.aspx");
+            Response.Redirect("Admin/Administrador.aspx");
         }
     }
 }

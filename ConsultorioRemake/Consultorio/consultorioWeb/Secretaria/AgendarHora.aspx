@@ -20,7 +20,7 @@
                 <table style="width: 100%;">
                     <tr>
                         <td class="style2">
-                            <img src="/Imagen/logoGobierno.png" alt="ministerio de la salud" />
+                            <img src="../Imagen/logoGobierno.png" alt="ministerio de la salud" />
                         </td>
                         <td>
                             <asp:Label ID="Label1" runat="server" Text="REGISTRO PACIENTE CON HORAS"></asp:Label>

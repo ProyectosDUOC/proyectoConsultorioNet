@@ -6,7 +6,7 @@
                 <table style="width:100%;">
                     <tr>
                         <td class="style1">
-                            <img src="/Imagen/logoGobierno.png" alt="ministerio de la salud" /> </td>
+                            <img src="../Imagen/logoGobierno.png" alt="ministerio de la salud" /> </td>
                         <td>
                             HORARIO DOCTORES</td>
                         <td>

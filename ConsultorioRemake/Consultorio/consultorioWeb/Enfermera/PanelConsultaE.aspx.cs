@@ -43,7 +43,7 @@ namespace consultorioWeb.Enfermera
 
                 if (controlAcceso.Id==0)
                 {
-                    Response.Redirect("/Login.aspx");
+                    Response.Redirect("Login.aspx");
                 }
             }
         }
@@ -66,7 +66,7 @@ namespace consultorioWeb.Enfermera
         protected void Button2_Click(object sender, EventArgs e)
         {
             controlAcceso = new ControlAcceso();
-            Response.Redirect("/Login.aspx");
+            Response.Redirect("Login.aspx");
         }
 
         protected void bntRevisar_Click(object sender, EventArgs e){

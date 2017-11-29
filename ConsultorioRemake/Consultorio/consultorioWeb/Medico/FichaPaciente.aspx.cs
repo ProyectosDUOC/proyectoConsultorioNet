@@ -66,7 +66,7 @@ namespace consultorioWeb.Medico
          
             if (controlAcceso.Id==0)
             {
-                Response.Redirect("/login.aspx");
+                Response.Redirect("Login.aspx");
             }
         }
         protected void btnGuardarMedico_Click(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace consultorioWeb.Medico
         protected void btnMedicamentos_Click(object sender, EventArgs e)
         {
             String idFicha = lblID.Text;
-            Response.Redirect("/Medico/RecetaMedica.aspx?id="+idFicha);
+            Response.Redirect("Medico/RecetaMedica.aspx?id="+idFicha);
         }
     }
 }

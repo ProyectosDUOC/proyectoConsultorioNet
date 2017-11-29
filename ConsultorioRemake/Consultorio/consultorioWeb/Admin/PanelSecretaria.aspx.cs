@@ -16,17 +16,17 @@ namespace consultorioWeb.Admin
 
         protected void btn_Agregar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/Secretaria/RegistroSecretaria.aspx");
+            Response.Redirect("Admin/Secretaria/RegistroSecretaria.aspx");
         }
 
         protected void btn_Listar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/Secretaria/ListarSecretaria.aspx");
+            Response.Redirect("Admin/Secretaria/ListarSecretaria.aspx");
         }
 
         protected void btn_Atras_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Admin/Administrador.aspx");
+            Response.Redirect("Admin/Administrador.aspx");
         }
     }
 }

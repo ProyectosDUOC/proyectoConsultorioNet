@@ -7,7 +7,7 @@
                     <table style="width: 100%;">
                         <tr>
                             <td class="style13">
-                                <img src="/Imagen/LogoGobierno.png" alt="Resultado de imagen para ministerio de la salud" />
+                                <img src="../Imagen/LogoGobierno.png" alt="Resultado de imagen para ministerio de la salud" />
                             </td>
                             <td class="style18">
                                 &nbsp;</td>

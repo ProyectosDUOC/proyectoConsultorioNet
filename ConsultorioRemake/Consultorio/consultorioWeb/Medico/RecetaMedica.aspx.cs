@@ -134,6 +134,10 @@ namespace consultorioWeb.Medico
                 lblMensaje.Text = "";
             }
 
+            ServicioFarmacias.Service1Client servicio = new ServicioFarmacias.Service1Client();
+            String x = servicio.cantidadMedicamento(idMe);
+            lblConsultaBaseDatos.Text = "Medicamento : " + idMe + " Total Medicamento " + x;
+       
 
        }
 
@@ -149,12 +153,33 @@ namespace consultorioWeb.Medico
             txtGlosa.Text = resultado.ToString();
             btnAgregar.Enabled = true;
             panel.Enabled = true;
+              /*   if (x >= resultado)
+            {
+                lblConsultaBaseDatos.Text = "Esta disponible Total Para solicitar " + x;
+            }
+            else {
+
+                lblConsultaBaseDatos.Text = "No Esta disponible Total Para solicitar " + x;
+            } */
+          
         }
 
         protected void btnVolver_Click(object sender, EventArgs e)
         {
             Response.Redirect("FichaPaciente.aspx?id=" + lblID.Text);
                       
+        }
+
+        protected void btnEstado_Click(object sender, EventArgs e)
+        {
+            String id = idMedicamento.Text;
+            ServicioFarmacias.Service1Client servicios = new ServicioFarmacias.Service1Client();
+
+           // String cantidad = servicios.cantidadMedicamento(id);
+
+            String cantidad = servicios.cantidadMedicamento2(id);
+
+            lblConsultaBaseDatos.Text = "Medicamento :"+id+" La cantidad es: " + cantidad;
         }
 
       

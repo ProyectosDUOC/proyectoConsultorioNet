@@ -112,6 +112,24 @@ namespace consultorioWeb.Medico {
         protected global::System.Web.UI.WebControls.Label Label16;
         
         /// <summary>
+        /// Control idMedicamento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox idMedicamento;
+        
+        /// <summary>
+        /// Control btnEstado.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEstado;
+        
+        /// <summary>
         /// Control lblMedicamento.
         /// </summary>
         /// <remarks>
@@ -182,6 +200,15 @@ namespace consultorioWeb.Medico {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCalculate;
+        
+        /// <summary>
+        /// Control lblConsultaBaseDatos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblConsultaBaseDatos;
         
         /// <summary>
         /// Control btnAgregar.

@@ -53,7 +53,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
- <div>
+    <div>
         <table style="width:100%;">
             <tr>
                 <td class="style12">
@@ -284,7 +284,9 @@
                                   />
                             </td>
                             <td class="style19">
-                                &nbsp;</td>
+                                <asp:Label ID="lblResultadoBSOTROS" ForeColor="Red" runat="server" Text="Label" 
+                                    style="text-align: center; font-weight: 700"></asp:Label>
+                            </td>
                             <td>
                                 &nbsp;</td>
                         </tr>

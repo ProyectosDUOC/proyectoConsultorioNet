@@ -46,5 +46,8 @@ namespace WebServicioConsultorio
 
         [OperationContract]
         bool addMedicamento(String nombre, int id, String descripcion);
+
+
+
     }
 }

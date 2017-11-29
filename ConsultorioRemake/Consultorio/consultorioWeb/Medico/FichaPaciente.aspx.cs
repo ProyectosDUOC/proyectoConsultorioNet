@@ -86,7 +86,7 @@ namespace consultorioWeb.Medico
 
                 if (ficha.Update())
                 {
-
+                           
                     lblMensaje.Text = "Consulta Finalizada";
                 }
                 else
@@ -109,8 +109,12 @@ namespace consultorioWeb.Medico
 
         protected void btnMedicamentos_Click(object sender, EventArgs e)
         {
+
+
             String idFicha = lblID.Text;
-            Response.Redirect("RecetaMedica.aspx?id="+idFicha);
+            lblMensaje.Text= "";
+           Response.Redirect("RecetaMedica.aspx?id="+idFicha);
+
         }
     }
 }

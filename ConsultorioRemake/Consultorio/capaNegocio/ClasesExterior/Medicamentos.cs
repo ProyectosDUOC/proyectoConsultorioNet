@@ -114,6 +114,30 @@ namespace capaNegocio
                 return false;
             }
         }
+        public bool ReadNombre()
+        {
+            try
+            {
+                capaDatos.Medicamentos medicamentos =
+                    CommonBC.ModeloConsultorio.Medicamentos.First
+                    (
+                        medik => medik.nombre_producto == this.nombre
+                    );
+                this.id = medicamentos.id_medicamentos;
+                this.PrincipioActivo = medicamentos.principio_activo;
+                this.Nombre = medicamentos.nombre_producto;
+                this.ProductoReferencia = medicamentos.producto_referencia;
+                this.CodigoRegistro = medicamentos.codigo_registro;
+                this.Glosa = medicamentos.glosa;
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
+        }
 
 
         public bool Update()

@@ -228,5 +228,30 @@ namespace WebServicioConsultorio
             return glosa;
         }
 
+        public bool addMedicamento(string nombre, int id, string descripcion)
+        {
+            try
+            {
+                Medicamentos medicamento = new Medicamentos();
+                medicamento.Id = id;
+                medicamento.Nombre = nombre;
+                medicamento.PrincipioActivo = nombre;
+                medicamento.ProductoReferencia = nombre;
+                medicamento.Glosa = descripcion;
+                if (medicamento.Create())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }   
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+          
+        }
     }
 }

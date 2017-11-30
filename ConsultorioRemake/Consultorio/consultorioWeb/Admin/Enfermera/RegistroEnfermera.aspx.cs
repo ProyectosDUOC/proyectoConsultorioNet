@@ -10,11 +10,25 @@ namespace consultorioWeb.Admin.Enfermera
 {
     public partial class RegistroEnfermera : System.Web.UI.Page
     {
+        private ControlAcceso controlAcceso
+        {
+            get
+            {
+                if (Session["MiUsuario"] == null)
+                {
+                    Session["MiUsuario"] = new ControlAcceso();
+                }
+                return (ControlAcceso)Session["MiUsuario"];
+            }
+            set { Session["MiUsuario"] = value; }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            bloqueo();
+            
             if (!IsPostBack)
             {
+                bloqueo();
                 ddGenero.DataSource = capaNegocio.GeneroColeccion.ReadAll();
                 ddNacionalidad.DataSource = capaNegocio.NacionalidadColeccion.ReadAll();
                 ddComuna.DataSource = capaNegocio.ComunaColeccion.ReadAll();
@@ -22,6 +36,10 @@ namespace consultorioWeb.Admin.Enfermera
                 ddGenero.DataBind();
                 ddNacionalidad.DataBind();
                 ddComuna.DataBind();
+                if (controlAcceso.Id == 0)
+                {
+                    Response.Redirect("../../Login.aspx");
+                }
             }
 
         }
@@ -33,7 +51,6 @@ namespace consultorioWeb.Admin.Enfermera
 
         private void bloqueo()
         {
-            txt_nFicha.Enabled = false;
             txt_pNombre.Enabled = false;
             txt_sNombre.Enabled = false;
             txt_apPaterno.Enabled = false;
@@ -45,11 +62,13 @@ namespace consultorioWeb.Admin.Enfermera
             ddComuna.Enabled = false;
             txt_nCasa.Enabled = false;
             txt_nCelular.Enabled = false;
+            btnGuardarActualizar.Enabled = false;
+            btn_Agregar.Enabled = false;
+            btnHabilitar.Visible = false;
         }
 
         private void desbloqueo()
         {
-            txt_nFicha.Enabled = true;
             txt_pNombre.Enabled = true;
             txt_sNombre.Enabled = true;
             txt_apPaterno.Enabled = true;
@@ -89,6 +108,8 @@ namespace consultorioWeb.Admin.Enfermera
                     ddNacionalidad.SelectedIndex = ddNacionalidad.Items.IndexOf(ddNacionalidad.Items.FindByValue(usuario.IdNacionalidad.ToString()));
                     ddComuna.SelectedIndex = ddComuna.Items.IndexOf(ddComuna.Items.FindByValue(usuario.IdComuna.ToString()));
                     desbloqueo();
+                    btnGuardarActualizar.Enabled = true;
+                    btn_Agregar.Enabled = false;
                 }
                 else
                 {
@@ -99,12 +120,14 @@ namespace consultorioWeb.Admin.Enfermera
             {
                 lblRespuesta.Text = "No se encontro";
                 limpiar();
+                bloqueo();
+                btnHabilitar.Enabled = true;
+                btnHabilitar.Visible = true;
             }
         }
 
         private void limpiar()
         {
-            txt_nFicha.Text = "";
             txt_pNombre.Text = "";
             txt_sNombre.Text = "";
             txt_apPaterno.Text = "";
@@ -115,10 +138,71 @@ namespace consultorioWeb.Admin.Enfermera
             txt_nCelular.Text = "";
         }
 
-        protected void btn_Guardar_Click(object sender, EventArgs e)
+        protected void btnHabilitar_Click1(object sender, EventArgs e)
+        {
+            desbloqueo();
+            btn_Agregar.Enabled = true;
+            btnHabilitar.Enabled = false;
+            btnHabilitar.Visible = false;
+        }
+
+        protected void btn_Agregar_Click(object sender, EventArgs e)
         {
             Usuario user = new Usuario();
-            user.Rut = Convert.ToInt32(txt_Rut);
+            user.Rut = Convert.ToInt32(txt_Rut.Text);
+
+            if (user.ReadRut())
+            {
+                lblRespuesta.Text = "No se puede agregar usuario ya existe";
+            } 
+            else
+            {
+                capaNegocio.Enfermera enf = new capaNegocio.Enfermera();
+                int contadorU = capaNegocio.Control.Contadores.contadorIdUsuario();
+                int contadorE = capaNegocio.Control.Contadores.contadorIdEnfemera();
+
+                try
+                {
+                    user.Id = contadorU + 1;
+                    user.Dv = Convert.ToChar(txt_dv.Text);
+                    user.Pnombre = txt_pNombre.Text;
+                    user.Snombre = txt_sNombre.Text;
+                    user.Appaterno = txt_apPaterno.Text;
+                    user.Apmaterno = txt_apMaterno.Text;
+                    user.FechaNacimiento = Convert.ToDateTime(txt_Fecha.Text);
+                    user.IdGenero = ddGenero.SelectedIndex + 1;
+                    user.IdNacionalidad = ddNacionalidad.SelectedIndex + 1;
+                    user.Direccion = txt_Domicilio.Text;
+                    user.IdComuna = ddComuna.SelectedIndex + 1;
+                    lbl_Edad.Text = (DateTime.Today.AddTicks(-user.FechaNacimiento.Ticks).Year - 1).ToString();
+                    user.Fono1 = txt_nCasa.Text;
+                    user.Fono2 = txt_nCelular.Text;
+                    if (user.Create())
+                    {
+                        enf.Id = contadorE + 1;
+                        enf.IdUsuario = user.Id;
+                        //enf.IdJornadaLaboral = ;
+                        if (enf.Create())
+                        {
+                            lblRespuesta.Text = "Exito! Se ha creado";
+                        }
+                    }
+                    else
+                    {
+                        lblRespuesta.Text = "No ha sido creado";
+                    }
+                }
+                catch (Exception ex)
+                {
+                    lblRespuesta.Text = ex.Message;
+                }
+            }
+        }
+
+        protected void btnGuardarActualizar_Click(object sender, EventArgs e)
+        {
+            Usuario user = new Usuario();
+            user.Rut = Convert.ToInt32(txt_Rut.Text);
 
             if (user.ReadRut())
             {
@@ -132,10 +216,10 @@ namespace consultorioWeb.Admin.Enfermera
                     user.Appaterno = txt_apPaterno.Text;
                     user.Apmaterno = txt_apMaterno.Text;
                     user.FechaNacimiento = Convert.ToDateTime(txt_Fecha.Text);
-                    user.IdGenero = ddGenero.SelectedIndex;
-                    user.IdNacionalidad = ddNacionalidad.SelectedIndex;
+                    user.IdGenero = ddGenero.SelectedIndex + 1;
+                    user.IdNacionalidad = ddNacionalidad.SelectedIndex + 1;
                     user.Direccion = txt_Domicilio.Text;
-                    user.IdComuna = ddComuna.SelectedIndex;
+                    user.IdComuna = ddComuna.SelectedIndex + 1;
                     lbl_Edad.Text = (DateTime.Today.AddTicks(-user.FechaNacimiento.Ticks).Year - 1).ToString();
                     user.Fono1 = txt_nCasa.Text;
                     user.Fono2 = txt_nCelular.Text;
@@ -145,19 +229,14 @@ namespace consultorioWeb.Admin.Enfermera
                     {
                         if (enfermera.Update())
                         {
-                            lblRespuesta.Text = "Exito!. Se ha actualizado";
-                        }
-                        else {
-                            lblRespuesta.Text = "Erooorororooror";
+                            lblRespuesta.Text = "Exito! Se ha actualizado";
                         }
                     }
-                    else {
+                    else
+                    {
                         lblRespuesta.Text = "No se actualizo";
-                    }                    
+                    }
                 }
-            }   //Caso usuario no exite se agrega
-            else {
-                lblRespuesta.Text = "Se crea";            
             }
         }
     }

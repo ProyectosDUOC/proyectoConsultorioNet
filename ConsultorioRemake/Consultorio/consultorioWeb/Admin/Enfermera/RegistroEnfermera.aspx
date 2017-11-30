@@ -7,11 +7,9 @@
     <div>
         <table>
             <tr>
-                <td>N° ficha</td>
                 <td>Rut</td>
             </tr>
             <tr>
-                <td><asp:TextBox ID="txt_nFicha" runat="server"></asp:TextBox></td>
                 <td><asp:TextBox ID="txt_Rut" runat="server"></asp:TextBox></td>
                 <td class="style1">-</td>
                 <td class="style2">
@@ -19,6 +17,17 @@
                 </td>
                 <td><asp:Button ID="btn_Buscar" runat="server" Text="Buscar" 
                         onclick="btn_Buscar_Click" /></td>
+                <td><asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="*Ingrese Rut"
+                        ForeColor="Red" ControlToValidate="txt_Rut"></asp:RequiredFieldValidator>
+                    <br />
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txt_dv"
+                        ForeColor="Red" ErrorMessage="*Ingrese Dv"></asp:RequiredFieldValidator>
+                </td>
+                <td>
+                    <asp:Label ID="Label1" runat="server" ForeColor="Red" Text=""></asp:Label>
+                    <asp:Button ID="btnHabilitar" runat="server" Height="47px" Text="Habilitar Agregar" 
+                        Width="85px" onclick="btnHabilitar_Click1" />
+                </td>
             </tr>
         </table>
         <table>
@@ -95,8 +104,10 @@
                 </td>
             </tr>
         </table>
-        <asp:Button ID="btn_Guardar" runat="server" Text="Guardar" Height="55px" 
-            Width="200px" onclick="btn_Guardar_Click" />
+        <asp:Button ID="btn_Agregar" runat="server" Text="Agregar" Height="55px" 
+            Width="200px" onclick="btn_Agregar_Click" />
+        <asp:Button ID="btnGuardarActualizar" runat="server" Height="55px" Text="Guardar" 
+            Width="200px" onclick="btnGuardarActualizar_Click" />
         <asp:Button ID="btn_Atras" runat="server" Text="Atrás" Width="200px" Height="55px"
             OnClick="btn_Atras_Click" />
             <asp:Label ID="lblRespuesta" runat="server" Text=" "></asp:Label>

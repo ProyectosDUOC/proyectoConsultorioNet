@@ -41,7 +41,7 @@ namespace consultorioWeb.Admin.Paciente
                 ddGrupoS.DataBind();
                 if (controlAcceso.Id == 0)
                 {
-                    Response.Redirect("Login.aspx");
+                    Response.Redirect("../../Login.aspx");
                 }
             }
         }

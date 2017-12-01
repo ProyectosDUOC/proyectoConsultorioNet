@@ -134,8 +134,10 @@ namespace consultorioWeb.Medico
                 lblMensaje.Text = "";
             }
 
-            ServicioFarmacias.Service1Client servicio = new ServicioFarmacias.Service1Client();
-            String x = servicio.cantidadMedicamento(idMe);
+            //ServicioFarmacia.Service1Client servicio = new ServicioFarmacias.Service1Client();
+            ServicioFarmaciaFunciona.WebService1SoapClient servicios = new ServicioFarmaciaFunciona.WebService1SoapClient();
+         
+            String x = servicios.cantidadMedicamento(idMe);
             lblConsultaBaseDatos.Text = "Medicamento : " + idMe + " Total Medicamento " + x;
        
 
@@ -170,17 +172,7 @@ namespace consultorioWeb.Medico
                       
         }
 
-        protected void btnEstado_Click(object sender, EventArgs e)
-        {
-            String id = idMedicamento.Text;
-            ServicioFarmacias.Service1Client servicios = new ServicioFarmacias.Service1Client();
-
-           // String cantidad = servicios.cantidadMedicamento(id);
-
-            String cantidad = servicios.cantidadMedicamento2(id);
-
-            lblConsultaBaseDatos.Text = "Medicamento :"+id+" La cantidad es: " + cantidad;
-        }
+        
 
       
     }

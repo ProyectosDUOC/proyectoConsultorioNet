@@ -139,13 +139,7 @@
                     <table style="width: 98%; height: 379px;">
                         <tr>
                             <td class="style4">
-                                <asp:Label ID="Label16" runat="server" style="font-size: large; color: #FF3300" 
-                                    Text="Medicamentos"></asp:Label>
-                            &nbsp;<asp:TextBox ID="idMedicamento" runat="server" Width="65px" 
-></asp:TextBox>
-                                <asp:Button ID="btnEstado" runat="server" Text="Estado" 
-                                    onclick="btnEstado_Click" />
-                            </td>
+                            &nbsp;</td>
                             <td class="style17">
                                 <asp:Label ID="lblMedicamento" runat="server" Style="font-weight: 700; color: #FF6600;
                                     font-size: large" Text=""></asp:Label>

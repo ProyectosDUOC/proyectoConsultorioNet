@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://farmacias.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://farmacias.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://farmacias.org/">
+      <s:element name="cantidadMedicamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idMedicamento" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cantidadMedicamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cantidadMedicamentoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cantidadMedicamento2">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="idMedicamento" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cantidadMedicamento2Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cantidadMedicamento2Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isMedicamento">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idMedicamento" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cantidad" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isMedicamentoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isMedicamentoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="cantidadMedicamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:cantidadMedicamento" />
+  </wsdl:message>
+  <wsdl:message name="cantidadMedicamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:cantidadMedicamentoResponse" />
+  </wsdl:message>
+  <wsdl:message name="cantidadMedicamento2SoapIn">
+    <wsdl:part name="parameters" element="tns:cantidadMedicamento2" />
+  </wsdl:message>
+  <wsdl:message name="cantidadMedicamento2SoapOut">
+    <wsdl:part name="parameters" element="tns:cantidadMedicamento2Response" />
+  </wsdl:message>
+  <wsdl:message name="isMedicamentoSoapIn">
+    <wsdl:part name="parameters" element="tns:isMedicamento" />
+  </wsdl:message>
+  <wsdl:message name="isMedicamentoSoapOut">
+    <wsdl:part name="parameters" element="tns:isMedicamentoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="cantidadMedicamento">
+      <wsdl:input message="tns:cantidadMedicamentoSoapIn" />
+      <wsdl:output message="tns:cantidadMedicamentoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cantidadMedicamento2">
+      <wsdl:input message="tns:cantidadMedicamento2SoapIn" />
+      <wsdl:output message="tns:cantidadMedicamento2SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isMedicamento">
+      <wsdl:input message="tns:isMedicamentoSoapIn" />
+      <wsdl:output message="tns:isMedicamentoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="cantidadMedicamento">
+      <soap:operation soapAction="http://farmacias.org/cantidadMedicamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cantidadMedicamento2">
+      <soap:operation soapAction="http://farmacias.org/cantidadMedicamento2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isMedicamento">
+      <soap:operation soapAction="http://farmacias.org/isMedicamento" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="cantidadMedicamento">
+      <soap12:operation soapAction="http://farmacias.org/cantidadMedicamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cantidadMedicamento2">
+      <soap12:operation soapAction="http://farmacias.org/cantidadMedicamento2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isMedicamento">
+      <soap12:operation soapAction="http://farmacias.org/isMedicamento" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://25.69.234.23/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://25.69.234.23/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

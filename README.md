@@ -6,7 +6,7 @@
 - [Imagenes Paso A Pasos](#imagenes-paso-a-pasos)
 - [Programacion destacada](#programacion-destacada)
   - [CRUD](#crud )
-  - [Programacion destacada](#programacion-destacada)  
+  - [Coleccion](#coleccion)  
   - [Programacion destacada](#programacion-destacada)
   - [Programacion destacada](#programacion-destacada)
 
@@ -85,9 +85,9 @@ basandose en los datos semana a semana y lo visto en clase. Se comenzo con la el
 # Programacion destacada
 ## CRUD
 ##  System.Data.Entity 
-* using System.Data.Entity;
+* using System.Data.Entity; | clase consultorio.cs {id ,rut, dv, idComuna, nombre}
 ```csharp - C
-            public bool Read(){
+       public bool Read(){
             try
             {
                 capaDatos.Consultorio consultorio = CommonBC.ModeloConsultorio.Consultorio.First
@@ -147,6 +147,91 @@ basandose en los datos semana a semana y lo visto en clase. Se comenzo con la el
         }
     }
 ```
+## Coleccion 
+* Clase consultorio.cs {id ,rut, dv, idComuna, nombre}
+```csharp - C
+   public static List<Consultorio> GenerarListado(List<capaDatos.Consultorio> ConsultorioDALC)
+        {
+            List<capaNegocio.Consultorio> consultorios= new List<Consultorio>();
 
+            foreach (capaDatos.Consultorio consul in ConsultorioDALC)
+            {
+                capaNegocio.Consultorio consultorio = new Consultorio();
 
+                consultorio.Id = consul.id_consultorio;
+                consultorio.Rut = (int)consul.rut_consultorio;
+                consultorio.Dv = Char.Parse(consul.dv);
+                consultorio.IdComuna = (int)consul.id_comuna;
+                consultorio.Nombre = consul.nombre;
+                
+                consultorios.Add(consultorio);
+            }
+            return consultorios;
+        }
 
+        //Listado de todos los elementos
+
+        public List<Consultorio> ReadAll()
+        {
+            var consultorios = CommonBC.ModeloConsultorio.Consultorio;
+            return GenerarListado(consultorios.ToList());
+        }
+
+       
+    }
+```
+## CommonBC 
+* Clase consultorio.cs {id ,rut, dv, idComuna, nombre}
+```csharp - C
+using capaDatos;
+
+namespace capaNegocio
+{
+    public class CommonBC
+    {
+        private static ConsultoriosEntities _modeloConsultorio;
+
+        public static ConsultoriosEntities ModeloConsultorio
+        {
+            get
+            {
+                if (_modeloConsultorio == null)
+                {
+                    _modeloConsultorio = new ConsultoriosEntities();
+                }
+                return _modeloConsultorio;
+            }
+        }
+        public CommonBC() { }
+    }
+}
+```
+
+## xml app config
+* App.Config
+```xml - XML
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <connectionStrings>
+    <add name="ConsultoriosEntities" connectionString="metadata=res://*/ConsultorioEDM.csdl|res://*/ConsultorioEDM.ssdl|res://*/ConsultorioEDM.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=DESKTOP-26I1PO8\SQLEXPRESS;Initial Catalog=Consultorios;Integrated Security=True;MultipleActiveResultSets=True&quot;" providerName="System.Data.EntityClient" />
+  </connectionStrings>
+</configuration>
+```
+
+## Session 
+* Logi.aspx coneccion con Session | clase controlAcceso {id, usuario, pass, tipoUsuario, activo}
+```csharp - C
+        private ControlAcceso controlAcceso
+        {
+            get
+            {
+                if (Session["MiUsuario"] == null)
+                {
+                    Session["MiUsuario"] = new ControlAcceso();
+                }
+                return (ControlAcceso)Session["MiUsuario"];
+            }
+            set { Session["MiUsuario"] = value; }
+        }
+
+```

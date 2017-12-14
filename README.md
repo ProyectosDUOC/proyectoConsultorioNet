@@ -203,7 +203,7 @@ namespace capaNegocio
 ```
 
 ## Session 
-* Logi.aspx coneccion con Session | clase controlAcceso {id, usuario, pass, tipoUsuario, activo}
+* Login.aspx coneccion con Session | clase controlAcceso {id, usuario, pass, tipoUsuario, activo}
 ```csharp - C
         private ControlAcceso controlAcceso
         {

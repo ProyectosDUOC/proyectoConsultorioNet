@@ -7,30 +7,15 @@
 - [Programacion destacada](#programacion-destacada)
   - [CRUD](#crud )
   - [Coleccion](#coleccion)  
+  - [CommonBC](#commonbc)  
+  - [xml app config](#xml-app-config)  
+  - [Session](#session)  
+  - [DropDownList](#dropdownlist)    
+  - [Gridview](#gridview)    
   - [Programacion destacada](#programacion-destacada)
   - [Programacion destacada](#programacion-destacada)
 
-## Funcionamiento detallado
 
-|nombre|Herramienta|Descripcion|
-| -- | -- | -- |
-| - | Visual Studio 2010 | - |
-| Base de datos | MYSQL | Insertar datos y poblacion |
-| Tecnologia #1 | Modelo Capa de datos | Entities System.data.Entity |
-| Tecnologia #2 | Modelo Capa de datos | Entity Data Model Tools .EDMX |
-| Tecnologia #3 | Modelo Capa de Negocio | CLASES .cs |
-| Tecnologia #4 | Modelo Capa de Negocio | Coleccion de cada clase |
-| Tecnologia #5 | Modelo Capa de Negocio | CRUD con Entity EDMX |
-| Tecnologia #6 | Modelo Capa de Negocio | Clases customer |
-| Tecnologia #7 | Modelo Capa de Presentacion | .aspx |
-| Tecnologia #8 | Modelo Capa de Presentacion | .C# |
-| Tecnologia #9 | Modelo Capa de Presentacion | DropDownList |
-| Tecnologia #10 | Modelo Capa de Presentacion | Gridview |
-| Tecnologia #11 | Modelo Capa de Presentacion | HTML |
-| Tecnologia #12 | Modelo Capa de Presentacion | CSS |
-| Tecnologia #13 | Modelo Capa de Presentacion | Session |
-| Tecnologia #14 | Modelo Capa de Servicio | Servicio web IIS Envio |
-| Tecnologia #15 | Modelo Capa de Servicio | Servicio web Recibiendo |
 
 ## Acerca de 
 
@@ -302,6 +287,7 @@ Conexion a pada de negocio clase coleccion
 * Ir a los eventos de su GV **SelectedIndexChanged = Seleccionar** (doble click para programar el evento)
 
 **Tabla Saludo** (id = GridView1)
+
 | Seleccionar | Id | Nombre |
 | -- | -- | -- |
 | GridView1.SelectedRow.Cells[0].Text | GridView1.SelectedRow.Cells[1].Text | GridView1.SelectedRow.Cells[2].Text |
@@ -310,10 +296,32 @@ Conexion a pada de negocio clase coleccion
 | Seleccionar | 2 | Hola1 |
 | Seleccionar | 3 | Hola2 |
 | Seleccionar | 4 | Hola3 |
+
 ```csharp - C
          protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
            int id = Convert.ToInt32(GridView1.SelectedRow.Cells[1].Text); //Seleccionariamos el id
         }
  
- ```                    
+ ```     
+ ## Funcionamiento detallado
+
+|nombre|Herramienta|Descripcion|
+| -- | -- | -- |
+| - | Visual Studio 2010 | - |
+| Base de datos | MYSQL | Insertar datos y poblacion |
+| Tecnologia #1 | Modelo Capa de datos | Entities System.data.Entity |
+| Tecnologia #2 | Modelo Capa de datos | Entity Data Model Tools .EDMX |
+| Tecnologia #3 | Modelo Capa de Negocio | CLASES .cs |
+| Tecnologia #4 | Modelo Capa de Negocio | Coleccion de cada clase |
+| Tecnologia #5 | Modelo Capa de Negocio | CRUD con Entity EDMX |
+| Tecnologia #6 | Modelo Capa de Negocio | Clases customer |
+| Tecnologia #7 | Modelo Capa de Presentacion | .aspx |
+| Tecnologia #8 | Modelo Capa de Presentacion | .C# |
+| Tecnologia #9 | Modelo Capa de Presentacion | DropDownList |
+| Tecnologia #10 | Modelo Capa de Presentacion | Gridview |
+| Tecnologia #11 | Modelo Capa de Presentacion | HTML |
+| Tecnologia #12 | Modelo Capa de Presentacion | CSS |
+| Tecnologia #13 | Modelo Capa de Presentacion | Session |
+| Tecnologia #14 | Modelo Capa de Servicio | Servicio web IIS Envio |
+| Tecnologia #15 | Modelo Capa de Servicio | Servicio web Recibiendo |

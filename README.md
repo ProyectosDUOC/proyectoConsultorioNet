@@ -273,36 +273,47 @@ Conexion a pada de negocio clase coleccion
 
 ## Gridview
 Conexion a pada de negocio clase coleccion 
-1. En web .aspx (Combo Box) 
+1. En web .aspx (Lista) 
   * Cuadro de herramientas - "ObjectDataSource" - Cargar la coleccion de capa de negocios
-  * poner DropDownList y Elegir origin de ODS
-  * en el DDL borrar el id de object y despues borrar object
+  * poner Gridview y Elegir origin de ODS
+  * en el gv borrar el id de object y despues borrar object
   * En el controlador de la pagina poner lo siguiente **pagina.aspx.cs**
 ```csharp - C
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
-            {    
-                ddGenero.DataSource = capaNegocio.GeneroColeccion.ReadAll(); //Rellena
-                ddGenero.DataBind(); // Muestra en ventana
+           if (!IsPostBack)
+            {
+                GridView1.DataSource = capaNegocio.ClasesListar.PacienteLColeccion.GenerarListado();
+                GridView1.DataBind();
             }
         }
 ```
-2. Seleccionar un encontrado 
-* ddGenero = DropDownList llamado ddGenero {Masculino, Femenino, Prefiero no decirlo, Otro}
-* SelectedIndex = Seleciona uno de la posicion X
+2. Habilitar Paginacion
+* Ir a propiedades de su GV **PageSize = 10** (cantidad de paginas max) 
+* Ir a los eventos de su GV **PageIndexChanged = paginas** (doble click para programar el evento)
 ```csharp - C
-         ddGenero.SelectedIndex = ddGenero.Items.IndexOf(ddGenero.Items.FindByValue(usuario.IdGenero.ToString()));              
+         GridView1.PageIndex = e.NewPageIndex; //Para hablitar el cambio de pagina
+         
+         GridView1.DataSource = capaNegocio.ClasesListar.PacienteLColeccion.GenerarListado(); // Lo mismo que !IsPostBack
+         GridView1.DataBind();            
 ```
-3. Guardar el seleccionado 
-* ddGenero = DropDownList llamado ddGenero {Masculino, Femenino, Prefiero no decirlo, Otro}
+3. Habilitar Seleccionar
+* En tareas de GV **habilitar Seleccion**
+* Ir a los eventos de su GV **SelectedIndexChanged = Seleccionar** (doble click para programar el evento)
 
+**Tabla Saludo** (id = GridView1)
+| Seleccionar | Id | Nombre |
+| -- | -- | -- |
+| GridView1.SelectedRow.Cells[0].Text | GridView1.SelectedRow.Cells[1].Text | GridView1.SelectedRow.Cells[2].Text |
+| Seleccionar | 1 | Hola |
+| Seleccionar | 1 | Hola |
+| Seleccionar | 2 | Hola1 |
+| Seleccionar | 3 | Hola2 |
+| Seleccionar | 4 | Hola3 |
 ```csharp - C
-        //Guardar el id de genero  
-        String id = ddGenero.SelectedIndex + 1;  //Masculino[0] , Femenino[1] , etc..
-        
-        //Guarda el valor de lo asignado en el DDL
-        String id = ddGenero.SelectedItem;
-```
-  ddGenero.SelectedIndex = ddGenero.Items.IndexOf(ddGenero.Items.FindByValue(usuario.IdGenero.ToString()));
-                       
+         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           int id = Convert.ToInt32(GridView1.SelectedRow.Cells[1].Text); //Seleccionariamos el id
+        }
+ 
+ ```                    

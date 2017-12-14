@@ -25,7 +25,7 @@
 | Tecnologia #7 | Modelo Capa de Presentacion | .aspx |
 | Tecnologia #8 | Modelo Capa de Presentacion | .C# |
 | Tecnologia #9 | Modelo Capa de Presentacion | DropDownList |
-| Tecnologia #10 | Modelo Capa de Presentacion | Griwview |
+| Tecnologia #10 | Modelo Capa de Presentacion | Gridview |
 | Tecnologia #11 | Modelo Capa de Presentacion | HTML |
 | Tecnologia #12 | Modelo Capa de Presentacion | CSS |
 | Tecnologia #13 | Modelo Capa de Presentacion | Session |
@@ -35,12 +35,14 @@
 ## Acerca de 
 
 Proyecto Consultorio es una aplicacion web creada en el ramo de Desarrollo en .NET en el segundo semestre del año 2017,
-basandose en los datos semana a semana y lo visto en clase. Se comenzo con la elvaracion de dicho
+basandose en los datos semana a semana y lo visto en clase.
 
-## Funcionamiento
-
+***
+# Funcionamiento
 
 ### Incio sesión
+* Agregar SQL (SQL Server)
+* Abir Archivo **proyectoConsultorioNet-master\ConsultorioRemake\Consultorio\Consultorio.sln**  
 
 |Tipo Usuario | Usuario | Constraseña|
 | -- | -- | -- |
@@ -235,3 +237,72 @@ namespace capaNegocio
         }
 
 ```
+## DropDownList
+Conexion a pada de negocio clase coleccion 
+1. En web .aspx (Combo Box) 
+  * Cuadro de herramientas - "ObjectDataSource" - Cargar la coleccion de capa de negocios
+  * poner DropDownList y Elegir origin de ODS
+  * en el DDL borrar el id de object y despues borrar object
+  * En el controlador de la pagina poner lo siguiente **pagina.aspx.cs**
+```csharp - C
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {    
+                ddGenero.DataSource = capaNegocio.GeneroColeccion.ReadAll(); //Rellena
+                ddGenero.DataBind(); // Muestra en ventana
+            }
+        }
+```
+2. Seleccionar un encontrado 
+* ddGenero = DropDownList llamado ddGenero {Masculino, Femenino, Prefiero no decirlo, Otro}
+* SelectedIndex = Seleciona uno de la posicion X
+```csharp - C
+         ddGenero.SelectedIndex = ddGenero.Items.IndexOf(ddGenero.Items.FindByValue(usuario.IdGenero.ToString()));              
+```
+3. Guardar el seleccionado 
+* ddGenero = DropDownList llamado ddGenero {Masculino, Femenino, Prefiero no decirlo, Otro}
+
+```csharp - C
+        //Guardar el id de genero  
+        String id = ddGenero.SelectedIndex + 1;  //Masculino[0] , Femenino[1] , etc..
+        
+        //Guarda el valor de lo asignado en el DDL
+        String id = ddGenero.SelectedItem;
+```
+
+## Gridview
+Conexion a pada de negocio clase coleccion 
+1. En web .aspx (Combo Box) 
+  * Cuadro de herramientas - "ObjectDataSource" - Cargar la coleccion de capa de negocios
+  * poner DropDownList y Elegir origin de ODS
+  * en el DDL borrar el id de object y despues borrar object
+  * En el controlador de la pagina poner lo siguiente **pagina.aspx.cs**
+```csharp - C
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {    
+                ddGenero.DataSource = capaNegocio.GeneroColeccion.ReadAll(); //Rellena
+                ddGenero.DataBind(); // Muestra en ventana
+            }
+        }
+```
+2. Seleccionar un encontrado 
+* ddGenero = DropDownList llamado ddGenero {Masculino, Femenino, Prefiero no decirlo, Otro}
+* SelectedIndex = Seleciona uno de la posicion X
+```csharp - C
+         ddGenero.SelectedIndex = ddGenero.Items.IndexOf(ddGenero.Items.FindByValue(usuario.IdGenero.ToString()));              
+```
+3. Guardar el seleccionado 
+* ddGenero = DropDownList llamado ddGenero {Masculino, Femenino, Prefiero no decirlo, Otro}
+
+```csharp - C
+        //Guardar el id de genero  
+        String id = ddGenero.SelectedIndex + 1;  //Masculino[0] , Femenino[1] , etc..
+        
+        //Guarda el valor de lo asignado en el DDL
+        String id = ddGenero.SelectedItem;
+```
+  ddGenero.SelectedIndex = ddGenero.Items.IndexOf(ddGenero.Items.FindByValue(usuario.IdGenero.ToString()));
+                       

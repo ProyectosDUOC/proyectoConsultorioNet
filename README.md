@@ -12,10 +12,6 @@
   - [Session](#session)  
   - [DropDownList](#dropdownlist)    
   - [Gridview](#gridview)    
-  - [Programacion destacada](#programacion-destacada)
-  - [Programacion destacada](#programacion-destacada)
-
-
 
 ## Acerca de 
 
@@ -46,32 +42,33 @@ basandose en los datos semana a semana y lo visto en clase.
 
 
 ## Imagenes Paso A Pasos
-*: _ Logo ministerio de Salud imagen obtenida de googles Imagenes 
+_Logo ministerio de Salud imagen obtenida de googles Imagenes_
 
-* Inicio Login
+* **Inicio Login**
 ![Login](https://github.com/ProyectosDUOC/proyectoConsultorioNet/blob/master/Fotos%20Proyecto/Fotos%20Consultorio/1Login.jpg?raw=true "Login")
-* Administrador Agregar Paciente 
+* **Administrador Agregar Paciente**
 ![Agregar Paciente](https://github.com/ProyectosDUOC/proyectoConsultorioNet/blob/master/Fotos%20Proyecto/Fotos%20Consultorio/2AgregarPaciente.jpg?raw=true "titulo")
-* Enfermera: Agregar Paciente a la ficha
+* **Enfermera: Agregar Paciente a la ficha**
 ![Con titulo](https://github.com/ProyectosDUOC/proyectoConsultorioNet/blob/master/Fotos%20Proyecto/Fotos%20Consultorio/5agregarPacientepara%20una%20Ficha.jpg?raw=true "titulo")
-* Enfermera Selecciona
+* **Enfermera Seleccion**
 ![Con titulo](https://github.com/ProyectosDUOC/proyectoConsultorioNet/blob/master/Fotos%20Proyecto/Fotos%20Consultorio/9Seleccionamos%20al%20paciente.jpg?raw=true "titulo")
 ![Con titulo](https://github.com/ProyectosDUOC/proyectoConsultorioNet/blob/master/Fotos%20Proyecto/Fotos%20Consultorio/6SecertariaAgregarPaciente.jpg?raw=true "titulo")
-* Enfermera Ficha
+* **Enfermera Ficha**
 ![Con titulo](https://github.com/ProyectosDUOC/proyectoConsultorioNet/blob/master/Fotos%20Proyecto/Fotos%20Consultorio/10EjecutaLaConsulta.jpg?raw=true "titulo")
-* Medico Ficha
+* **Medico Ficha**
 ![Con titulo](https://github.com/ProyectosDUOC/proyectoConsultorioNet/blob/master/Fotos%20Proyecto/Fotos%20Consultorio/13Selecciondelpaciente.jpg?raw=true "titulo")
-* Medico Ficha Paciente
+* **Medico Ficha Paciente**
 ![Con titulo](https://github.com/ProyectosDUOC/proyectoConsultorioNet/blob/master/Fotos%20Proyecto/Fotos%20Consultorio/14FichaMedica.jpg?raw=true "titulo")
-* Medico Agregar Medicamento
+* **Medico Agregar Medicamento**
 ![Con titulo](https://github.com/ProyectosDUOC/proyectoConsultorioNet/blob/master/Fotos%20Proyecto/Fotos%20Consultorio/15AgregarMedicamento.jpg?raw=true "titulo")
-* Consulta Finalizada
+* **Consulta Finalizada**
 ![Con titulo](https://github.com/ProyectosDUOC/proyectoConsultorioNet/blob/master/Fotos%20Proyecto/Fotos%20Consultorio/17FinDoctor.jpg?raw=true "titulo")
 
+***
 
 # Programacion destacada
 ## CRUD
-##  System.Data.Entity 
+* ** USO DE System.Data.Entity** 
 * using System.Data.Entity; | clase consultorio.cs {id ,rut, dv, idComuna, nombre}
 ```csharp - C
        public bool Read(){
